@@ -1,9 +1,9 @@
 # Portfolio Nguyễn Quý Anh (Mason)
 
-Đây là website Portfolio + CV online của bạn, gồm **2 phiên bản thiết kế** dùng chung một nguồn nội dung:
+Đây là website Portfolio + CV online của bạn, gồm **2 phiên bản thiết kế** dùng chung một nguồn nội dung. **Bản Nổi bật (`/bold/`) đã được chọn làm bản chính** — file `index.html` ở thư mục gốc tự động chuyển hướng vào đó.
 
-- **`/minimal/`** — bản "Tinh tế": nền sáng, nhiều khoảng trắng, cuộn mượt, số liệu đếm chạy khi cuộn tới, con trỏ chuột tuỳ chỉnh.
-- **`/bold/`** — bản "Nổi bật": nền tối, hiệu ứng gradient động, nút "hút" theo chuột, ảnh dự án nghiêng theo chuột (tilt).
+- **`/bold/`** (bản chính) — bản "Nổi bật": nền tối, hiệu ứng gradient động, nút "hút" theo chuột, ảnh dự án nghiêng theo chuột (tilt).
+- **`/minimal/`** (giữ lại để đối chiếu) — bản "Tinh tế": nền sáng, nhiều khoảng trắng, cuộn mượt, số liệu đếm chạy khi cuộn tới, con trỏ chuột tuỳ chỉnh.
 
 Cả 2 bản đều là **HTML/CSS/JS thuần** — không cần cài Node.js, không cần "build", mở file là chạy.
 
@@ -11,12 +11,9 @@ Cả 2 bản đều là **HTML/CSS/JS thuần** — không cần cài Node.js, k
 
 ## 1. Xem thử ngay trên máy (không cần biết lập trình)
 
-Mở Finder, vào thư mục `portfolio-mason`, sau đó:
+Mở Finder, vào thư mục `portfolio-mason`, double-click file **`index.html`** ở thư mục gốc → tự chuyển vào bản Nổi bật.
 
-- Vào thư mục `minimal`, double-click file **`index.html`** → mở bằng trình duyệt (Chrome, Safari...).
-- Vào thư mục `bold`, double-click file **`index.html`** để xem bản còn lại.
-
-Xem xong cả 2 bản, chọn bản bạn ưng ý nhất để gửi cho nhà tuyển dụng hoặc đem đi deploy (đăng lên mạng — xem mục 3).
+Muốn xem lại bản Tinh tế: vào thư mục `minimal`, double-click file `index.html` bên trong.
 
 > Mẹo: nút tròn ghi **EN / VI** ở góc trên bên phải để đổi ngôn ngữ toàn trang. Ngôn ngữ bạn chọn sẽ được nhớ cho lần mở sau.
 
@@ -55,10 +52,9 @@ Chọn 1 trong 3 cách sau — đều miễn phí và không cần biết lập 
 ### Cách 1 — Netlify Drop (dễ nhất, kéo-thả)
 
 1. Mở trình duyệt vào [app.netlify.com/drop](https://app.netlify.com/drop)
-2. Kéo **cả thư mục `portfolio-mason`** (hoặc chỉ thư mục `minimal`/`bold` nếu chỉ muốn đăng 1 bản) thả vào trang đó.
-3. Đợi vài giây, Netlify sẽ đưa cho bạn 1 link dạng `https://ten-ngau-nhien.netlify.app`.
-4. Nếu kéo cả thư mục `portfolio-mason`, link vào bản Tinh tế sẽ là `.../minimal/index.html` và bản Nổi bật là `.../bold/index.html`.
-5. (Tuỳ chọn) Đăng ký tài khoản Netlify miễn phí để đổi tên link cho đẹp hơn, dễ nhớ hơn.
+2. Kéo **cả thư mục `portfolio-mason`** thả vào trang đó — **luôn kéo cả thư mục này**, không kéo riêng `bold` hay `minimal`, vì 2 bản đó dùng chung ảnh/dữ liệu nằm ở thư mục cha (`assets/`, `data/`); kéo riêng sẽ bị thiếu ảnh và thiếu nội dung.
+3. Đợi vài giây, Netlify sẽ đưa cho bạn 1 link dạng `https://ten-ngau-nhien.netlify.app` — link gốc này tự chuyển vào bản Nổi bật. Muốn xem bản Tinh tế thì vào thêm `/minimal/` phía sau link.
+4. (Tuỳ chọn) Đăng ký tài khoản Netlify miễn phí để đổi tên link cho đẹp hơn, dễ nhớ hơn.
 
 ### Cách 2 — Vercel
 
@@ -71,7 +67,9 @@ Chọn 1 trong 3 cách sau — đều miễn phí và không cần biết lập 
 1. Tạo 1 repository mới trên GitHub, đặt tên tuỳ ý (ví dụ `portfolio`).
 2. Tải toàn bộ nội dung thư mục `portfolio-mason` lên repository đó (dùng nút "Add file → Upload files" trên GitHub, kéo-thả từng thư mục con vào).
 3. Vào **Settings → Pages** của repository, chọn nhánh `main` và thư mục gốc `/ (root)`, bấm **Save**.
-4. Sau khoảng 1 phút, GitHub sẽ cho bạn link dạng `https://ten-ban.github.io/portfolio/minimal/` (và `/bold/`).
+4. Sau khoảng 1 phút, GitHub sẽ cho bạn link dạng `https://ten-ban.github.io/portfolio/` — link gốc tự chuyển vào bản Nổi bật; thêm `/minimal/` vào cuối để xem bản Tinh tế.
+
+> Dự án đã có sẵn Git repo cục bộ (đã `git init` + commit). Nếu bạn dùng Cách 3, có thể bỏ qua bước upload thủ công và thay bằng `git remote add origin <link-repo-github-cua-ban> && git push -u origin main` từ trong thư mục `portfolio-mason`.
 
 > Cả 3 cách trên chỉ đăng file tĩnh, không có bước "build" nào — đúng như thư mục bạn có sẵn.
 

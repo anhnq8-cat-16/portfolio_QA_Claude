@@ -5,10 +5,8 @@ This is Nguyễn Quý Anh's ("Mason Nguyen") personal job-hunting portfolio/CV s
 ## What this is
 
 Two static, self-contained design versions of the same portfolio, sharing one content source:
-- `/minimal/` — light theme, restrained, Lenis smooth scroll + GSAP scroll reveals, custom cursor.
-- `/bold/` — dark theme, animated gradient-mesh hero, magnetic buttons, tilt project cards.
-
-The user has not yet picked a favorite version — both are complete and meant to stay complete until they choose (or decide to keep both).
+- `/bold/` — **chosen as the primary version.** Dark theme, animated gradient-mesh hero, magnetic buttons, tilt project cards. The root `index.html` redirects here.
+- `/minimal/` — light theme, restrained, Lenis smooth scroll + GSAP scroll reveals, custom cursor. Kept for reference/comparison, not deleted, but not the primary experience.
 
 ## Hard constraints — do not violate these
 
@@ -28,10 +26,11 @@ The user has not yet picked a favorite version — both are complete and meant t
   Forgetting this step means edits silently don't show up on the site — this is the single most common mistake when touching this project.
 - `scripts/generate_cv_pdf.py` generates the two downloadable CV PDFs (`assets/cv/NguyenQuyAnh-CV-VI.pdf` / `-EN.pdf`) directly from `content.json`, using `fpdf2` + the system's Tahoma font (confirmed to render Vietnamese diacritics correctly — Helvetica/core PDF fonts do not). Re-run it after any content change so the downloadable CV stays in sync with the site.
 
-## Known open items (as of the last Claude Code session, 2026-08-29)
+## Resolved (as of 2026-08-29 — do not reopen these without the user raising it first)
 
-- The user's two source CVs disagreed on intern-mentoring count (EN CV: "9 interns"; VI CV: "8 interns, 4 promoted to full-time"). The VI figure was used as more specific/authoritative, but this was never explicitly confirmed with the user — worth double-checking before treating it as settled.
-- User was deciding between the two design versions — check whether that decision has since been made (e.g. one version removed, or a note in README/commit history) before assuming both are still equally "live."
+- Version choice: **Bold**, confirmed by the user. Root `index.html` redirects to `/bold/index.html`.
+- Intern-mentoring count discrepancy between the two source CVs: confirmed as **9** (the EN CV's number).
+- Deploy: user asked for full auto-deploy with no further confirmation needed. No hosting CLI (gh/vercel/netlify) was installed or authenticated on the machine this was built on, so it could not be completed end-to-end — Netlify Drop (no login required) was left as the one manual step. Check README.md / git remotes / recent commits for whether this has since been completed.
 
 ## Where to look
 

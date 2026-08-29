@@ -249,8 +249,8 @@ window.SITE_CONTENT = {
             "en": "Analyzed complex advertising data into actionable insights, boosting overall ROI/ROAS by 150% versus initial targets."
           },
           {
-            "vi": "Dẫn dắt và trao quyền cho đội ngũ chuyên viên trẻ và thực tập sinh, xây dựng tư duy ra quyết định dựa trên dữ liệu.",
-            "en": "Led and empowered a team of junior executives and interns, fostering a data-driven decision-making mindset."
+            "vi": "Dẫn dắt và trao quyền cho đội ngũ chuyên viên trẻ, trực tiếp mentor 9 thực tập sinh marketing, xây dựng tư duy ra quyết định dựa trên dữ liệu.",
+            "en": "Led and empowered a team of junior executives, directly mentoring 9 marketing interns, fostering a data-driven decision-making mindset."
           }
         ],
         "tags": [
