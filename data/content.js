@@ -1,0 +1,894 @@
+// AUTO-GENERATED from content.json — do not hand-edit. Run scripts/build_content_js.py after editing content.json.
+window.SITE_CONTENT = {
+  "meta": {
+    "siteTitle": {
+      "vi": "Nguyễn Quý Anh — Marketing & Project Management",
+      "en": "Nguyen Quy Anh — Marketing & Project Management"
+    },
+    "siteDescription": {
+      "vi": "Portfolio của Nguyễn Quý Anh (Mason Nguyen) — 4+ năm quản lý dự án & tài khoản tại Agency, cầu nối chiến lược giữa Agency và Nhãn hàng cho Vietnam Airlines, Panasonic, VPBank và hơn 40 dự án khác.",
+      "en": "Portfolio of Nguyen Quy Anh (Mason Nguyen) — 4+ years in account & project management at a digital agency, the strategic bridge between Agency and Brand for Vietnam Airlines, Panasonic, VPBank and 40+ other projects."
+    },
+    "ogImage": "../assets/images/og-cover.jpg",
+    "siteUrl": "https://mason-nguyen.example",
+    "themeColor": "#FF3131"
+  },
+  "personal": {
+    "fullName": "Nguyễn Quý Anh",
+    "displayName": "Mason Nguyen",
+    "signature": "Mason Nguyen",
+    "title": {
+      "vi": "Senior Account Executive & Quản lý Dự án",
+      "en": "Senior Account Executive & Project Manager"
+    },
+    "targetRole": {
+      "vi": "Định hướng: Marketing / Brand Manager phía nhãn hàng",
+      "en": "Aiming for: Client-side Marketing / Brand Manager"
+    },
+    "email": "anhnq8.ent@gmail.com",
+    "phoneDisplay": "0983 991 216",
+    "phoneHref": "+84983991216",
+    "location": {
+      "vi": "Quận Đống Đa, Hà Nội",
+      "en": "Dong Da District, Hanoi, Vietnam"
+    },
+    "linkedinUrl": "https://www.linkedin.com/in/quy-anh-612",
+    "linkedinLabel": "linkedin.com/in/quy-anh-612",
+    "cv": {
+      "vi": "../assets/cv/NguyenQuyAnh-CV-VI.pdf",
+      "en": "../assets/cv/NguyenQuyAnh-CV-EN.pdf"
+    },
+    "heroPhoto": "../assets/images/hero-mason.jpg",
+    "aboutPhotos": [
+      "../assets/images/about-bridge.jpg",
+      "../assets/images/about-mountain.jpg"
+    ]
+  },
+  "ui": {
+    "nav": {
+      "about": {
+        "vi": "Giới thiệu",
+        "en": "About"
+      },
+      "experience": {
+        "vi": "Kinh nghiệm",
+        "en": "Experience"
+      },
+      "projects": {
+        "vi": "Dự án",
+        "en": "Projects"
+      },
+      "skills": {
+        "vi": "Kỹ năng",
+        "en": "Skills"
+      },
+      "education": {
+        "vi": "Học vấn",
+        "en": "Education"
+      },
+      "contact": {
+        "vi": "Liên hệ",
+        "en": "Contact"
+      }
+    },
+    "langToggleLabel": {
+      "vi": "EN",
+      "en": "VI"
+    },
+    "langToggleAria": {
+      "vi": "Chuyển sang tiếng Anh",
+      "en": "Switch to Vietnamese"
+    },
+    "downloadCv": {
+      "vi": "Tải CV",
+      "en": "Download CV"
+    },
+    "contactCta": {
+      "vi": "Liên hệ",
+      "en": "Contact me"
+    },
+    "viewProjects": {
+      "vi": "Xem dự án",
+      "en": "View projects"
+    },
+    "sendEmail": {
+      "vi": "Gửi email",
+      "en": "Send an email"
+    },
+    "backToTop": {
+      "vi": "Lên đầu trang",
+      "en": "Back to top"
+    },
+    "scrollHint": {
+      "vi": "Cuộn xuống",
+      "en": "Scroll down"
+    },
+    "menuOpen": {
+      "vi": "Mở menu",
+      "en": "Open menu"
+    },
+    "menuClose": {
+      "vi": "Đóng menu",
+      "en": "Close menu"
+    },
+    "present": {
+      "vi": "Hiện tại",
+      "en": "Present"
+    },
+    "footerRights": {
+      "vi": "Đã giữ mọi quyền.",
+      "en": "All rights reserved."
+    },
+    "footerBuilt": {
+      "vi": "Thiết kế & phát triển bởi Mason Nguyen.",
+      "en": "Designed & built by Mason Nguyen."
+    },
+    "clientsEyebrow": {
+      "vi": "Khách hàng đã hợp tác",
+      "en": "Clients I've worked with"
+    }
+  },
+  "hero": {
+    "eyebrow": {
+      "vi": "Portfolio 2026",
+      "en": "Portfolio 2026"
+    },
+    "headline": {
+      "vi": "4 năm làm cầu nối chiến lược giữa Agency và Nhãn hàng — giờ sẵn sàng ngồi phía bên kia bàn.",
+      "en": "4 years as the strategic bridge between Agency and Brand — ready to sit on the client side of the table."
+    },
+    "subheadline": {
+      "vi": "Mình là Quý Anh — chuyên gia Quản lý Tài khoản & Quản lý Dự án, từng trực tiếp điều phối hơn 40 chiến dịch IMC cho Vietnam Airlines, Panasonic, VPBank và nhiều nhãn hàng lớn khác.",
+      "en": "I'm Quy Anh — an Account & Project Management specialist who has directly coordinated 40+ IMC campaigns for Vietnam Airlines, Panasonic, VPBank and many other major brands."
+    }
+  },
+  "about": {
+    "eyebrow": {
+      "vi": "Giới thiệu",
+      "en": "About"
+    },
+    "heading": {
+      "vi": "Giới thiệu bản thân",
+      "en": "About me"
+    },
+    "paragraphs": [
+      {
+        "vi": "Mình là chuyên gia Quản lý Tài khoản (Account Management) và Quản lý Dự án với hơn 4 năm kinh nghiệm tại môi trường Agency — bắt đầu từ vị trí Marketing Intern và phát triển lên Senior Account Executive tại Novaon Digital.",
+        "en": "I'm an Account Management and Project Management specialist with 4+ years in a digital agency environment — starting as a Marketing Intern and growing into a Senior Account Executive at Novaon Digital."
+      },
+      {
+        "vi": "Vai trò của mình là cầu nối chiến lược giữa Agency và Khách hàng: tổng hợp, phân tích thông tin và điều phối các chiến dịch truyền thông tích hợp (IMC) đa kênh. Mình đã có kinh nghiệm thực chiến trong nhiều ngành lớn như Hàng không, Điện máy, Bán lẻ và Ngân hàng.",
+        "en": "My role is the strategic bridge between Agency and Client: synthesizing information and coordinating multi-channel integrated marketing communications (IMC) campaigns. I've worked hands-on across major industries — Aviation, Home Appliances, Retail and Banking."
+      },
+      {
+        "vi": "Mục tiêu tiếp theo là mang tư duy quản trị chiến dịch và tối ưu vận hành đã tích lũy ở Agency sang một đội ngũ Marketing phía nhãn hàng, đồng thời tiếp tục phát triển năng lực quản trị kinh doanh với kế hoạch học Thạc sĩ Quản trị Kinh doanh (MBA) tại Vương quốc Anh vào năm 2027.",
+        "en": "My next step is bringing the campaign-management and operations-optimization mindset built at the agency into an in-house brand marketing team — while continuing to grow as a business leader, with a planned MBA in the UK in 2027."
+      }
+    ],
+    "highlights": [
+      {
+        "value": 4,
+        "prefix": "",
+        "suffix": "+",
+        "label": {
+          "vi": "năm kinh nghiệm Agency",
+          "en": "years agency experience"
+        }
+      },
+      {
+        "value": 40,
+        "prefix": "",
+        "suffix": "+",
+        "label": {
+          "vi": "dự án đã trực tiếp quản lý",
+          "en": "projects directly managed"
+        }
+      },
+      {
+        "value": 150,
+        "prefix": "",
+        "suffix": {
+          "vi": " tỷ VNĐ",
+          "en": "B VND"
+        },
+        "label": {
+          "vi": "tổng ngân sách đã điều phối",
+          "en": "total budget coordinated"
+        }
+      },
+      {
+        "value": 80,
+        "prefix": "",
+        "suffix": "%",
+        "label": {
+          "vi": "tỷ lệ giữ chân khách hàng",
+          "en": "client retention rate"
+        }
+      }
+    ]
+  },
+  "experience": {
+    "eyebrow": {
+      "vi": "Lộ trình sự nghiệp",
+      "en": "Career path"
+    },
+    "heading": {
+      "vi": "Kinh nghiệm làm việc",
+      "en": "Work experience"
+    },
+    "items": [
+      {
+        "period": {
+          "vi": "06/2023 — Hiện tại",
+          "en": "06/2023 — Present"
+        },
+        "company": "Novaon Digital",
+        "role": {
+          "vi": "Senior Account Executive",
+          "en": "Senior Account Executive"
+        },
+        "summary": {
+          "vi": "Chuyển trọng tâm từ vận hành hằng ngày sang định hướng chiến lược cấp cao, tối ưu hiệu quả và lợi nhuận cho toàn bộ danh mục chiến dịch.",
+          "en": "Shifted focus from daily execution to high-level strategic direction, optimizing efficiency and profitability across the full campaign portfolio."
+        },
+        "bullets": [
+          {
+            "vi": "Định hướng chiến lược cấp cao cho 15 dự án digital marketing lớn, tập trung vào hiệu quả và lợi nhuận tổng thể của chiến dịch.",
+            "en": "Directed high-level strategic planning for 15 major digital marketing projects, shifting focus to overall campaign efficiency and profitability."
+          },
+          {
+            "vi": "Quản lý kỳ vọng của các bên liên quan trên 20 tài khoản trọng điểm, giữ tỷ lệ hài lòng/giữ chân khách hàng ở mức 80%.",
+            "en": "Managed stakeholder expectations across 20 key accounts, maintaining an 80% client satisfaction/retention rate."
+          },
+          {
+            "vi": "Chuẩn hóa quy trình QA cho toàn bộ sản phẩm sáng tạo và truyền thông, giảm 35% số vòng chỉnh sửa nội bộ.",
+            "en": "Standardized QA workflows across all creative and media outputs, reducing internal revision rounds by 35%."
+          },
+          {
+            "vi": "Phân tích dữ liệu quảng cáo phức tạp, chuyển hóa thành insight hành động, giúp ROI/ROAS tăng 150% so với mục tiêu ban đầu.",
+            "en": "Analyzed complex advertising data into actionable insights, boosting overall ROI/ROAS by 150% versus initial targets."
+          },
+          {
+            "vi": "Dẫn dắt và trao quyền cho đội ngũ chuyên viên trẻ và thực tập sinh, xây dựng tư duy ra quyết định dựa trên dữ liệu.",
+            "en": "Led and empowered a team of junior executives and interns, fostering a data-driven decision-making mindset."
+          }
+        ],
+        "tags": [
+          "Panasonic",
+          "BCC Pharma",
+          "PV Pharma",
+          "Song Hong",
+          "Ascott",
+          "Vietnam Airlines"
+        ]
+      },
+      {
+        "period": {
+          "vi": "04/2022 — 05/2023",
+          "en": "04/2022 — 05/2023"
+        },
+        "company": "Novaon Digital",
+        "role": {
+          "vi": "Account Executive",
+          "en": "Account Executive"
+        },
+        "summary": {
+          "vi": "Trực tiếp quản lý toàn trình các dự án Marketing, Digital Marketing và IMC cho các đối tác nhãn hàng trọng điểm.",
+          "en": "Directly managed end-to-end Marketing, Digital Marketing and IMC projects for key brand partners."
+        },
+        "bullets": [
+          {
+            "vi": "Tư vấn giai đoạn tiền sales, phân tích brief khách hàng để lên báo giá và chiến lược quảng cáo chính xác cho 35 chiến dịch.",
+            "en": "Consulted during the initial sales phase, analyzing client briefs to provide accurate quotations and ad strategies for 35 campaigns."
+          },
+          {
+            "vi": "Quản lý toàn trình Marketing, Digital Marketing và IMC cho các đối tác nhãn hàng trọng điểm — lập kế hoạch, xác định phạm vi, tiến độ và ngân sách lên tới 1,8 triệu USD.",
+            "en": "Managed end-to-end Marketing, Digital Marketing and IMC projects for key brand partners — planning, scoping, timelines and budgets of up to USD 1.8 million."
+          },
+          {
+            "vi": "Điều phối đội ngũ đa chức năng (Media, Design, Planning) gồm 20 thành viên, tối ưu phân bổ nguồn lực và quản lý kỳ vọng khách hàng.",
+            "en": "Coordinated cross-functional teams (Media, Design, Planning) of 20 members, optimizing resource allocation while managing client expectations."
+          },
+          {
+            "vi": "Theo dõi hiệu quả chiến dịch theo KPI, chủ động quản trị rủi ro và đưa ra giải pháp tức thời để giữ tiến độ dự án.",
+            "en": "Monitored campaign performance against KPIs, proactively managing risk and driving immediate solutions to keep projects on track."
+          },
+          {
+            "vi": "Đánh giá hiệu quả chiến dịch qua báo cáo hậu kỳ, tính toán ROI/ROAS — cho thấy mức tăng 180% giá trị chiến dịch mang lại cho nhãn hàng.",
+            "en": "Evaluated campaign effectiveness via post-campaign reports and ROI/ROAS calculations — demonstrating a 180% increase in campaign value for brands."
+          }
+        ],
+        "tags": [
+          "Long Hai",
+          "Song Hong",
+          "Ascott",
+          "PVI AM",
+          "Panasonic",
+          "Vietnam Airlines"
+        ]
+      },
+      {
+        "period": {
+          "vi": "06/2021 — 03/2022",
+          "en": "06/2021 — 03/2022"
+        },
+        "company": "Novaon Digital",
+        "role": {
+          "vi": "Marketing Intern",
+          "en": "Marketing Intern"
+        },
+        "summary": {
+          "vi": "Giai đoạn làm quen với cơ chế vận hành Agency và cấu trúc phối hợp đa phòng ban, xây dựng tư duy chủ động giải quyết vấn đề.",
+          "en": "A period mastering agency mechanisms and cross-functional structures, cultivating a proactive, solution-oriented mindset."
+        },
+        "bullets": [
+          {
+            "vi": "Hỗ trợ tư vấn và bán hàng, trực tiếp giới thiệu giải pháp digital marketing tới 18 khách hàng tiềm năng.",
+            "en": "Assisted in the consulting and sales process, actively pitching digital marketing products and services to 18 potential clients."
+          },
+          {
+            "vi": "Phối hợp với các đội Media, Design và Planning để hỗ trợ sản xuất cho 10 chiến dịch marketing.",
+            "en": "Collaborated with cross-functional teams (Media, Design, Planning) to support the production phase for 10 marketing campaigns."
+          }
+        ],
+        "tags": [
+          "Panasonic Living",
+          "Panasonic Cooking",
+          "Panasonic Healthcare",
+          "Mavin Food"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "eyebrow": {
+      "vi": "Case study",
+      "en": "Case studies"
+    },
+    "heading": {
+      "vi": "Dự án nổi bật",
+      "en": "Featured projects"
+    },
+    "items": [
+      {
+        "id": "vietnam-airlines",
+        "client": "Vietnam Airlines",
+        "category": {
+          "vi": "Hàng không · Google Search Ads",
+          "en": "Aviation · Google Search Ads"
+        },
+        "period": {
+          "vi": "2023 — 2024",
+          "en": "2023 — 2024"
+        },
+        "cover": "../assets/images/hero-mason.jpg",
+        "problem": {
+          "vi": "Vietnam Airlines cần vận hành quảng cáo Google Search nhất quán về thông điệp thương hiệu nhưng vẫn phù hợp văn hóa, hành vi tìm kiếm của từng thị trường quốc tế — cùng lúc, không lệch nhịp.",
+          "en": "Vietnam Airlines needed Google Search advertising that stayed consistent in brand messaging yet locally relevant across many international markets — run in parallel, without falling out of sync."
+        },
+        "action": {
+          "vi": "Trực tiếp quản lý chiến dịch Google Search toàn cầu trải dài 24 thị trường quốc tế: lên kế hoạch truyền thông, xây dựng cấu trúc từ khóa theo từng thị trường và địa phương hóa thông điệp quảng cáo (localized ad messaging) cho từng thị trường mục tiêu.",
+          "en": "Directly managed a global Google Search campaign spanning 24 international markets: media planning, market-specific keyword architecture, and localized ad messaging for each target market."
+        },
+        "result": {
+          "vi": "Vận hành đồng bộ 24 thị trường quốc tế cùng lúc dưới một khung chiến lược chung, đảm bảo nhất quán thương hiệu toàn cầu trong khi vẫn tối ưu theo từng địa phương.",
+          "en": "Ran 24 international markets in sync under one strategic framework — preserving global brand consistency while still optimizing locally."
+        },
+        "metrics": [
+          {
+            "value": "24",
+            "label": {
+              "vi": "thị trường quốc tế",
+              "en": "international markets"
+            }
+          }
+        ]
+      },
+      {
+        "id": "panasonic",
+        "client": "Panasonic Service Vietnam",
+        "category": {
+          "vi": "Điện máy · Chiến dịch tích hợp",
+          "en": "Home Appliances · Integrated campaign"
+        },
+        "period": {
+          "vi": "2023 — 2024",
+          "en": "2023 — 2024"
+        },
+        "cover": "../assets/images/csr-treeplanting.jpg",
+        "problem": {
+          "vi": "Panasonic Service Vietnam cần một chiến dịch kỷ niệm 20 năm (\"20th years of Trusted Service\") vừa thúc đẩy các gói bảo dưỡng và khuyến mãi bảo hành mở rộng, vừa xây dựng được cộng đồng khách hàng trung thành lâu dài.",
+          "en": "Panasonic Service Vietnam needed a 20th-anniversary campaign (\"20 Years of Trusted Service\") that both drove maintenance/extended-warranty promotions and built a lasting loyal customer community."
+        },
+        "action": {
+          "vi": "Xây dựng chiến lược Digital Marketing cho các chiến dịch bảo dưỡng thiết bị và khuyến mãi bảo hành; trực tiếp quản lý dự án kỷ niệm 20 năm — từ lên kế hoạch nội dung, xây dựng ý tưởng Landing Page, quản trị cộng đồng Facebook, đến vận hành quảng cáo Google/Facebook, quảng cáo e-commerce, PR báo chí và tổ chức hoạt động ngoài trời (chương trình trồng cây \"Sống khỏe góp xanh\").",
+          "en": "Built the digital marketing strategy for maintenance and extended-warranty campaigns; directly managed the 20th-anniversary project end-to-end — content planning, landing page concepting, Facebook community management, Google/Facebook and e-commerce advertising, PR outreach, and an outdoor CSR tree-planting activation (\"Sống khỏe góp xanh\")."
+        },
+        "result": {
+          "vi": "Một chiến dịch tích hợp đầy đủ kênh — từ landing page, cộng đồng Facebook, quảng cáo hiệu suất đến hoạt động ngoài trời — giúp Panasonic vừa giữ chân khách hàng cũ vừa lan tỏa hình ảnh thương hiệu gắn với trách nhiệm cộng đồng.",
+          "en": "A fully integrated campaign — spanning landing page, Facebook community, performance ads and offline CSR activation — that helped Panasonic retain existing customers while extending its brand image around community responsibility."
+        },
+        "metrics": [
+          {
+            "value": "6+",
+            "label": {
+              "vi": "kênh triển khai tích hợp",
+              "en": "integrated channels"
+            }
+          }
+        ]
+      },
+      {
+        "id": "songhong-bedding",
+        "client": "Chăn Ga Gối Đệm Sông Hồng",
+        "category": {
+          "vi": "Bán lẻ · B2B2C Marketing",
+          "en": "Retail · B2B2C Marketing"
+        },
+        "period": {
+          "vi": "2023",
+          "en": "2023"
+        },
+        "cover": "../assets/images/about-bridge.jpg",
+        "problem": {
+          "vi": "Song Hồng cần thúc đẩy đồng thời 4 bộ sưu tập (Basic, Urban, Adore, Back Essential) qua cả kênh đại lý (B2B) lẫn người tiêu dùng cuối (B2C), đòi hỏi thông điệp nhất quán nhưng linh hoạt cho từng nhóm đối tượng.",
+          "en": "Song Hong needed to promote four product collections (Basic, Urban, Adore, Back Essential) simultaneously across both dealer (B2B) and end-consumer (B2C) channels, with messaging that stayed consistent yet flexible per audience."
+        },
+        "action": {
+          "vi": "Thực thi các chiến dịch quảng bá kỹ thuật số và chương trình tương tác đại lý B2B2C cho từng bộ sưu tập; thiết kế nội dung quảng cáo, định hướng bài đăng mạng xã hội, đồng thời lên kế hoạch cho hội nghị khách hàng (dealer conference).",
+          "en": "Executed digital promotion campaigns and B2B2C dealer engagement programs per collection; designed ad content, directed social media output, and planned the dealer conference."
+        },
+        "result": {
+          "vi": "Vận hành song song 4 dòng sản phẩm trên cả hai tuyến B2B và B2C mà không xung đột thông điệp, củng cố quan hệ với mạng lưới đại lý qua hội nghị khách hàng.",
+          "en": "Ran four product lines in parallel across both B2B and B2C without message conflict, and strengthened the dealer network relationship through the customer conference."
+        },
+        "metrics": [
+          {
+            "value": "4",
+            "label": {
+              "vi": "bộ sưu tập song song",
+              "en": "collections in parallel"
+            }
+          }
+        ]
+      },
+      {
+        "id": "vpbank-sme",
+        "client": "VPBank SME",
+        "category": {
+          "vi": "Ngân hàng · Ra mắt sản phẩm",
+          "en": "Banking · Product launch"
+        },
+        "period": {
+          "vi": "2022 — 2023",
+          "en": "2022 — 2023"
+        },
+        "cover": "../assets/images/about-mountain.jpg",
+        "problem": {
+          "vi": "VPBank cần xây dựng nhận diện cho hai tính năng thanh toán mới — Tap2Phone và QR Payment — tới đúng phân khúc khách hàng SME, qua cả kênh sự kiện lẫn mạng xã hội.",
+          "en": "VPBank needed to build awareness for two new payment features — Tap2Phone and QR Payment — targeted at the SME segment, across both event and social channels."
+        },
+        "action": {
+          "vi": "Lên khung chiến dịch talkshow và phát triển nội dung mạng xã hội cho Tap2Phone và QR Payment; trực tiếp viết brief cho talkshow, caption video và xây dựng định vị sản phẩm.",
+          "en": "Framed the talkshow campaign and developed social content for Tap2Phone and QR Payment; wrote the talkshow brief, video captions, and product positioning directly."
+        },
+        "result": {
+          "vi": "Đồng bộ thông điệp sản phẩm mới trên cả kênh sự kiện (talkshow) và mạng xã hội, giúp truyền tải rõ ràng giá trị của hai tính năng thanh toán tới đúng đối tượng SME.",
+          "en": "Synchronized new-product messaging across both the talkshow event and social channels, clearly communicating the value of both payment features to the right SME audience."
+        },
+        "metrics": [
+          {
+            "value": "2",
+            "label": {
+              "vi": "tính năng ra mắt song song",
+              "en": "features launched in parallel"
+            }
+          }
+        ]
+      },
+      {
+        "id": "csr-songhong-garment",
+        "client": {
+          "vi": "CSR — Song Hồng Garment",
+          "en": "CSR — Song Hong Garment"
+        },
+        "category": {
+          "vi": "Trách nhiệm xã hội · Quản lý dự án",
+          "en": "Corporate social responsibility · Project management"
+        },
+        "period": {
+          "vi": "12/2024 & 01/2026",
+          "en": "12/2024 & 01/2026"
+        },
+        "cover": "../assets/images/about-mountain.jpg",
+        "problem": {
+          "vi": "Cần triển khai chương trình thiện nguyện tại các tỉnh miền núi phía Bắc (Lào Cai & Hà Giang), đòi hỏi phối hợp với chính quyền địa phương và tổ chức tình nguyện để đảm bảo đúng đối tượng và đúng nhu cầu thực tế.",
+          "en": "A charity program needed to run across mountainous northern provinces (Lao Cai & Ha Giang), requiring coordination with local authorities and volunteer organizations to reach the right beneficiaries with the right support."
+        },
+        "action": {
+          "vi": "Đảm nhiệm vai trò Project Manager & Coordinator: liên hệ chính quyền địa phương và tổ chức tình nguyện để khảo sát, đánh giá và chọn địa điểm phù hợp nhất cho chương trình; trực tiếp dẫn dắt đội 15 tình nguyện viên và quản lý ngân sách 500 triệu đồng.",
+          "en": "Served as Project Manager & Coordinator: liaised with local authorities and volunteer organizations to scout, assess and secure the most suitable locations; directly led a team of 15 volunteers and managed a 500-million-VND project budget."
+        },
+        "result": {
+          "vi": "Triển khai thành công các hoạt động cứu trợ và CSR trên hai tỉnh, hỗ trợ trực tiếp 250 người thụ hưởng/hộ gia đình, thể hiện năng lực lãnh đạo và điều phối ngoài phạm vi công việc agency thường ngày.",
+          "en": "Successfully delivered relief and CSR activities across both provinces, directly supporting 250 beneficiaries/families — demonstrating leadership and coordination ability beyond day-to-day agency work."
+        },
+        "metrics": [
+          {
+            "value": "250",
+            "label": {
+              "vi": "người thụ hưởng",
+              "en": "beneficiaries"
+            }
+          },
+          {
+            "value": "15",
+            "label": {
+              "vi": "tình nguyện viên",
+              "en": "volunteers led"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "clients": {
+    "eyebrow": {
+      "vi": "Đối tác",
+      "en": "Partners"
+    },
+    "heading": {
+      "vi": "Khách hàng đã hợp tác",
+      "en": "Clients I've worked with"
+    },
+    "groups": [
+      {
+        "label": {
+          "vi": "Doanh nghiệp lớn trong nước",
+          "en": "Big local companies"
+        },
+        "names": [
+          "Vietnam Airlines",
+          "Mavin",
+          "BCC Pharma",
+          "Long Hai",
+          "Hong Ha",
+          "VTVcab",
+          "Song Hong",
+          "Kova",
+          "PV Pharma",
+          "BIM Land"
+        ]
+      },
+      {
+        "label": {
+          "vi": "Doanh nghiệp toàn cầu",
+          "en": "Global companies"
+        },
+        "names": [
+          "Panasonic",
+          "Panasonic Cooking",
+          "PVI AM",
+          "The Ascott",
+          "Kalite",
+          "Leben Community Vietnam",
+          "JNTO"
+        ]
+      },
+      {
+        "label": {
+          "vi": "Doanh nghiệp SME",
+          "en": "SME companies"
+        },
+        "names": [
+          "VPBank SME",
+          "Trần Phú",
+          "DVN",
+          "TH",
+          "Viet Han",
+          "Vietnam Robotics",
+          "Anmira Resort & Spa",
+          "Tien Cuong",
+          "Bon Chon",
+          "Volwatt"
+        ]
+      }
+    ]
+  },
+  "competencies": {
+    "eyebrow": {
+      "vi": "Năng lực cốt lõi",
+      "en": "Core competencies"
+    },
+    "heading": {
+      "vi": "Năng lực cốt lõi",
+      "en": "Core competencies"
+    },
+    "items": [
+      {
+        "title": {
+          "vi": "Hoạch định & Lập phạm vi Chiến lược",
+          "en": "Strategic Planning & Scoping"
+        },
+        "items": [
+          {
+            "vi": "Xây dựng lộ trình chiến dịch",
+            "en": "Campaign roadmapping"
+          },
+          {
+            "vi": "Quản lý ngân sách & nguồn lực",
+            "en": "Resource & budget management"
+          }
+        ]
+      },
+      {
+        "title": {
+          "vi": "Điều phối & Quản trị Các bên liên quan",
+          "en": "Coordination & Stakeholder Management"
+        },
+        "items": [
+          {
+            "vi": "Đồng bộ đa phòng ban",
+            "en": "Cross-functional synchronization"
+          },
+          {
+            "vi": "Tối ưu vai trò đội nhóm",
+            "en": "Team role optimization"
+          },
+          {
+            "vi": "Quản lý kỳ vọng",
+            "en": "Expectation management"
+          }
+        ]
+      },
+      {
+        "title": {
+          "vi": "Giám sát & Tối ưu Hiệu suất",
+          "en": "Performance Monitoring & Optimization"
+        },
+        "items": [
+          {
+            "vi": "Theo dõi & kiểm soát KPI",
+            "en": "KPI tracking & control"
+          },
+          {
+            "vi": "Xử lý khủng hoảng",
+            "en": "Crisis management"
+          }
+        ]
+      },
+      {
+        "title": {
+          "vi": "Quản trị Rủi ro Tổng thể",
+          "en": "Integrated Risk Management"
+        },
+        "items": [
+          {
+            "vi": "Đảm bảo chất lượng & tiến độ",
+            "en": "Quality & timeline assurance"
+          }
+        ]
+      },
+      {
+        "title": {
+          "vi": "Báo cáo & Đánh giá Giá trị",
+          "en": "Reporting & Value Evaluation"
+        },
+        "items": [
+          {
+            "vi": "Báo cáo dựa trên dữ liệu",
+            "en": "Data-driven reporting"
+          },
+          {
+            "vi": "Phân tích tác động tài chính",
+            "en": "Financial impact analysis"
+          }
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "eyebrow": {
+      "vi": "Kỹ năng",
+      "en": "Skills"
+    },
+    "heading": {
+      "vi": "Kỹ năng & Công cụ",
+      "en": "Skills & tools"
+    },
+    "categories": [
+      {
+        "label": {
+          "vi": "Chuyên môn",
+          "en": "Expertise"
+        },
+        "items": [
+          "Project Management",
+          "Account Management",
+          "Digital Marketing Planning",
+          "B2B2C Marketing",
+          "KOC/KOL Briefing",
+          "Data Analysis",
+          "Visual Storytelling"
+        ]
+      },
+      {
+        "label": {
+          "vi": "Công cụ & Tự động hóa",
+          "en": "Productivity & automation"
+        },
+        "items": [
+          "Google Sheets",
+          "Microsoft Excel",
+          "n8n",
+          "Make.com",
+          "Canva",
+          "Frame.io",
+          "NotebookLM",
+          "Vercel",
+          "Cursor"
+        ]
+      },
+      {
+        "label": {
+          "vi": "Kỹ thuật & Thiết kế",
+          "en": "Technical & design"
+        },
+        "items": [
+          "SQL",
+          "Photoshop",
+          "Illustrator",
+          "Google Analytics",
+          "Google Search Ads",
+          "Google AI"
+        ]
+      },
+      {
+        "label": {
+          "vi": "Kỹ năng mềm",
+          "en": "Soft skills"
+        },
+        "items": [
+          {
+            "vi": "Giao tiếp linh hoạt, rõ ràng với nội bộ & khách hàng",
+            "en": "Clear, adaptive communication with teams & clients"
+          },
+          {
+            "vi": "Tư duy logic & tổ chức thông tin chuyên nghiệp",
+            "en": "Logical thinking & professional information structuring"
+          }
+        ]
+      }
+    ],
+    "languages": [
+      {
+        "name": {
+          "vi": "Tiếng Việt",
+          "en": "Vietnamese"
+        },
+        "level": {
+          "vi": "Bản ngữ",
+          "en": "Native"
+        }
+      },
+      {
+        "name": {
+          "vi": "Tiếng Anh",
+          "en": "English"
+        },
+        "level": {
+          "vi": "Thành thạo chuyên môn",
+          "en": "Professional working proficiency"
+        }
+      }
+    ]
+  },
+  "education": {
+    "eyebrow": {
+      "vi": "Học vấn",
+      "en": "Education"
+    },
+    "heading": {
+      "vi": "Học vấn & Chứng chỉ",
+      "en": "Education & certificates"
+    },
+    "schools": [
+      {
+        "school": {
+          "vi": "Đại học Kinh tế Quốc dân (NEU) — hợp tác cùng Coventry University",
+          "en": "National Economics University (NEU) — in partnership with Coventry University"
+        },
+        "program": {
+          "vi": "Cử nhân Quốc tế IBD@ISME, ngành Marketing Kinh doanh",
+          "en": "IBD@ISME International Programme, BA in Business Marketing"
+        },
+        "period": {
+          "vi": "09/2018 — 09/2022",
+          "en": "09/2018 — 09/2022"
+        },
+        "honor": {
+          "vi": "Bằng danh dự hạng Nhì (2:1) do Coventry University cấp",
+          "en": "Upper Second-Class Honours (2:1), awarded by Coventry University"
+        }
+      }
+    ],
+    "certificates": [
+      {
+        "name": "TEG Certificate Level 4",
+        "issuer": "TEG"
+      },
+      {
+        "name": {
+          "vi": "Chứng chỉ Google Search Ads",
+          "en": "Google Search Ads Certificate"
+        },
+        "issuer": "Google"
+      },
+      {
+        "name": {
+          "vi": "Chứng chỉ Google AI",
+          "en": "Google AI Certificate"
+        },
+        "issuer": "Google"
+      },
+      {
+        "name": {
+          "vi": "Khóa Facebook Marketing",
+          "en": "Facebook Marketing Course"
+        },
+        "issuer": "Vinalink"
+      },
+      {
+        "name": {
+          "vi": "Khóa Google Marketing",
+          "en": "Google Marketing Course"
+        },
+        "issuer": "Vinalink"
+      },
+      {
+        "name": {
+          "vi": "Chứng chỉ MOS Word & PowerPoint",
+          "en": "MOS Certificate — Word & PowerPoint"
+        },
+        "issuer": "Microsoft"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": {
+      "vi": "Liên hệ",
+      "en": "Contact"
+    },
+    "heading": {
+      "vi": "Cùng trao đổi cơ hội hợp tác",
+      "en": "Let's talk about an opportunity"
+    },
+    "blurb": {
+      "vi": "Đang tìm kiếm một vị trí Marketing/Brand Manager phía nhãn hàng? Mình luôn sẵn sàng cho một cuộc trò chuyện.",
+      "en": "Looking for a client-side Marketing/Brand Manager? I'm always open to a conversation."
+    },
+    "social": [
+      {
+        "platform": "Email",
+        "url": "mailto:anhnq8.ent@gmail.com",
+        "label": "anhnq8.ent@gmail.com"
+      },
+      {
+        "platform": "LinkedIn",
+        "url": "https://www.linkedin.com/in/quy-anh-612",
+        "label": "linkedin.com/in/quy-anh-612"
+      },
+      {
+        "platform": "Phone",
+        "url": "tel:+84983991216",
+        "label": "0983 991 216"
+      }
+    ]
+  },
+  "footer": {
+    "note": {
+      "vi": "Được thiết kế và phát triển thủ công tại Hà Nội.",
+      "en": "Designed and built by hand in Hanoi."
+    }
+  }
+};

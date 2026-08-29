@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nguyễn Quý Anh — Marketing & Project Management</title>
+<meta name="description" content="Portfolio của Nguyễn Quý Anh (Mason Nguyen) — 4+ năm quản lý dự án & tài khoản tại Agency, cầu nối chiến lược giữa Agency và Nhãn hàng cho Vietnam Airlines, Panasonic, VPBank và hơn 40 dự án khác.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nguyễn Quý Anh — Marketing & Project Management">
+<meta property="og:description" content="4+ năm quản lý dự án & tài khoản tại Agency. Cầu nối chiến lược giữa Agency và Nhãn hàng.">
+<meta property="og:image" content="../assets/images/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0B0B0D">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%230B0B0D%22/><text y=%22.9em%22 x=%2222%22 font-size=%2290%22 font-family=%22Georgia,serif%22 font-weight=%22bold%22 fill=%22%23FF3131%22>M</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Bỏ qua tới nội dung chính / Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand" id="brandLink">Mason<span>.</span></a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Chính">
+      <a href="#about" data-nav="about"></a>
+      <a href="#experience" data-nav="experience"></a>
+      <a href="#projects" data-nav="projects"></a>
+      <a href="#skills" data-nav="skills"></a>
+      <a href="#education" data-nav="education"></a>
+      <a href="#contact" data-nav="contact"></a>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="lang-toggle magnetic" id="langToggle" aria-label="Đổi ngôn ngữ"></button>
+      <a href="#" class="btn btn-solid magnetic" id="headerCvBtn" download></a>
+      <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Di động">
+    <a href="#about" data-nav="about"></a>
+    <a href="#experience" data-nav="experience"></a>
+    <a href="#projects" data-nav="projects"></a>
+    <a href="#skills" data-nav="skills"></a>
+    <a href="#education" data-nav="education"></a>
+    <a href="#contact" data-nav="contact"></a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top">
+    <div class="mesh" aria-hidden="true">
+      <span class="mesh-blob mesh-blob-1"></span>
+      <span class="mesh-blob mesh-blob-2"></span>
+      <span class="mesh-blob mesh-blob-3"></span>
+    </div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow reveal-up" id="heroEyebrow"></p>
+        <h1 class="hero-headline reveal-up" id="heroHeadline"></h1>
+        <p class="hero-sub reveal-up" id="heroSub"></p>
+        <div class="hero-actions reveal-up">
+          <a href="#contact" class="btn btn-solid magnetic" id="heroContactBtn"></a>
+          <a href="#" class="btn btn-line magnetic" id="heroCvBtn" download></a>
+        </div>
+      </div>
+      <div class="hero-photo-wrap reveal-up">
+        <img id="heroPhoto" src="" alt="" width="700" height="933">
+        <span class="hero-signature" id="heroSignature" aria-hidden="true"></span>
+      </div>
+    </div>
+    <button type="button" class="scroll-hint" id="scrollHint">
+      <span id="scrollHintLabel"></span>
+      <span class="scroll-hint-line" aria-hidden="true"></span>
+    </button>
+  </section>
+
+  <section class="clients-strip" aria-labelledby="clientsEyebrow">
+    <div class="wrap">
+      <p class="eyebrow" id="clientsEyebrow"></p>
+    </div>
+    <div class="clients-track" id="clientsTrack"></div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-photos" id="aboutPhotos"></div>
+      <div class="about-copy">
+        <p class="eyebrow reveal-up" id="aboutEyebrow"></p>
+        <h2 class="section-heading reveal-up" id="aboutHeading"></h2>
+        <div class="about-paragraphs" id="aboutParagraphs"></div>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="stats-grid" id="statsGrid"></div>
+    </div>
+  </section>
+
+  <section class="experience" id="experience">
+    <div class="wrap">
+      <p class="eyebrow reveal-up" id="experienceEyebrow"></p>
+      <h2 class="section-heading reveal-up" id="experienceHeading"></h2>
+      <div class="timeline" id="timeline"></div>
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <div class="wrap">
+      <p class="eyebrow reveal-up" id="projectsEyebrow"></p>
+      <h2 class="section-heading reveal-up" id="projectsHeading"></h2>
+    </div>
+    <div class="projects-list" id="projectsList"></div>
+  </section>
+
+  <section class="competencies" id="competencies">
+    <div class="wrap">
+      <p class="eyebrow reveal-up" id="competenciesEyebrow"></p>
+      <h2 class="section-heading reveal-up" id="competenciesHeading"></h2>
+      <div class="competencies-list" id="competenciesGrid"></div>
+    </div>
+  </section>
+
+  <section class="skills" id="skills">
+    <div class="wrap">
+      <p class="eyebrow reveal-up" id="skillsEyebrow"></p>
+      <h2 class="section-heading reveal-up" id="skillsHeading"></h2>
+      <div class="skills-grid" id="skillsGrid"></div>
+      <div class="languages-row" id="languagesRow"></div>
+    </div>
+  </section>
+
+  <section class="education" id="education">
+    <div class="wrap">
+      <p class="eyebrow reveal-up" id="educationEyebrow"></p>
+      <h2 class="section-heading reveal-up" id="educationHeading"></h2>
+      <div class="education-list" id="educationList"></div>
+      <div class="certificates-list" id="certificatesList"></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="mesh mesh-contact" aria-hidden="true">
+      <span class="mesh-blob mesh-blob-1"></span>
+      <span class="mesh-blob mesh-blob-2"></span>
+    </div>
+    <div class="wrap">
+      <p class="eyebrow reveal-up" id="contactEyebrow"></p>
+      <h2 class="section-heading contact-heading reveal-up" id="contactHeading"></h2>
+      <p class="contact-blurb reveal-up" id="contactBlurb"></p>
+      <div class="contact-links" id="contactLinks"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p class="signature" id="footerSignature">Mason Nguyen</p>
+    <p class="footer-note" id="footerNote"></p>
+    <button type="button" class="back-to-top magnetic" id="backToTop"></button>
+  </div>
+</footer>
+
+<script src="../data/content.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

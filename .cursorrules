@@ -1,0 +1,39 @@
+# Project context for AI assistants (Cursor, etc.)
+
+This is Nguyễn Quý Anh's ("Mason Nguyen") personal job-hunting portfolio/CV site. Built originally with Claude Code; this file exists so a fresh AI session in another editor doesn't have to re-derive project context from scratch.
+
+## What this is
+
+Two static, self-contained design versions of the same portfolio, sharing one content source:
+- `/minimal/` — light theme, restrained, Lenis smooth scroll + GSAP scroll reveals, custom cursor.
+- `/bold/` — dark theme, animated gradient-mesh hero, magnetic buttons, tilt project cards.
+
+The user has not yet picked a favorite version — both are complete and meant to stay complete until they choose (or decide to keep both).
+
+## Hard constraints — do not violate these
+
+- **Vanilla HTML/CSS/JS only. No framework, no bundler, no build step.** The user is non-technical and must be able to open `minimal/index.html` or `bold/index.html` by double-clicking — no `npm install`, no dev server required to view the finished site.
+- **Never use `fetch()` or `<script type="module">` for local files.** Both are blocked by CORS when a page is opened via `file://` (double-click), which is the primary way this site gets viewed. This is why content loads via a plain `<script src="../data/content.js">` tag instead of fetching JSON — see below.
+- **Never fabricate CV content** (experience, numbers, clients, dates). All real content comes from the user's actual CV files; if something is missing or ambiguous, ask rather than invent.
+- Animations must no-op under `prefers-reduced-motion: reduce` (already implemented — keep it that way if you touch animation code).
+
+## Content architecture — read this before editing any text on the site
+
+- `data/content.json` is the **single source of truth** for all bilingual (vi/en) text, both design versions render from it.
+- `data/content.js` is a **generated mirror** (`window.SITE_CONTENT = {...}`) — this is what the pages actually `<script src>` load, because raw JSON can't be fetched under `file://`. It is NOT hand-edited.
+- **After changing `content.json`, always run:**
+  ```bash
+  python3 scripts/build_content_js.py
+  ```
+  Forgetting this step means edits silently don't show up on the site — this is the single most common mistake when touching this project.
+- `scripts/generate_cv_pdf.py` generates the two downloadable CV PDFs (`assets/cv/NguyenQuyAnh-CV-VI.pdf` / `-EN.pdf`) directly from `content.json`, using `fpdf2` + the system's Tahoma font (confirmed to render Vietnamese diacritics correctly — Helvetica/core PDF fonts do not). Re-run it after any content change so the downloadable CV stays in sync with the site.
+
+## Known open items (as of the last Claude Code session, 2026-08-29)
+
+- The user's two source CVs disagreed on intern-mentoring count (EN CV: "9 interns"; VI CV: "8 interns, 4 promoted to full-time"). The VI figure was used as more specific/authoritative, but this was never explicitly confirmed with the user — worth double-checking before treating it as settled.
+- User was deciding between the two design versions — check whether that decision has since been made (e.g. one version removed, or a note in README/commit history) before assuming both are still equally "live."
+
+## Where to look
+
+- `README.md` — Vietnamese, non-technical instructions for previewing locally and deploying (Netlify Drop / Vercel / GitHub Pages).
+- `scripts/` — the two Python helpers above; safe to re-run any time, both are idempotent.
