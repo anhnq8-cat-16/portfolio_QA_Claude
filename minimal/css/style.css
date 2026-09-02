@@ -145,7 +145,7 @@ section { position: relative; padding: clamp(4rem, 9vw, 8rem) 0; }
   font-size: 1.3rem;
   letter-spacing: -0.02em;
 }
-.brand span { color: var(--red); }
+.brand-dot { color: var(--red); }
 
 .main-nav { display: flex; gap: 2rem; }
 .main-nav a {
@@ -291,7 +291,7 @@ section { position: relative; padding: clamp(4rem, 9vw, 8rem) 0; }
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1.5rem;
   border-top: 1px solid var(--line);
   padding-top: clamp(2rem, 4vw, 3rem);

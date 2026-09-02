@@ -38,6 +38,7 @@
   }
 
   function renderHeader() {
+    setText("brandText", DATA.personal.brandLabel);
     document.querySelectorAll("[data-nav]").forEach(function (a) {
       var key = a.getAttribute("data-nav");
       a.textContent = t(DATA.ui.nav[key]);
@@ -75,8 +76,8 @@
     var wrap = document.getElementById("clientsMarquee");
     wrap.innerHTML = "";
     DATA.clients.groups.forEach(function (group) {
-      group.names.forEach(function (name) {
-        wrap.appendChild(el("span", "client-pill", name));
+      group.names.forEach(function (client) {
+        wrap.appendChild(el("span", "client-pill", client.name));
       });
     });
   }

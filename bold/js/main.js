@@ -38,6 +38,7 @@
   }
 
   function renderHeader() {
+    setText("brandText", DATA.personal.brandLabel);
     document.querySelectorAll("[data-nav]").forEach(function (a) {
       var key = a.getAttribute("data-nav");
       a.textContent = t(DATA.ui.nav[key]);
@@ -68,19 +69,45 @@
     photo.alt = DATA.personal.fullName + " — " + t(DATA.personal.title);
 
     setText("heroSignature", DATA.personal.signature);
+    setText("heroBadge", t(DATA.personal.title));
     setText("scrollHintLabel", t(DATA.ui.scrollHint));
   }
 
   function renderClients() {
     setText("clientsEyebrow", t(DATA.ui.clientsEyebrow));
-    var track = document.getElementById("clientsTrack");
-    track.innerHTML = "";
-    var names = [];
-    DATA.clients.groups.forEach(function (g) { g.names.forEach(function (n) { names.push(n); }); });
-    // duplicate the list once so the CSS marquee (-50%) loops seamlessly
-    names.concat(names).forEach(function (name) {
-      var s = el("span", null, name + " <span aria-hidden=\"true\" style=\"color:var(--red)\">&bull;</span>");
-      track.appendChild(s);
+    var wrap = document.getElementById("clientsGroups");
+    wrap.innerHTML = "";
+    var hintLinked = state.lang === "vi" ? "Xem case study →" : "View case study →";
+    var hintPlain = state.lang === "vi" ? "Chi tiết sắp cập nhật" : "Details coming soon";
+
+    DATA.clients.groups.forEach(function (group) {
+      var groupEl = el("div", "client-group");
+      groupEl.appendChild(el("div", "client-group-label", t(group.label)));
+      var grid = el("div", "client-tile-grid");
+
+      group.names.forEach(function (client) {
+        var hasLogo = !!client.logo;
+        var hasLink = !!client.projectId;
+        var tile = el("div", "client-tile" + (hasLogo ? "" : " no-logo") + (hasLink ? " has-link" : ""));
+        if (hasLogo) {
+          var img = el("img", "client-tile-logo");
+          img.src = client.logo;
+          img.loading = "lazy";
+          img.alt = client.name;
+          tile.appendChild(img);
+        }
+        tile.appendChild(el("div", "client-tile-name", client.name));
+        tile.appendChild(el("span", "client-tile-hint", hasLink ? hintLinked : hintPlain));
+        if (hasLink) {
+          tile.setAttribute("data-project-id", client.projectId);
+          tile.setAttribute("role", "button");
+          tile.setAttribute("tabindex", "0");
+        }
+        grid.appendChild(tile);
+      });
+
+      groupEl.appendChild(grid);
+      wrap.appendChild(groupEl);
     });
   }
 
@@ -97,13 +124,15 @@
     var photos = document.getElementById("aboutPhotos");
     photos.innerHTML = "";
     DATA.personal.aboutPhotos.forEach(function (src) {
+      var frame = el("div", "about-photo reveal-up");
       var img = el("img");
       img.src = src;
       img.loading = "lazy";
       img.alt = DATA.personal.fullName;
       img.width = 450;
       img.height = 560;
-      photos.appendChild(img);
+      frame.appendChild(img);
+      photos.appendChild(frame);
     });
 
     var stats = document.getElementById("statsGrid");
@@ -155,6 +184,7 @@
     list.innerHTML = "";
     DATA.projects.items.forEach(function (proj, i) {
       var card = el("article", "project-card reveal-up");
+      card.setAttribute("data-project-id", proj.id);
 
       var media = el("div", "project-media");
       var inner = el("div", "project-media-inner");
@@ -182,12 +212,24 @@
       if (proj.metrics && proj.metrics.length) {
         var metrics = el("div", "project-metrics");
         proj.metrics.forEach(function (m) {
-          var mEl = el("div");
+          var mEl = el("div", "project-metric");
           mEl.appendChild(el("div", "project-metric-value", m.value));
           mEl.appendChild(el("div", "project-metric-label", t(m.label)));
           metrics.appendChild(mEl);
         });
         body.appendChild(metrics);
+      }
+
+      if (proj.gallery && proj.gallery.length) {
+        var gallery = el("div", "project-gallery");
+        proj.gallery.forEach(function (src) {
+          var gImg = el("img");
+          gImg.src = src;
+          gImg.loading = "lazy";
+          gImg.alt = t(proj.client) + " — " + (state.lang === "vi" ? "hình ảnh dự án" : "project photo");
+          gallery.appendChild(gImg);
+        });
+        body.appendChild(gallery);
       }
 
       card.appendChild(media);
@@ -483,6 +525,32 @@
     });
   }
 
+  function setupClientLinks(lenis) {
+    function goToProject(id) {
+      var target = document.querySelector('.project-card[data-project-id="' + id + '"]');
+      if (!target) return;
+      if (lenis) lenis.scrollTo(target, { offset: -70 });
+      else target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+    }
+    document.getElementById("clientsGroups").addEventListener("click", function (e) {
+      var tile = e.target.closest(".client-tile[data-project-id]");
+      if (tile) goToProject(tile.getAttribute("data-project-id"));
+    });
+    document.getElementById("clientsGroups").addEventListener("keydown", function (e) {
+      if (e.key !== "Enter" && e.key !== " ") return;
+      var tile = e.target.closest(".client-tile[data-project-id]");
+      if (tile) { e.preventDefault(); goToProject(tile.getAttribute("data-project-id")); }
+    });
+  }
+
+  function setupHeroParallax() {
+    if (reduceMotion || !window.gsap || !window.ScrollTrigger) return;
+    window.gsap.to("#heroPhoto", {
+      yPercent: 6, ease: "none",
+      scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: 0.6 }
+    });
+  }
+
   function init() {
     renderAll();
     revealFallback();
@@ -493,9 +561,11 @@
     setupBackToTop(lenis);
     setupScrollHint(lenis);
     setupAnchorLinks(lenis);
+    setupClientLinks(lenis);
     setupScrollReveal();
     setupCounters();
     setupMeshParallax();
+    setupHeroParallax();
     setupMagnetic();
     setupTiltCards();
   }

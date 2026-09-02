@@ -25,14 +25,24 @@ Two static, self-contained design versions of the same portfolio, sharing one co
   ```
   Forgetting this step means edits silently don't show up on the site — this is the single most common mistake when touching this project.
 - `scripts/generate_cv_pdf.py` generates the two downloadable CV PDFs (`assets/cv/NguyenQuyAnh-CV-VI.pdf` / `-EN.pdf`) directly from `content.json`, using `fpdf2` + the system's Tahoma font (confirmed to render Vietnamese diacritics correctly — Helvetica/core PDF fonts do not). Re-run it after any content change so the downloadable CV stays in sync with the site.
+- `clients.groups[].names` entries are objects, not plain strings: `{name, logo?, projectId?}`. `logo` is a relative path under `assets/images/logos/` (omit it for a client with no logo — the UI falls back to a text-only tile); `projectId` links the tile to a matching `projects.items[].id` so clicking it scrolls to that case study. Both `bold` and `minimal` read this same shape — if you add a client, update both versions' render functions only if you change the *shape* again, not for ordinary data edits.
 
-## Resolved (as of 2026-08-29 — do not reopen these without the user raising it first)
+## Local dev server — use `scripts/dev_server.py`, not `python3 -m http.server`
 
-- Version choice: **Bold**, confirmed by the user. Root `index.html` redirects to `/bold/index.html`.
-- Intern-mentoring count discrepancy between the two source CVs: confirmed as **9** (the EN CV's number).
-- Deploy: user asked for full auto-deploy with no further confirmation needed. No hosting CLI (gh/vercel/netlify) was installed or authenticated on the machine this was built on, so it could not be completed end-to-end — Netlify Drop (no login required) was left as the one manual step. Check README.md / git remotes / recent commits for whether this has since been completed.
+Plain `http.server` sends no cache headers, and Chrome then caches responses on its own heuristics — edits can silently stop showing up on reload, with no way to tell from the page itself. Losing time to this is the single most likely way an editing session on this project goes sideways. Use:
+```bash
+python3 scripts/dev_server.py . 4173
+```
+(also wired up as the `portfolio-mason` launch config). If content still looks stale after that, it's not a cache problem — check the actual file and data flow.
+
+## Resolved (do not reopen these without the user raising it first)
+
+- Version choice: **Bold**, confirmed 2026-08-29. Root `index.html` redirects to `/bold/index.html`.
+- Intern-mentoring count discrepancy between the two source CVs: confirmed as **9** (the EN CV's number) on 2026-09-02, overriding the earlier VI-CV-based guess of 8.
+- Deploy: user asked for full auto-deploy with no further confirmation needed (2026-08-29). No hosting CLI (gh/vercel/netlify) was installed or authenticated on the machine this was built on, so it could not be completed end-to-end — Netlify Drop (no login required) was left as the one manual step. Check README.md / git remotes / recent commits for whether this has since been completed.
+- 2026-09-02 revision batch (annotated directly in the review doc, not as native Word comments — diff the two versions of `Noi-dung-Portfolio-Mason.docx` if similar review docs appear again): years bumped 4→5 throughout, formal "Tôi" pronoun instead of "Mình", client logos + hover/click-through added to Bold's client grid, About photo layout made flexible for more images (user said 3-5 more coming later, not yet supplied), a 5th stat (ROAS) added — `about.highlights` and both versions' stats-grid CSS must stay `auto-fit`, not a fixed 4-column grid, if you touch that again.
 
 ## Where to look
 
 - `README.md` — Vietnamese, non-technical instructions for previewing locally and deploying (Netlify Drop / Vercel / GitHub Pages).
-- `scripts/` — the two Python helpers above; safe to re-run any time, both are idempotent.
+- `scripts/` — the Python helpers above; safe to re-run any time, all are idempotent.

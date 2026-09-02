@@ -42,7 +42,8 @@ window.SITE_CONTENT = {
     "aboutPhotos": [
       "../assets/images/about-bridge.jpg",
       "../assets/images/about-mountain.jpg"
-    ]
+    ],
+    "brandLabel": "Mason Nguyễn"
   },
   "ui": {
     "nav": {
@@ -130,16 +131,16 @@ window.SITE_CONTENT = {
   },
   "hero": {
     "eyebrow": {
-      "vi": "Portfolio 2026",
-      "en": "Portfolio 2026"
+      "vi": "Về tôi",
+      "en": "About Me"
     },
     "headline": {
-      "vi": "4 năm làm cầu nối chiến lược giữa Agency và Nhãn hàng — giờ sẵn sàng ngồi phía bên kia bàn.",
-      "en": "4 years as the strategic bridge between Agency and Brand — ready to sit on the client side of the table."
+      "vi": "5 năm làm cầu nối chiến lược giữa Agency và Nhãn hàng — giờ sẵn sàng ngồi phía bên kia bàn.",
+      "en": "5 years as the strategic bridge between Agency and Brand — ready to sit on the client side of the table."
     },
     "subheadline": {
-      "vi": "Mình là Quý Anh — chuyên gia Quản lý Tài khoản & Quản lý Dự án, từng trực tiếp điều phối hơn 40 chiến dịch IMC cho Vietnam Airlines, Panasonic, VPBank và nhiều nhãn hàng lớn khác.",
-      "en": "I'm Quy Anh — an Account & Project Management specialist who has directly coordinated 40+ IMC campaigns for Vietnam Airlines, Panasonic, VPBank and many other major brands."
+      "vi": "Tôi là Quý Anh — chuyên gia Quản lý Dự án Marketing, từng trực tiếp điều phối hơn 40 chiến dịch IMC cho Vietnam Airlines, Panasonic, Long Hải, Sông Hồng và nhiều nhãn hàng lớn khác.",
+      "en": "I'm Quy Anh — a Marketing Project Management specialist who has directly coordinated 40+ IMC campaigns for Vietnam Airlines, Panasonic, Long Hai, Song Hong and many other major brands."
     }
   },
   "about": {
@@ -153,11 +154,11 @@ window.SITE_CONTENT = {
     },
     "paragraphs": [
       {
-        "vi": "Mình là chuyên gia Quản lý Tài khoản (Account Management) và Quản lý Dự án với hơn 4 năm kinh nghiệm tại môi trường Agency — bắt đầu từ vị trí Marketing Intern và phát triển lên Senior Account Executive tại Novaon Digital.",
-        "en": "I'm an Account Management and Project Management specialist with 4+ years in a digital agency environment — starting as a Marketing Intern and growing into a Senior Account Executive at Novaon Digital."
+        "vi": "Tôi là chuyên gia Quản lý Tài khoản (Account Management) và Quản lý Dự án với hơn 5 năm kinh nghiệm tại môi trường Agency — bắt đầu từ vị trí Marketing Intern và phát triển lên Senior Account Executive tại Novaon Digital.",
+        "en": "I'm an Account Management and Project Management specialist with 5+ years in a digital agency environment — starting as a Marketing Intern and growing into a Senior Account Executive at Novaon Digital."
       },
       {
-        "vi": "Vai trò của mình là cầu nối chiến lược giữa Agency và Khách hàng: tổng hợp, phân tích thông tin và điều phối các chiến dịch truyền thông tích hợp (IMC) đa kênh. Mình đã có kinh nghiệm thực chiến trong nhiều ngành lớn như Hàng không, Điện máy, Bán lẻ và Ngân hàng.",
+        "vi": "Vai trò của tôi là cầu nối chiến lược giữa Agency và Khách hàng: tổng hợp, phân tích thông tin và điều phối các chiến dịch truyền thông tích hợp (IMC) đa kênh. Tôi đã có kinh nghiệm thực chiến trong nhiều ngành lớn như Hàng không, Điện máy, Bán lẻ và Ngân hàng.",
         "en": "My role is the strategic bridge between Agency and Client: synthesizing information and coordinating multi-channel integrated marketing communications (IMC) campaigns. I've worked hands-on across major industries — Aviation, Home Appliances, Retail and Banking."
       },
       {
@@ -167,7 +168,7 @@ window.SITE_CONTENT = {
     ],
     "highlights": [
       {
-        "value": 4,
+        "value": 5,
         "prefix": "",
         "suffix": "+",
         "label": {
@@ -186,7 +187,7 @@ window.SITE_CONTENT = {
       },
       {
         "value": 150,
-        "prefix": "",
+        "prefix": ">",
         "suffix": {
           "vi": " tỷ VNĐ",
           "en": "B VND"
@@ -197,12 +198,21 @@ window.SITE_CONTENT = {
         }
       },
       {
-        "value": 80,
+        "value": 85,
         "prefix": "",
         "suffix": "%",
         "label": {
           "vi": "tỷ lệ giữ chân khách hàng",
           "en": "client retention rate"
+        }
+      },
+      {
+        "value": 2.5,
+        "prefix": "",
+        "suffix": "%",
+        "label": {
+          "vi": "Chỉ số ROAS",
+          "en": "Average ROAS"
         }
       }
     ]
@@ -358,8 +368,8 @@ window.SITE_CONTENT = {
           "en": "Aviation · Google Search Ads"
         },
         "period": {
-          "vi": "2023 — 2024",
-          "en": "2023 — 2024"
+          "vi": "2023 — 2026",
+          "en": "2023 — 2026"
         },
         "cover": "../assets/images/hero-mason.jpg",
         "problem": {
@@ -386,14 +396,14 @@ window.SITE_CONTENT = {
       },
       {
         "id": "panasonic",
-        "client": "Panasonic Service Vietnam",
+        "client": "Panasonic Vietnam",
         "category": {
           "vi": "Điện máy · Chiến dịch tích hợp",
           "en": "Home Appliances · Integrated campaign"
         },
         "period": {
-          "vi": "2023 — 2024",
-          "en": "2023 — 2024"
+          "vi": "2023 — 2026",
+          "en": "2023 — 2026"
         },
         "cover": "../assets/images/csr-treeplanting.jpg",
         "problem": {
@@ -548,16 +558,48 @@ window.SITE_CONTENT = {
           "en": "Big local companies"
         },
         "names": [
-          "Vietnam Airlines",
-          "Mavin",
-          "BCC Pharma",
-          "Long Hai",
-          "Hong Ha",
-          "VTVcab",
-          "Song Hong",
-          "Kova",
-          "PV Pharma",
-          "BIM Land"
+          {
+            "name": "Vietnam Airlines",
+            "logo": "../assets/images/logos/vietnam-airlines.png",
+            "projectId": "vietnam-airlines"
+          },
+          {
+            "name": "Mavin",
+            "logo": "../assets/images/logos/mavin.png"
+          },
+          {
+            "name": "BCC Pharma",
+            "logo": "../assets/images/logos/bcc-pharma.png"
+          },
+          {
+            "name": "Long Hải",
+            "logo": "../assets/images/logos/long-hai.png"
+          },
+          {
+            "name": "Hồng Hà",
+            "logo": "../assets/images/logos/hong-ha.png"
+          },
+          {
+            "name": "VTVcab",
+            "logo": "../assets/images/logos/vtvcab.png"
+          },
+          {
+            "name": "Chăn ga gối Sông Hồng",
+            "logo": "../assets/images/logos/song-hong.png",
+            "projectId": "songhong-bedding"
+          },
+          {
+            "name": "Kova",
+            "logo": "../assets/images/logos/kova.png"
+          },
+          {
+            "name": "PV Pharma",
+            "logo": "../assets/images/logos/pv-pharma.png"
+          },
+          {
+            "name": "BIM Land",
+            "logo": "../assets/images/logos/bim-land.png"
+          }
         ]
       },
       {
@@ -566,13 +608,39 @@ window.SITE_CONTENT = {
           "en": "Global companies"
         },
         "names": [
-          "Panasonic",
-          "Panasonic Cooking",
-          "PVI AM",
-          "The Ascott",
-          "Kalite",
-          "Leben Community Vietnam",
-          "JNTO"
+          {
+            "name": "Panasonic",
+            "logo": "../assets/images/logos/panasonic.png",
+            "projectId": "panasonic"
+          },
+          {
+            "name": "Panasonic Cooking",
+            "logo": "../assets/images/logos/panasonic-cooking.png",
+            "projectId": "panasonic"
+          },
+          {
+            "name": "PVI AM",
+            "logo": "../assets/images/logos/pvi-am.png"
+          },
+          {
+            "name": "The Ascott",
+            "logo": "../assets/images/logos/the-ascott.png"
+          },
+          {
+            "name": "Kalite",
+            "logo": "../assets/images/logos/kalite.png"
+          },
+          {
+            "name": "UKG"
+          },
+          {
+            "name": "Leben Community Vietnam",
+            "logo": "../assets/images/logos/leben-community.png"
+          },
+          {
+            "name": "JNTO",
+            "logo": "../assets/images/logos/jnto.png"
+          }
         ]
       },
       {
@@ -581,16 +649,45 @@ window.SITE_CONTENT = {
           "en": "SME companies"
         },
         "names": [
-          "VPBank SME",
-          "Trần Phú",
-          "DVN",
-          "TH",
-          "Viet Han",
-          "Vietnam Robotics",
-          "Anmira Resort & Spa",
-          "Tien Cuong",
-          "Bon Chon",
-          "Volwatt"
+          {
+            "name": "VPBank SME",
+            "projectId": "vpbank-sme"
+          },
+          {
+            "name": "Trần Phú"
+          },
+          {
+            "name": "DVN",
+            "logo": "../assets/images/logos/dvn.png"
+          },
+          {
+            "name": "TH",
+            "logo": "../assets/images/logos/th.png"
+          },
+          {
+            "name": "Cáp điện Việt Hàn",
+            "logo": "../assets/images/logos/viet-han.png"
+          },
+          {
+            "name": "Vietnam Robotics",
+            "logo": "../assets/images/logos/vietnam-robotics.png"
+          },
+          {
+            "name": "Anmira Resort & Spa",
+            "logo": "../assets/images/logos/anmira.png"
+          },
+          {
+            "name": "Tien Cuong",
+            "logo": "../assets/images/logos/tien-cuong.png"
+          },
+          {
+            "name": "Bon Chon",
+            "logo": "../assets/images/logos/bon-chon.png"
+          },
+          {
+            "name": "Volwatt Việt Nam",
+            "logo": "../assets/images/logos/volwatt.png"
+          }
         ]
       }
     ]
@@ -864,7 +961,7 @@ window.SITE_CONTENT = {
       "en": "Let's talk about an opportunity"
     },
     "blurb": {
-      "vi": "Đang tìm kiếm một vị trí Marketing/Brand Manager phía nhãn hàng? Mình luôn sẵn sàng cho một cuộc trò chuyện.",
+      "vi": "Đang tìm kiếm một vị trí Marketing/Brand Manager phía nhãn hàng? Tôi luôn sẵn sàng cho một cuộc trò chuyện.",
       "en": "Looking for a client-side Marketing/Brand Manager? I'm always open to a conversation."
     },
     "social": [
