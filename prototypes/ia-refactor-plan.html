@@ -1,0 +1,324 @@
+<meta charset="UTF-8">
+<title>Tái Cấu Trúc Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F6F3EE;
+    --surface: #FFFFFF;
+    --surface-2: #EFEAE2;
+    --ink: #1B1815;
+    --ink-soft: #6E675D;
+    --ink-faint: #9A928C;
+    --line: #E2DCD1;
+    --accent: #D62E2E;
+    --accent-ink: #B32323;
+    --accent-soft: #FBE3E0;
+    --neutral-fill: #E7E2D9;
+    --neutral-stroke: #C9C2B4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #17140F;
+      --surface: #211D17;
+      --surface-2: #2A251D;
+      --ink: #F2ECE2;
+      --ink-soft: #B3AA9B;
+      --ink-faint: #7D7568;
+      --line: #3A3428;
+      --accent: #FF5B4A;
+      --accent-ink: #FF7A6B;
+      --accent-soft: rgba(255,91,74,0.16);
+      --neutral-fill: #2C2820;
+      --neutral-stroke: #453F32;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #17140F;
+    --surface: #211D17;
+    --surface-2: #2A251D;
+    --ink: #F2ECE2;
+    --ink-soft: #B3AA9B;
+    --ink-faint: #7D7568;
+    --line: #3A3428;
+    --accent: #FF5B4A;
+    --accent-ink: #FF7A6B;
+    --accent-soft: rgba(255,91,74,0.16);
+    --neutral-fill: #2C2820;
+    --neutral-stroke: #453F32;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+  }
+  .font-display { font-family: 'Archivo', 'Helvetica Neue', sans-serif; }
+  .font-mono { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
+
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2rem); }
+
+  header.page-head { padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(2rem, 4vw, 3rem); border-bottom: 1px solid var(--line); }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace; font-size: .78rem; font-weight: 500;
+    text-transform: uppercase; letter-spacing: .1em; color: var(--accent-ink); margin: 0 0 .9rem;
+  }
+  h1 {
+    font-family: 'Archivo', sans-serif; font-weight: 900; font-size: clamp(1.9rem, 4.2vw, 2.7rem);
+    line-height: 1.08; letter-spacing: -0.015em; margin: 0 0 .9rem; text-wrap: balance; max-width: 18ch;
+  }
+  .lede { font-size: 1.05rem; color: var(--ink-soft); max-width: 62ch; margin: 0; }
+
+  section { padding: clamp(2.5rem, 5vw, 3.5rem) 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: 0; }
+  h2 {
+    font-family: 'Archivo', sans-serif; font-weight: 800; font-size: clamp(1.3rem, 2.4vw, 1.6rem);
+    letter-spacing: -0.01em; margin: 0 0 1.5rem;
+  }
+  .section-num { color: var(--accent-ink); font-family: 'IBM Plex Mono', monospace; font-weight: 500; }
+
+  /* ---- diagnosis ---- */
+  .diagnosis-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .diagnosis-item { background: var(--surface); padding: 1.4rem 1.5rem; }
+  .diagnosis-item .tag {
+    display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: .68rem; font-weight: 500;
+    text-transform: uppercase; letter-spacing: .05em; color: var(--accent-ink);
+    background: var(--accent-soft); padding: .22rem .55rem; border-radius: 4px; margin-bottom: .8rem;
+  }
+  .diagnosis-item p { margin: 0; font-size: .92rem; color: var(--ink-soft); }
+  .diagnosis-item b { color: var(--ink); font-weight: 600; }
+
+  /* ---- diagram ---- */
+  .diagram-scroll { overflow-x: auto; margin: 0 -0.25rem; padding: 0 0.25rem; }
+  .diagram-scroll svg { display: block; min-width: 720px; width: 100%; height: auto; }
+  .diagram-caption { font-size: .85rem; color: var(--ink-faint); margin-top: 1rem; max-width: 60ch; }
+  .diagram-caption b { color: var(--ink-soft); }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.4rem; font-size: .82rem; color: var(--ink-soft); }
+  .legend-item { display: flex; align-items: center; gap: .5rem; }
+  .legend-swatch { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+
+  /* ---- breakdown table ---- */
+  .breakdown { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+  .breakdown-row { display: grid; grid-template-columns: 1.4fr 1fr 1.1fr 1.8fr; gap: 1.5rem; padding: 1.1rem 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+  .breakdown-head { font-family: 'IBM Plex Mono', monospace; font-size: .68rem; font-weight: 500; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-faint); padding-bottom: .7rem; }
+  .breakdown-row .name { font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 1rem; }
+  .breakdown-row .name .status { display: block; font-family: 'IBM Plex Mono', monospace; font-weight: 500; font-size: .68rem; text-transform: uppercase; letter-spacing: .04em; color: var(--accent-ink); margin-top: .25rem; }
+  .breakdown-row .beat { font-size: .85rem; color: var(--ink-soft); }
+  .breakdown-row .pattern {
+    display: inline-block; font-size: .78rem; font-weight: 600; padding: .3rem .65rem;
+    border-radius: 999px; background: var(--neutral-fill); border: 1px solid var(--neutral-stroke); color: var(--ink); width: fit-content;
+  }
+  .breakdown-row .why { font-size: .88rem; color: var(--ink-soft); }
+
+  @media (max-width: 760px) {
+    .diagnosis-grid { grid-template-columns: 1fr; }
+    .breakdown-row { grid-template-columns: 1fr; gap: .35rem; padding: 1.2rem 0; }
+    .breakdown-head { display: none; }
+    .breakdown-row .beat::before { content: "Nhịp: "; color: var(--ink-faint); }
+    .breakdown-row .why::before { content: "Vì sao: "; color: var(--ink-faint); font-weight: 600; }
+  }
+
+  /* ---- closing ---- */
+  .closing { display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; flex-wrap: wrap; padding-top: clamp(2.5rem, 5vw, 3.5rem); padding-bottom: clamp(3rem, 6vw, 4rem); }
+  .closing p { margin: 0; max-width: 52ch; color: var(--ink-soft); }
+  .closing .signature { font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 1.1rem; white-space: nowrap; }
+  .closing .signature span { color: var(--accent-ink); }
+</style>
+
+<header class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Bold version — Information Architecture</p>
+    <h1>Tái cấu trúc Portfolio theo nhịp kể chuyện</h1>
+    <p class="lede">Đề xuất sắp xếp lại thứ tự section và đổi định dạng cho 4 khối đang nặng nhất, theo đúng "DNA" gọn — sắc — công nghệ của section Ownership. Chưa đụng code — đây là bản vẽ để bạn duyệt trước.</p>
+  </div>
+</header>
+
+<section id="diagnosis">
+  <div class="wrap">
+    <h2><span class="section-num">01 · </span>Vấn đề đang gặp</h2>
+    <div class="diagnosis-grid">
+      <div class="diagnosis-item">
+        <span class="tag">Nặng nhất trang</span>
+        <p><b>Case Study</b> có 5 khách hàng, mỗi cái 3 đoạn văn (Vấn đề / Cách làm / Kết quả) xếp chồng liên tục — chiếm khoảng 1/4 tổng chiều dài trang.</p>
+      </div>
+      <div class="diagnosis-item">
+        <span class="tag">Trùng lặp</span>
+        <p><b>Kinh nghiệm</b> và <b>Case Study</b> cùng nhắc lại Panasonic, Vietnam Airlines, Sông Hồng — người đọc thấy tên khách hàng này tới 2 lần ở 2 định dạng khác nhau.</p>
+      </div>
+      <div class="diagnosis-item">
+        <span class="tag">Rời rạc</span>
+        <p><b>Năng lực · Kỹ năng · Học vấn</b> là 3 section riêng, nội dung đều ngắn dạng liệt kê — nhưng mỗi cái vẫn chiếm trọn 1 lượt cuộn với khoảng trắng riêng.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="diagram">
+  <div class="wrap">
+    <h2><span class="section-num">02 · </span>Bố cục hiện tại → đề xuất</h2>
+    <div class="diagram-scroll">
+      <svg viewBox="0 0 1000 660" role="img" aria-label="So sánh chiều cao và thứ tự section giữa bố cục hiện tại (10 section, cao) và bố cục đề xuất (7 section, thấp hơn khoảng 35%), với Case Study chuyển lên và rút gọn thành Tabs, còn Kinh nghiệm, Năng lực, Kỹ năng, Học vấn gộp thành một section Năng lực duy nhất.">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"></path>
+          </marker>
+        </defs>
+
+        <text x="170" y="34" text-anchor="middle" class="font-mono" font-size="12" fill="var(--ink-faint)" letter-spacing="1">HIỆN TẠI · 10 SECTION</text>
+        <text x="790" y="34" text-anchor="middle" class="font-mono" font-size="12" fill="var(--ink-faint)" letter-spacing="1">ĐỀ XUẤT · 7 SECTION</text>
+
+        <!-- CURRENT column blocks (x 60-280) -->
+        <!-- Hero 48 -->
+        <rect x="60" y="90" width="220" height="48" rx="6" fill="var(--neutral-fill)" stroke="var(--neutral-stroke)"></rect>
+        <text x="70" y="118" font-size="13" font-weight="700" fill="var(--ink)" class="font-display">Hero</text>
+        <!-- Clients 32 -->
+        <rect x="60" y="141" width="220" height="32" rx="6" fill="var(--neutral-fill)" stroke="var(--neutral-stroke)"></rect>
+        <text x="70" y="161" font-size="13" font-weight="700" fill="var(--ink)" class="font-display">Khách hàng</text>
+        <!-- About 48 -->
+        <rect x="60" y="176" width="220" height="48" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" stroke-opacity="0.5"></rect>
+        <text x="70" y="204" font-size="13" font-weight="700" fill="var(--ink)" class="font-display">Giới thiệu</text>
+        <!-- Ownership 64 -->
+        <rect x="60" y="227" width="220" height="64" rx="6" fill="var(--neutral-fill)" stroke="var(--neutral-stroke)"></rect>
+        <text x="70" y="255" font-size="13" font-weight="700" fill="var(--ink)" class="font-display">Định vị</text>
+        <text x="70" y="272" font-size="10" fill="var(--ink-faint)">(mẫu tham chiếu)</text>
+        <!-- Experience 80 -->
+        <rect x="60" y="294" width="220" height="80" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" stroke-opacity="0.5"></rect>
+        <text x="70" y="322" font-size="13" font-weight="700" fill="var(--ink)" class="font-display">Kinh nghiệm</text>
+        <text x="70" y="339" font-size="10" fill="var(--ink-faint)">3 vai trò × 5 bullet</text>
+        <!-- Projects 128 -->
+        <rect x="60" y="377" width="220" height="128" rx="6" fill="var(--accent-soft)" stroke="var(--accent)"></rect>
+        <text x="70" y="405" font-size="13" font-weight="700" fill="var(--ink)" class="font-display">Case Study</text>
+        <text x="70" y="422" font-size="10" fill="var(--ink-faint)">5 case × 3 đoạn văn</text>
+        <text x="70" y="437" font-size="10" fill="var(--ink-faint)">nặng nhất trang</text>
+        <!-- Competencies 32 -->
+        <rect x="60" y="508" width="220" height="32" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" stroke-opacity="0.5"></rect>
+        <text x="70" y="528" font-size="13" font-weight="700" fill="var(--ink)" class="font-display">Năng lực cốt lõi</text>
+        <!-- Skills 32 -->
+        <rect x="60" y="543" width="220" height="32" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" stroke-opacity="0.5"></rect>
+        <text x="70" y="563" font-size="13" font-weight="700" fill="var(--ink)" class="font-display">Kỹ năng</text>
+        <!-- Education 24 -->
+        <rect x="60" y="578" width="220" height="24" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" stroke-opacity="0.5"></rect>
+        <text x="70" y="594" font-size="12" font-weight="700" fill="var(--ink)" class="font-display">Học vấn</text>
+        <!-- Contact 24 -->
+        <rect x="60" y="605" width="220" height="24" rx="6" fill="var(--neutral-fill)" stroke="var(--neutral-stroke)"></rect>
+        <text x="70" y="621" font-size="12" font-weight="700" fill="var(--ink)" class="font-display">Liên hệ</text>
+
+        <!-- PROPOSED column blocks (x 680-900) -->
+        <!-- Hero 48 -->
+        <rect x="680" y="90" width="220" height="48" rx="6" fill="var(--neutral-fill)" stroke="var(--neutral-stroke)"></rect>
+        <text x="690" y="118" font-size="13" font-weight="700" fill="var(--ink)" class="font-display">Hero</text>
+        <!-- About 24 -->
+        <rect x="680" y="141" width="220" height="24" rx="6" fill="var(--accent-soft)" stroke="var(--accent)"></rect>
+        <text x="690" y="157" font-size="12" font-weight="700" fill="var(--ink)" class="font-display">Giới thiệu — rút gọn</text>
+        <!-- Clients 32 -->
+        <rect x="680" y="168" width="220" height="32" rx="6" fill="var(--neutral-fill)" stroke="var(--neutral-stroke)"></rect>
+        <text x="690" y="188" font-size="13" font-weight="700" fill="var(--ink)" class="font-display">Khách hàng</text>
+        <!-- Ownership 64 -->
+        <rect x="680" y="203" width="220" height="64" rx="6" fill="var(--neutral-fill)" stroke="var(--neutral-stroke)"></rect>
+        <text x="690" y="231" font-size="13" font-weight="700" fill="var(--ink)" class="font-display">Định vị</text>
+        <text x="690" y="248" font-size="10" fill="var(--ink-faint)">không đổi</text>
+        <!-- Case Studies 48 -->
+        <rect x="680" y="270" width="220" height="48" rx="6" fill="var(--accent-soft)" stroke="var(--accent)"></rect>
+        <text x="690" y="292" font-size="13" font-weight="700" fill="var(--ink)" class="font-display">Case Study</text>
+        <text x="690" y="308" font-size="10" fill="var(--ink-faint)">dạng Tabs — 1 case/lần</text>
+        <!-- Capabilities 80 -->
+        <rect x="680" y="321" width="220" height="80" rx="6" fill="var(--accent-soft)" stroke="var(--accent)"></rect>
+        <text x="690" y="345" font-size="13" font-weight="700" fill="var(--ink)" class="font-display">Năng lực</text>
+        <text x="690" y="362" font-size="10" fill="var(--ink-faint)">gộp Kinh nghiệm + Năng lực</text>
+        <text x="690" y="376" font-size="10" fill="var(--ink-faint)">+ Kỹ năng + Học vấn</text>
+        <!-- Contact 24 -->
+        <rect x="680" y="404" width="220" height="24" rx="6" fill="var(--neutral-fill)" stroke="var(--neutral-stroke)"></rect>
+        <text x="690" y="420" font-size="12" font-weight="700" fill="var(--ink)" class="font-display">Liên hệ</text>
+
+        <!-- connector: Case Study moves up + shrinks -->
+        <path d="M 280 441 C 450 441, 450 294, 680 294" fill="none" stroke="var(--accent)" stroke-width="1.6" marker-end="url(#arrow)"></path>
+        <text x="475" y="270" text-anchor="middle" font-size="11" fill="var(--accent-ink)" font-weight="600">chuyển lên, sau Định vị</text>
+
+        <!-- connectors: 4 sections merge into Capabilities -->
+        <path d="M 280 334 C 420 334, 420 361, 680 361" fill="none" stroke="var(--accent)" stroke-width="1.3" stroke-dasharray="3 3" marker-end="url(#arrow)"></path>
+        <path d="M 280 524 C 420 524, 420 361, 680 361" fill="none" stroke="var(--accent)" stroke-width="1.3" stroke-dasharray="3 3" marker-end="url(#arrow)"></path>
+        <path d="M 280 559 C 420 559, 420 361, 680 361" fill="none" stroke="var(--accent)" stroke-width="1.3" stroke-dasharray="3 3" marker-end="url(#arrow)"></path>
+        <path d="M 280 590 C 420 590, 420 361, 680 361" fill="none" stroke="var(--accent)" stroke-width="1.3" stroke-dasharray="3 3" marker-end="url(#arrow)"></path>
+        <text x="475" y="470" text-anchor="middle" font-size="11" fill="var(--accent-ink)" font-weight="600">4 section → 1 section "Năng lực"</text>
+
+        <!-- height comparison callout -->
+        <line x1="922" y1="90" x2="922" y2="629" stroke="var(--ink-faint)" stroke-width="1"></line>
+        <line x1="917" y1="90" x2="927" y2="90" stroke="var(--ink-faint)" stroke-width="1"></line>
+        <line x1="917" y1="629" x2="927" y2="629" stroke="var(--ink-faint)" stroke-width="1"></line>
+        <line x1="938" y1="90" x2="938" y2="428" stroke="var(--accent)" stroke-width="1.6"></line>
+        <line x1="933" y1="90" x2="943" y2="90" stroke="var(--accent)" stroke-width="1.6"></line>
+        <line x1="933" y1="428" x2="943" y2="428" stroke="var(--accent)" stroke-width="1.6"></line>
+        <text x="922" y="645" font-size="10" fill="var(--ink-faint)" text-anchor="middle">10 section</text>
+        <text x="938" y="440" font-size="11" fill="var(--accent-ink)" font-weight="700" text-anchor="start" dx="8">−35%</text>
+      </svg>
+    </div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-swatch" style="background:var(--neutral-fill);border:1px solid var(--neutral-stroke)"></span>Giữ nguyên vị trí &amp; định dạng</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:var(--accent-soft);border:1px solid var(--accent)"></span>Đổi vị trí, định dạng, hoặc gộp</div>
+    </div>
+    <p class="diagram-caption">Ước tính theo khối lượng nội dung thực tế (không phải đo pixel chính xác) — tổng chiều cao đề xuất giảm khoảng <b>35%</b> so với hiện tại, chủ yếu nhờ Case Study chuyển sang Tabs và 4 section cuối gộp làm một.</p>
+  </div>
+</section>
+
+<section id="breakdown">
+  <div class="wrap">
+    <h2><span class="section-num">03 · </span>Chi tiết từng section</h2>
+    <div class="breakdown">
+      <div class="breakdown-row breakdown-head">
+        <div>Section</div><div>Nhịp kể chuyện</div><div>Định dạng UI</div><div>Vì sao</div>
+      </div>
+      <div class="breakdown-row">
+        <div class="name">Hero</div>
+        <div class="beat">Ấn tượng ban đầu</div>
+        <div><span class="pattern">Không đổi</span></div>
+        <div class="why">Đã đúng vai trò — mở đầu bằng định vị 1 câu + ảnh.</div>
+      </div>
+      <div class="breakdown-row">
+        <div class="name">Giới thiệu<span class="status">rút gọn</span></div>
+        <div class="beat">Ấn tượng ban đầu</div>
+        <div><span class="pattern">1 đoạn + hàng stat</span></div>
+        <div class="why">3 đoạn văn hiện tại lặp ý với Định vị ngay sau đó — giữ lại 1 đoạn cô đọng nhất, stat vẫn giữ nguyên vì đã compact.</div>
+      </div>
+      <div class="breakdown-row">
+        <div class="name">Khách hàng</div>
+        <div class="beat">Ấn tượng ban đầu</div>
+        <div><span class="pattern">Không đổi</span></div>
+        <div class="why">Lưới logo đã compact, đúng vai trò "bằng chứng nhanh".</div>
+      </div>
+      <div class="breakdown-row">
+        <div class="name">Định vị</div>
+        <div class="beat">Lợi thế cạnh tranh</div>
+        <div><span class="pattern">Không đổi</span></div>
+        <div class="why">Đây chính là mẫu tham chiếu cho toàn trang — giữ nguyên, nhân rộng "DNA" của nó sang các phần khác.</div>
+      </div>
+      <div class="breakdown-row">
+        <div class="name">Case Study<span class="status">chuyển lên + đổi UI</span></div>
+        <div class="beat">Minh chứng</div>
+        <div><span class="pattern">Tabs (chọn khách hàng)</span></div>
+        <div class="why">Định vị vừa nêu case nào thì Case Study nên nối tiếp ngay để "chứng minh". Tabs giữ 4/5 case ẩn cho tới khi được chọn, thay vì xếp chồng cả 5.</div>
+      </div>
+      <div class="breakdown-row">
+        <div class="name">Năng lực<span class="status">gộp 4 → 1</span></div>
+        <div class="beat">Năng lực công nghệ / vận hành</div>
+        <div><span class="pattern">Bento + Accordion</span></div>
+        <div class="why">Kinh nghiệm, Năng lực cốt lõi, Kỹ năng, Học vấn đều là nội dung "liệt kê" — gộp vào 1 lưới, riêng Kinh nghiệm dùng accordion (bấm vai trò mới mở bullet) để không chiếm hết chiều cao.</div>
+      </div>
+      <div class="breakdown-row">
+        <div class="name">Liên hệ</div>
+        <div class="beat">Call to action</div>
+        <div><span class="pattern">Không đổi</span></div>
+        <div class="why">Điểm kết bài — giữ nguyên vị trí cuối cùng.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="closing">
+  <div class="wrap closing">
+    <p>Bản vẽ này chưa đụng tới code hay nội dung — chỉ là bố cục &amp; định dạng. Bạn duyệt hướng này thì mình bắt đầu build từng phần, có thể làm Case Study (Tabs) trước vì đó là chỗ "quá tải" rõ nhất.</p>
+    <p class="signature">Mason<span>.</span> — IA v2</p>
+  </div>
+</section>
