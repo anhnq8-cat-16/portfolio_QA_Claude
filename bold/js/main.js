@@ -56,6 +56,10 @@
     var cvBtn = document.getElementById("headerCvBtn");
     cvBtn.href = DATA.personal.cv[state.lang];
     cvBtn.innerHTML = '<span class="full">' + t(DATA.ui.downloadCv) + "</span>";
+
+    var mobileCvBtn = document.getElementById("mobileNavCvBtn");
+    mobileCvBtn.href = DATA.personal.cv[state.lang];
+    mobileCvBtn.textContent = t(DATA.ui.downloadCv);
   }
 
   function renderHero() {
