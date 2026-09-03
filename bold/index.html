@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="stylesheet" href="css/style.css?v=5">
 </head>
 <body>
 <a class="skip-link" href="#main">Bỏ qua tới nội dung chính / Skip to content</a>
@@ -127,6 +127,16 @@
     </div>
   </section>
 
+  <section class="proof" id="proof">
+    <div class="wrap">
+      <p class="eyebrow reveal-up" id="proofEyebrow"></p>
+      <h2 class="section-heading reveal-up" id="proofHeading"></h2>
+      <p class="proof-intro reveal-up" id="proofIntro"></p>
+      <div class="proof-filters" id="proofFilters" role="tablist"></div>
+      <div class="proof-grid" id="proofGrid"></div>
+    </div>
+  </section>
+
   <section class="capabilities" id="capabilities">
     <div class="wrap">
       <p class="eyebrow reveal-up" id="capabilitiesEyebrow"></p>
@@ -168,6 +178,16 @@
 
 </main>
 
+<div class="proof-modal" id="proofModal" aria-hidden="true">
+  <div class="proof-modal-backdrop" id="proofModalBackdrop"></div>
+  <div class="proof-modal-panel" role="dialog" aria-modal="true" aria-labelledby="proofModalTitle">
+    <button type="button" class="proof-modal-close" id="proofModalClose" aria-label="Close"></button>
+    <p class="eyebrow" id="proofModalEyebrow"></p>
+    <h3 class="proof-modal-title" id="proofModalTitle"></h3>
+    <div class="proof-grid" id="proofModalGrid"></div>
+  </div>
+</div>
+
 <footer class="site-footer">
   <div class="wrap footer-inner">
     <p class="signature" id="footerSignature">Mason Nguyen</p>
@@ -176,10 +196,10 @@
   </div>
 </footer>
 
-<script src="../data/content.js?v=3"></script>
+<script src="../data/content.js?v=5"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-<script src="js/main.js?v=3"></script>
+<script src="js/main.js?v=5"></script>
 </body>
 </html>

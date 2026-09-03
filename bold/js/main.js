@@ -3,7 +3,13 @@
 
   var DATA = window.SITE_CONTENT;
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var state = { lang: localStorage.getItem("mason-lang") || "vi", activeProjectTab: 0, openExperienceIndex: 0 };
+  var state = {
+    lang: localStorage.getItem("mason-lang") || "vi",
+    activeProjectTab: 0,
+    openExperienceIndex: 0,
+    proofCategory: "all",
+    proofAssets: (DATA.proofOfWork && DATA.proofOfWork.assets) || []
+  };
 
   function t(field) {
     if (field && typeof field === "object" && !Array.isArray(field) && ("vi" in field || "en" in field)) {
@@ -64,9 +70,20 @@
     cvBtn.href = DATA.personal.cv[state.lang];
     cvBtn.textContent = t(DATA.ui.downloadCv);
 
+    var photoInner = document.getElementById("heroPhotoInner");
+    var existingHeroPh = photoInner.querySelector(".hero-photo-ph");
+    if (existingHeroPh) existingHeroPh.remove();
     var photo = document.getElementById("heroPhoto");
-    photo.src = DATA.personal.heroPhoto;
-    photo.alt = DATA.personal.fullName + " — " + t(DATA.personal.title);
+    if (DATA.personal.heroPhoto) {
+      photo.style.display = "";
+      photo.src = DATA.personal.heroPhoto;
+      photo.alt = DATA.personal.fullName + " — " + t(DATA.personal.title);
+    } else {
+      photo.style.display = "none";
+      var heroPh = el("div", "ph hero-photo-ph");
+      heroPh.innerHTML = PH_ICON_IMAGE + '<span class="ph-label">' + t(DATA.personal.heroPhotoPlaceholder) + "</span>";
+      photoInner.insertBefore(heroPh, photo);
+    }
 
     setText("heroSignature", DATA.personal.signature);
     setText("heroBadge", t(DATA.personal.title));
@@ -125,13 +142,19 @@
     photos.innerHTML = "";
     DATA.personal.aboutPhotos.forEach(function (src) {
       var frame = el("div", "about-photo reveal-up");
-      var img = el("img");
-      img.src = src;
-      img.loading = "lazy";
-      img.alt = DATA.personal.fullName;
-      img.width = 450;
-      img.height = 560;
-      frame.appendChild(img);
+      if (src) {
+        var img = el("img");
+        img.src = src;
+        img.loading = "lazy";
+        img.alt = DATA.personal.fullName;
+        img.width = 450;
+        img.height = 560;
+        frame.appendChild(img);
+      } else {
+        var ph = el("div", "ph about-photo-ph");
+        ph.innerHTML = PH_ICON_IMAGE + '<span class="ph-label">' + t(DATA.personal.aboutPhotoPlaceholder) + "</span>";
+        frame.appendChild(ph);
+      }
       photos.appendChild(frame);
     });
 
@@ -153,6 +176,14 @@
 
   var PH_ICON_IMAGE = '<svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>';
   var PH_ICON_TEAM = '<svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>';
+  var PH_ICON_DOC = '<svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>';
+  var PH_ICON_PLAY = '<svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg>';
+
+  function proofTypeIcon(type) {
+    if (type === "pdf") return PH_ICON_DOC;
+    if (type === "video") return PH_ICON_PLAY;
+    return PH_ICON_IMAGE;
+  }
 
   function renderOwnership() {
     var O = DATA.ownership;
@@ -258,11 +289,17 @@
 
     var media = el("div", "project-media");
     var inner = el("div", "project-media-inner");
-    var img = el("img");
-    img.src = proj.cover;
-    img.loading = "lazy";
-    img.alt = t(proj.client) + " — " + t(proj.category);
-    inner.appendChild(img);
+    if (proj.cover) {
+      var img = el("img");
+      img.src = proj.cover;
+      img.loading = "lazy";
+      img.alt = t(proj.client) + " — " + t(proj.category);
+      inner.appendChild(img);
+    } else {
+      var coverPh = el("div", "ph project-cover-ph");
+      coverPh.innerHTML = PH_ICON_IMAGE + '<span class="ph-label">' + t(proj.client) + " — " + t(DATA.projects.coverPlaceholder) + "</span>";
+      inner.appendChild(coverPh);
+    }
     media.appendChild(inner);
 
     var body = el("div", "project-body");
@@ -302,6 +339,13 @@
       body.appendChild(gallery);
     }
 
+    if (getAssetsForProject(proj.id).length) {
+      var proofBtn = el("button", "btn btn-line proof-cta", t(DATA.proofOfWork.viewDetailLabel));
+      proofBtn.type = "button";
+      proofBtn.setAttribute("data-proof-project", proj.id);
+      body.appendChild(proofBtn);
+    }
+
     panel.appendChild(media);
     panel.appendChild(body);
 
@@ -310,6 +354,204 @@
     }
     setupTiltCards(); // each tab switch creates a fresh .project-media node that needs its own tilt binding
     if (window.ScrollTrigger) window.ScrollTrigger.refresh();
+  }
+
+  /* ---------------- Proof of Work (gallery + case-study modal) ---------------- */
+
+  function getProofAssets() {
+    return state.proofAssets || [];
+  }
+
+  function getAssetsForProject(projectId) {
+    return getProofAssets().filter(function (a) { return a.projectId === projectId; });
+  }
+
+  function getFilteredProofAssets() {
+    var assets = getProofAssets();
+    if (state.proofCategory === "all") return assets;
+    return assets.filter(function (a) { return a.category === state.proofCategory; });
+  }
+
+  function buildProofTile(asset) {
+    var hasFile = !!asset.url;
+    var tile = el("div", "proof-tile" + (hasFile ? "" : " ph"));
+    if (hasFile && asset.type === "image") {
+      var img = el("img");
+      img.src = asset.url;
+      img.loading = "lazy";
+      img.alt = t(asset.description);
+      tile.appendChild(img);
+      tile.appendChild(el("span", "proof-tile-caption", t(asset.description)));
+    } else if (hasFile) {
+      tile.classList.add("proof-tile-file");
+      tile.innerHTML = proofTypeIcon(asset.type) + '<span class="proof-tile-caption">' + t(asset.description) + "</span>";
+    } else {
+      tile.innerHTML = proofTypeIcon(asset.type) + '<span class="ph-label">' + t(asset.description) + "</span>";
+    }
+    if (hasFile) {
+      tile.setAttribute("data-proof-url", asset.url);
+      tile.setAttribute("role", "link");
+      tile.setAttribute("tabindex", "0");
+    }
+    return tile;
+  }
+
+  function renderProofGrid(container, assets) {
+    if (!container) return;
+    container.innerHTML = "";
+    if (!assets.length) {
+      container.appendChild(el("p", "proof-empty", t(DATA.proofOfWork.emptyLabel)));
+      return;
+    }
+    assets.forEach(function (asset) { container.appendChild(buildProofTile(asset)); });
+  }
+
+  function renderProofOfWork() {
+    var P = DATA.proofOfWork;
+    setText("proofEyebrow", t(P.eyebrow));
+    setText("proofHeading", t(P.heading));
+    setText("proofIntro", t(P.intro));
+
+    var filters = document.getElementById("proofFilters");
+    filters.innerHTML = "";
+    var allChip = el("button", "proof-chip" + (state.proofCategory === "all" ? " is-active" : ""), t(P.allLabel));
+    allChip.type = "button";
+    allChip.setAttribute("data-category", "all");
+    allChip.setAttribute("role", "tab");
+    allChip.setAttribute("aria-selected", state.proofCategory === "all" ? "true" : "false");
+    filters.appendChild(allChip);
+    P.categories.forEach(function (cat) {
+      var isActive = state.proofCategory === cat.id;
+      var chip = el("button", "proof-chip" + (isActive ? " is-active" : ""), t(cat.label));
+      chip.type = "button";
+      chip.setAttribute("data-category", cat.id);
+      chip.setAttribute("role", "tab");
+      chip.setAttribute("aria-selected", isActive ? "true" : "false");
+      filters.appendChild(chip);
+    });
+
+    renderProofGrid(document.getElementById("proofGrid"), getFilteredProofAssets());
+  }
+
+  var proofModalTrigger = null;
+
+  function openProofModal(projectId, trigger) {
+    var proj = DATA.projects.items.find(function (p) { return p.id === projectId; });
+    if (!proj) return;
+    proofModalTrigger = trigger || null;
+    setText("proofModalEyebrow", t(DATA.proofOfWork.eyebrow));
+    setText("proofModalTitle", t(proj.client));
+    renderProofGrid(document.getElementById("proofModalGrid"), getAssetsForProject(projectId));
+    var modal = document.getElementById("proofModal");
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    document.getElementById("proofModalClose").focus();
+  }
+
+  function closeProofModal() {
+    var modal = document.getElementById("proofModal");
+    if (!modal.classList.contains("is-open")) return;
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+    if (proofModalTrigger) { proofModalTrigger.focus(); proofModalTrigger = null; }
+  }
+
+  /* Live sync from a published Google Sheet (optional — see README.md).
+     Reads DATA.proofOfWork.sheetUrl; if blank, or if the fetch fails for any
+     reason (most commonly: page opened via file:// instead of a real http(s)
+     deploy, since file:// pages can't fetch external URLs), the mock
+     `assets` already in content.json stay in place. Never throws. */
+  function normalizeSheetKey(s) {
+    return (s || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+  }
+
+  function parseSheetIdAndGid(url) {
+    var m = url.match(/\/d\/([a-zA-Z0-9-_]+)/);
+    var id = m ? m[1] : url.trim();
+    var gidMatch = url.match(/[?&#]gid=(\d+)/);
+    return { id: id, gid: gidMatch ? gidMatch[1] : "0" };
+  }
+
+  function loadProofAssetsFromSheet() {
+    var sheetUrl = DATA.proofOfWork && DATA.proofOfWork.sheetUrl;
+    if (!sheetUrl) return;
+    var parsed = parseSheetIdAndGid(sheetUrl);
+    var endpoint = "https://docs.google.com/spreadsheets/d/" + parsed.id + "/gviz/tq?tqx=out:json&gid=" + parsed.gid;
+
+    fetch(endpoint)
+      .then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res.text();
+      })
+      .then(function (text) {
+        var jsonText = text.substring(text.indexOf("{"), text.lastIndexOf("}") + 1);
+        var data = JSON.parse(jsonText);
+        var cols = data.table.cols.map(function (c) { return normalizeSheetKey(c.label || c.id); });
+        var assets = data.table.rows.map(function (row) {
+          var obj = {};
+          (row.c || []).forEach(function (cell, i) { obj[cols[i]] = cell ? cell.v : ""; });
+          return {
+            id: obj.id || "",
+            type: (obj.type || "image").toLowerCase(),
+            category: obj.category || "",
+            projectId: obj.projectid || "",
+            url: obj.url || "",
+            description: { vi: obj.descriptionvi || obj.description || "", en: obj.descriptionen || obj.description || "" }
+          };
+        }).filter(function (a) { return a.url; });
+
+        if (assets.length) {
+          state.proofAssets = assets;
+          renderProofOfWork();
+        }
+      })
+      .catch(function (err) {
+        console.info("[proof-of-work] Live Google Sheet not reachable right now — showing sample data instead.", err);
+      });
+  }
+
+  function setupProofFilters() {
+    document.getElementById("proofFilters").addEventListener("click", function (e) {
+      var chip = e.target.closest(".proof-chip");
+      if (!chip) return;
+      var cat = chip.getAttribute("data-category");
+      if (cat === state.proofCategory) return;
+      state.proofCategory = cat;
+      document.querySelectorAll("#proofFilters .proof-chip").forEach(function (c) {
+        var active = c.getAttribute("data-category") === cat;
+        c.classList.toggle("is-active", active);
+        c.setAttribute("aria-selected", active ? "true" : "false");
+      });
+      renderProofGrid(document.getElementById("proofGrid"), getFilteredProofAssets());
+    });
+  }
+
+  function setupProofModal() {
+    document.getElementById("projectPanel").addEventListener("click", function (e) {
+      var btn = e.target.closest("[data-proof-project]");
+      if (btn) openProofModal(btn.getAttribute("data-proof-project"), btn);
+    });
+    document.getElementById("proofModalClose").addEventListener("click", closeProofModal);
+    document.getElementById("proofModalBackdrop").addEventListener("click", closeProofModal);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeProofModal();
+    });
+  }
+
+  function setupProofTileOpen() {
+    // Delegated on document since tiles live in two different, re-rendered
+    // grids (#proofGrid and #proofModalGrid) — one listener covers both.
+    document.addEventListener("click", function (e) {
+      var tile = e.target.closest("[data-proof-url]");
+      if (tile) window.open(tile.getAttribute("data-proof-url"), "_blank", "noopener");
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Enter" && e.key !== " ") return;
+      var tile = e.target.closest("[data-proof-url]");
+      if (tile) { e.preventDefault(); window.open(tile.getAttribute("data-proof-url"), "_blank", "noopener"); }
+    });
   }
 
   function renderCapabilities() {
@@ -434,6 +676,7 @@
     renderAbout();
     renderOwnership();
     renderProjects();
+    renderProofOfWork();
     renderCapabilities();
     renderContact();
     renderFooter();
@@ -764,6 +1007,10 @@
     setupProjectLinkDelegation("clientsGroups", ".client-tile", lenis);
     setupProjectLinkDelegation("ownershipChapters", ".ownership-case", lenis);
     setupProjectTabs();
+    setupProofFilters();
+    setupProofModal();
+    setupProofTileOpen();
+    loadProofAssetsFromSheet();
     setupCapAccordion();
     setupScrollReveal();
     setupCounters();

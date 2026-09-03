@@ -38,11 +38,19 @@ window.SITE_CONTENT = {
       "vi": "../assets/cv/NguyenQuyAnh-CV-VI.pdf",
       "en": "../assets/cv/NguyenQuyAnh-CV-EN.pdf"
     },
-    "heroPhoto": "../assets/images/hero-mason.jpg",
+    "heroPhoto": "",
+    "heroPhotoPlaceholder": {
+      "vi": "Ảnh chân dung — dọc 3:4, ≥1400×1867px, JPG, nén <400KB",
+      "en": "Portrait — vertical 3:4, ≥1400×1867px, JPG, <400KB compressed"
+    },
     "aboutPhotos": [
-      "../assets/images/about-bridge.jpg",
-      "../assets/images/about-mountain.jpg"
+      "",
+      ""
     ],
+    "aboutPhotoPlaceholder": {
+      "vi": "Ảnh sinh hoạt/làm việc — dọc 3:4, ≥900×1200px, JPG <400KB",
+      "en": "Work/lifestyle photo — vertical 3:4, ≥900×1200px, JPG <400KB"
+    },
     "brandLabel": "Mason Nguyễn"
   },
   "ui": {
@@ -499,6 +507,10 @@ window.SITE_CONTENT = {
       "vi": "Dự án nổi bật",
       "en": "Featured projects"
     },
+    "coverPlaceholder": {
+      "vi": "ảnh đại diện dự án, ngang 4:3, ≥1600×1200px, JPG <400KB",
+      "en": "project cover, horizontal 4:3, ≥1600×1200px, JPG <400KB"
+    },
     "items": [
       {
         "id": "vietnam-airlines",
@@ -511,7 +523,7 @@ window.SITE_CONTENT = {
           "vi": "2023 — 2026",
           "en": "2023 — 2026"
         },
-        "cover": "../assets/images/hero-mason.jpg",
+        "cover": "",
         "problem": {
           "vi": "Vietnam Airlines cần vận hành quảng cáo Google Search nhất quán về thông điệp thương hiệu nhưng vẫn phù hợp văn hóa, hành vi tìm kiếm của từng thị trường quốc tế — cùng lúc, không lệch nhịp.",
           "en": "Vietnam Airlines needed Google Search advertising that stayed consistent in brand messaging yet locally relevant across many international markets — run in parallel, without falling out of sync."
@@ -545,7 +557,7 @@ window.SITE_CONTENT = {
           "vi": "2023 — 2026",
           "en": "2023 — 2026"
         },
-        "cover": "../assets/images/csr-treeplanting.jpg",
+        "cover": "",
         "problem": {
           "vi": "Panasonic Service Vietnam cần một chiến dịch kỷ niệm 20 năm (\"20th years of Trusted Service\") vừa thúc đẩy các gói bảo dưỡng và khuyến mãi bảo hành mở rộng, vừa xây dựng được cộng đồng khách hàng trung thành lâu dài.",
           "en": "Panasonic Service Vietnam needed a 20th-anniversary campaign (\"20 Years of Trusted Service\") that both drove maintenance/extended-warranty promotions and built a lasting loyal customer community."
@@ -579,7 +591,7 @@ window.SITE_CONTENT = {
           "vi": "2023",
           "en": "2023"
         },
-        "cover": "../assets/images/about-bridge.jpg",
+        "cover": "",
         "problem": {
           "vi": "Song Hồng cần thúc đẩy đồng thời 4 bộ sưu tập (Basic, Urban, Adore, Back Essential) qua cả kênh đại lý (B2B) lẫn người tiêu dùng cuối (B2C), đòi hỏi thông điệp nhất quán nhưng linh hoạt cho từng nhóm đối tượng.",
           "en": "Song Hong needed to promote four product collections (Basic, Urban, Adore, Back Essential) simultaneously across both dealer (B2B) and end-consumer (B2C) channels, with messaging that stayed consistent yet flexible per audience."
@@ -613,7 +625,7 @@ window.SITE_CONTENT = {
           "vi": "2022 — 2023",
           "en": "2022 — 2023"
         },
-        "cover": "../assets/images/about-mountain.jpg",
+        "cover": "",
         "problem": {
           "vi": "VPBank cần xây dựng nhận diện cho hai tính năng thanh toán mới — Tap2Phone và QR Payment — tới đúng phân khúc khách hàng SME, qua cả kênh sự kiện lẫn mạng xã hội.",
           "en": "VPBank needed to build awareness for two new payment features — Tap2Phone and QR Payment — targeted at the SME segment, across both event and social channels."
@@ -650,7 +662,7 @@ window.SITE_CONTENT = {
           "vi": "12/2024 & 01/2026",
           "en": "12/2024 & 01/2026"
         },
-        "cover": "../assets/images/about-mountain.jpg",
+        "cover": "",
         "problem": {
           "vi": "Cần triển khai chương trình thiện nguyện tại các tỉnh miền núi phía Bắc (Lào Cai & Hà Giang), đòi hỏi phối hợp với chính quyền địa phương và tổ chức tình nguyện để đảm bảo đúng đối tượng và đúng nhu cầu thực tế.",
           "en": "A charity program needed to run across mountainous northern provinces (Lao Cai & Ha Giang), requiring coordination with local authorities and volunteer organizations to reach the right beneficiaries with the right support."
@@ -679,6 +691,204 @@ window.SITE_CONTENT = {
             }
           }
         ]
+      }
+    ]
+  },
+  "proofOfWork": {
+    "eyebrow": {
+      "vi": "Minh chứng thực tế",
+      "en": "Proof of work"
+    },
+    "heading": {
+      "vi": "Hậu trường & Sản phẩm thực tế",
+      "en": "Behind the Scenes & Real Deliverables"
+    },
+    "intro": {
+      "vi": "Thư viện hình ảnh, tài liệu và khoảnh khắc hậu trường từ các dự án đã triển khai — lọc theo loại hoạt động, hoặc mở trực tiếp từ một case study cụ thể ở trên.",
+      "en": "A library of images, documents and behind-the-scenes moments from delivered projects — filter by activity type, or open it directly from a case study above."
+    },
+    "sheetUrl": "",
+    "viewDetailLabel": {
+      "vi": "Xem minh chứng dự án",
+      "en": "View project proof"
+    },
+    "modalCloseLabel": {
+      "vi": "Đóng",
+      "en": "Close"
+    },
+    "allLabel": {
+      "vi": "Tất cả",
+      "en": "All"
+    },
+    "emptyLabel": {
+      "vi": "Chưa có minh chứng nào ở mục này.",
+      "en": "No proof items in this category yet."
+    },
+    "categories": [
+      {
+        "id": "design",
+        "label": {
+          "vi": "Thiết kế",
+          "en": "Design"
+        }
+      },
+      {
+        "id": "tvc",
+        "label": {
+          "vi": "TVC & Sản xuất",
+          "en": "TVC & Production"
+        }
+      },
+      {
+        "id": "event",
+        "label": {
+          "vi": "Sự kiện",
+          "en": "Events"
+        }
+      },
+      {
+        "id": "livestream",
+        "label": {
+          "vi": "Livestream & Talkshow",
+          "en": "Livestream & Talkshow"
+        }
+      },
+      {
+        "id": "csr",
+        "label": {
+          "vi": "CSR",
+          "en": "CSR"
+        }
+      },
+      {
+        "id": "proposal",
+        "label": {
+          "vi": "Proposal & Báo cáo",
+          "en": "Proposals & Reports"
+        }
+      }
+    ],
+    "assets": [
+      {
+        "id": "a1",
+        "type": "image",
+        "category": "tvc",
+        "projectId": "panasonic",
+        "url": "",
+        "description": {
+          "vi": "Hậu trường quay TVC chiến dịch kỷ niệm 20 năm Panasonic \"Trusted Service\"",
+          "en": "Behind-the-scenes: TVC shoot for Panasonic's 20th-anniversary \"Trusted Service\" campaign"
+        }
+      },
+      {
+        "id": "a2",
+        "type": "image",
+        "category": "csr",
+        "projectId": "panasonic",
+        "url": "",
+        "description": {
+          "vi": "Hoạt động ngoài trời — chương trình trồng cây \"Sống khỏe góp xanh\"",
+          "en": "Outdoor CSR activation — the \"Sống khỏe góp xanh\" tree-planting program"
+        }
+      },
+      {
+        "id": "a3",
+        "type": "image",
+        "category": "design",
+        "projectId": "panasonic",
+        "url": "",
+        "description": {
+          "vi": "Ấn phẩm Landing Page & quảng cáo chiến dịch 20 năm",
+          "en": "Landing page & ad creative for the 20th-anniversary campaign"
+        }
+      },
+      {
+        "id": "a4",
+        "type": "pdf",
+        "category": "proposal",
+        "projectId": "vietnam-airlines",
+        "url": "",
+        "description": {
+          "vi": "Báo cáo hiệu suất Google Search Ads — 24 thị trường quốc tế",
+          "en": "Google Search Ads performance report — 24 international markets"
+        }
+      },
+      {
+        "id": "a5",
+        "type": "image",
+        "category": "design",
+        "projectId": "vietnam-airlines",
+        "url": "",
+        "description": {
+          "vi": "Ấn phẩm quảng cáo địa phương hóa theo từng thị trường",
+          "en": "Locally-adapted ad creative per market"
+        }
+      },
+      {
+        "id": "a6",
+        "type": "image",
+        "category": "event",
+        "projectId": "songhong-bedding",
+        "url": "",
+        "description": {
+          "vi": "Hội nghị khách hàng (Dealer Conference) — 4 bộ sưu tập Basic/Urban/Adore",
+          "en": "Dealer Conference — the Basic/Urban/Adore collections"
+        }
+      },
+      {
+        "id": "a7",
+        "type": "image",
+        "category": "design",
+        "projectId": "songhong-bedding",
+        "url": "",
+        "description": {
+          "vi": "Ấn phẩm truyền thông 4 bộ sưu tập Sông Hồng",
+          "en": "Campaign creative across Song Hong's four collections"
+        }
+      },
+      {
+        "id": "a8",
+        "type": "pdf",
+        "category": "proposal",
+        "projectId": "vpbank-sme",
+        "url": "",
+        "description": {
+          "vi": "Brief & proposal talkshow ra mắt Tap2Phone, QR Payment",
+          "en": "Brief & proposal for the Tap2Phone / QR Payment talkshow launch"
+        }
+      },
+      {
+        "id": "a9",
+        "type": "video",
+        "category": "livestream",
+        "projectId": "vpbank-sme",
+        "url": "",
+        "description": {
+          "vi": "Talkshow ra mắt tính năng thanh toán VPBank SME",
+          "en": "VPBank SME payment-feature launch talkshow"
+        }
+      },
+      {
+        "id": "a10",
+        "type": "image",
+        "category": "csr",
+        "projectId": "csr-songhong-garment",
+        "url": "",
+        "description": {
+          "vi": "Hoạt động cứu trợ tại Lào Cai & Hà Giang — 250 người thụ hưởng",
+          "en": "Relief activities across Lao Cai & Ha Giang — 250 beneficiaries"
+        }
+      },
+      {
+        "id": "a11",
+        "type": "image",
+        "category": "event",
+        "projectId": "csr-songhong-garment",
+        "url": "",
+        "description": {
+          "vi": "Đội 15 tình nguyện viên khảo sát & triển khai tại địa phương",
+          "en": "The 15-volunteer team scouting & delivering on-site"
+        }
       }
     ]
   },

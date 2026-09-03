@@ -75,7 +75,35 @@ Chọn 1 trong 3 cách sau — đều miễn phí và không cần biết lập 
 
 ---
 
-## 4. Nút "Tải CV" trỏ tới đâu?
+## 4. Thư viện "Minh chứng thực tế" (Proof of Work) — đồng bộ tự động từ Google Sheet (tuỳ chọn)
+
+Ở bản Nổi bật (`/bold/`), ngay dưới phần Case Study, có 1 khu vực thư viện ảnh/tài liệu hậu trường ("Proof of Work"), lọc được theo loại hoạt động (Thiết kế, TVC, Sự kiện...), và mỗi Case Study có nút **"Xem minh chứng dự án"** mở ra đúng các mục thuộc dự án đó.
+
+Mặc định, khu vực này hiển thị **dữ liệu mẫu** đã có sẵn trong `data/content.json` (mục `proofOfWork.assets`) — mô tả đúng các hoạt động thật đã làm, nhưng chưa có file ảnh/PDF thật đính kèm (hiện ra dạng ô placeholder viền đứt nét). Nếu bạn muốn khu vực này tự động lấy ảnh/file thật và cập nhật mà **không cần sửa code mỗi lần**, làm theo các bước sau:
+
+1. Tạo 1 Google Sheet mới, đặt các cột theo đúng thứ tự (tên cột không phân biệt hoa/thường, có hay không có khoảng trắng/gạch dưới đều được):
+
+   | id | type | category | projectId | url | description_vi | description_en |
+   |---|---|---|---|---|---|---|
+   | a1 | image | design | panasonic | (link ảnh) | (mô tả tiếng Việt) | (mô tả tiếng Anh) |
+
+   - `type`: `image`, `pdf`, hoặc `video`.
+   - `category`: 1 trong 6 mã đã định nghĩa sẵn — `design`, `tvc`, `event`, `livestream`, `csr`, `proposal`.
+   - `projectId`: phải khớp đúng `id` của dự án trong `content.json` (`vietnam-airlines`, `panasonic`, `songhong-bedding`, `vpbank-sme`, `csr-songhong-garment`) — để nút "Xem minh chứng dự án" lọc đúng.
+   - `url`: link ảnh/file. Với ảnh/file trên Google Drive, mở file → **Share → General access → Anyone with the link** → copy link, rồi đổi phần `/view?usp=...` thành `/preview` để ảnh hiện trực tiếp thay vì mở trang xem trước của Drive.
+   - Chỉ dùng **1 sheet (1 tab) duy nhất** — để đơn giản, đừng tạo thêm tab phụ.
+
+2. Bấm **Share** (góc trên bên phải Google Sheet) → **General access** → đổi thành **Anyone with the link** → **Viewer**. (Không cần "Publish to web", không cần API key.)
+
+3. Copy link ở thanh địa chỉ trình duyệt (dạng `https://docs.google.com/spreadsheets/d/xxxxxxxx/edit...`), dán vào `data/content.json`, mục `proofOfWork.sheetUrl` (hiện đang để trống `""`).
+
+4. Chạy lại `python3 scripts/build_content_js.py` như bình thường mỗi khi sửa `content.json`.
+
+**Lưu ý quan trọng:** vì bước này cần gọi ra Google (qua Internet), nó **chỉ chạy được sau khi website đã deploy lên 1 link http(s) thật** (Netlify/Vercel/GitHub Pages ở mục 3) — mở file bằng double-click sẽ **không** lấy được dữ liệu từ Sheet (trình duyệt chặn vì lý do bảo mật), và trang sẽ **tự động hiện lại dữ liệu mẫu** thay vì báo lỗi. Đây là điều bình thường, không phải lỗi — cứ kiểm tra bằng cách mở link đã deploy.
+
+---
+
+## 5. Nút "Tải CV" trỏ tới đâu?
 
 Nút Tải CV tải file PDF trong `assets/cv/`:
 
@@ -86,15 +114,16 @@ Nút Tải CV tải file PDF trong `assets/cv/`:
 
 ---
 
-## 5. Muốn sửa nội dung sau này?
+## 6. Muốn sửa nội dung sau này?
 
 Cách an toàn nhất: đưa thư mục `portfolio-mason` này cho một AI coding assistant (như Claude Code) hoặc một lập trình viên, và nói rõ muốn sửa gì (ví dụ "đổi số điện thoại", "thêm 1 dự án mới vào phần Projects"). Họ chỉ cần sửa trong `data/content.json` rồi chạy lại `scripts/build_content_js.py` — nội dung sẽ tự cập nhật ở **cả 2 bản thiết kế cùng lúc**, không bị lệch nhau.
 
 ---
 
-## 6. Đã kiểm tra
+## 7. Đã kiểm tra
 
 - Mở trực tiếp bằng double-click, không lỗi console.
 - Responsive tốt ở 375px (điện thoại), 768px (tablet), 1440px (desktop).
 - Animation tự tắt khi máy bật "Reduce Motion" (Cài đặt hệ điều hành → Trợ năng).
 - Chuyển ngôn ngữ Việt/Anh mượt, không tải lại trang.
+- Thư viện "Proof of Work" (mục 4): hiện dữ liệu mẫu khi mở local hoặc chưa gắn Google Sheet; sẵn sàng nhận dữ liệu thật ngay khi dán link Sheet sau khi deploy — không lỗi console ở cả 2 trường hợp.
