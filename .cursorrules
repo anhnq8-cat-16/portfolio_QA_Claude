@@ -5,8 +5,9 @@ This is Nguyễn Quý Anh's ("Mason Nguyen") personal job-hunting portfolio/CV s
 ## What this is
 
 Two static, self-contained design versions of the same portfolio, sharing one content source:
-- `/bold/` — **chosen as the primary version.** Dark theme, animated gradient-mesh hero, magnetic buttons, tilt project cards. The root `index.html` redirects here.
-- `/minimal/` — light theme, restrained, Lenis smooth scroll + GSAP scroll reveals, custom cursor. Kept for reference/comparison, not deleted, but not the primary experience.
+- `/bold/` — **chosen as the primary version.** Dark theme, animated gradient-mesh hero, magnetic buttons, tilt project cards, a sticky-scroll "Ownership" positioning section (`data.ownership`, between About and Experience). The root `index.html` redirects here.
+- `/minimal/` — light theme, restrained, Lenis smooth scroll + GSAP scroll reveals, custom cursor. Kept for reference/comparison, not deleted, but not the primary experience — the Ownership section was NOT added here (Bold-only; ask the user before porting it over).
+- `/prototypes/` — throwaway Tailwind+vanilla-JS wireframes used to review layout/copy before building the real thing into `bold/`. Not linked from the live site. `ownership-section.html` is the archived first draft of the section now live in Bold — historical reference only, the real implementation has since diverged from it.
 
 ## Hard constraints — do not violate these
 
@@ -26,6 +27,12 @@ Two static, self-contained design versions of the same portfolio, sharing one co
   Forgetting this step means edits silently don't show up on the site — this is the single most common mistake when touching this project.
 - `scripts/generate_cv_pdf.py` generates the two downloadable CV PDFs (`assets/cv/NguyenQuyAnh-CV-VI.pdf` / `-EN.pdf`) directly from `content.json`, using `fpdf2` + the system's Tahoma font (confirmed to render Vietnamese diacritics correctly — Helvetica/core PDF fonts do not). Re-run it after any content change so the downloadable CV stays in sync with the site.
 - `clients.groups[].names` entries are objects, not plain strings: `{name, logo?, projectId?}`. `logo` is a relative path under `assets/images/logos/` (omit it for a client with no logo — the UI falls back to a text-only tile); `projectId` links the tile to a matching `projects.items[].id` so clicking it scrolls to that case study. Both `bold` and `minimal` read this same shape — if you add a client, update both versions' render functions only if you change the *shape* again, not for ordinary data edits.
+- `ownership.chapters[]` (Bold only) mixes two layouts on purpose: a chapter with a `stat` field renders a stat-callout card instead of the generic `cases` placeholder grid (see `renderOwnership()` in `bold/js/main.js` — it branches on `chapter.stat`). A `cases[]` entry with `projectId` renders as clickable (scrolls to that project); without it, renders as an inert placeholder. Don't add a fourth chapter without deciding which layout it needs.
+
+## Two footguns already hit once — don't reintroduce either
+
+1. **Never target `.stat-value` for anything other than the animated About counters.** `setupCounters()` does `document.querySelectorAll(".stat-value")` and expects every match to carry `data-count`/`data-prefix`/`data-suffix`. Reusing that class purely for its gradient-text look (e.g. the Ownership section's "50%") gets silently overwritten with the literal string `"null"` once the counter's fallback timer runs, since a missing attribute reads back as `null` and string-concatenates as text. If you want that visual treatment elsewhere, copy the CSS under a new class name (see `.ownership-stat-value`) — never reuse `.stat-value` itself.
+2. **`setupLenis()` must drive Lenis from exactly one clock.** Calling `lenis.raf()` from both a manual `requestAnimationFrame` loop and `gsap.ticker.add()` at the same time feeds it two incompatible time epochs — `scrollTo()` then returns/resolves normally but the scroll never actually animates, with no error anywhere. Already fixed in both `bold/js/main.js` and `minimal/js/main.js` (GSAP's ticker drives Lenis exclusively whenever GSAP is loaded; the manual rAF loop is only a fallback for when it isn't). If you ever rewrite `setupLenis()`, keep that either/or — don't run both.
 
 ## Local dev server — use `scripts/dev_server.py`, not `python3 -m http.server`
 
@@ -41,6 +48,7 @@ python3 scripts/dev_server.py . 4173
 - Intern-mentoring count discrepancy between the two source CVs: confirmed as **9** (the EN CV's number) on 2026-09-02, overriding the earlier VI-CV-based guess of 8.
 - Deploy: user asked for full auto-deploy with no further confirmation needed (2026-08-29). No hosting CLI (gh/vercel/netlify) was installed or authenticated on the machine this was built on, so it could not be completed end-to-end — Netlify Drop (no login required) was left as the one manual step. Check README.md / git remotes / recent commits for whether this has since been completed.
 - 2026-09-02 revision batch (annotated directly in the review doc, not as native Word comments — diff the two versions of `Noi-dung-Portfolio-Mason.docx` if similar review docs appear again): years bumped 4→5 throughout, formal "Tôi" pronoun instead of "Mình", client logos + hover/click-through added to Bold's client grid, About photo layout made flexible for more images (user said 3-5 more coming later, not yet supplied), a 5th stat (ROAS) added — `about.highlights` and both versions' stats-grid CSS must stay `auto-fit`, not a fixed 4-column grid, if you touch that again.
+- New "Ownership" positioning section (Bold only), added 2026-09-03: reviewed first as a standalone `prototypes/ownership-section.html` wireframe, approved by the user, then integrated for real into `bold/`. Uses "8 interns, 4 (50%) promoted" for its leadership stat — note this is a DIFFERENT figure than the "9 interns" used in the main Experience bullet (see the 2026-09-02 entry above). Both numbers came directly from the user across two separate messages and were flagged back to them as inconsistent; neither has been reconciled as of this writing — don't silently "fix" one to match the other without asking.
 
 ## Where to look
 
