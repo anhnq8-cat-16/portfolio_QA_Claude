@@ -55,21 +55,13 @@ window.SITE_CONTENT = {
         "vi": "Định vị",
         "en": "Positioning"
       },
-      "experience": {
-        "vi": "Kinh nghiệm",
-        "en": "Experience"
-      },
       "projects": {
         "vi": "Dự án",
         "en": "Projects"
       },
-      "skills": {
-        "vi": "Kỹ năng",
-        "en": "Skills"
-      },
-      "education": {
-        "vi": "Học vấn",
-        "en": "Education"
+      "capabilities": {
+        "vi": "Năng lực",
+        "en": "Capabilities"
       },
       "contact": {
         "vi": "Liên hệ",
@@ -158,16 +150,8 @@ window.SITE_CONTENT = {
     },
     "paragraphs": [
       {
-        "vi": "Tôi là chuyên gia Quản lý Tài khoản (Account Management) và Quản lý Dự án với hơn 5 năm kinh nghiệm tại môi trường Agency — bắt đầu từ vị trí Marketing Intern và phát triển lên Senior Account Executive tại Novaon Digital.",
-        "en": "I'm an Account Management and Project Management specialist with 5+ years in a digital agency environment — starting as a Marketing Intern and growing into a Senior Account Executive at Novaon Digital."
-      },
-      {
-        "vi": "Vai trò của tôi là cầu nối chiến lược giữa Agency và Khách hàng: tổng hợp, phân tích thông tin và điều phối các chiến dịch truyền thông tích hợp (IMC) đa kênh. Tôi đã có kinh nghiệm thực chiến trong nhiều ngành lớn như Hàng không, Điện máy, Bán lẻ và Ngân hàng.",
-        "en": "My role is the strategic bridge between Agency and Client: synthesizing information and coordinating multi-channel integrated marketing communications (IMC) campaigns. I've worked hands-on across major industries — Aviation, Home Appliances, Retail and Banking."
-      },
-      {
-        "vi": "Mục tiêu tiếp theo là mang tư duy quản trị chiến dịch và tối ưu vận hành đã tích lũy ở Agency sang một đội ngũ Marketing phía nhãn hàng, đồng thời tiếp tục phát triển năng lực quản trị kinh doanh với kế hoạch học Thạc sĩ Quản trị Kinh doanh (MBA) tại Vương quốc Anh vào năm 2027.",
-        "en": "My next step is bringing the campaign-management and operations-optimization mindset built at the agency into an in-house brand marketing team — while continuing to grow as a business leader, with a planned MBA in the UK in 2027."
+        "vi": "Tôi là chuyên gia Quản lý Tài khoản và Quản lý Dự án với hơn 5 năm kinh nghiệm tại Novaon Digital — từ Marketing Intern lên Senior Account Executive, đóng vai trò cầu nối chiến lược giữa Agency và Khách hàng trong các ngành Hàng không, Điện máy, Bán lẻ và Ngân hàng.",
+        "en": "I'm an Account and Project Management specialist with 5+ years at Novaon Digital — from Marketing Intern to Senior Account Executive — serving as the strategic bridge between Agency and Client across Aviation, Home Appliances, Retail and Banking."
       }
     ],
     "highlights": [
@@ -848,6 +832,32 @@ window.SITE_CONTENT = {
       }
     ]
   },
+  "capabilities": {
+    "eyebrow": {
+      "vi": "Năng lực công nghệ & vận hành",
+      "en": "Tech & operational capability"
+    },
+    "heading": {
+      "vi": "Năng lực",
+      "en": "Capabilities"
+    },
+    "experienceLabel": {
+      "vi": "Kinh nghiệm",
+      "en": "Experience"
+    },
+    "educationLabel": {
+      "vi": "Học vấn",
+      "en": "Education"
+    },
+    "competenciesLabel": {
+      "vi": "Năng lực cốt lõi",
+      "en": "Core competencies"
+    },
+    "skillsLabel": {
+      "vi": "Kỹ năng & Công cụ",
+      "en": "Skills & tools"
+    }
+  },
   "competencies": {
     "eyebrow": {
       "vi": "Năng lực cốt lõi",
@@ -1065,6 +1075,10 @@ window.SITE_CONTENT = {
         }
       }
     ],
+    "planNote": {
+      "vi": "Dự kiến học Thạc sĩ Quản trị Kinh doanh (MBA) tại Vương quốc Anh vào năm 2027",
+      "en": "Planning an MBA in the UK in 2027"
+    },
     "certificates": [
       {
         "name": "TEG Certificate Level 4",

@@ -3,7 +3,7 @@
 
   var DATA = window.SITE_CONTENT;
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var state = { lang: localStorage.getItem("mason-lang") || "vi" };
+  var state = { lang: localStorage.getItem("mason-lang") || "vi", activeProjectTab: 0, openExperienceIndex: 0 };
 
   function t(field) {
     if (field && typeof field === "object" && !Array.isArray(field) && ("vi" in field || "en" in field)) {
@@ -232,151 +232,177 @@
     });
   }
 
-  function renderExperience() {
-    setText("experienceEyebrow", t(DATA.experience.eyebrow));
-    setText("experienceHeading", t(DATA.experience.heading));
-
-    var timeline = document.getElementById("timeline");
-    timeline.innerHTML = "";
-    DATA.experience.items.forEach(function (item) {
-      var row = el("div", "timeline-item reveal-up");
-      var period = el("div", "timeline-period", t(item.period));
-      var body = el("div", "timeline-body");
-      body.appendChild(el("div", "timeline-role", t(item.role)));
-      body.appendChild(el("div", "timeline-company", item.company));
-      body.appendChild(el("p", "timeline-summary", t(item.summary)));
-      var ul = el("ul", "timeline-bullets");
-      item.bullets.forEach(function (b) { ul.appendChild(el("li", null, t(b))); });
-      body.appendChild(ul);
-      var tags = el("div", "timeline-tags");
-      item.tags.forEach(function (tag) { tags.appendChild(el("span", "tag", tag)); });
-      body.appendChild(tags);
-      row.appendChild(period);
-      row.appendChild(body);
-      timeline.appendChild(row);
-    });
-  }
-
   function renderProjects() {
     setText("projectsEyebrow", t(DATA.projects.eyebrow));
     setText("projectsHeading", t(DATA.projects.heading));
 
-    var list = document.getElementById("projectsList");
-    list.innerHTML = "";
+    var tabsEl = document.getElementById("projectTabs");
+    tabsEl.innerHTML = "";
     DATA.projects.items.forEach(function (proj, i) {
-      var card = el("article", "project-card reveal-up");
-      card.setAttribute("data-project-id", proj.id);
+      var isActive = i === state.activeProjectTab;
+      var btn = el("button", "project-tab" + (isActive ? " is-active" : ""), t(proj.client));
+      btn.type = "button";
+      btn.setAttribute("data-tab-index", String(i));
+      btn.setAttribute("role", "tab");
+      btn.setAttribute("aria-selected", isActive ? "true" : "false");
+      tabsEl.appendChild(btn);
+    });
 
-      var media = el("div", "project-media");
-      var inner = el("div", "project-media-inner");
-      var img = el("img");
-      img.src = proj.cover;
-      img.loading = "lazy";
-      img.alt = t(proj.client) + " — " + t(proj.category);
-      inner.appendChild(img);
-      media.appendChild(inner);
+    renderProjectPanel();
+  }
 
-      var body = el("div", "project-body");
-      body.appendChild(el("div", "project-index", "0" + (i + 1)));
-      body.appendChild(el("div", "project-client", t(proj.client)));
-      body.appendChild(el("div", "project-category", t(proj.category) + " · " + t(proj.period)));
+  function renderProjectPanel() {
+    var proj = DATA.projects.items[state.activeProjectTab];
+    var panel = document.getElementById("projectPanel");
+    panel.innerHTML = "";
 
-      [["problem", state.lang === "vi" ? "Vấn đề" : "Challenge"],
-       ["action", state.lang === "vi" ? "Cách triển khai" : "What I did"],
-       ["result", state.lang === "vi" ? "Kết quả" : "Result"]].forEach(function (pair) {
-        var block = el("div", "project-block");
-        block.appendChild(el("div", "project-block-label", pair[1]));
-        block.appendChild(el("p", null, t(proj[pair[0]])));
-        body.appendChild(block);
+    var media = el("div", "project-media");
+    var inner = el("div", "project-media-inner");
+    var img = el("img");
+    img.src = proj.cover;
+    img.loading = "lazy";
+    img.alt = t(proj.client) + " — " + t(proj.category);
+    inner.appendChild(img);
+    media.appendChild(inner);
+
+    var body = el("div", "project-body");
+    body.appendChild(el("div", "project-index", "0" + (state.activeProjectTab + 1)));
+    body.appendChild(el("div", "project-client", t(proj.client)));
+    body.appendChild(el("div", "project-category", t(proj.category) + " · " + t(proj.period)));
+
+    [["problem", state.lang === "vi" ? "Vấn đề" : "Challenge"],
+     ["action", state.lang === "vi" ? "Cách triển khai" : "What I did"],
+     ["result", state.lang === "vi" ? "Kết quả" : "Result"]].forEach(function (pair) {
+      var block = el("div", "project-block");
+      block.appendChild(el("div", "project-block-label", pair[1]));
+      block.appendChild(el("p", null, t(proj[pair[0]])));
+      body.appendChild(block);
+    });
+
+    if (proj.metrics && proj.metrics.length) {
+      var metrics = el("div", "project-metrics");
+      proj.metrics.forEach(function (m) {
+        var mEl = el("div", "project-metric");
+        mEl.appendChild(el("div", "project-metric-value", m.value));
+        mEl.appendChild(el("div", "project-metric-label", t(m.label)));
+        metrics.appendChild(mEl);
       });
+      body.appendChild(metrics);
+    }
 
-      if (proj.metrics && proj.metrics.length) {
-        var metrics = el("div", "project-metrics");
-        proj.metrics.forEach(function (m) {
-          var mEl = el("div", "project-metric");
-          mEl.appendChild(el("div", "project-metric-value", m.value));
-          mEl.appendChild(el("div", "project-metric-label", t(m.label)));
-          metrics.appendChild(mEl);
-        });
-        body.appendChild(metrics);
-      }
+    if (proj.gallery && proj.gallery.length) {
+      var gallery = el("div", "project-gallery");
+      proj.gallery.forEach(function (src) {
+        var gImg = el("img");
+        gImg.src = src;
+        gImg.loading = "lazy";
+        gImg.alt = t(proj.client) + " — " + (state.lang === "vi" ? "hình ảnh dự án" : "project photo");
+        gallery.appendChild(gImg);
+      });
+      body.appendChild(gallery);
+    }
 
-      if (proj.gallery && proj.gallery.length) {
-        var gallery = el("div", "project-gallery");
-        proj.gallery.forEach(function (src) {
-          var gImg = el("img");
-          gImg.src = src;
-          gImg.loading = "lazy";
-          gImg.alt = t(proj.client) + " — " + (state.lang === "vi" ? "hình ảnh dự án" : "project photo");
-          gallery.appendChild(gImg);
-        });
-        body.appendChild(gallery);
-      }
+    panel.appendChild(media);
+    panel.appendChild(body);
 
-      card.appendChild(media);
-      card.appendChild(body);
-      list.appendChild(card);
-    });
+    if (window.gsap && !reduceMotion) {
+      window.gsap.fromTo(panel, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" });
+    }
+    setupTiltCards(); // each tab switch creates a fresh .project-media node that needs its own tilt binding
+    if (window.ScrollTrigger) window.ScrollTrigger.refresh();
   }
 
-  function renderCompetencies() {
-    setText("competenciesEyebrow", t(DATA.competencies.eyebrow));
-    setText("competenciesHeading", t(DATA.competencies.heading));
-    var grid = document.getElementById("competenciesGrid");
-    grid.innerHTML = "";
-    DATA.competencies.items.forEach(function (comp, i) {
-      var row = el("div", "competency-row reveal-up");
-      row.appendChild(el("div", "competency-index", String(i + 1).padStart(2, "0")));
-      var right = el("div");
-      right.appendChild(el("div", "competency-title", t(comp.title)));
-      right.appendChild(el("div", "competency-items", comp.items.map(t).join(" · ")));
-      row.appendChild(right);
-      grid.appendChild(row);
-    });
-  }
+  function renderCapabilities() {
+    var Cp = DATA.capabilities;
+    setText("capabilitiesEyebrow", t(Cp.eyebrow));
+    setText("capabilitiesHeading", t(Cp.heading));
+    setText("capExperienceLabel", t(Cp.experienceLabel));
+    setText("capEducationLabel", t(Cp.educationLabel));
+    setText("capCompetenciesLabel", t(Cp.competenciesLabel));
+    setText("capSkillsLabel", t(Cp.skillsLabel));
 
-  function renderSkills() {
-    setText("skillsEyebrow", t(DATA.skills.eyebrow));
-    setText("skillsHeading", t(DATA.skills.heading));
-    var grid = document.getElementById("skillsGrid");
-    grid.innerHTML = "";
+    // -- Experience, as an accordion (collapsed rows expand to the full role detail) --
+    var accordion = document.getElementById("capAccordion");
+    accordion.innerHTML = "";
+    DATA.experience.items.forEach(function (item, i) {
+      var isOpen = state.openExperienceIndex === i;
+      var itemEl = el("div", "cap-accordion-item" + (isOpen ? " is-open" : ""));
+      itemEl.setAttribute("data-accordion-index", String(i));
+
+      var trigger = el("button", "cap-accordion-trigger");
+      trigger.type = "button";
+      trigger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      var left = el("div");
+      left.appendChild(el("div", "cap-accordion-role", t(item.role)));
+      left.appendChild(el("div", "cap-accordion-meta", item.company + " · " + t(item.period)));
+      trigger.appendChild(left);
+      trigger.appendChild(el("span", "cap-accordion-icon"));
+
+      var panelWrap = el("div", "cap-accordion-panel-wrap");
+      var panelInner = el("div", "cap-accordion-panel-inner");
+      var bodyEl = el("div", "cap-accordion-body");
+      bodyEl.appendChild(el("p", null, t(item.summary)));
+      var ul = el("ul");
+      item.bullets.forEach(function (b) { ul.appendChild(el("li", null, t(b))); });
+      bodyEl.appendChild(ul);
+      var tags = el("div", "cap-accordion-tags");
+      item.tags.forEach(function (tag) { tags.appendChild(el("span", "tag", tag)); });
+      bodyEl.appendChild(tags);
+      panelInner.appendChild(bodyEl);
+      panelWrap.appendChild(panelInner);
+
+      itemEl.appendChild(trigger);
+      itemEl.appendChild(panelWrap);
+      accordion.appendChild(itemEl);
+    });
+
+    // -- Education --
+    var sc = DATA.education.schools[0];
+    var eduBody = document.getElementById("capEducationBody");
+    eduBody.innerHTML = "";
+    eduBody.appendChild(el("div", "cap-education-school", t(sc.school)));
+    eduBody.appendChild(el("div", "cap-education-program", t(sc.program)));
+    eduBody.appendChild(el("div", "cap-education-period", t(sc.period)));
+    eduBody.appendChild(el("div", "cap-education-honor", t(sc.honor)));
+    if (DATA.education.planNote) {
+      eduBody.appendChild(el("div", "cap-education-note", t(DATA.education.planNote)));
+    }
+    var certList = el("div", "cap-cert-list");
+    DATA.education.certificates.forEach(function (c) {
+      certList.appendChild(el("span", "cert-pill", t(c.name)));
+    });
+    eduBody.appendChild(certList);
+
+    // -- Core competencies --
+    var compBody = document.getElementById("capCompetenciesBody");
+    compBody.innerHTML = "";
+    DATA.competencies.items.forEach(function (comp) {
+      var row = el("div", "competency-row");
+      row.appendChild(el("div", "competency-title", t(comp.title)));
+      row.appendChild(el("div", "competency-items", comp.items.map(t).join(" · ")));
+      compBody.appendChild(row);
+    });
+
+    // -- Skills & tools --
+    var skillsBody = document.getElementById("capSkillsBody");
+    skillsBody.innerHTML = "";
+    var skillsGridEl = el("div", "skills-grid");
     DATA.skills.categories.forEach(function (cat) {
-      var col = el("div", "skill-category reveal-up");
+      var col = el("div", "skill-category");
       col.appendChild(el("div", "skill-category-label", t(cat.label)));
-      var tags = el("div", "skill-tags");
-      cat.items.forEach(function (item) { tags.appendChild(el("span", "skill-tag", t(item))); });
-      col.appendChild(tags);
-      grid.appendChild(col);
+      var tagsEl = el("div", "skill-tags");
+      cat.items.forEach(function (item) { tagsEl.appendChild(el("span", "skill-tag", t(item))); });
+      col.appendChild(tagsEl);
+      skillsGridEl.appendChild(col);
     });
+    skillsBody.appendChild(skillsGridEl);
 
-    var langRow = document.getElementById("languagesRow");
+    var langRow = document.getElementById("capLanguagesRow");
     langRow.innerHTML = "";
     DATA.skills.languages.forEach(function (l) {
-      var item = el("div", "language-item reveal-up");
+      var item = el("div", "language-item");
       item.innerHTML = "<b>" + t(l.name) + "</b> — " + t(l.level);
       langRow.appendChild(item);
-    });
-  }
-
-  function renderEducation() {
-    setText("educationEyebrow", t(DATA.education.eyebrow));
-    setText("educationHeading", t(DATA.education.heading));
-
-    var list = document.getElementById("educationList");
-    list.innerHTML = "";
-    DATA.education.schools.forEach(function (sc) {
-      var item = el("div", "education-item reveal-up");
-      item.appendChild(el("div", "education-school", t(sc.school)));
-      item.appendChild(el("div", "education-program", t(sc.program)));
-      item.appendChild(el("div", "education-period", t(sc.period)));
-      item.appendChild(el("div", "education-honor", t(sc.honor)));
-      list.appendChild(item);
-    });
-
-    var certs = document.getElementById("certificatesList");
-    certs.innerHTML = "";
-    DATA.education.certificates.forEach(function (c) {
-      certs.appendChild(el("span", "cert-pill", t(c.name) + " · " + c.issuer));
     });
   }
 
@@ -407,11 +433,8 @@
     renderClients();
     renderAbout();
     renderOwnership();
-    renderExperience();
     renderProjects();
-    renderCompetencies();
-    renderSkills();
-    renderEducation();
+    renderCapabilities();
     renderContact();
     renderFooter();
   }
@@ -618,7 +641,19 @@
   }
 
   function scrollToProject(id, lenis) {
-    var target = document.querySelector('.project-card[data-project-id="' + id + '"]');
+    // Projects live behind tabs now (only one panel in the DOM at a time), so
+    // "go to project X" means: select its tab, then scroll the section into view.
+    var idx = DATA.projects.items.findIndex(function (p) { return p.id === id; });
+    if (idx === -1) return;
+    if (idx !== state.activeProjectTab) {
+      state.activeProjectTab = idx;
+      document.querySelectorAll(".project-tab").forEach(function (b, i) {
+        b.classList.toggle("is-active", i === idx);
+        b.setAttribute("aria-selected", i === idx ? "true" : "false");
+      });
+      renderProjectPanel();
+    }
+    var target = document.getElementById("projects");
     if (!target) return;
     if (lenis) lenis.scrollTo(target, { offset: -70 });
     else target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
@@ -635,6 +670,38 @@
       if (e.key !== "Enter" && e.key !== " ") return;
       var item = e.target.closest(itemSelector + "[data-project-id]");
       if (item) { e.preventDefault(); scrollToProject(item.getAttribute("data-project-id"), lenis); }
+    });
+  }
+
+  function setupProjectTabs() {
+    document.getElementById("projectTabs").addEventListener("click", function (e) {
+      var btn = e.target.closest(".project-tab");
+      if (!btn) return;
+      var idx = parseInt(btn.getAttribute("data-tab-index"), 10);
+      if (idx === state.activeProjectTab) return;
+      state.activeProjectTab = idx;
+      document.querySelectorAll(".project-tab").forEach(function (b, i) {
+        b.classList.toggle("is-active", i === idx);
+        b.setAttribute("aria-selected", i === idx ? "true" : "false");
+      });
+      renderProjectPanel();
+    });
+  }
+
+  function setupCapAccordion() {
+    document.getElementById("capAccordion").addEventListener("click", function (e) {
+      var trigger = e.target.closest(".cap-accordion-trigger");
+      if (!trigger) return;
+      var item = trigger.closest(".cap-accordion-item");
+      var idx = parseInt(item.getAttribute("data-accordion-index"), 10);
+      state.openExperienceIndex = state.openExperienceIndex === idx ? -1 : idx;
+      document.querySelectorAll(".cap-accordion-item").forEach(function (it) {
+        var i = parseInt(it.getAttribute("data-accordion-index"), 10);
+        var open = i === state.openExperienceIndex;
+        it.classList.toggle("is-open", open);
+        it.querySelector(".cap-accordion-trigger").setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      if (window.ScrollTrigger) window.ScrollTrigger.refresh();
     });
   }
 
@@ -696,6 +763,8 @@
     setupAnchorLinks(lenis);
     setupProjectLinkDelegation("clientsGroups", ".client-tile", lenis);
     setupProjectLinkDelegation("ownershipChapters", ".ownership-case", lenis);
+    setupProjectTabs();
+    setupCapAccordion();
     setupScrollReveal();
     setupCounters();
     setupMeshParallax();

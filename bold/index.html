@@ -30,10 +30,8 @@
     <nav class="main-nav" id="mainNav" aria-label="Chính">
       <a href="#about" data-nav="about"></a>
       <a href="#ownership" data-nav="ownership"></a>
-      <a href="#experience" data-nav="experience"></a>
       <a href="#projects" data-nav="projects"></a>
-      <a href="#skills" data-nav="skills"></a>
-      <a href="#education" data-nav="education"></a>
+      <a href="#capabilities" data-nav="capabilities"></a>
       <a href="#contact" data-nav="contact"></a>
     </nav>
 
@@ -48,10 +46,8 @@
   <nav class="mobile-nav" id="mobileNav" aria-label="Di động">
     <a href="#about" data-nav="about"></a>
     <a href="#ownership" data-nav="ownership"></a>
-    <a href="#experience" data-nav="experience"></a>
     <a href="#projects" data-nav="projects"></a>
-    <a href="#skills" data-nav="skills"></a>
-    <a href="#education" data-nav="education"></a>
+    <a href="#capabilities" data-nav="capabilities"></a>
     <a href="#contact" data-nav="contact"></a>
   </nav>
 </header>
@@ -122,45 +118,38 @@
     </div>
   </section>
 
-  <section class="experience" id="experience">
-    <div class="wrap">
-      <p class="eyebrow reveal-up" id="experienceEyebrow"></p>
-      <h2 class="section-heading reveal-up" id="experienceHeading"></h2>
-      <div class="timeline" id="timeline"></div>
-    </div>
-  </section>
-
   <section class="projects" id="projects">
     <div class="wrap">
       <p class="eyebrow reveal-up" id="projectsEyebrow"></p>
       <h2 class="section-heading reveal-up" id="projectsHeading"></h2>
-    </div>
-    <div class="projects-list" id="projectsList"></div>
-  </section>
-
-  <section class="competencies" id="competencies">
-    <div class="wrap">
-      <p class="eyebrow reveal-up" id="competenciesEyebrow"></p>
-      <h2 class="section-heading reveal-up" id="competenciesHeading"></h2>
-      <div class="competencies-list" id="competenciesGrid"></div>
+      <div class="project-tabs" id="projectTabs" role="tablist"></div>
+      <div class="project-panel" id="projectPanel"></div>
     </div>
   </section>
 
-  <section class="skills" id="skills">
+  <section class="capabilities" id="capabilities">
     <div class="wrap">
-      <p class="eyebrow reveal-up" id="skillsEyebrow"></p>
-      <h2 class="section-heading reveal-up" id="skillsHeading"></h2>
-      <div class="skills-grid" id="skillsGrid"></div>
-      <div class="languages-row" id="languagesRow"></div>
-    </div>
-  </section>
-
-  <section class="education" id="education">
-    <div class="wrap">
-      <p class="eyebrow reveal-up" id="educationEyebrow"></p>
-      <h2 class="section-heading reveal-up" id="educationHeading"></h2>
-      <div class="education-list" id="educationList"></div>
-      <div class="certificates-list" id="certificatesList"></div>
+      <p class="eyebrow reveal-up" id="capabilitiesEyebrow"></p>
+      <h2 class="section-heading reveal-up" id="capabilitiesHeading"></h2>
+      <div class="capabilities-grid">
+        <div class="cap-card cap-experience reveal-up">
+          <h3 class="cap-card-title" id="capExperienceLabel"></h3>
+          <div class="cap-accordion" id="capAccordion"></div>
+        </div>
+        <div class="cap-card cap-education reveal-up">
+          <h3 class="cap-card-title" id="capEducationLabel"></h3>
+          <div id="capEducationBody"></div>
+        </div>
+        <div class="cap-card cap-competencies reveal-up">
+          <h3 class="cap-card-title" id="capCompetenciesLabel"></h3>
+          <div id="capCompetenciesBody"></div>
+        </div>
+        <div class="cap-card cap-skills reveal-up">
+          <h3 class="cap-card-title" id="capSkillsLabel"></h3>
+          <div id="capSkillsBody"></div>
+          <div class="languages-row" id="capLanguagesRow"></div>
+        </div>
+      </div>
     </div>
   </section>
 
