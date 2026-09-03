@@ -139,12 +139,12 @@ window.SITE_CONTENT = {
       "en": "About Me"
     },
     "headline": {
-      "vi": "5 năm làm cầu nối chiến lược giữa Agency và Nhãn hàng — giờ sẵn sàng ngồi phía bên kia bàn.",
-      "en": "5 years as the strategic bridge between Agency and Brand — ready to sit on the client side of the table."
+      "vi": "5 năm làm cầu nối chiến lược giữa Agency và Nhãn hàng — giờ là lúc tôi sẵn sàng bước sang vai trò làm chủ phía Client.",
+      "en": "5 years as the strategic bridge between Agency and Brand — ready to take ownership on the Client side."
     },
     "subheadline": {
-      "vi": "Tôi là Quý Anh — chuyên gia Quản lý Dự án Marketing, từng trực tiếp điều phối hơn 40 chiến dịch IMC cho Vietnam Airlines, Panasonic, Long Hải, Sông Hồng và nhiều nhãn hàng lớn khác.",
-      "en": "I'm Quy Anh — a Marketing Project Management specialist who has directly coordinated 40+ IMC campaigns for Vietnam Airlines, Panasonic, Long Hai, Song Hong and many other major brands."
+      "vi": "Tôi là Quý Anh — chuyên gia Quản trị Dự án Marketing, từng trực tiếp điều phối hơn 40 chiến dịch IMC cho Vietnam Airlines, Panasonic, Long Hải, Sông Hồng và nhiều thương hiệu lớn khác.",
+      "en": "I'm Quy Anh — a Marketing Project Management specialist who has directly coordinated 40+ IMC campaigns for Vietnam Airlines, Panasonic, Long Hai, Song Hong, and other major brands."
     }
   },
   "about": {
@@ -158,8 +158,8 @@ window.SITE_CONTENT = {
     },
     "paragraphs": [
       {
-        "vi": "Tôi là chuyên gia Quản lý Tài khoản và Quản lý Dự án với hơn 5 năm kinh nghiệm tại Novaon Digital — từ Marketing Intern lên Senior Account Executive, đóng vai trò cầu nối chiến lược giữa Agency và Khách hàng trong các ngành Hàng không, Điện máy, Bán lẻ và Ngân hàng.",
-        "en": "I'm an Account and Project Management specialist with 5+ years at Novaon Digital — from Marketing Intern to Senior Account Executive — serving as the strategic bridge between Agency and Client across Aviation, Home Appliances, Retail and Banking."
+        "vi": "Tôi là chuyên gia Quản trị Tài khoản và Dự án (Account & Project Manager) với hơn 5 năm kinh nghiệm tại Novaon Digital — từ Marketing Intern tiến bước lên Senior Account Executive. Tôi đóng vai trò cầu nối chiến lược giữa Agency và Thương hiệu trong các nhóm ngành trọng điểm: Hàng không, Điện máy, Bán lẻ và Ngân hàng.",
+        "en": "I am an Account and Project Management specialist with over 5 years of experience at Novaon Digital. Rising from Marketing Intern to Senior Account Executive, I have served as the strategic bridge between Agency and Brand across the Aviation, Home Appliance, Retail, and Banking sectors."
       }
     ],
     "highlights": [
@@ -169,7 +169,7 @@ window.SITE_CONTENT = {
         "suffix": "+",
         "label": {
           "vi": "năm kinh nghiệm Agency",
-          "en": "years agency experience"
+          "en": "years of agency experience"
         }
       },
       {
@@ -177,7 +177,7 @@ window.SITE_CONTENT = {
         "prefix": "",
         "suffix": "+",
         "label": {
-          "vi": "dự án đã trực tiếp quản lý",
+          "vi": "dự án trực tiếp quản trị",
           "en": "projects directly managed"
         }
       },
@@ -189,7 +189,7 @@ window.SITE_CONTENT = {
           "en": "B VND"
         },
         "label": {
-          "vi": "tổng ngân sách đã điều phối",
+          "vi": "tổng ngân sách điều phối",
           "en": "total budget coordinated"
         }
       },
@@ -207,7 +207,7 @@ window.SITE_CONTENT = {
         "prefix": "",
         "suffix": "%",
         "label": {
-          "vi": "Chỉ số ROAS",
+          "vi": "Chỉ số ROAS trung bình",
           "en": "Average ROAS"
         }
       }
@@ -220,11 +220,11 @@ window.SITE_CONTENT = {
     },
     "headline": {
       "vi": "Agency rèn phản xạ. Giờ tôi muốn làm chủ hệ thống.",
-      "en": "Agency sharpened my instincts. Now I want to own the system."
+      "en": "The Agency sharpened my instincts. Now, I want to own the system."
     },
     "intro": {
-      "vi": "Sự nhạy bén của một Agency — tốc độ, đa nhiệm, chịu áp lực deadline — kết hợp với tư duy làm chủ hệ thống của một người đứng ở phía Client. Đó là vị trí tôi đang tìm.",
-      "en": "The sharpness of an Agency — speed, multitasking, thriving under deadline pressure — combined with the system-ownership mindset of someone on the Client side. That's the role I'm looking for."
+      "vi": "Sự nhạy bén của một Agency — tốc độ, đa nhiệm, bứt phá dưới áp lực deadline — kết hợp với tư duy làm chủ hệ thống của một người đứng ở phía Client. Đó là vị thế tôi đang hướng tới.",
+      "en": "The agility of an Agency — speed, multitasking, thriving under deadline pressure — combined with the system-ownership mindset of a Client-side leader. That is the role I am pursuing."
     },
     "railPlaceholder": {
       "vi": "Ảnh/đồ họa minh hoạ khái niệm \"Ownership\" (chân dung, sơ đồ, hoặc icon hệ thống)",
@@ -242,8 +242,8 @@ window.SITE_CONTENT = {
           "en": "Owning campaigns at every scale"
         },
         "body": {
-          "vi": "Từ chiến dịch toàn cầu đến từng đại lý địa phương, tôi vận hành xuyên suốt nhiều mô hình — B2C, B2B2C, SME — không chỉ đứng ở một mắt xích mà nhìn thấy toàn bộ phễu khách hàng, từ end-user đến từng đại lý.",
-          "en": "From global campaigns down to individual local dealers, I've operated across multiple models — B2C, B2B2C, SME — not just one link in the chain, but the full customer funnel, from end-user to dealer."
+          "vi": "Từ chiến dịch toàn cầu đến hoạt động kích hoạt tại điểm bán địa phương, tôi vận hành xuyên suốt nhiều mô hình (B2C, B2B2C, SME). Tôi không chỉ kiểm soát một mắt xích, mà bao quát toàn bộ phễu khách hàng — từ người tiêu dùng cuối đến đại lý phân phối.",
+          "en": "From global campaigns to local point-of-sale activations, I operate seamlessly across multiple models (B2C, B2B2C, SME). I don't just manage a single link in the chain; I oversee the entire customer funnel, from end-users to distributors."
         },
         "cases": [
           {
@@ -276,7 +276,7 @@ window.SITE_CONTENT = {
         ],
         "value": {
           "vi": "Góc nhìn xuyên ngành hàng — hiểu toàn bộ phễu khách hàng, không chỉ một khâu.",
-          "en": "A cross-industry perspective — understanding the full customer funnel, not just one stage."
+          "en": "A cross-industry perspective — understanding the full customer funnel, not just a single stage."
         }
       },
       {
@@ -286,12 +286,12 @@ window.SITE_CONTENT = {
           "en": "Operation & vendor optimization"
         },
         "title": {
-          "vi": "Tối ưu vận hành, không chỉ tiết kiệm ngân sách",
-          "en": "Optimizing operations, not just cutting budget"
+          "vi": "Tối ưu vận hành, không chỉ cắt giảm ngân sách",
+          "en": "Optimizing operations, not just cutting costs"
         },
         "body": {
-          "vi": "Từng đứng ở phía Agency, tôi hiểu rõ cấu trúc báo giá, cách vận hành nội bộ và điểm nghẽn ngân sách outsource — lợi thế để tối ưu chi phí In-house mà không đánh đổi chất lượng.",
-          "en": "Having stood on the Agency side, I understand quote structures, internal operations, and where outsourced budgets bottleneck — an edge for optimizing in-house cost without trading away quality."
+          "vi": "Từng trực tiếp vận hành tại Agency, tôi nắm rõ cấu trúc báo giá, quy trình nội bộ và các điểm nghẽn về ngân sách outsource. Đây là lợi thế tuyệt đối để tôi tối ưu chi phí In-house mà không phải đánh đổi chất lượng sản phẩm.",
+          "en": "Having operated on the Agency side, I deeply understand quote structures, internal workflows, and outsourced budget bottlenecks. This is a definitive advantage in optimizing In-house costs without compromising quality."
         },
         "cases": [
           {
@@ -316,12 +316,12 @@ window.SITE_CONTENT = {
           "Frame.io"
         ],
         "techNote": {
-          "vi": "tự động hoá quy trình quản trị dự án, triệt tiêu rủi ro trễ tiến độ",
+          "vi": "tự động hoá quy trình quản trị dự án, loại bỏ rủi ro trễ tiến độ",
           "en": "automating project-management workflows, eliminating the risk of schedule slippage"
         },
         "value": {
-          "vi": "Hiểu Agency từ bên trong — tối ưu ngân sách mà không cần đoán.",
-          "en": "Understanding Agency from the inside — optimizing budget without guesswork."
+          "vi": "Hiểu Agency từ bên trong — tối ưu ngân sách mà không cần phỏng đoán.",
+          "en": "Understanding Agencies from the inside out — optimizing budgets without guesswork."
         }
       },
       {
@@ -332,11 +332,11 @@ window.SITE_CONTENT = {
         },
         "title": {
           "vi": "Sẵn sàng làm chủ đội ngũ",
-          "en": "Ready to own a team"
+          "en": "Ready to lead the team"
         },
         "body": {
-          "vi": "Làm chủ không dừng ở dự án — mà ở cả con người. Tôi xây dựng tư duy đội ngũ kế cận, sẵn sàng cho vai trò Team Lead nội bộ.",
-          "en": "Ownership doesn't stop at projects — it extends to people. I build a succession mindset, ready for an internal Team Lead role."
+          "vi": "Tư duy làm chủ không dừng lại ở dự án, mà mở rộng đến yếu tố con người. Tôi luôn chú trọng xây dựng đội ngũ kế cận và hoàn toàn sẵn sàng cho vai trò Team Lead nội bộ.",
+          "en": "True ownership extends beyond projects to people. I focus on building a strong succession pipeline and am fully prepared to step into an internal Team Lead role."
         },
         "cases": [
           {
@@ -356,7 +356,7 @@ window.SITE_CONTENT = {
         },
         "note": {
           "vi": "Trực tiếp mentor 8 thực tập sinh — 4 người (50%) vượt qua kỳ đánh giá khắt khe, trở thành nhân sự chính thức.",
-          "en": "Directly mentored 8 interns — 4 (50%) passed a rigorous evaluation to become full-time staff."
+          "en": "Directly mentored 8 interns — 4 (50%) passed rigorous evaluations to become full-time staff."
         },
         "value": {
           "vi": "Không chỉ đào tạo — mà xây dựng người kế nhiệm.",
@@ -386,29 +386,29 @@ window.SITE_CONTENT = {
           "en": "Senior Account Executive"
         },
         "summary": {
-          "vi": "Chuyển trọng tâm từ vận hành hằng ngày sang định hướng chiến lược cấp cao, tối ưu hiệu quả và lợi nhuận cho toàn bộ danh mục chiến dịch.",
-          "en": "Shifted focus from daily execution to high-level strategic direction, optimizing efficiency and profitability across the full campaign portfolio."
+          "vi": "Chuyển trọng tâm từ vận hành hằng ngày sang định hướng chiến lược cấp cao, tối ưu hóa hiệu suất và biên lợi nhuận cho toàn bộ danh mục chiến dịch.",
+          "en": "Shifted focus from daily execution to high-level strategic direction, optimizing performance and profitability across the entire campaign portfolio."
         },
         "bullets": [
           {
-            "vi": "Định hướng chiến lược cấp cao cho 15 dự án digital marketing lớn, tập trung vào hiệu quả và lợi nhuận tổng thể của chiến dịch.",
-            "en": "Directed high-level strategic planning for 15 major digital marketing projects, shifting focus to overall campaign efficiency and profitability."
+            "vi": "Thiết lập định hướng chiến lược cho 15 dự án digital marketing trọng điểm, tập trung vào hiệu quả và lợi nhuận tổng thể.",
+            "en": "Directed high-level strategic planning for 15 major digital marketing projects, focusing on overall campaign efficiency and profitability."
           },
           {
-            "vi": "Quản lý kỳ vọng của các bên liên quan trên 20 tài khoản trọng điểm, giữ tỷ lệ hài lòng/giữ chân khách hàng ở mức 80%.",
-            "en": "Managed stakeholder expectations across 20 key accounts, maintaining an 80% client satisfaction/retention rate."
+            "vi": "Quản trị kỳ vọng của các bên liên quan trên 20 tài khoản chiến lược, duy trì tỷ lệ hài lòng và giữ chân khách hàng (retention rate) ở mức 80%.",
+            "en": "Managed stakeholder expectations across 20 key accounts, maintaining an 80% client satisfaction and retention rate."
           },
           {
-            "vi": "Chuẩn hóa quy trình QA cho toàn bộ sản phẩm sáng tạo và truyền thông, giảm 35% số vòng chỉnh sửa nội bộ.",
-            "en": "Standardized QA workflows across all creative and media outputs, reducing internal revision rounds by 35%."
+            "vi": "Chuẩn hóa quy trình kiểm soát chất lượng (QA) cho toàn bộ ấn phẩm sáng tạo và truyền thông, giảm 35% số vòng chỉnh sửa nội bộ.",
+            "en": "Standardized Quality Assurance (QA) workflows for all creative and media outputs, reducing internal revision rounds by 35%."
           },
           {
-            "vi": "Phân tích dữ liệu quảng cáo phức tạp, chuyển hóa thành insight hành động, giúp ROI/ROAS tăng 150% so với mục tiêu ban đầu.",
-            "en": "Analyzed complex advertising data into actionable insights, boosting overall ROI/ROAS by 150% versus initial targets."
+            "vi": "Phân tích hệ thống dữ liệu quảng cáo phức tạp thành các insight thực chiến, thúc đẩy chỉ số ROI/ROAS tăng 150% so với mục tiêu ban đầu.",
+            "en": "Translated complex advertising data into actionable insights, boosting overall ROI/ROAS by 150% against initial targets."
           },
           {
-            "vi": "Dẫn dắt và trao quyền cho đội ngũ chuyên viên trẻ, trực tiếp mentor 9 thực tập sinh marketing, xây dựng tư duy ra quyết định dựa trên dữ liệu.",
-            "en": "Led and empowered a team of junior executives, directly mentoring 9 marketing interns, fostering a data-driven decision-making mindset."
+            "vi": "Dẫn dắt và trao quyền cho đội ngũ nhân sự trẻ, trực tiếp mentor 9 thực tập sinh marketing nhằm xây dựng tư duy ra quyết định dựa trên dữ liệu (data-driven).",
+            "en": "Led and empowered a team of junior executives, directly mentoring 9 marketing interns to foster a data-driven decision-making mindset."
           }
         ],
         "tags": [
@@ -431,29 +431,29 @@ window.SITE_CONTENT = {
           "en": "Account Executive"
         },
         "summary": {
-          "vi": "Trực tiếp quản lý toàn trình các dự án Marketing, Digital Marketing và IMC cho các đối tác nhãn hàng trọng điểm.",
-          "en": "Directly managed end-to-end Marketing, Digital Marketing and IMC projects for key brand partners."
+          "vi": "Trực tiếp quản trị toàn trình (end-to-end) các dự án Digital Marketing và IMC cho các đối tác thương hiệu lớn.",
+          "en": "Directly managed end-to-end Digital Marketing and IMC projects for key brand partners."
         },
         "bullets": [
           {
-            "vi": "Tư vấn giai đoạn tiền sales, phân tích brief khách hàng để lên báo giá và chiến lược quảng cáo chính xác cho 35 chiến dịch.",
-            "en": "Consulted during the initial sales phase, analyzing client briefs to provide accurate quotations and ad strategies for 35 campaigns."
+            "vi": "Tư vấn chuyên sâu giai đoạn Pre-sales, phân tích brief để xây dựng báo giá và chiến lược truyền thông chuẩn xác cho 35 chiến dịch.",
+            "en": "Consulted during the pre-sales phase, analyzing client briefs to construct accurate quotations and media strategies for 35 campaigns."
           },
           {
-            "vi": "Quản lý toàn trình Marketing, Digital Marketing và IMC cho các đối tác nhãn hàng trọng điểm — lập kế hoạch, xác định phạm vi, tiến độ và ngân sách lên tới 1,8 triệu USD.",
-            "en": "Managed end-to-end Marketing, Digital Marketing and IMC projects for key brand partners — planning, scoping, timelines and budgets of up to USD 1.8 million."
+            "vi": "Quản trị toàn trình các dự án IMC quy mô lớn — từ lập kế hoạch, xác định phạm vi, kiểm soát tiến độ đến quản lý ngân sách lên tới 1,8 triệu USD.",
+            "en": "Managed large-scale IMC projects end-to-end — handling planning, scoping, timeline control, and budgets of up to USD 1.8 million."
           },
           {
-            "vi": "Điều phối đội ngũ đa chức năng (Media, Design, Planning) gồm 20 thành viên, tối ưu phân bổ nguồn lực và quản lý kỳ vọng khách hàng.",
-            "en": "Coordinated cross-functional teams (Media, Design, Planning) of 20 members, optimizing resource allocation while managing client expectations."
+            "vi": "Điều phối đội ngũ đa chức năng (Media, Design, Planning) gồm 20 thành viên, tối ưu hóa phân bổ nguồn lực và đảm bảo cam kết với khách hàng.",
+            "en": "Coordinated cross-functional teams (Media, Design, Planning) of 20 members, optimizing resource allocation while securing client deliverables."
           },
           {
-            "vi": "Theo dõi hiệu quả chiến dịch theo KPI, chủ động quản trị rủi ro và đưa ra giải pháp tức thời để giữ tiến độ dự án.",
-            "en": "Monitored campaign performance against KPIs, proactively managing risk and driving immediate solutions to keep projects on track."
+            "vi": "Theo dõi sát sao hiệu suất chiến dịch theo KPI, chủ động quản trị rủi ro và thực thi các giải pháp tức thời để bảo vệ tiến độ dự án.",
+            "en": "Monitored campaign performance against KPIs, proactively managing risks and executing immediate solutions to keep projects on track."
           },
           {
-            "vi": "Đánh giá hiệu quả chiến dịch qua báo cáo hậu kỳ, tính toán ROI/ROAS — cho thấy mức tăng 180% giá trị chiến dịch mang lại cho nhãn hàng.",
-            "en": "Evaluated campaign effectiveness via post-campaign reports and ROI/ROAS calculations — demonstrating a 180% increase in campaign value for brands."
+            "vi": "Đánh giá hiệu quả chiến dịch qua báo cáo hậu kỳ và tính toán ROI/ROAS, ghi nhận mức tăng trưởng giá trị 180% mang lại cho thương hiệu.",
+            "en": "Evaluated campaign effectiveness via post-campaign reports and ROI/ROAS calculations, demonstrating a 180% value increase for the brands."
           }
         ],
         "tags": [
@@ -476,17 +476,17 @@ window.SITE_CONTENT = {
           "en": "Marketing Intern"
         },
         "summary": {
-          "vi": "Giai đoạn làm quen với cơ chế vận hành Agency và cấu trúc phối hợp đa phòng ban, xây dựng tư duy chủ động giải quyết vấn đề.",
-          "en": "A period mastering agency mechanisms and cross-functional structures, cultivating a proactive, solution-oriented mindset."
+          "vi": "Giai đoạn nắm bắt cơ chế vận hành chuyên nghiệp của Agency và cấu trúc phối hợp liên phòng ban, rèn luyện tư duy chủ động giải quyết vấn đề.",
+          "en": "A foundational period mastering professional agency mechanics and cross-functional collaboration, cultivating a proactive, problem-solving mindset."
         },
         "bullets": [
           {
-            "vi": "Hỗ trợ tư vấn và bán hàng, trực tiếp giới thiệu giải pháp digital marketing tới 18 khách hàng tiềm năng.",
-            "en": "Assisted in the consulting and sales process, actively pitching digital marketing products and services to 18 potential clients."
+            "vi": "Hỗ trợ quá trình tư vấn và pitching, trực tiếp giới thiệu các giải pháp digital marketing tới 18 khách hàng tiềm năng.",
+            "en": "Supported the consulting and pitching processes, actively presenting digital marketing solutions to 18 potential clients."
           },
           {
-            "vi": "Phối hợp với các đội Media, Design và Planning để hỗ trợ sản xuất cho 10 chiến dịch marketing.",
-            "en": "Collaborated with cross-functional teams (Media, Design, Planning) to support the production phase for 10 marketing campaigns."
+            "vi": "Phối hợp nhịp nhàng với các bộ phận Media, Design và Planning để hỗ trợ sản xuất thành công 10 chiến dịch truyền thông.",
+            "en": "Collaborated seamlessly with the Media, Design, and Planning teams to support the successful production of 10 media campaigns."
           }
         ],
         "tags": [
@@ -525,16 +525,16 @@ window.SITE_CONTENT = {
         },
         "cover": "",
         "problem": {
-          "vi": "Vietnam Airlines cần vận hành quảng cáo Google Search nhất quán về thông điệp thương hiệu nhưng vẫn phù hợp văn hóa, hành vi tìm kiếm của từng thị trường quốc tế — cùng lúc, không lệch nhịp.",
-          "en": "Vietnam Airlines needed Google Search advertising that stayed consistent in brand messaging yet locally relevant across many international markets — run in parallel, without falling out of sync."
+          "vi": "Vietnam Airlines cần vận hành hệ thống quảng cáo Google Search nhất quán về thông điệp thương hiệu cốt lõi, nhưng vẫn phải bám sát văn hóa và hành vi tìm kiếm của từng thị trường quốc tế — diễn ra đồng thời mà không bị lệch nhịp.",
+          "en": "Vietnam Airlines needed a Google Search advertising system that maintained core brand consistency while adapting to the culture and search behaviors of individual international markets — running simultaneously without falling out of sync."
         },
         "action": {
-          "vi": "Trực tiếp quản lý chiến dịch Google Search toàn cầu trải dài 24 thị trường quốc tế: lên kế hoạch truyền thông, xây dựng cấu trúc từ khóa theo từng thị trường và địa phương hóa thông điệp quảng cáo (localized ad messaging) cho từng thị trường mục tiêu.",
-          "en": "Directly managed a global Google Search campaign spanning 24 international markets: media planning, market-specific keyword architecture, and localized ad messaging for each target market."
+          "vi": "Trực tiếp quản trị chiến dịch Google Search toàn cầu trải dài trên 24 thị trường quốc tế: thiết lập Media Plan, xây dựng cấu trúc từ khóa chuyên biệt và địa phương hóa thông điệp quảng cáo (localized ad messaging) cho từng quốc gia.",
+          "en": "Directly managed a global Google Search campaign spanning 24 international markets: developing the Media Plan, building market-specific keyword architectures, and localizing ad messaging for each target country."
         },
         "result": {
-          "vi": "Vận hành đồng bộ 24 thị trường quốc tế cùng lúc dưới một khung chiến lược chung, đảm bảo nhất quán thương hiệu toàn cầu trong khi vẫn tối ưu theo từng địa phương.",
-          "en": "Ran 24 international markets in sync under one strategic framework — preserving global brand consistency while still optimizing locally."
+          "vi": "Vận hành đồng bộ 24 thị trường quốc tế dưới một khung chiến lược chung, bảo vệ tính nhất quán của thương hiệu toàn cầu trong khi vẫn tối ưu hiệu suất xuất sắc tại từng địa phương.",
+          "en": "Synchronized 24 international markets under a single strategic framework, safeguarding global brand consistency while achieving excellent localized performance."
         },
         "metrics": [
           {
@@ -559,16 +559,16 @@ window.SITE_CONTENT = {
         },
         "cover": "",
         "problem": {
-          "vi": "Panasonic Service Vietnam cần một chiến dịch kỷ niệm 20 năm (\"20th years of Trusted Service\") vừa thúc đẩy các gói bảo dưỡng và khuyến mãi bảo hành mở rộng, vừa xây dựng được cộng đồng khách hàng trung thành lâu dài.",
-          "en": "Panasonic Service Vietnam needed a 20th-anniversary campaign (\"20 Years of Trusted Service\") that both drove maintenance/extended-warranty promotions and built a lasting loyal customer community."
+          "vi": "Panasonic Service Vietnam cần một chiến dịch kỷ niệm 20 năm (\"20th years of Trusted Service\") vừa thúc đẩy doanh số các gói bảo dưỡng và gia hạn bảo hành, vừa xây dựng thành công cộng đồng khách hàng trung thành dài hạn.",
+          "en": "Panasonic Service Vietnam required a 20th-anniversary campaign (\"20 Years of Trusted Service\") that simultaneously drove sales for maintenance and extended-warranty packages while successfully building a long-term loyal customer community."
         },
         "action": {
-          "vi": "Xây dựng chiến lược Digital Marketing cho các chiến dịch bảo dưỡng thiết bị và khuyến mãi bảo hành; trực tiếp quản lý dự án kỷ niệm 20 năm — từ lên kế hoạch nội dung, xây dựng ý tưởng Landing Page, quản trị cộng đồng Facebook, đến vận hành quảng cáo Google/Facebook, quảng cáo e-commerce, PR báo chí và tổ chức hoạt động ngoài trời (chương trình trồng cây \"Sống khỏe góp xanh\").",
-          "en": "Built the digital marketing strategy for maintenance and extended-warranty campaigns; directly managed the 20th-anniversary project end-to-end — content planning, landing page concepting, Facebook community management, Google/Facebook and e-commerce advertising, PR outreach, and an outdoor CSR tree-planting activation (\"Sống khỏe góp xanh\")."
+          "vi": "Xây dựng chiến lược Digital Marketing cho luồng Performance (bảo dưỡng, bảo hành); đồng thời quản trị toàn trình dự án kỷ niệm 20 năm — từ định hướng nội dung, ý tưởng Landing Page, quản trị cộng đồng Facebook, vận hành quảng cáo số, Booking PR, đến tổ chức hoạt động CSR ngoài trời (\"Sống khỏe góp xanh\").",
+          "en": "Formulated the Digital Marketing strategy for the Performance stream (maintenance/warranty) while managing the 20th-anniversary project end-to-end — covering content direction, Landing Page concepts, Facebook community management, digital ads, PR booking, and an outdoor CSR activation (\"Sống khỏe góp xanh\")."
         },
         "result": {
-          "vi": "Một chiến dịch tích hợp đầy đủ kênh — từ landing page, cộng đồng Facebook, quảng cáo hiệu suất đến hoạt động ngoài trời — giúp Panasonic vừa giữ chân khách hàng cũ vừa lan tỏa hình ảnh thương hiệu gắn với trách nhiệm cộng đồng.",
-          "en": "A fully integrated campaign — spanning landing page, Facebook community, performance ads and offline CSR activation — that helped Panasonic retain existing customers while extending its brand image around community responsibility."
+          "vi": "Triển khai thành công chiến dịch tích hợp đa điểm chạm (Omnichannel) — giúp Panasonic vừa gia tăng tỷ lệ giữ chân khách hàng cũ, vừa lan tỏa mạnh mẽ hình ảnh thương hiệu gắn liền với trách nhiệm xã hội.",
+          "en": "Successfully delivered an integrated, multi-touchpoint (Omnichannel) campaign — helping Panasonic boost existing customer retention rates while strongly amplifying its brand image tied to social responsibility."
         },
         "metrics": [
           {
@@ -593,16 +593,16 @@ window.SITE_CONTENT = {
         },
         "cover": "",
         "problem": {
-          "vi": "Song Hồng cần thúc đẩy đồng thời 4 bộ sưu tập (Basic, Urban, Adore, Back Essential) qua cả kênh đại lý (B2B) lẫn người tiêu dùng cuối (B2C), đòi hỏi thông điệp nhất quán nhưng linh hoạt cho từng nhóm đối tượng.",
-          "en": "Song Hong needed to promote four product collections (Basic, Urban, Adore, Back Essential) simultaneously across both dealer (B2B) and end-consumer (B2C) channels, with messaging that stayed consistent yet flexible per audience."
+          "vi": "Sông Hồng cần đẩy mạnh truyền thông cho 4 bộ sưu tập (Basic, Urban, Adore, Back Essential) trên cả hai kênh: Đại lý (B2B) và Người tiêu dùng cuối (B2C), đòi hỏi hệ thống thông điệp phải nhất quán nhưng vẫn linh hoạt theo từng tệp đối tượng.",
+          "en": "Song Hong needed to amplify communications for 4 collections (Basic, Urban, Adore, Back Essential) across both Dealer (B2B) and End-Consumer (B2C) channels, requiring a messaging system that was cohesive yet flexible for different audiences."
         },
         "action": {
-          "vi": "Thực thi các chiến dịch quảng bá kỹ thuật số và chương trình tương tác đại lý B2B2C cho từng bộ sưu tập; thiết kế nội dung quảng cáo, định hướng bài đăng mạng xã hội, đồng thời lên kế hoạch cho hội nghị khách hàng (dealer conference).",
-          "en": "Executed digital promotion campaigns and B2B2C dealer engagement programs per collection; designed ad content, directed social media output, and planned the dealer conference."
+          "vi": "Thực thi toàn bộ chiến dịch quảng bá kỹ thuật số và chương trình tương tác đại lý B2B2C cho từng bộ sưu tập; thiết kế luồng nội dung quảng cáo, định hướng mạng xã hội, và trực tiếp lên kế hoạch tổ chức Hội nghị khách hàng (Dealer Conference).",
+          "en": "Executed full digital promotion campaigns and B2B2C dealer engagement programs for each collection; designed ad content flows, directed social media strategies, and directly planned the Dealer Conference."
         },
         "result": {
-          "vi": "Vận hành song song 4 dòng sản phẩm trên cả hai tuyến B2B và B2C mà không xung đột thông điệp, củng cố quan hệ với mạng lưới đại lý qua hội nghị khách hàng.",
-          "en": "Ran four product lines in parallel across both B2B and B2C without message conflict, and strengthened the dealer network relationship through the customer conference."
+          "vi": "Vận hành mượt mà 4 dòng sản phẩm song song trên cả hai tuyến B2B và B2C mà không xảy ra xung đột thông điệp; đồng thời thắt chặt mối quan hệ chiến lược với mạng lưới đại lý thông qua Hội nghị khách hàng.",
+          "en": "Smoothly operated 4 product lines in parallel across B2B and B2C channels without message conflict; while also cementing strategic relationships with the dealer network through the customer conference."
         },
         "metrics": [
           {
@@ -627,16 +627,16 @@ window.SITE_CONTENT = {
         },
         "cover": "",
         "problem": {
-          "vi": "VPBank cần xây dựng nhận diện cho hai tính năng thanh toán mới — Tap2Phone và QR Payment — tới đúng phân khúc khách hàng SME, qua cả kênh sự kiện lẫn mạng xã hội.",
-          "en": "VPBank needed to build awareness for two new payment features — Tap2Phone and QR Payment — targeted at the SME segment, across both event and social channels."
+          "vi": "VPBank SME cần xây dựng nhận diện thương hiệu cho hai giải pháp thanh toán mới — Tap2Phone và QR Payment — tiếp cận chính xác tệp khách hàng Doanh nghiệp vừa và nhỏ (SME) thông qua cả kênh sự kiện và mạng xã hội.",
+          "en": "VPBank SME needed to build brand awareness for two new payment solutions — Tap2Phone and QR Payment — accurately targeting the Small and Medium Enterprise (SME) segment through both events and social media channels."
         },
         "action": {
-          "vi": "Lên khung chiến dịch talkshow và phát triển nội dung mạng xã hội cho Tap2Phone và QR Payment; trực tiếp viết brief cho talkshow, caption video và xây dựng định vị sản phẩm.",
-          "en": "Framed the talkshow campaign and developed social content for Tap2Phone and QR Payment; wrote the talkshow brief, video captions, and product positioning directly."
+          "vi": "Xây dựng framework chiến dịch Talkshow và phát triển nội dung đa nền tảng cho Tap2Phone & QR Payment. Trực tiếp viết brief kịch bản Talkshow, xây dựng thông điệp định vị sản phẩm và biên tập nội dung video.",
+          "en": "Developed the Talkshow campaign framework and cross-platform content for Tap2Phone & QR Payment. Directly briefed the Talkshow scripts, crafted product positioning messages, and edited video content."
         },
         "result": {
-          "vi": "Đồng bộ thông điệp sản phẩm mới trên cả kênh sự kiện (talkshow) và mạng xã hội, giúp truyền tải rõ ràng giá trị của hai tính năng thanh toán tới đúng đối tượng SME.",
-          "en": "Synchronized new-product messaging across both the talkshow event and social channels, clearly communicating the value of both payment features to the right SME audience."
+          "vi": "Đồng bộ hóa xuất sắc thông điệp sản phẩm mới trên cả điểm chạm sự kiện (Talkshow) và digital, truyền tải sắc bén giá trị của hai giải pháp thanh toán tới đúng tệp khách hàng SME mục tiêu.",
+          "en": "Excellently synchronized new product messaging across both event (Talkshow) and digital touchpoints, sharply conveying the value of the two payment solutions to the exact target SME audience."
         },
         "metrics": [
           {
@@ -664,16 +664,16 @@ window.SITE_CONTENT = {
         },
         "cover": "",
         "problem": {
-          "vi": "Cần triển khai chương trình thiện nguyện tại các tỉnh miền núi phía Bắc (Lào Cai & Hà Giang), đòi hỏi phối hợp với chính quyền địa phương và tổ chức tình nguyện để đảm bảo đúng đối tượng và đúng nhu cầu thực tế.",
-          "en": "A charity program needed to run across mountainous northern provinces (Lao Cai & Ha Giang), requiring coordination with local authorities and volunteer organizations to reach the right beneficiaries with the right support."
+          "vi": "Cần triển khai dự án thiện nguyện quy mô tại các tỉnh miền núi phía Bắc (Lào Cai & Hà Giang), đòi hỏi kỹ năng phối hợp chặt chẽ với chính quyền địa phương và các tổ chức tình nguyện để đảm bảo tiếp cận đúng đối tượng và đáp ứng đúng nhu cầu thực tế.",
+          "en": "A large-scale charity project needed to be deployed in the northern mountainous provinces (Lao Cai & Ha Giang), requiring tight coordination with local authorities and volunteer organizations to ensure it reached the right beneficiaries with actual needs."
         },
         "action": {
-          "vi": "Đảm nhiệm vai trò Project Manager & Coordinator: liên hệ chính quyền địa phương và tổ chức tình nguyện để khảo sát, đánh giá và chọn địa điểm phù hợp nhất cho chương trình; trực tiếp dẫn dắt đội 15 tình nguyện viên và quản lý ngân sách 500 triệu đồng.",
-          "en": "Served as Project Manager & Coordinator: liaised with local authorities and volunteer organizations to scout, assess and secure the most suitable locations; directly led a team of 15 volunteers and managed a 500-million-VND project budget."
+          "vi": "Đảm nhiệm vai trò Project Manager & Coordinator: Trực tiếp làm việc với chính quyền và tổ chức địa phương để khảo sát, đánh giá và lựa chọn địa bàn; dẫn dắt đội ngũ 15 tình nguyện viên và quản lý chặt chẽ ngân sách dự án 500 triệu đồng.",
+          "en": "Served as Project Manager & Coordinator: Directly liaised with local authorities and organizations to scout, assess, and select locations; led a team of 15 volunteers and strictly managed the 500-million-VND project budget."
         },
         "result": {
-          "vi": "Triển khai thành công các hoạt động cứu trợ và CSR trên hai tỉnh, hỗ trợ trực tiếp 250 người thụ hưởng/hộ gia đình, thể hiện năng lực lãnh đạo và điều phối ngoài phạm vi công việc agency thường ngày.",
-          "en": "Successfully delivered relief and CSR activities across both provinces, directly supporting 250 beneficiaries/families — demonstrating leadership and coordination ability beyond day-to-day agency work."
+          "vi": "Triển khai xuất sắc các hoạt động cứu trợ tại hai tỉnh, hỗ trợ trực tiếp 250 người thụ hưởng/hộ gia đình — minh chứng rõ nét cho năng lực lãnh đạo, điều phối nguồn lực và xử lý vấn đề ngoài phạm vi chuyên môn Agency thông thường.",
+          "en": "Flawlessly executed relief operations across two provinces, directly supporting 250 beneficiaries/families — a clear testament to leadership, resource coordination, and problem-solving capabilities beyond standard Agency scope."
         },
         "metrics": [
           {
@@ -704,8 +704,8 @@ window.SITE_CONTENT = {
       "en": "Behind the Scenes & Real Deliverables"
     },
     "intro": {
-      "vi": "Thư viện hình ảnh, tài liệu và khoảnh khắc hậu trường từ các dự án đã triển khai — lọc theo loại hoạt động, hoặc mở trực tiếp từ một case study cụ thể ở trên.",
-      "en": "A library of images, documents and behind-the-scenes moments from delivered projects — filter by activity type, or open it directly from a case study above."
+      "vi": "Khám phá thư viện hình ảnh, tài liệu báo cáo và những khoảnh khắc hậu trường từ các chiến dịch tôi đã trực tiếp điều phối. Bạn có thể lọc theo từng phân loại, hoặc xem trực tiếp từ mục Case Study phía trên.",
+      "en": "Explore a gallery of visuals, report documents, and behind-the-scenes moments from campaigns I have directly coordinated. You can filter by category or view them directly from the Case Studies section above."
     },
     "sheetUrl": "",
     "viewDetailLabel": {
@@ -777,7 +777,7 @@ window.SITE_CONTENT = {
         "url": "",
         "description": {
           "vi": "Hậu trường quay TVC chiến dịch kỷ niệm 20 năm Panasonic \"Trusted Service\"",
-          "en": "Behind-the-scenes: TVC shoot for Panasonic's 20th-anniversary \"Trusted Service\" campaign"
+          "en": "Behind-the-scenes: TVC shooting for Panasonic's 20th-anniversary \"Trusted Service\" campaign"
         }
       },
       {
@@ -787,8 +787,8 @@ window.SITE_CONTENT = {
         "projectId": "panasonic",
         "url": "",
         "description": {
-          "vi": "Hoạt động ngoài trời — chương trình trồng cây \"Sống khỏe góp xanh\"",
-          "en": "Outdoor CSR activation — the \"Sống khỏe góp xanh\" tree-planting program"
+          "vi": "Hoạt động ngoài trời — dự án CSR trồng cây \"Sống khỏe góp xanh\"",
+          "en": "Outdoor activation — the \"Sống khỏe góp xanh\" CSR tree-planting project"
         }
       },
       {
@@ -798,8 +798,8 @@ window.SITE_CONTENT = {
         "projectId": "panasonic",
         "url": "",
         "description": {
-          "vi": "Ấn phẩm Landing Page & quảng cáo chiến dịch 20 năm",
-          "en": "Landing page & ad creative for the 20th-anniversary campaign"
+          "vi": "Giao diện Landing Page & ấn phẩm quảng cáo chiến dịch 20 năm",
+          "en": "Landing page UI & ad creatives for the 20th-anniversary campaign"
         }
       },
       {
@@ -820,8 +820,8 @@ window.SITE_CONTENT = {
         "projectId": "vietnam-airlines",
         "url": "",
         "description": {
-          "vi": "Ấn phẩm quảng cáo địa phương hóa theo từng thị trường",
-          "en": "Locally-adapted ad creative per market"
+          "vi": "Ấn phẩm quảng cáo được địa phương hóa theo từng quốc gia",
+          "en": "Locally-adapted ad creatives per target country"
         }
       },
       {
@@ -831,8 +831,8 @@ window.SITE_CONTENT = {
         "projectId": "songhong-bedding",
         "url": "",
         "description": {
-          "vi": "Hội nghị khách hàng (Dealer Conference) — 4 bộ sưu tập Basic/Urban/Adore",
-          "en": "Dealer Conference — the Basic/Urban/Adore collections"
+          "vi": "Sự kiện Hội nghị khách hàng (Dealer Conference) — 4 bộ sưu tập Sông Hồng",
+          "en": "Dealer Conference Event — Song Hong's 4 collections"
         }
       },
       {
@@ -842,8 +842,8 @@ window.SITE_CONTENT = {
         "projectId": "songhong-bedding",
         "url": "",
         "description": {
-          "vi": "Ấn phẩm truyền thông 4 bộ sưu tập Sông Hồng",
-          "en": "Campaign creative across Song Hong's four collections"
+          "vi": "Ấn phẩm truyền thông tích hợp 4 bộ sưu tập Sông Hồng",
+          "en": "Integrated campaign creatives for Song Hong's 4 collections"
         }
       },
       {
@@ -853,8 +853,8 @@ window.SITE_CONTENT = {
         "projectId": "vpbank-sme",
         "url": "",
         "description": {
-          "vi": "Brief & proposal talkshow ra mắt Tap2Phone, QR Payment",
-          "en": "Brief & proposal for the Tap2Phone / QR Payment talkshow launch"
+          "vi": "Kịch bản Brief & Proposal Talkshow ra mắt Tap2Phone, QR Payment",
+          "en": "Brief & Proposal for the Tap2Phone / QR Payment launch talkshow"
         }
       },
       {
@@ -864,8 +864,8 @@ window.SITE_CONTENT = {
         "projectId": "vpbank-sme",
         "url": "",
         "description": {
-          "vi": "Talkshow ra mắt tính năng thanh toán VPBank SME",
-          "en": "VPBank SME payment-feature launch talkshow"
+          "vi": "Hiện trường Talkshow ra mắt giải pháp thanh toán VPBank SME",
+          "en": "On-site: VPBank SME payment solutions launch talkshow"
         }
       },
       {
@@ -875,8 +875,8 @@ window.SITE_CONTENT = {
         "projectId": "csr-songhong-garment",
         "url": "",
         "description": {
-          "vi": "Hoạt động cứu trợ tại Lào Cai & Hà Giang — 250 người thụ hưởng",
-          "en": "Relief activities across Lao Cai & Ha Giang — 250 beneficiaries"
+          "vi": "Dự án cứu trợ đồng bào tại Lào Cai & Hà Giang — 250 người thụ hưởng",
+          "en": "Relief project in Lao Cai & Ha Giang — 250 beneficiaries"
         }
       },
       {
@@ -886,8 +886,8 @@ window.SITE_CONTENT = {
         "projectId": "csr-songhong-garment",
         "url": "",
         "description": {
-          "vi": "Đội 15 tình nguyện viên khảo sát & triển khai tại địa phương",
-          "en": "The 15-volunteer team scouting & delivering on-site"
+          "vi": "Đội ngũ 15 tình nguyện viên khảo sát & triển khai thực địa",
+          "en": "The 15-volunteer team scouting & executing on-site"
         }
       }
     ]
@@ -1338,11 +1338,11 @@ window.SITE_CONTENT = {
     },
     "heading": {
       "vi": "Cùng trao đổi cơ hội hợp tác",
-      "en": "Let's talk about an opportunity"
+      "en": "Let's discuss an opportunity"
     },
     "blurb": {
-      "vi": "Đang tìm kiếm một vị trí Marketing/Brand Manager phía nhãn hàng? Tôi luôn sẵn sàng cho một cuộc trò chuyện.",
-      "en": "Looking for a client-side Marketing/Brand Manager? I'm always open to a conversation."
+      "vi": "Doanh nghiệp của bạn đang tìm kiếm một Marketing/Brand Manager thực chiến? Tôi luôn sẵn sàng cho một cuộc trò chuyện.",
+      "en": "Is your company looking for an actionable Marketing/Brand Manager? I am always open to a conversation."
     },
     "social": [
       {
@@ -1365,7 +1365,7 @@ window.SITE_CONTENT = {
   "footer": {
     "note": {
       "vi": "Được thiết kế và phát triển thủ công tại Hà Nội.",
-      "en": "Designed and built by hand in Hanoi."
+      "en": "Designed and hand-coded in Hanoi."
     }
   }
 };
