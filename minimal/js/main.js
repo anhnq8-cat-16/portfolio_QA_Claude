@@ -360,12 +360,17 @@
   function setupLenis() {
     if (reduceMotion || typeof window.Lenis !== "function") return null;
     var lenis = new window.Lenis({ duration: 1.1, smoothWheel: true });
-    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-    requestAnimationFrame(raf);
+    // Exactly one clock may call lenis.raf() or its internal deltas get fed
+    // two different time epochs and the animation stalls silently (scrollTo
+    // "succeeds" but nothing moves). GSAP's ticker is the driver whenever
+    // it's present (its own official Lenis integration); plain rAF is only
+    // a fallback for the case GSAP failed to load.
     if (window.gsap) {
-      lenis.on("scroll", window.ScrollTrigger && window.ScrollTrigger.update);
       window.gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
       window.gsap.ticker.lagSmoothing(0);
+      if (window.ScrollTrigger) lenis.on("scroll", window.ScrollTrigger.update);
+    } else {
+      (function raf(time) { lenis.raf(time); requestAnimationFrame(raf); })();
     }
     return lenis;
   }

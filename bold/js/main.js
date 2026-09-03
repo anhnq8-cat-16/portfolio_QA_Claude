@@ -151,6 +151,87 @@
     });
   }
 
+  var PH_ICON_IMAGE = '<svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>';
+  var PH_ICON_TEAM = '<svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>';
+
+  function renderOwnership() {
+    var O = DATA.ownership;
+    setText("ownershipEyebrow", t(O.eyebrow));
+    setText("ownershipHeadline", t(O.headline));
+    setText("ownershipIntro", t(O.intro));
+
+    var railPh = document.getElementById("ownershipRailPlaceholder");
+    railPh.innerHTML = PH_ICON_IMAGE + '<span class="ph-label">' + t(O.railPlaceholder) + "</span>";
+
+    var nav = document.getElementById("ownershipNav");
+    nav.innerHTML = "";
+    O.chapters.forEach(function (chapter, i) {
+      var a = el("a", "ownership-nav-item");
+      a.href = "#ownership-chapter-" + chapter.id;
+      a.setAttribute("data-nav", String(i + 1));
+      a.innerHTML = '<span class="ownership-nav-num">' + String(i + 1).padStart(2, "0") + "</span><span>" + t(chapter.navLabel) + "</span>";
+      nav.appendChild(a);
+    });
+
+    var chaptersEl = document.getElementById("ownershipChapters");
+    chaptersEl.innerHTML = "";
+    O.chapters.forEach(function (chapter, i) {
+      var article = el("article", "ownership-chapter reveal-up");
+      article.id = "ownership-chapter-" + chapter.id;
+      article.setAttribute("data-chapter", String(i + 1));
+
+      article.appendChild(el("span", "ownership-chapter-index", String(i + 1).padStart(2, "0")));
+      article.appendChild(el("h3", "ownership-chapter-title", t(chapter.title)));
+      article.appendChild(el("p", "ownership-chapter-body", t(chapter.body)));
+
+      if (chapter.stat) {
+        // Leadership-style chapter: one placeholder photo next to a big stat callout, instead of the generic case grid.
+        var statRow = el("div", "ownership-stat-row");
+        var phCard = el("div", "ph");
+        phCard.innerHTML = PH_ICON_TEAM + '<span class="ph-label">' + t(chapter.cases[0].label) + "</span>";
+        var statCard = el("div", "ownership-stat-card");
+        statCard.innerHTML = '<span class="ownership-stat-value">' + chapter.stat.value + '</span><span class="ownership-stat-card-label">' + t(chapter.stat.label) + "</span>";
+        statRow.appendChild(phCard);
+        statRow.appendChild(statCard);
+        article.appendChild(statRow);
+      } else {
+        var cases = el("div", "ownership-cases");
+        chapter.cases.forEach(function (c) {
+          var hasLink = !!c.projectId;
+          var card = el("div", "ownership-case ph" + (hasLink ? " has-link" : ""));
+          var text = t(c.label) + (c.detail ? "<br>" + t(c.detail) : "");
+          card.innerHTML = PH_ICON_IMAGE + '<span class="ph-label">' + text + "</span>";
+          if (hasLink) {
+            card.setAttribute("data-project-id", c.projectId);
+            card.setAttribute("role", "button");
+            card.setAttribute("tabindex", "0");
+            var hintText = state.lang === "vi" ? "Xem case study →" : "View case study →";
+            card.appendChild(el("span", "ownership-case-hint", hintText));
+          }
+          cases.appendChild(card);
+        });
+        article.appendChild(cases);
+      }
+
+      if (chapter.techTags) {
+        var techRow = el("div", "ownership-tech-row");
+        chapter.techTags.forEach(function (tag) { techRow.appendChild(el("span", "tag", tag)); });
+        techRow.appendChild(el("span", "ownership-tech-note", "— " + t(chapter.techNote)));
+        article.appendChild(techRow);
+      }
+
+      if (chapter.note) {
+        article.appendChild(el("p", "ownership-note", t(chapter.note)));
+      }
+
+      var value = el("div", "ownership-value");
+      value.appendChild(el("p", null, t(chapter.value)));
+      article.appendChild(value);
+
+      chaptersEl.appendChild(article);
+    });
+  }
+
   function renderExperience() {
     setText("experienceEyebrow", t(DATA.experience.eyebrow));
     setText("experienceHeading", t(DATA.experience.heading));
@@ -325,6 +406,7 @@
     renderHero();
     renderClients();
     renderAbout();
+    renderOwnership();
     renderExperience();
     renderProjects();
     renderCompetencies();
@@ -343,6 +425,7 @@
       renderAll();
       setupMagnetic();
       setupTiltCards();
+      setupOwnershipTracking();
       if (window.ScrollTrigger) window.ScrollTrigger.refresh();
     });
   }
@@ -376,12 +459,17 @@
   function setupLenis() {
     if (reduceMotion || typeof window.Lenis !== "function") return null;
     var lenis = new window.Lenis({ duration: 1.1, smoothWheel: true });
-    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-    requestAnimationFrame(raf);
+    // Exactly one clock may call lenis.raf() or its internal deltas get fed
+    // two different time epochs and the animation stalls silently (scrollTo
+    // "succeeds" but nothing moves). GSAP's ticker is the driver whenever
+    // it's present (its own official Lenis integration); plain rAF is only
+    // a fallback for the case GSAP failed to load.
     if (window.gsap) {
-      lenis.on("scroll", window.ScrollTrigger && window.ScrollTrigger.update);
       window.gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
       window.gsap.ticker.lagSmoothing(0);
+      if (window.ScrollTrigger) lenis.on("scroll", window.ScrollTrigger.update);
+    } else {
+      (function raf(time) { lenis.raf(time); requestAnimationFrame(raf); })();
     }
     return lenis;
   }
@@ -402,18 +490,22 @@
   }
 
   function setupAnchorLinks(lenis) {
-    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-      a.addEventListener("click", function (e) {
-        var id = a.getAttribute("href");
-        if (id.length < 2) return;
-        var target = document.querySelector(id);
-        if (!target) return;
-        e.preventDefault();
-        var top = target.getBoundingClientRect().top + window.scrollY - 70;
-        if (lenis) lenis.scrollTo(target, { offset: -70 });
-        else window.scrollTo({ top: top, behavior: reduceMotion ? "auto" : "smooth" });
-        history.pushState(null, "", id);
-      });
+    // Delegated on document (bound once): correctly covers anchors that get
+    // rebuilt by renderAll() on every language toggle (e.g. the ownership
+    // chapter nav), which per-node listeners would silently stop working on
+    // after the first re-render since those nodes get replaced.
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest('a[href^="#"]');
+      if (!a) return;
+      var id = a.getAttribute("href");
+      if (id.length < 2) return;
+      var target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      var top = target.getBoundingClientRect().top + window.scrollY - 70;
+      if (lenis) lenis.scrollTo(target, { offset: -70 });
+      else window.scrollTo({ top: top, behavior: reduceMotion ? "auto" : "smooth" });
+      history.pushState(null, "", id);
     });
   }
 
@@ -525,21 +617,24 @@
     });
   }
 
-  function setupClientLinks(lenis) {
-    function goToProject(id) {
-      var target = document.querySelector('.project-card[data-project-id="' + id + '"]');
-      if (!target) return;
-      if (lenis) lenis.scrollTo(target, { offset: -70 });
-      else target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
-    }
-    document.getElementById("clientsGroups").addEventListener("click", function (e) {
-      var tile = e.target.closest(".client-tile[data-project-id]");
-      if (tile) goToProject(tile.getAttribute("data-project-id"));
+  function scrollToProject(id, lenis) {
+    var target = document.querySelector('.project-card[data-project-id="' + id + '"]');
+    if (!target) return;
+    if (lenis) lenis.scrollTo(target, { offset: -70 });
+    else target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+  }
+
+  function setupProjectLinkDelegation(containerId, itemSelector, lenis) {
+    var container = document.getElementById(containerId);
+    if (!container) return;
+    container.addEventListener("click", function (e) {
+      var item = e.target.closest(itemSelector + "[data-project-id]");
+      if (item) scrollToProject(item.getAttribute("data-project-id"), lenis);
     });
-    document.getElementById("clientsGroups").addEventListener("keydown", function (e) {
+    container.addEventListener("keydown", function (e) {
       if (e.key !== "Enter" && e.key !== " ") return;
-      var tile = e.target.closest(".client-tile[data-project-id]");
-      if (tile) { e.preventDefault(); goToProject(tile.getAttribute("data-project-id")); }
+      var item = e.target.closest(itemSelector + "[data-project-id]");
+      if (item) { e.preventDefault(); scrollToProject(item.getAttribute("data-project-id"), lenis); }
     });
   }
 
@@ -549,6 +644,44 @@
       yPercent: 6, ease: "none",
       scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: 0.6 }
     });
+  }
+
+  var _ownershipTrackingListener = null;
+
+  function setupOwnershipTracking() {
+    // Active-chapter wayfinding for the sticky rail nav: recomputed from real
+    // element positions on every scroll (whichever chapter's midpoint sits
+    // closest to the 45%-viewport line wins), instead of several independent
+    // trigger zones that can overlap and race on tall or fast-scrolled content.
+    // Re-run after every renderAll() (lang toggle rebuilds these nodes), so
+    // the previous listener — which would otherwise keep reading stale,
+    // detached elements — is removed first.
+    if (_ownershipTrackingListener) {
+      window.removeEventListener("scroll", _ownershipTrackingListener);
+      _ownershipTrackingListener = null;
+    }
+    var chapters = document.querySelectorAll(".ownership-chapter");
+    var navItems = document.querySelectorAll(".ownership-nav-item");
+    if (!chapters.length || !navItems.length) return;
+
+    function setActive(n) {
+      navItems.forEach(function (a) {
+        a.classList.toggle("is-active", a.getAttribute("data-nav") === String(n));
+      });
+    }
+    function update() {
+      var line = window.innerHeight * 0.45;
+      var best = null, bestDist = Infinity;
+      chapters.forEach(function (c) {
+        var r = c.getBoundingClientRect();
+        var dist = Math.abs(r.top + r.height / 2 - line);
+        if (dist < bestDist) { bestDist = dist; best = c; }
+      });
+      if (best) setActive(best.getAttribute("data-chapter"));
+    }
+    _ownershipTrackingListener = update;
+    window.addEventListener("scroll", update, { passive: true });
+    update();
   }
 
   function init() {
@@ -561,11 +694,13 @@
     setupBackToTop(lenis);
     setupScrollHint(lenis);
     setupAnchorLinks(lenis);
-    setupClientLinks(lenis);
+    setupProjectLinkDelegation("clientsGroups", ".client-tile", lenis);
+    setupProjectLinkDelegation("ownershipChapters", ".ownership-case", lenis);
     setupScrollReveal();
     setupCounters();
     setupMeshParallax();
     setupHeroParallax();
+    setupOwnershipTracking();
     setupMagnetic();
     setupTiltCards();
   }

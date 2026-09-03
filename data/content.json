@@ -50,6 +50,10 @@
         "vi": "Giới thiệu",
         "en": "About"
       },
+      "ownership": {
+        "vi": "Định vị",
+        "en": "Positioning"
+      },
       "experience": {
         "vi": "Kinh nghiệm",
         "en": "Experience"
@@ -216,6 +220,89 @@
       }
     ]
   },
+
+  "ownership": {
+    "eyebrow": { "vi": "Tại sao Client-side", "en": "Why Client-side" },
+    "headline": {
+      "vi": "Agency rèn phản xạ. Giờ tôi muốn làm chủ hệ thống.",
+      "en": "Agency sharpened my instincts. Now I want to own the system."
+    },
+    "intro": {
+      "vi": "Sự nhạy bén của một Agency — tốc độ, đa nhiệm, chịu áp lực deadline — kết hợp với tư duy làm chủ hệ thống của một người đứng ở phía Client. Đó là vị trí tôi đang tìm.",
+      "en": "The sharpness of an Agency — speed, multitasking, thriving under deadline pressure — combined with the system-ownership mindset of someone on the Client side. That's the role I'm looking for."
+    },
+    "railPlaceholder": {
+      "vi": "Ảnh/đồ họa minh hoạ khái niệm \"Ownership\" (chân dung, sơ đồ, hoặc icon hệ thống)",
+      "en": "Photo/graphic illustrating the \"Ownership\" concept (portrait, diagram, or system icon)"
+    },
+    "chapters": [
+      {
+        "id": "project-management",
+        "navLabel": { "vi": "Quản trị dự án đa quy mô", "en": "Complex project management" },
+        "title": { "vi": "Làm chủ mọi quy mô chiến dịch", "en": "Owning campaigns at every scale" },
+        "body": {
+          "vi": "Từ chiến dịch toàn cầu đến từng đại lý địa phương, tôi vận hành xuyên suốt nhiều mô hình — B2C, B2B2C, SME — không chỉ đứng ở một mắt xích mà nhìn thấy toàn bộ phễu khách hàng, từ end-user đến từng đại lý.",
+          "en": "From global campaigns down to individual local dealers, I've operated across multiple models — B2C, B2B2C, SME — not just one link in the chain, but the full customer funnel, from end-user to dealer."
+        },
+        "cases": [
+          { "label": "Vietnam Airlines", "detail": { "vi": "Google Search Ads · 24 thị trường", "en": "Google Search Ads · 24 markets" }, "projectId": "vietnam-airlines" },
+          { "label": { "vi": "Sông Hồng & Cơ điện Trần Phú", "en": "Song Hong & Tran Phu Electrics" }, "detail": { "vi": "B2B2C · Quản lý KOC · Dealer Conference", "en": "B2B2C · KOC management · Dealer Conference" }, "projectId": "songhong-bedding" },
+          { "label": "VPBank SME", "detail": { "vi": "Framework nội dung & Talkshow", "en": "Content framework & Talkshow" }, "projectId": "vpbank-sme" }
+        ],
+        "value": {
+          "vi": "Góc nhìn xuyên ngành hàng — hiểu toàn bộ phễu khách hàng, không chỉ một khâu.",
+          "en": "A cross-industry perspective — understanding the full customer funnel, not just one stage."
+        }
+      },
+      {
+        "id": "operations",
+        "navLabel": { "vi": "Tối ưu vận hành & Vendor", "en": "Operation & vendor optimization" },
+        "title": { "vi": "Tối ưu vận hành, không chỉ tiết kiệm ngân sách", "en": "Optimizing operations, not just cutting budget" },
+        "body": {
+          "vi": "Từng đứng ở phía Agency, tôi hiểu rõ cấu trúc báo giá, cách vận hành nội bộ và điểm nghẽn ngân sách outsource — lợi thế để tối ưu chi phí In-house mà không đánh đổi chất lượng.",
+          "en": "Having stood on the Agency side, I understand quote structures, internal operations, and where outsourced budgets bottleneck — an edge for optimizing in-house cost without trading away quality."
+        },
+        "cases": [
+          { "label": "Panasonic Service Vietnam", "detail": { "vi": "Chiến dịch kỷ niệm 20 năm — kiểm soát chất lượng từ brief đến nghiệm thu", "en": "20th-anniversary campaign — quality control from brief to acceptance" }, "projectId": "panasonic" },
+          { "label": { "vi": "Sơ đồ tự động hoá quy trình", "en": "Process automation diagram" }, "placeholder": true }
+        ],
+        "techTags": ["Make.com", "n8n", "Frame.io"],
+        "techNote": {
+          "vi": "tự động hoá quy trình quản trị dự án, triệt tiêu rủi ro trễ tiến độ",
+          "en": "automating project-management workflows, eliminating the risk of schedule slippage"
+        },
+        "value": {
+          "vi": "Hiểu Agency từ bên trong — tối ưu ngân sách mà không cần đoán.",
+          "en": "Understanding Agency from the inside — optimizing budget without guesswork."
+        }
+      },
+      {
+        "id": "leadership",
+        "navLabel": { "vi": "Dẫn dắt đội ngũ kế cận", "en": "Leadership & succession" },
+        "title": { "vi": "Sẵn sàng làm chủ đội ngũ", "en": "Ready to own a team" },
+        "body": {
+          "vi": "Làm chủ không dừng ở dự án — mà ở cả con người. Tôi xây dựng tư duy đội ngũ kế cận, sẵn sàng cho vai trò Team Lead nội bộ.",
+          "en": "Ownership doesn't stop at projects — it extends to people. I build a succession mindset, ready for an internal Team Lead role."
+        },
+        "cases": [
+          { "label": { "vi": "Ảnh đội nhóm / mentoring", "en": "Team / mentoring photo" }, "placeholder": true }
+        ],
+        "stat": {
+          "value": "50%",
+          "label": { "vi": "tỷ lệ thực tập sinh lên chính thức", "en": "intern-to-full-time conversion rate" }
+        },
+        "note": {
+          "vi": "Trực tiếp mentor 8 thực tập sinh — 4 người (50%) vượt qua kỳ đánh giá khắt khe, trở thành nhân sự chính thức.",
+          "en": "Directly mentored 8 interns — 4 (50%) passed a rigorous evaluation to become full-time staff."
+        },
+        "value": {
+          "vi": "Không chỉ đào tạo — mà xây dựng người kế nhiệm.",
+          "en": "Not just training — building successors."
+        }
+      }
+    ]
+  },
+
   "experience": {
     "eyebrow": {
       "vi": "Lộ trình sự nghiệp",
