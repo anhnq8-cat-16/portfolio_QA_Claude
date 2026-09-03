@@ -5,9 +5,19 @@ This is Nguyễn Quý Anh's ("Mason Nguyen") personal job-hunting portfolio/CV s
 ## What this is
 
 Two static, self-contained design versions of the same portfolio, sharing one content source:
-- `/bold/` — **chosen as the primary version.** Dark theme, animated gradient-mesh hero, magnetic buttons, tilt project cards, a sticky-scroll "Ownership" positioning section (`data.ownership`, between About and Experience). The root `index.html` redirects here.
-- `/minimal/` — light theme, restrained, Lenis smooth scroll + GSAP scroll reveals, custom cursor. Kept for reference/comparison, not deleted, but not the primary experience — the Ownership section was NOT added here (Bold-only; ask the user before porting it over).
-- `/prototypes/` — throwaway Tailwind+vanilla-JS wireframes used to review layout/copy before building the real thing into `bold/`. Not linked from the live site. `ownership-section.html` is the archived first draft of the section now live in Bold — historical reference only, the real implementation has since diverged from it.
+- `/bold/` — **chosen as the primary version**, and the only one that got the 2026-09-03 IA/UX refactor below. The root `index.html` redirects here.
+- `/minimal/` — light theme, restrained, Lenis smooth scroll + GSAP scroll reveals, custom cursor. Frozen at its 2026-08-29 structure (Hero → Clients → About → Experience → Projects → Competencies → Skills → Education → Contact) — kept for reference/comparison, not deleted, but nothing done to Bold since 2026-09-03 has been ported over. Ask the user before changing that.
+- `/prototypes/` — throwaway wireframes used to review layout/copy before building the real thing into `bold/`. Not linked from the live site, and NOT kept in sync with it after approval — treat every file in here as a historical snapshot of what was pitched, not as current. `ownership-section.html` and `ia-refactor-plan.html` are the two so far.
+
+### Bold's current section order (top to bottom) — 2026-09-03
+
+`Hero → Clients → About → Ownership (positioning) → Projects (case studies) → Capabilities → Contact`
+
+This is a deliberate storytelling order the user asked for explicitly (First impression → Competitive edge → Proof → Tech/operational capability → CTA) — don't reorder sections without that framing in mind. Nav is 5 links: `about`, `ownership`, `projects`, `capabilities`, `contact` (no separate Experience/Skills/Education links — they live inside Capabilities now).
+
+**Projects is a tab bar + single panel, not stacked cards.** Only the active `DATA.projects.items[state.activeProjectTab]` is in `#projectPanel` at any time — the other four cases aren't in the DOM until their tab is clicked. `renderProjectPanel()` rebuilds the panel and must re-run `setupTiltCards()` every time (see footgun list) since it creates a fresh `.project-media` node.
+
+**Capabilities is a bento merge of four previously-separate sections** (Experience, Core Competencies, Skills & Tools, Education) — `renderCapabilities()` in `bold/js/main.js` pulls from `DATA.experience`, `DATA.competencies`, `DATA.skills`, `DATA.education` and `DATA.capabilities` (just holds the section's own eyebrow/heading/labels, no items of its own). Experience renders as an accordion (`.cap-accordion-item`, one role open at a time, first role open by default) instead of always-expanded bullets — this is the main reason the section is short enough to share a screen with three other panels. If you add a 5th chapter/category, decide where it goes in the 2-column bento (`.cap-experience` spans both rows on the left; the other three stack on the right) rather than bolting on a 5th cell.
 
 ## Hard constraints — do not violate these
 
@@ -33,6 +43,7 @@ Two static, self-contained design versions of the same portfolio, sharing one co
 
 1. **Never target `.stat-value` for anything other than the animated About counters.** `setupCounters()` does `document.querySelectorAll(".stat-value")` and expects every match to carry `data-count`/`data-prefix`/`data-suffix`. Reusing that class purely for its gradient-text look (e.g. the Ownership section's "50%") gets silently overwritten with the literal string `"null"` once the counter's fallback timer runs, since a missing attribute reads back as `null` and string-concatenates as text. If you want that visual treatment elsewhere, copy the CSS under a new class name (see `.ownership-stat-value`) — never reuse `.stat-value` itself.
 2. **`setupLenis()` must drive Lenis from exactly one clock.** Calling `lenis.raf()` from both a manual `requestAnimationFrame` loop and `gsap.ticker.add()` at the same time feeds it two incompatible time epochs — `scrollTo()` then returns/resolves normally but the scroll never actually animates, with no error anywhere. Already fixed in both `bold/js/main.js` and `minimal/js/main.js` (GSAP's ticker drives Lenis exclusively whenever GSAP is loaded; the manual rAF loop is only a fallback for when it isn't). If you ever rewrite `setupLenis()`, keep that either/or — don't run both.
+3. **`scrollToProject(id, lenis)` resolves by index into `DATA.projects.items`, not by querying the DOM.** It used to look for `.project-card[data-project-id="…"]`, which broke silently (no error, just did nothing) the moment Projects became tab-based and that class stopped existing. If Projects' markup changes again, remember this function — and the Clients-grid / Ownership case-card click-throughs that call it — needs to keep working by data lookup, not by assuming a specific card is sitting in the DOM.
 
 ## Local dev server — use `scripts/dev_server.py`, not `python3 -m http.server`
 
@@ -49,6 +60,7 @@ python3 scripts/dev_server.py . 4173
 - Deploy: user asked for full auto-deploy with no further confirmation needed (2026-08-29). No hosting CLI (gh/vercel/netlify) was installed or authenticated on the machine this was built on, so it could not be completed end-to-end — Netlify Drop (no login required) was left as the one manual step. Check README.md / git remotes / recent commits for whether this has since been completed.
 - 2026-09-02 revision batch (annotated directly in the review doc, not as native Word comments — diff the two versions of `Noi-dung-Portfolio-Mason.docx` if similar review docs appear again): years bumped 4→5 throughout, formal "Tôi" pronoun instead of "Mình", client logos + hover/click-through added to Bold's client grid, About photo layout made flexible for more images (user said 3-5 more coming later, not yet supplied), a 5th stat (ROAS) added — `about.highlights` and both versions' stats-grid CSS must stay `auto-fit`, not a fixed 4-column grid, if you touch that again.
 - New "Ownership" positioning section (Bold only), added 2026-09-03: reviewed first as a standalone `prototypes/ownership-section.html` wireframe, approved by the user, then integrated for real into `bold/`. Uses "8 interns, 4 (50%) promoted" for its leadership stat — note this is a DIFFERENT figure than the "9 interns" used in the main Experience bullet (see the 2026-09-02 entry above). Both numbers came directly from the user across two separate messages and were flagged back to them as inconsistent; neither has been reconciled as of this writing — don't silently "fix" one to match the other without asking.
+- Full IA/UX refactor of Bold, also 2026-09-03 (same day, later): user said the whole page felt oversized/overlong right after approving Ownership, asked for a full reorder + compaction in its style. Reviewed first as `prototypes/ia-refactor-plan.html` (a published Artifact + local copy), then built for real — see "Bold's current section order" above for the result. `minimal/` deliberately not touched.
 
 ## Where to look
 
