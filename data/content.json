@@ -42,7 +42,10 @@
       "vi": "Ảnh chân dung — dọc 3:4, ≥1400×1867px, JPG, nén <400KB",
       "en": "Portrait — vertical 3:4, ≥1400×1867px, JPG, <400KB compressed"
     },
-    "aboutPhotos": ["", ""],
+    "aboutPhotos": [
+      "",
+      ""
+    ],
     "aboutPhotoPlaceholder": {
       "vi": "Ảnh sinh hoạt/làm việc — dọc 3:4, ≥900×1200px, JPG <400KB",
       "en": "Work/lifestyle photo — vertical 3:4, ≥900×1200px, JPG <400KB"
@@ -213,9 +216,11 @@
       }
     ]
   },
-
   "ownership": {
-    "eyebrow": { "vi": "Tại sao Client-side", "en": "Why Client-side" },
+    "eyebrow": {
+      "vi": "Tại sao Client-side",
+      "en": "Why Client-side"
+    },
     "headline": {
       "vi": "Agency rèn phản xạ. Giờ tôi muốn làm chủ hệ thống.",
       "en": "The Agency sharpened my instincts. Now, I want to own the system."
@@ -231,16 +236,46 @@
     "chapters": [
       {
         "id": "project-management",
-        "navLabel": { "vi": "Quản trị dự án đa quy mô", "en": "Complex project management" },
-        "title": { "vi": "Làm chủ mọi quy mô chiến dịch", "en": "Owning campaigns at every scale" },
+        "navLabel": {
+          "vi": "Quản trị dự án đa quy mô",
+          "en": "Complex project management"
+        },
+        "title": {
+          "vi": "Làm chủ mọi quy mô chiến dịch",
+          "en": "Owning campaigns at every scale"
+        },
         "body": {
           "vi": "Từ chiến dịch toàn cầu đến hoạt động kích hoạt tại điểm bán địa phương, tôi vận hành xuyên suốt nhiều mô hình (B2C, B2B2C, SME). Tôi không chỉ kiểm soát một mắt xích, mà bao quát toàn bộ phễu khách hàng — từ người tiêu dùng cuối đến đại lý phân phối.",
           "en": "From global campaigns to local point-of-sale activations, I operate seamlessly across multiple models (B2C, B2B2C, SME). I don't just manage a single link in the chain; I oversee the entire customer funnel, from end-users to distributors."
         },
         "cases": [
-          { "label": "Vietnam Airlines", "detail": { "vi": "Google Search Ads · 24 thị trường", "en": "Google Search Ads · 24 markets" }, "projectId": "vietnam-airlines" },
-          { "label": { "vi": "Sông Hồng & Cơ điện Trần Phú", "en": "Song Hong & Tran Phu Electrics" }, "detail": { "vi": "B2B2C · Quản lý KOC · Dealer Conference", "en": "B2B2C · KOC management · Dealer Conference" }, "projectId": "songhong-bedding" },
-          { "label": "VPBank SME", "detail": { "vi": "Framework nội dung & Talkshow", "en": "Content framework & Talkshow" }, "projectId": "vpbank-sme" }
+          {
+            "label": "Vietnam Airlines",
+            "detail": {
+              "vi": "Google Search Ads · 24 thị trường",
+              "en": "Google Search Ads · 24 markets"
+            },
+            "projectId": "vietnam-airlines"
+          },
+          {
+            "label": {
+              "vi": "Sông Hồng & Cơ điện Trần Phú",
+              "en": "Song Hong & Tran Phu Electrics"
+            },
+            "detail": {
+              "vi": "B2B2C · Quản lý KOC · Dealer Conference",
+              "en": "B2B2C · KOC management · Dealer Conference"
+            },
+            "projectId": "songhong-bedding"
+          },
+          {
+            "label": "VPBank SME",
+            "detail": {
+              "vi": "Framework nội dung & Talkshow",
+              "en": "Content framework & Talkshow"
+            },
+            "projectId": "vpbank-sme"
+          }
         ],
         "value": {
           "vi": "Góc nhìn xuyên ngành hàng — hiểu toàn bộ phễu khách hàng, không chỉ một khâu.",
@@ -249,17 +284,40 @@
       },
       {
         "id": "operations",
-        "navLabel": { "vi": "Tối ưu vận hành & Vendor", "en": "Operation & vendor optimization" },
-        "title": { "vi": "Tối ưu vận hành, không chỉ cắt giảm ngân sách", "en": "Optimizing operations, not just cutting costs" },
+        "navLabel": {
+          "vi": "Tối ưu vận hành & Vendor",
+          "en": "Operation & vendor optimization"
+        },
+        "title": {
+          "vi": "Tối ưu vận hành, không chỉ cắt giảm ngân sách",
+          "en": "Optimizing operations, not just cutting costs"
+        },
         "body": {
           "vi": "Từng trực tiếp vận hành tại Agency, tôi nắm rõ cấu trúc báo giá, quy trình nội bộ và các điểm nghẽn về ngân sách outsource. Đây là lợi thế tuyệt đối để tôi tối ưu chi phí In-house mà không phải đánh đổi chất lượng sản phẩm.",
           "en": "Having operated on the Agency side, I deeply understand quote structures, internal workflows, and outsourced budget bottlenecks. This is a definitive advantage in optimizing In-house costs without compromising quality."
         },
         "cases": [
-          { "label": "Panasonic Service Vietnam", "detail": { "vi": "Chiến dịch kỷ niệm 20 năm — kiểm soát chất lượng từ brief đến nghiệm thu", "en": "20th-anniversary campaign — quality control from brief to acceptance" }, "projectId": "panasonic" },
-          { "label": { "vi": "Sơ đồ tự động hoá quy trình", "en": "Process automation diagram" }, "placeholder": true }
+          {
+            "label": "Panasonic Service Vietnam",
+            "detail": {
+              "vi": "Chiến dịch kỷ niệm 20 năm — kiểm soát chất lượng từ brief đến nghiệm thu",
+              "en": "20th-anniversary campaign — quality control from brief to acceptance"
+            },
+            "projectId": "panasonic"
+          },
+          {
+            "label": {
+              "vi": "Sơ đồ tự động hoá quy trình",
+              "en": "Process automation diagram"
+            },
+            "image": "../assets/images/ownership-process.jpg"
+          }
         ],
-        "techTags": ["Make.com", "n8n", "Frame.io"],
+        "techTags": [
+          "Make.com",
+          "n8n",
+          "Frame.io"
+        ],
         "techNote": {
           "vi": "tự động hoá quy trình quản trị dự án, loại bỏ rủi ro trễ tiến độ",
           "en": "automating project-management workflows, eliminating the risk of schedule slippage"
@@ -271,18 +329,33 @@
       },
       {
         "id": "leadership",
-        "navLabel": { "vi": "Dẫn dắt đội ngũ kế cận", "en": "Leadership & succession" },
-        "title": { "vi": "Sẵn sàng làm chủ đội ngũ", "en": "Ready to lead the team" },
+        "navLabel": {
+          "vi": "Dẫn dắt đội ngũ kế cận",
+          "en": "Leadership & succession"
+        },
+        "title": {
+          "vi": "Sẵn sàng làm chủ đội ngũ",
+          "en": "Ready to lead the team"
+        },
         "body": {
           "vi": "Tư duy làm chủ không dừng lại ở dự án, mà mở rộng đến yếu tố con người. Tôi luôn chú trọng xây dựng đội ngũ kế cận và hoàn toàn sẵn sàng cho vai trò Team Lead nội bộ.",
           "en": "True ownership extends beyond projects to people. I focus on building a strong succession pipeline and am fully prepared to step into an internal Team Lead role."
         },
         "cases": [
-          { "label": { "vi": "Ảnh đội nhóm / mentoring", "en": "Team / mentoring photo" }, "placeholder": true }
+          {
+            "label": {
+              "vi": "Ảnh đội nhóm / mentoring",
+              "en": "Team / mentoring photo"
+            },
+            "placeholder": true
+          }
         ],
         "stat": {
           "value": "44%",
-          "label": { "vi": "tỷ lệ thực tập sinh lên chính thức", "en": "intern-to-full-time conversion rate" }
+          "label": {
+            "vi": "tỷ lệ thực tập sinh lên chính thức",
+            "en": "intern-to-full-time conversion rate"
+          }
         },
         "note": {
           "vi": "Trực tiếp mentor 9 thực tập sinh — 4 người (44%) vượt qua kỳ đánh giá khắt khe, trở thành nhân sự chính thức.",
@@ -293,9 +366,9 @@
           "en": "Not just training — building successors."
         }
       }
-    ]
+    ],
+    "railImage": "../assets/images/ownership-rail.jpg"
   },
-
   "experience": {
     "eyebrow": {
       "vi": "Lộ trình sự nghiệp",
@@ -454,7 +527,7 @@
           "vi": "2023 — 2026",
           "en": "2023 — 2026"
         },
-        "cover": "",
+        "cover": "../assets/images/cover-vietnam-airlines.jpg",
         "problem": {
           "vi": "Vietnam Airlines cần vận hành hệ thống quảng cáo Google Search nhất quán về thông điệp thương hiệu cốt lõi, nhưng vẫn phải bám sát văn hóa và hành vi tìm kiếm của từng thị trường quốc tế — diễn ra đồng thời mà không bị lệch nhịp.",
           "en": "Vietnam Airlines needed a Google Search advertising system that maintained core brand consistency while adapting to the culture and search behaviors of individual international markets — running simultaneously without falling out of sync."
@@ -488,7 +561,7 @@
           "vi": "2023 — 2026",
           "en": "2023 — 2026"
         },
-        "cover": "",
+        "cover": "../assets/images/cover-panasonic.jpg",
         "problem": {
           "vi": "Panasonic Service Vietnam cần một chiến dịch kỷ niệm 20 năm (\"20th years of Trusted Service\") vừa thúc đẩy doanh số các gói bảo dưỡng và gia hạn bảo hành, vừa xây dựng thành công cộng đồng khách hàng trung thành dài hạn.",
           "en": "Panasonic Service Vietnam required a 20th-anniversary campaign (\"20 Years of Trusted Service\") that simultaneously drove sales for maintenance and extended-warranty packages while successfully building a long-term loyal customer community."
@@ -522,7 +595,7 @@
           "vi": "2023",
           "en": "2023"
         },
-        "cover": "",
+        "cover": "../assets/images/cover-songhong-bedding.jpg",
         "problem": {
           "vi": "Sông Hồng cần đẩy mạnh truyền thông cho 4 bộ sưu tập (Basic, Urban, Adore, Back Essential) trên cả hai kênh: Đại lý (B2B) và Người tiêu dùng cuối (B2C), đòi hỏi hệ thống thông điệp phải nhất quán nhưng vẫn linh hoạt theo từng tệp đối tượng.",
           "en": "Song Hong needed to amplify communications for 4 collections (Basic, Urban, Adore, Back Essential) across both Dealer (B2B) and End-Consumer (B2C) channels, requiring a messaging system that was cohesive yet flexible for different audiences."
@@ -593,7 +666,7 @@
           "vi": "12/2024 & 01/2026",
           "en": "12/2024 & 01/2026"
         },
-        "cover": "",
+        "cover": "../assets/images/cover-csr-songhong.jpg",
         "problem": {
           "vi": "Cần triển khai dự án thiện nguyện quy mô tại các tỉnh miền núi phía Bắc (Lào Cai & Hà Giang), đòi hỏi kỹ năng phối hợp chặt chẽ với chính quyền địa phương và các tổ chức tình nguyện để đảm bảo tiếp cận đúng đối tượng và đáp ứng đúng nhu cầu thực tế.",
           "en": "A large-scale charity project needed to be deployed in the northern mountainous provinces (Lao Cai & Ha Giang), requiring tight coordination with local authorities and volunteer organizations to ensure it reached the right beneficiaries with actual needs."
@@ -625,42 +698,259 @@
       }
     ]
   },
-
   "proofOfWork": {
-    "eyebrow": { "vi": "Minh chứng thực tế", "en": "Proof of work" },
-    "heading": { "vi": "Hậu trường & Sản phẩm thực tế", "en": "Behind the Scenes & Real Deliverables" },
+    "eyebrow": {
+      "vi": "Minh chứng thực tế",
+      "en": "Proof of work"
+    },
+    "heading": {
+      "vi": "Hậu trường & Sản phẩm thực tế",
+      "en": "Behind the Scenes & Real Deliverables"
+    },
     "intro": {
       "vi": "Khám phá thư viện hình ảnh, tài liệu báo cáo và những khoảnh khắc hậu trường từ các chiến dịch tôi đã trực tiếp điều phối. Bạn có thể lọc theo từng phân loại, hoặc xem trực tiếp từ mục Case Study phía trên.",
       "en": "Explore a gallery of visuals, report documents, and behind-the-scenes moments from campaigns I have directly coordinated. You can filter by category or view them directly from the Case Studies section above."
     },
     "sheetUrl": "",
-    "viewDetailLabel": { "vi": "Xem minh chứng dự án", "en": "View project proof" },
-    "modalCloseLabel": { "vi": "Đóng", "en": "Close" },
-    "allLabel": { "vi": "Tất cả", "en": "All" },
-    "emptyLabel": { "vi": "Chưa có minh chứng nào ở mục này.", "en": "No proof items in this category yet." },
+    "viewDetailLabel": {
+      "vi": "Xem minh chứng dự án",
+      "en": "View project proof"
+    },
+    "modalCloseLabel": {
+      "vi": "Đóng",
+      "en": "Close"
+    },
+    "allLabel": {
+      "vi": "Tất cả",
+      "en": "All"
+    },
+    "emptyLabel": {
+      "vi": "Chưa có minh chứng nào ở mục này.",
+      "en": "No proof items in this category yet."
+    },
     "categories": [
-      { "id": "design", "label": { "vi": "Thiết kế", "en": "Design" } },
-      { "id": "tvc", "label": { "vi": "TVC & Sản xuất", "en": "TVC & Production" } },
-      { "id": "event", "label": { "vi": "Sự kiện", "en": "Events" } },
-      { "id": "livestream", "label": { "vi": "Livestream & Talkshow", "en": "Livestream & Talkshow" } },
-      { "id": "csr", "label": { "vi": "CSR", "en": "CSR" } },
-      { "id": "proposal", "label": { "vi": "Proposal & Báo cáo", "en": "Proposals & Reports" } }
+      {
+        "id": "design",
+        "label": {
+          "vi": "Thiết kế",
+          "en": "Design"
+        }
+      },
+      {
+        "id": "tvc",
+        "label": {
+          "vi": "TVC & Sản xuất",
+          "en": "TVC & Production"
+        }
+      },
+      {
+        "id": "event",
+        "label": {
+          "vi": "Sự kiện",
+          "en": "Events"
+        }
+      },
+      {
+        "id": "livestream",
+        "label": {
+          "vi": "Livestream & Talkshow",
+          "en": "Livestream & Talkshow"
+        }
+      },
+      {
+        "id": "csr",
+        "label": {
+          "vi": "CSR",
+          "en": "CSR"
+        }
+      },
+      {
+        "id": "proposal",
+        "label": {
+          "vi": "Proposal & Báo cáo",
+          "en": "Proposals & Reports"
+        }
+      }
     ],
     "assets": [
-      { "id": "a1", "type": "image", "category": "tvc", "projectId": "panasonic", "url": "", "description": { "vi": "Hậu trường quay TVC chiến dịch kỷ niệm 20 năm Panasonic \"Trusted Service\"", "en": "Behind-the-scenes: TVC shooting for Panasonic's 20th-anniversary \"Trusted Service\" campaign" } },
-      { "id": "a2", "type": "image", "category": "csr", "projectId": "panasonic", "url": "", "description": { "vi": "Hoạt động ngoài trời — dự án CSR trồng cây \"Sống khỏe góp xanh\"", "en": "Outdoor activation — the \"Sống khỏe góp xanh\" CSR tree-planting project" } },
-      { "id": "a3", "type": "image", "category": "design", "projectId": "panasonic", "url": "", "description": { "vi": "Giao diện Landing Page & ấn phẩm quảng cáo chiến dịch 20 năm", "en": "Landing page UI & ad creatives for the 20th-anniversary campaign" } },
-      { "id": "a4", "type": "pdf", "category": "proposal", "projectId": "vietnam-airlines", "url": "", "description": { "vi": "Báo cáo hiệu suất Google Search Ads — 24 thị trường quốc tế", "en": "Google Search Ads performance report — 24 international markets" } },
-      { "id": "a5", "type": "image", "category": "design", "projectId": "vietnam-airlines", "url": "", "description": { "vi": "Ấn phẩm quảng cáo được địa phương hóa theo từng quốc gia", "en": "Locally-adapted ad creatives per target country" } },
-      { "id": "a6", "type": "image", "category": "event", "projectId": "songhong-bedding", "url": "", "description": { "vi": "Sự kiện Hội nghị khách hàng (Dealer Conference) — 4 bộ sưu tập Sông Hồng", "en": "Dealer Conference Event — Song Hong's 4 collections" } },
-      { "id": "a7", "type": "image", "category": "design", "projectId": "songhong-bedding", "url": "", "description": { "vi": "Ấn phẩm truyền thông tích hợp 4 bộ sưu tập Sông Hồng", "en": "Integrated campaign creatives for Song Hong's 4 collections" } },
-      { "id": "a8", "type": "pdf", "category": "proposal", "projectId": "vpbank-sme", "url": "", "description": { "vi": "Kịch bản Brief & Proposal Talkshow ra mắt Tap2Phone, QR Payment", "en": "Brief & Proposal for the Tap2Phone / QR Payment launch talkshow" } },
-      { "id": "a9", "type": "video", "category": "livestream", "projectId": "vpbank-sme", "url": "", "description": { "vi": "Hiện trường Talkshow ra mắt giải pháp thanh toán VPBank SME", "en": "On-site: VPBank SME payment solutions launch talkshow" } },
-      { "id": "a10", "type": "image", "category": "csr", "projectId": "csr-songhong-garment", "url": "", "description": { "vi": "Dự án cứu trợ đồng bào tại Lào Cai & Hà Giang — 250 người thụ hưởng", "en": "Relief project in Lao Cai & Ha Giang — 250 beneficiaries" } },
-      { "id": "a11", "type": "image", "category": "event", "projectId": "csr-songhong-garment", "url": "", "description": { "vi": "Đội ngũ 15 tình nguyện viên khảo sát & triển khai thực địa", "en": "The 15-volunteer team scouting & executing on-site" } }
+      {
+        "id": "a1",
+        "type": "image",
+        "category": "tvc",
+        "projectId": "panasonic",
+        "url": "",
+        "description": {
+          "vi": "Hậu trường quay TVC chiến dịch kỷ niệm 20 năm Panasonic \"Trusted Service\"",
+          "en": "Behind-the-scenes: TVC shooting for Panasonic's 20th-anniversary \"Trusted Service\" campaign"
+        }
+      },
+      {
+        "id": "a2",
+        "type": "image",
+        "category": "csr",
+        "projectId": "panasonic",
+        "url": "",
+        "description": {
+          "vi": "Hoạt động ngoài trời — dự án CSR trồng cây \"Sống khỏe góp xanh\"",
+          "en": "Outdoor activation — the \"Sống khỏe góp xanh\" CSR tree-planting project"
+        }
+      },
+      {
+        "id": "a3",
+        "type": "image",
+        "category": "design",
+        "projectId": "panasonic",
+        "url": "",
+        "description": {
+          "vi": "Giao diện Landing Page & ấn phẩm quảng cáo chiến dịch 20 năm",
+          "en": "Landing page UI & ad creatives for the 20th-anniversary campaign"
+        }
+      },
+      {
+        "id": "a4",
+        "type": "pdf",
+        "category": "proposal",
+        "projectId": "vietnam-airlines",
+        "url": "",
+        "description": {
+          "vi": "Báo cáo hiệu suất Google Search Ads — 24 thị trường quốc tế",
+          "en": "Google Search Ads performance report — 24 international markets"
+        }
+      },
+      {
+        "id": "a5",
+        "type": "image",
+        "category": "design",
+        "projectId": "vietnam-airlines",
+        "url": "../assets/images/proof-vna-1.jpg",
+        "description": {
+          "vi": "Ấn phẩm quảng cáo được địa phương hóa theo từng quốc gia",
+          "en": "Locally-adapted ad creatives per target country"
+        }
+      },
+      {
+        "id": "a6",
+        "type": "image",
+        "category": "event",
+        "projectId": "songhong-bedding",
+        "url": "",
+        "description": {
+          "vi": "Sự kiện Hội nghị khách hàng (Dealer Conference) — 4 bộ sưu tập Sông Hồng",
+          "en": "Dealer Conference Event — Song Hong's 4 collections"
+        }
+      },
+      {
+        "id": "a7",
+        "type": "image",
+        "category": "design",
+        "projectId": "songhong-bedding",
+        "url": "../assets/images/proof-songhong-1.jpg",
+        "description": {
+          "vi": "Ấn phẩm truyền thông tích hợp 4 bộ sưu tập Sông Hồng",
+          "en": "Integrated campaign creatives for Song Hong's 4 collections"
+        }
+      },
+      {
+        "id": "a8",
+        "type": "pdf",
+        "category": "proposal",
+        "projectId": "vpbank-sme",
+        "url": "",
+        "description": {
+          "vi": "Kịch bản Brief & Proposal Talkshow ra mắt Tap2Phone, QR Payment",
+          "en": "Brief & Proposal for the Tap2Phone / QR Payment launch talkshow"
+        }
+      },
+      {
+        "id": "a9",
+        "type": "video",
+        "category": "livestream",
+        "projectId": "vpbank-sme",
+        "url": "",
+        "description": {
+          "vi": "Hiện trường Talkshow ra mắt giải pháp thanh toán VPBank SME",
+          "en": "On-site: VPBank SME payment solutions launch talkshow"
+        }
+      },
+      {
+        "id": "a10",
+        "type": "image",
+        "category": "csr",
+        "projectId": "csr-songhong-garment",
+        "url": "",
+        "description": {
+          "vi": "Dự án cứu trợ đồng bào tại Lào Cai & Hà Giang — 250 người thụ hưởng",
+          "en": "Relief project in Lao Cai & Ha Giang — 250 beneficiaries"
+        }
+      },
+      {
+        "id": "a11",
+        "type": "image",
+        "category": "event",
+        "projectId": "csr-songhong-garment",
+        "url": "",
+        "description": {
+          "vi": "Đội ngũ 15 tình nguyện viên khảo sát & triển khai thực địa",
+          "en": "The 15-volunteer team scouting & executing on-site"
+        }
+      },
+      {
+        "id": "a12",
+        "type": "image",
+        "category": "design",
+        "projectId": "vietnam-airlines",
+        "url": "../assets/images/proof-vna-2.jpg",
+        "description": {
+          "vi": "Ấn phẩm quảng cáo được địa phương hóa theo từng quốc gia",
+          "en": "Locally-adapted ad creatives per target country"
+        }
+      },
+      {
+        "id": "a13",
+        "type": "image",
+        "category": "design",
+        "projectId": "vietnam-airlines",
+        "url": "../assets/images/proof-vna-3.jpg",
+        "description": {
+          "vi": "Ấn phẩm quảng cáo được địa phương hóa theo từng quốc gia",
+          "en": "Locally-adapted ad creatives per target country"
+        }
+      },
+      {
+        "id": "a14",
+        "type": "image",
+        "category": "design",
+        "projectId": "vietnam-airlines",
+        "url": "../assets/images/proof-vna-4.jpg",
+        "description": {
+          "vi": "Ấn phẩm quảng cáo được địa phương hóa theo từng quốc gia",
+          "en": "Locally-adapted ad creatives per target country"
+        }
+      },
+      {
+        "id": "a15",
+        "type": "image",
+        "category": "design",
+        "projectId": "vietnam-airlines",
+        "url": "../assets/images/proof-vna-5.jpg",
+        "description": {
+          "vi": "Ấn phẩm quảng cáo được địa phương hóa theo từng quốc gia",
+          "en": "Locally-adapted ad creatives per target country"
+        }
+      },
+      {
+        "id": "a16",
+        "type": "image",
+        "category": "design",
+        "projectId": "songhong-bedding",
+        "url": "../assets/images/proof-songhong-2.jpg",
+        "description": {
+          "vi": "Ấn phẩm truyền thông tích hợp 4 bộ sưu tập Sông Hồng",
+          "en": "Integrated campaign creatives for Song Hong's 4 collections"
+        }
+      }
     ]
   },
-
   "clients": {
     "eyebrow": {
       "vi": "Đối tác",
@@ -815,14 +1105,31 @@
     ]
   },
   "capabilities": {
-    "eyebrow": { "vi": "Năng lực công nghệ & vận hành", "en": "Tech & operational capability" },
-    "heading": { "vi": "Năng lực", "en": "Capabilities" },
-    "experienceLabel": { "vi": "Kinh nghiệm", "en": "Experience" },
-    "educationLabel": { "vi": "Học vấn", "en": "Education" },
-    "competenciesLabel": { "vi": "Năng lực cốt lõi", "en": "Core competencies" },
-    "skillsLabel": { "vi": "Kỹ năng & Công cụ", "en": "Skills & tools" }
+    "eyebrow": {
+      "vi": "Năng lực công nghệ & vận hành",
+      "en": "Tech & operational capability"
+    },
+    "heading": {
+      "vi": "Năng lực",
+      "en": "Capabilities"
+    },
+    "experienceLabel": {
+      "vi": "Kinh nghiệm",
+      "en": "Experience"
+    },
+    "educationLabel": {
+      "vi": "Học vấn",
+      "en": "Education"
+    },
+    "competenciesLabel": {
+      "vi": "Năng lực cốt lõi",
+      "en": "Core competencies"
+    },
+    "skillsLabel": {
+      "vi": "Kỹ năng & Công cụ",
+      "en": "Skills & tools"
+    }
   },
-
   "competencies": {
     "eyebrow": {
       "vi": "Năng lực cốt lõi",

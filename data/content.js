@@ -311,7 +311,7 @@ window.SITE_CONTENT = {
               "vi": "Sơ đồ tự động hoá quy trình",
               "en": "Process automation diagram"
             },
-            "placeholder": true
+            "image": "../assets/images/ownership-process.jpg"
           }
         ],
         "techTags": [
@@ -367,7 +367,8 @@ window.SITE_CONTENT = {
           "en": "Not just training — building successors."
         }
       }
-    ]
+    ],
+    "railImage": "../assets/images/ownership-rail.jpg"
   },
   "experience": {
     "eyebrow": {
@@ -527,7 +528,7 @@ window.SITE_CONTENT = {
           "vi": "2023 — 2026",
           "en": "2023 — 2026"
         },
-        "cover": "",
+        "cover": "../assets/images/cover-vietnam-airlines.jpg",
         "problem": {
           "vi": "Vietnam Airlines cần vận hành hệ thống quảng cáo Google Search nhất quán về thông điệp thương hiệu cốt lõi, nhưng vẫn phải bám sát văn hóa và hành vi tìm kiếm của từng thị trường quốc tế — diễn ra đồng thời mà không bị lệch nhịp.",
           "en": "Vietnam Airlines needed a Google Search advertising system that maintained core brand consistency while adapting to the culture and search behaviors of individual international markets — running simultaneously without falling out of sync."
@@ -561,7 +562,7 @@ window.SITE_CONTENT = {
           "vi": "2023 — 2026",
           "en": "2023 — 2026"
         },
-        "cover": "",
+        "cover": "../assets/images/cover-panasonic.jpg",
         "problem": {
           "vi": "Panasonic Service Vietnam cần một chiến dịch kỷ niệm 20 năm (\"20th years of Trusted Service\") vừa thúc đẩy doanh số các gói bảo dưỡng và gia hạn bảo hành, vừa xây dựng thành công cộng đồng khách hàng trung thành dài hạn.",
           "en": "Panasonic Service Vietnam required a 20th-anniversary campaign (\"20 Years of Trusted Service\") that simultaneously drove sales for maintenance and extended-warranty packages while successfully building a long-term loyal customer community."
@@ -595,7 +596,7 @@ window.SITE_CONTENT = {
           "vi": "2023",
           "en": "2023"
         },
-        "cover": "",
+        "cover": "../assets/images/cover-songhong-bedding.jpg",
         "problem": {
           "vi": "Sông Hồng cần đẩy mạnh truyền thông cho 4 bộ sưu tập (Basic, Urban, Adore, Back Essential) trên cả hai kênh: Đại lý (B2B) và Người tiêu dùng cuối (B2C), đòi hỏi hệ thống thông điệp phải nhất quán nhưng vẫn linh hoạt theo từng tệp đối tượng.",
           "en": "Song Hong needed to amplify communications for 4 collections (Basic, Urban, Adore, Back Essential) across both Dealer (B2B) and End-Consumer (B2C) channels, requiring a messaging system that was cohesive yet flexible for different audiences."
@@ -666,7 +667,7 @@ window.SITE_CONTENT = {
           "vi": "12/2024 & 01/2026",
           "en": "12/2024 & 01/2026"
         },
-        "cover": "",
+        "cover": "../assets/images/cover-csr-songhong.jpg",
         "problem": {
           "vi": "Cần triển khai dự án thiện nguyện quy mô tại các tỉnh miền núi phía Bắc (Lào Cai & Hà Giang), đòi hỏi kỹ năng phối hợp chặt chẽ với chính quyền địa phương và các tổ chức tình nguyện để đảm bảo tiếp cận đúng đối tượng và đáp ứng đúng nhu cầu thực tế.",
           "en": "A large-scale charity project needed to be deployed in the northern mountainous provinces (Lao Cai & Ha Giang), requiring tight coordination with local authorities and volunteer organizations to ensure it reached the right beneficiaries with actual needs."
@@ -822,7 +823,7 @@ window.SITE_CONTENT = {
         "type": "image",
         "category": "design",
         "projectId": "vietnam-airlines",
-        "url": "",
+        "url": "../assets/images/proof-vna-1.jpg",
         "description": {
           "vi": "Ấn phẩm quảng cáo được địa phương hóa theo từng quốc gia",
           "en": "Locally-adapted ad creatives per target country"
@@ -844,7 +845,7 @@ window.SITE_CONTENT = {
         "type": "image",
         "category": "design",
         "projectId": "songhong-bedding",
-        "url": "",
+        "url": "../assets/images/proof-songhong-1.jpg",
         "description": {
           "vi": "Ấn phẩm truyền thông tích hợp 4 bộ sưu tập Sông Hồng",
           "en": "Integrated campaign creatives for Song Hong's 4 collections"
@@ -892,6 +893,61 @@ window.SITE_CONTENT = {
         "description": {
           "vi": "Đội ngũ 15 tình nguyện viên khảo sát & triển khai thực địa",
           "en": "The 15-volunteer team scouting & executing on-site"
+        }
+      },
+      {
+        "id": "a12",
+        "type": "image",
+        "category": "design",
+        "projectId": "vietnam-airlines",
+        "url": "../assets/images/proof-vna-2.jpg",
+        "description": {
+          "vi": "Ấn phẩm quảng cáo được địa phương hóa theo từng quốc gia",
+          "en": "Locally-adapted ad creatives per target country"
+        }
+      },
+      {
+        "id": "a13",
+        "type": "image",
+        "category": "design",
+        "projectId": "vietnam-airlines",
+        "url": "../assets/images/proof-vna-3.jpg",
+        "description": {
+          "vi": "Ấn phẩm quảng cáo được địa phương hóa theo từng quốc gia",
+          "en": "Locally-adapted ad creatives per target country"
+        }
+      },
+      {
+        "id": "a14",
+        "type": "image",
+        "category": "design",
+        "projectId": "vietnam-airlines",
+        "url": "../assets/images/proof-vna-4.jpg",
+        "description": {
+          "vi": "Ấn phẩm quảng cáo được địa phương hóa theo từng quốc gia",
+          "en": "Locally-adapted ad creatives per target country"
+        }
+      },
+      {
+        "id": "a15",
+        "type": "image",
+        "category": "design",
+        "projectId": "vietnam-airlines",
+        "url": "../assets/images/proof-vna-5.jpg",
+        "description": {
+          "vi": "Ấn phẩm quảng cáo được địa phương hóa theo từng quốc gia",
+          "en": "Locally-adapted ad creatives per target country"
+        }
+      },
+      {
+        "id": "a16",
+        "type": "image",
+        "category": "design",
+        "projectId": "songhong-bedding",
+        "url": "../assets/images/proof-songhong-2.jpg",
+        "description": {
+          "vi": "Ấn phẩm truyền thông tích hợp 4 bộ sưu tập Sông Hồng",
+          "en": "Integrated campaign creatives for Song Hong's 4 collections"
         }
       }
     ]

@@ -204,7 +204,18 @@
     setText("ownershipIntro", t(O.intro));
 
     var railPh = document.getElementById("ownershipRailPlaceholder");
-    railPh.innerHTML = PH_ICON_IMAGE + '<span class="ph-label">' + t(O.railPlaceholder) + "</span>";
+    if (O.railImage) {
+      railPh.className = "ownership-rail-placeholder";
+      railPh.innerHTML = "";
+      var railImg = el("img", "ownership-rail-img");
+      railImg.src = O.railImage;
+      railImg.loading = "lazy";
+      railImg.alt = t(O.railPlaceholder);
+      railPh.appendChild(railImg);
+    } else {
+      railPh.className = "ownership-rail-placeholder ph";
+      railPh.innerHTML = PH_ICON_IMAGE + '<span class="ph-label">' + t(O.railPlaceholder) + "</span>";
+    }
 
     var nav = document.getElementById("ownershipNav");
     nav.innerHTML = "";
@@ -241,9 +252,18 @@
         var cases = el("div", "ownership-cases");
         chapter.cases.forEach(function (c) {
           var hasLink = !!c.projectId;
-          var card = el("div", "ownership-case ph" + (hasLink ? " has-link" : ""));
+          var hasImage = !!c.image;
+          var card = el("div", "ownership-case" + (hasImage ? "" : " ph") + (hasLink ? " has-link" : ""));
           var text = t(c.label) + (c.detail ? "<br>" + t(c.detail) : "");
-          card.innerHTML = PH_ICON_IMAGE + '<span class="ph-label">' + text + "</span>";
+          if (hasImage) {
+            var caseImg = el("img", "ownership-case-img");
+            caseImg.src = c.image;
+            caseImg.loading = "lazy";
+            caseImg.alt = t(c.label);
+            card.appendChild(caseImg);
+          } else {
+            card.innerHTML = PH_ICON_IMAGE + '<span class="ph-label">' + text + "</span>";
+          }
           if (hasLink) {
             card.setAttribute("data-project-id", c.projectId);
             card.setAttribute("role", "button");
