@@ -439,11 +439,23 @@
       return;
     }
     if (marquee) {
-      // Auto-sliding row: duplicate the set once so the track can loop seamlessly at -50%.
-      var track = el("div", "proof-track");
-      var loopAssets = assets.length > 2 ? assets.concat(assets) : assets;
-      loopAssets.forEach(function (asset) { track.appendChild(buildProofTile(asset)); });
-      container.appendChild(track);
+      // 3 auto-sliding rows, alternating direction. Assets are dealt round-robin into
+      // rows so each row's mix stays varied; each row's set is duplicated once so its
+      // track can loop seamlessly at -50%.
+      var rowCount = Math.min(3, assets.length);
+      var rows = [];
+      for (var r = 0; r < rowCount; r++) rows.push([]);
+      assets.forEach(function (asset, i) { rows[i % rowCount].push(asset); });
+
+      rows.forEach(function (rowAssets, rowIndex) {
+        if (!rowAssets.length) return;
+        var rowEl = el("div", "proof-track-row" + (rowIndex % 2 === 1 ? " is-reverse" : ""));
+        var track = el("div", "proof-track");
+        var loopAssets = rowAssets.length > 2 ? rowAssets.concat(rowAssets) : rowAssets;
+        loopAssets.forEach(function (asset) { track.appendChild(buildProofTile(asset)); });
+        rowEl.appendChild(track);
+        container.appendChild(rowEl);
+      });
     } else {
       assets.forEach(function (asset) { container.appendChild(buildProofTile(asset)); });
     }

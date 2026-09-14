@@ -407,16 +407,18 @@ section { position: relative; padding: clamp(4.5rem, 10vw, 9rem) 0; }
 .proof-chip.is-active { background: var(--red); border-color: var(--red); color: #fff; }
 
 .proof-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: .9rem; }
-.proof-grid.proof-grid-marquee {
-  display: block; overflow: hidden; margin: 0 calc(clamp(1.25rem, 4vw, 3rem) * -1);
+.proof-grid.proof-grid-marquee { display: flex; flex-direction: column; gap: .9rem; }
+.proof-track-row {
+  overflow: hidden; margin: 0 calc(clamp(1.25rem, 4vw, 3rem) * -1);
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
 }
 .proof-track { display: flex; gap: .9rem; width: max-content; animation: proof-marquee 42s linear infinite; padding: 0 clamp(1.25rem, 4vw, 3rem); }
+.proof-track-row.is-reverse .proof-track { animation-direction: reverse; }
 .proof-grid-marquee .proof-tile { flex: 0 0 190px; width: 190px; }
 @keyframes proof-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (hover: hover) and (pointer: fine) {
-  .proof-grid-marquee:hover .proof-track { animation-play-state: paused; }
+  .proof-track-row:hover .proof-track { animation-play-state: paused; }
 }
 @media (prefers-reduced-motion: reduce) { .proof-track { animation: none; overflow-x: auto; } }
 @media (max-width: 640px) { .proof-grid-marquee .proof-tile { flex-basis: 130px; width: 130px; } .proof-track { animation-duration: 30s; } }
