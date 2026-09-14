@@ -139,12 +139,12 @@ window.SITE_CONTENT = {
       "en": "About Me"
     },
     "headline": {
-      "vi": "5 năm làm cầu nối chiến lược giữa Agency và Nhãn hàng — giờ là lúc tôi sẵn sàng bước sang vai trò làm chủ phía Client.",
-      "en": "5 years as the strategic bridge between Agency and Brand — ready to take ownership on the Client side."
+      "vi": "Cầu nối chiến lược giữa Agency & Nhãn hàng",
+      "en": "The Strategic Bridge Between Agency & Brand"
     },
     "subheadline": {
-      "vi": "Tôi là Quý Anh — chuyên gia Quản trị Dự án Marketing, từng trực tiếp điều phối hơn 40 chiến dịch IMC cho Vietnam Airlines, Panasonic, Long Hải, Sông Hồng và nhiều thương hiệu lớn khác.",
-      "en": "I'm Quy Anh — a Marketing Project Management specialist who has directly coordinated 40+ IMC campaigns for Vietnam Airlines, Panasonic, Long Hai, Song Hong, and other major brands."
+      "vi": "Tôi là Quý Anh (Mason) — 5 năm quản trị và điều phối hơn 40 chiến dịch IMC cho Vietnam Airlines, Panasonic, Sông Hồng, VPBank... Tôi sẵn sàng mang tư duy làm chủ hệ thống và tốc độ vận hành thực chiến sang vai trò Marketing / Brand Manager phía Client.",
+      "en": "I'm Quy Anh (Mason) — 5 years managing and coordinating 40+ IMC campaigns for Vietnam Airlines, Panasonic, Song Hong, VPBank... Ready to bring an ownership mindset and operational agility to a Client-side Marketing / Brand Manager role."
     }
   },
   "about": {
@@ -205,7 +205,7 @@ window.SITE_CONTENT = {
       {
         "value": 2.5,
         "prefix": "",
-        "suffix": "%",
+        "suffix": "x",
         "label": {
           "vi": "Chỉ số ROAS trung bình",
           "en": "Average ROAS"
@@ -355,8 +355,8 @@ window.SITE_CONTENT = {
           }
         },
         "note": {
-          "vi": "Trực tiếp mentor 8 thực tập sinh — 4 người (50%) vượt qua kỳ đánh giá khắt khe, trở thành nhân sự chính thức.",
-          "en": "Directly mentored 8 interns — 4 (50%) passed rigorous evaluations to become full-time staff."
+          "vi": "Trực tiếp mentor 9 thực tập sinh — 4 người (gần 50%) vượt qua kỳ đánh giá khắt khe, trở thành nhân sự chính thức.",
+          "en": "Directly mentored 9 interns — 4 (nearly 50%) passed rigorous evaluations to become full-time staff."
         },
         "value": {
           "vi": "Không chỉ đào tạo — mà xây dựng người kế nhiệm.",

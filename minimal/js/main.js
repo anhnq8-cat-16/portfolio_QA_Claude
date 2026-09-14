@@ -421,6 +421,7 @@
         var target = parseFloat(entry.target.getAttribute("data-count"));
         var prefix = entry.target.getAttribute("data-prefix") || "";
         var suffix = entry.target.getAttribute("data-suffix") || "";
+        var isFloat = target % 1 !== 0;
         if (reduceMotion) {
           entry.target.textContent = prefix + target + suffix;
           return;
@@ -428,7 +429,9 @@
         var obj = { v: 0 };
         window.gsap ? window.gsap.to(obj, {
           v: target, duration: 1.6, ease: "power2.out",
-          onUpdate: function () { entry.target.textContent = prefix + Math.round(obj.v) + suffix; }
+          onUpdate: function () {
+            entry.target.textContent = prefix + (isFloat ? obj.v.toFixed(1) : Math.round(obj.v)) + suffix;
+          }
         }) : (entry.target.textContent = prefix + target + suffix);
       });
     }, { threshold: 0.4 });
