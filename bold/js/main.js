@@ -430,14 +430,23 @@
     return tile;
   }
 
-  function renderProofGrid(container, assets) {
+  function renderProofGrid(container, assets, marquee) {
     if (!container) return;
     container.innerHTML = "";
+    container.classList.toggle("proof-grid-marquee", !!marquee);
     if (!assets.length) {
       container.appendChild(el("p", "proof-empty", t(DATA.proofOfWork.emptyLabel)));
       return;
     }
-    assets.forEach(function (asset) { container.appendChild(buildProofTile(asset)); });
+    if (marquee) {
+      // Auto-sliding row: duplicate the set once so the track can loop seamlessly at -50%.
+      var track = el("div", "proof-track");
+      var loopAssets = assets.length > 2 ? assets.concat(assets) : assets;
+      loopAssets.forEach(function (asset) { track.appendChild(buildProofTile(asset)); });
+      container.appendChild(track);
+    } else {
+      assets.forEach(function (asset) { container.appendChild(buildProofTile(asset)); });
+    }
   }
 
   function renderProofOfWork() {
@@ -464,7 +473,7 @@
       filters.appendChild(chip);
     });
 
-    renderProofGrid(document.getElementById("proofGrid"), getFilteredProofAssets());
+    renderProofGrid(document.getElementById("proofGrid"), getFilteredProofAssets(), true);
   }
 
   var proofModalTrigger = null;
@@ -558,7 +567,7 @@
         c.classList.toggle("is-active", active);
         c.setAttribute("aria-selected", active ? "true" : "false");
       });
-      renderProofGrid(document.getElementById("proofGrid"), getFilteredProofAssets());
+      renderProofGrid(document.getElementById("proofGrid"), getFilteredProofAssets(), true);
     });
   }
 
