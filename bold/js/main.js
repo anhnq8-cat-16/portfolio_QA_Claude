@@ -301,7 +301,9 @@
 
     var tabsEl = document.getElementById("projectTabs");
     tabsEl.innerHTML = "";
+    var featuredIds = DATA.projects.featuredIds || DATA.projects.items.map(function (p) { return p.id; });
     DATA.projects.items.forEach(function (proj, i) {
+      if (featuredIds.indexOf(proj.id) === -1) return; // not one of the featured tabs, but still reachable via deep links (ownership/proof/clients)
       var isActive = i === state.activeProjectTab;
       var btn = el("button", "project-tab" + (isActive ? " is-active" : ""), t(proj.client));
       btn.type = "button";
@@ -421,7 +423,7 @@
       tile.innerHTML = proofTypeIcon(asset.type) + '<span class="ph-label">' + t(asset.description) + "</span>";
     }
     if (hasFile) {
-      tile.setAttribute("data-proof-url", asset.url);
+      tile.setAttribute("data-proof-url", asset.link || asset.url);
       tile.setAttribute("role", "link");
       tile.setAttribute("tabindex", "0");
     }

@@ -695,7 +695,66 @@
             }
           }
         ]
+      },
+      {
+        "id": "pvi-am",
+        "client": "PVI AM",
+        "category": {
+          "vi": "Đang cập nhật",
+          "en": "To be updated"
+        },
+        "period": {
+          "vi": "",
+          "en": ""
+        },
+        "cover": "",
+        "problem": {
+          "vi": "Nội dung đang được bổ sung.",
+          "en": "Content coming soon."
+        },
+        "action": {
+          "vi": "Nội dung đang được bổ sung.",
+          "en": "Content coming soon."
+        },
+        "result": {
+          "vi": "Nội dung đang được bổ sung.",
+          "en": "Content coming soon."
+        },
+        "metrics": []
+      },
+      {
+        "id": "ukg-unie",
+        "client": "UKG & Unie Brand",
+        "category": {
+          "vi": "Đang cập nhật",
+          "en": "To be updated"
+        },
+        "period": {
+          "vi": "",
+          "en": ""
+        },
+        "cover": "",
+        "problem": {
+          "vi": "Nội dung đang được bổ sung.",
+          "en": "Content coming soon."
+        },
+        "action": {
+          "vi": "Nội dung đang được bổ sung.",
+          "en": "Content coming soon."
+        },
+        "result": {
+          "vi": "Nội dung đang được bổ sung.",
+          "en": "Content coming soon."
+        },
+        "metrics": []
       }
+    ],
+    "featuredIds": [
+      "vietnam-airlines",
+      "panasonic",
+      "songhong-bedding",
+      "pvi-am",
+      "ukg-unie"
     ]
   },
   "proofOfWork": {
@@ -704,8 +763,8 @@
       "en": "Proof of work"
     },
     "heading": {
-      "vi": "Hậu trường & Sản phẩm thực tế",
-      "en": "Behind the Scenes & Real Deliverables"
+      "vi": "Thư viện sản phẩm",
+      "en": "Product Library"
     },
     "intro": {
       "vi": "Khám phá thư viện hình ảnh, tài liệu báo cáo và những khoảnh khắc hậu trường từ các chiến dịch tôi đã trực tiếp điều phối. Bạn có thể lọc theo từng phân loại, hoặc xem trực tiếp từ mục Case Study phía trên.",
