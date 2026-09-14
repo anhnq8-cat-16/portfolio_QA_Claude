@@ -986,8 +986,7 @@ window.SITE_CONTENT = {
           },
           {
             "name": "UKG",
-            "logo": "../assets/images/logos/ukg.png",
-            "fullBleed": true
+            "logo": "../assets/images/logos/ukg.png"
           },
           {
             "name": "Leben Community Vietnam",
@@ -1008,7 +1007,6 @@ window.SITE_CONTENT = {
           {
             "name": "VPBank SME",
             "logo": "../assets/images/logos/vpbank-sme.png",
-            "fullBleed": true,
             "projectId": "vpbank-sme"
           },
           {

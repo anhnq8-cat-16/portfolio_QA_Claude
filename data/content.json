@@ -751,8 +751,7 @@
           },
           {
             "name": "UKG",
-            "logo": "../assets/images/logos/ukg.png",
-            "fullBleed": true
+            "logo": "../assets/images/logos/ukg.png"
           },
           {
             "name": "Leben Community Vietnam",
@@ -773,7 +772,6 @@
           {
             "name": "VPBank SME",
             "logo": "../assets/images/logos/vpbank-sme.png",
-            "fullBleed": true,
             "projectId": "vpbank-sme"
           },
           {

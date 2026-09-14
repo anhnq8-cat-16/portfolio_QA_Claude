@@ -115,7 +115,6 @@
       group.names.forEach(function (client) {
         var hasLogo = !!client.logo;
         var hasLink = !!client.projectId;
-        var logoHasOwnLabel = hasLogo && !!client.fullBleed; // image already renders its own name as text
         var tile = el("div", "client-tile" + (hasLogo ? "" : " no-logo") + (hasLink ? " has-link" : ""));
         if (hasLogo) {
           var img = el("img", "client-tile-logo");
@@ -124,9 +123,7 @@
           img.alt = client.name;
           tile.appendChild(img);
         }
-        if (!logoHasOwnLabel) {
-          tile.appendChild(el("div", "client-tile-name", client.name));
-        }
+        tile.appendChild(el("div", "client-tile-name", client.name));
         tile.appendChild(el("span", "client-tile-hint", hasLink ? hintLinked : hintPlain));
         if (hasLink) {
           tile.setAttribute("data-project-id", client.projectId);
