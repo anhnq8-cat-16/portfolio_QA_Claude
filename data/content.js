@@ -142,6 +142,10 @@ window.SITE_CONTENT = {
       "vi": "Cầu nối chiến lược giữa Agency & Nhãn hàng",
       "en": "The Strategic Bridge Between Agency & Brand"
     },
+    "headlineAccent": {
+      "vi": "Agency & Nhãn hàng",
+      "en": "Agency & Brand"
+    },
     "subheadline": {
       "vi": "Tôi là Quý Anh (Mason) — 5 năm quản trị và điều phối hơn 40 chiến dịch IMC cho Vietnam Airlines, Panasonic, Sông Hồng, VPBank... Tôi sẵn sàng mang tư duy làm chủ hệ thống và tốc độ vận hành thực chiến sang vai trò Marketing / Brand Manager phía Client.",
       "en": "I'm Quy Anh (Mason) — 5 years managing and coordinating 40+ IMC campaigns for Vietnam Airlines, Panasonic, Song Hong, VPBank... Ready to bring an ownership mindset and operational agility to a Client-side Marketing / Brand Manager role."

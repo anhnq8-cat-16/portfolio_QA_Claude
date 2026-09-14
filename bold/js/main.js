@@ -64,7 +64,14 @@
 
   function renderHero() {
     setText("heroEyebrow", t(DATA.hero.eyebrow));
-    setText("heroHeadline", t(DATA.hero.headline));
+    var headlineEl = document.getElementById("heroHeadline");
+    var headlineText = t(DATA.hero.headline);
+    var accentText = DATA.hero.headlineAccent && t(DATA.hero.headlineAccent);
+    if (accentText && headlineText.indexOf(accentText) !== -1) {
+      headlineEl.innerHTML = headlineText.replace(accentText, '<span class="hero-headline-accent">' + accentText + "</span>");
+    } else {
+      headlineEl.textContent = headlineText;
+    }
     setText("heroSub", t(DATA.hero.subheadline));
 
     var contactBtn = document.getElementById("heroContactBtn");
@@ -115,7 +122,13 @@
           img.src = client.logo;
           img.loading = "lazy";
           img.alt = client.name;
-          tile.appendChild(img);
+          if (isFullBleed) {
+            tile.appendChild(img);
+          } else {
+            var logoBox = el("div", "client-tile-logo-box");
+            logoBox.appendChild(img);
+            tile.appendChild(logoBox);
+          }
         }
         if (!isFullBleed) {
           tile.appendChild(el("div", "client-tile-name", client.name));
