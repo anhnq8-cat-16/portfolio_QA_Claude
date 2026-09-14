@@ -254,7 +254,8 @@
           var hasLink = !!c.projectId;
           var hasImage = !!c.image;
           var card = el("div", "ownership-case" + (hasImage ? "" : " ph") + (hasLink ? " has-link" : ""));
-          var text = t(c.label) + (c.detail ? "<br>" + t(c.detail) : "");
+          var sizeHint = state.lang === "vi" ? "ngang 4:3, ≥1000×750px, JPG <400KB" : "horizontal 4:3, ≥1000×750px, JPG <400KB";
+          var text = t(c.label) + (c.detail ? "<br>" + t(c.detail) : "") + "<br>" + sizeHint;
           if (hasImage) {
             var caseImg = el("img", "ownership-case-img");
             caseImg.src = c.image;
@@ -420,7 +421,10 @@
       tile.classList.add("proof-tile-file");
       tile.innerHTML = proofTypeIcon(asset.type) + '<span class="proof-tile-caption">' + t(asset.description) + "</span>";
     } else {
-      tile.innerHTML = proofTypeIcon(asset.type) + '<span class="ph-label">' + t(asset.description) + "</span>";
+      var proofSizeHint = asset.type === "image"
+        ? (state.lang === "vi" ? "vuông 1:1, ≥1200×1200px, JPG <400KB" : "square 1:1, ≥1200×1200px, JPG <400KB")
+        : (state.lang === "vi" ? "link YouTube/Facebook hoặc file PDF" : "YouTube/Facebook link or PDF file");
+      tile.innerHTML = proofTypeIcon(asset.type) + '<span class="ph-label">' + t(asset.description) + "<br>" + proofSizeHint + "</span>";
     }
     if (hasFile) {
       tile.setAttribute("data-proof-url", asset.link || asset.url);
