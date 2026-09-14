@@ -38,7 +38,7 @@ window.SITE_CONTENT = {
       "vi": "../assets/cv/NguyenQuyAnh-CV-VI.pdf",
       "en": "../assets/cv/NguyenQuyAnh-CV-EN.pdf"
     },
-    "heroPhoto": "",
+    "heroPhoto": "../assets/images/hero-portrait.jpg",
     "heroPhotoPlaceholder": {
       "vi": "Ảnh chân dung — dọc 3:4, ≥1400×1867px, JPG, nén <400KB",
       "en": "Portrait — vertical 3:4, ≥1400×1867px, JPG, <400KB compressed"
