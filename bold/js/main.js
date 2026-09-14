@@ -89,7 +89,6 @@
       photoInner.insertBefore(heroPh, photo);
     }
 
-    setText("heroSignature", DATA.personal.signature);
     setText("heroBadge", t(DATA.personal.title));
     setText("scrollHintLabel", t(DATA.ui.scrollHint));
   }
@@ -109,7 +108,8 @@
       group.names.forEach(function (client) {
         var hasLogo = !!client.logo;
         var hasLink = !!client.projectId;
-        var tile = el("div", "client-tile" + (hasLogo ? "" : " no-logo") + (hasLink ? " has-link" : ""));
+        var isFullBleed = hasLogo && !!client.fullBleed;
+        var tile = el("div", "client-tile" + (hasLogo ? "" : " no-logo") + (hasLink ? " has-link" : "") + (isFullBleed ? " is-full-bleed" : ""));
         if (hasLogo) {
           var img = el("img", "client-tile-logo");
           img.src = client.logo;
@@ -117,7 +117,9 @@
           img.alt = client.name;
           tile.appendChild(img);
         }
-        tile.appendChild(el("div", "client-tile-name", client.name));
+        if (!isFullBleed) {
+          tile.appendChild(el("div", "client-tile-name", client.name));
+        }
         tile.appendChild(el("span", "client-tile-hint", hasLink ? hintLinked : hintPlain));
         if (hasLink) {
           tile.setAttribute("data-project-id", client.projectId);

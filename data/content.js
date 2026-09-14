@@ -981,7 +981,9 @@ window.SITE_CONTENT = {
             "logo": "../assets/images/logos/kalite.png"
           },
           {
-            "name": "UKG"
+            "name": "UKG",
+            "logo": "../assets/images/logos/ukg.png",
+            "fullBleed": true
           },
           {
             "name": "Leben Community Vietnam",
@@ -1001,10 +1003,13 @@ window.SITE_CONTENT = {
         "names": [
           {
             "name": "VPBank SME",
+            "logo": "../assets/images/logos/vpbank-sme.png",
+            "fullBleed": true,
             "projectId": "vpbank-sme"
           },
           {
-            "name": "Trần Phú"
+            "name": "Trần Phú",
+            "logo": "../assets/images/logos/tran-phu.png"
           },
           {
             "name": "DVN",
