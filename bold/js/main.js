@@ -165,12 +165,14 @@
     var stats = document.getElementById("statsGrid");
     stats.innerHTML = "";
     DATA.about.highlights.forEach(function (stat) {
-      var card = el("div", "stat");
+      var prefix = stat.prefix || "";
+      var suffix = t(stat.suffix) || "";
+      var card = el("div", "stat" + ((prefix + stat.value + suffix).length > 6 ? " is-long" : ""));
       var value = el("div", "stat-value reveal-up");
       value.setAttribute("data-count", stat.value);
-      value.setAttribute("data-prefix", stat.prefix || "");
-      value.setAttribute("data-suffix", t(stat.suffix) || "");
-      value.textContent = (stat.prefix || "") + "0" + (t(stat.suffix) || "");
+      value.setAttribute("data-prefix", prefix);
+      value.setAttribute("data-suffix", suffix);
+      value.textContent = prefix + "0" + suffix;
       var label = el("div", "stat-label reveal-up", t(stat.label));
       card.appendChild(value);
       card.appendChild(label);

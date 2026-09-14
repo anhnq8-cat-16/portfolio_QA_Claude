@@ -131,7 +131,7 @@ section { position: relative; padding: clamp(4.5rem, 10vw, 9rem) 0; }
 .hero { padding-top: calc(80px + clamp(2rem, 5vw, 3.8rem)); padding-bottom: clamp(2rem, 4.5vw, 3.5rem); overflow: hidden; }
 .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
 .hero-headline {
-  font-family: var(--font-display); font-weight: 900; font-size: clamp(2.3rem, 4.8vw, 3.9rem);
+  font-family: var(--font-display); font-weight: 900; font-size: clamp(2.5rem, 5.2vw, 4.4rem);
   line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 1.4rem; text-transform: uppercase;
 }
 .hero-sub { font-size: clamp(1.02rem, 1.35vw, 1.18rem); color: var(--ink-soft); max-width: 48ch; margin-bottom: 2.2rem; line-height: 1.6; }
@@ -149,8 +149,13 @@ section { position: relative; padding: clamp(4.5rem, 10vw, 9rem) 0; }
   mix-blend-mode: overlay;
 }
 .hero-signature {
-  position: absolute; left: -6%; bottom: -6%; font-family: var(--font-script); font-weight: 700;
+  position: absolute; left: 6%; bottom: 6%; font-family: var(--font-script); font-weight: 700;
   font-size: clamp(2.2rem, 5vw, 3.6rem); color: var(--red); transform: rotate(-4deg);
+  padding: .3rem 1rem .45rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg) 55%, transparent);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(246,244,239,.25);
   text-shadow: 0 0 24px rgba(255,49,49,.6);
 }
 .hero-badge {
@@ -172,7 +177,7 @@ section { position: relative; padding: clamp(4.5rem, 10vw, 9rem) 0; }
 @media (max-width: 899px) {
   .hero-grid { grid-template-columns: 1fr; }
   .hero-photo-wrap { max-width: 260px; margin: 0 auto; order: -1; }
-  .hero-signature { left: 4%; bottom: -3%; font-size: clamp(1.6rem, 8vw, 2.4rem); }
+  .hero-signature { left: 6%; bottom: 6%; font-size: clamp(1.6rem, 8vw, 2.4rem); padding: .22rem .8rem .32rem; }
   .hero-headline { font-size: clamp(1.7rem, 7.5vw, 2.3rem); }
 }
 
@@ -234,6 +239,7 @@ section { position: relative; padding: clamp(4.5rem, 10vw, 9rem) 0; }
   background: linear-gradient(120deg, var(--red), var(--red-2));
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
+.stat.is-long .stat-value { font-size: clamp(1.8rem, 3.2vw, 2.4rem); }
 .stat-label { font-size: .85rem; color: var(--ink-soft); max-width: 16ch; }
 
 @media (max-width: 899px) {
@@ -508,7 +514,7 @@ body.modal-open { overflow: hidden; }
 
 /* ===== Contact ===== */
 .contact { text-align: left; overflow: hidden; }
-.contact-heading { max-width: 20ch; }
+.contact-heading { max-width: 20ch; position: relative; z-index: 1; }
 .contact-blurb { position: relative; z-index: 1; font-size: 1.15rem; color: var(--ink-soft); max-width: 50ch; margin-bottom: 2.6rem; }
 .contact-links { position: relative; z-index: 1; display: flex; flex-direction: column; border-top: 1px solid var(--line); }
 .contact-link {

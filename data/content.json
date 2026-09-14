@@ -277,12 +277,12 @@
           { "label": { "vi": "Ảnh đội nhóm / mentoring", "en": "Team / mentoring photo" }, "placeholder": true }
         ],
         "stat": {
-          "value": "50%",
+          "value": "44%",
           "label": { "vi": "tỷ lệ thực tập sinh lên chính thức", "en": "intern-to-full-time conversion rate" }
         },
         "note": {
-          "vi": "Trực tiếp mentor 9 thực tập sinh — 4 người (gần 50%) vượt qua kỳ đánh giá khắt khe, trở thành nhân sự chính thức.",
-          "en": "Directly mentored 9 interns — 4 (nearly 50%) passed rigorous evaluations to become full-time staff."
+          "vi": "Trực tiếp mentor 9 thực tập sinh — 4 người (44%) vượt qua kỳ đánh giá khắt khe, trở thành nhân sự chính thức.",
+          "en": "Directly mentored 9 interns — 4 (44%) passed rigorous evaluations to become full-time staff."
         },
         "value": {
           "vi": "Không chỉ đào tạo — mà xây dựng người kế nhiệm.",
