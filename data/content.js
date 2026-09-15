@@ -256,7 +256,8 @@ window.SITE_CONTENT = {
               "vi": "Google Search Ads · 24 thị trường",
               "en": "Google Search Ads · 24 markets"
             },
-            "projectId": "vietnam-airlines"
+            "projectId": "vietnam-airlines",
+            "image": "../assets/images/ownership-case-project-management-0.jpg"
           },
           {
             "label": {
@@ -548,6 +549,10 @@ window.SITE_CONTENT = {
               "en": "international markets"
             }
           }
+        ],
+        "gallery": [
+          "",
+          ""
         ]
       },
       {
@@ -582,6 +587,10 @@ window.SITE_CONTENT = {
               "en": "integrated channels"
             }
           }
+        ],
+        "gallery": [
+          "",
+          ""
         ]
       },
       {
@@ -616,6 +625,10 @@ window.SITE_CONTENT = {
               "en": "collections in parallel"
             }
           }
+        ],
+        "gallery": [
+          "",
+          ""
         ]
       },
       {
@@ -650,6 +663,10 @@ window.SITE_CONTENT = {
               "en": "features launched in parallel"
             }
           }
+        ],
+        "gallery": [
+          "",
+          ""
         ]
       },
       {
@@ -694,6 +711,10 @@ window.SITE_CONTENT = {
               "en": "volunteers led"
             }
           }
+        ],
+        "gallery": [
+          "",
+          ""
         ]
       },
       {
@@ -720,7 +741,11 @@ window.SITE_CONTENT = {
           "vi": "Nội dung đang được bổ sung.",
           "en": "Content coming soon."
         },
-        "metrics": []
+        "metrics": [],
+        "gallery": [
+          "",
+          ""
+        ]
       },
       {
         "id": "ukg-unie",
@@ -746,7 +771,11 @@ window.SITE_CONTENT = {
           "vi": "Nội dung đang được bổ sung.",
           "en": "Content coming soon."
         },
-        "metrics": []
+        "metrics": [],
+        "gallery": [
+          "",
+          ""
+        ]
       }
     ],
     "featuredIds": [
