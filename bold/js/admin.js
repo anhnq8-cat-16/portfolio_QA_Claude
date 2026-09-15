@@ -564,6 +564,11 @@
         img.src = asset.url;
         img.loading = "lazy";
         thumb.appendChild(img);
+      } else if (asset.type !== "image" && asset.thumbnail) {
+        var thumbImg = document.createElement("img");
+        thumbImg.src = asset.thumbnail;
+        thumbImg.loading = "lazy";
+        thumb.appendChild(thumbImg);
       } else {
         var ph = document.createElement("div");
         ph.className = "admin-thumb-empty";
@@ -597,6 +602,30 @@
           }, renderLibrary);
         });
         actions.appendChild(btnUpload);
+      } else {
+        var btnThumb = document.createElement("button");
+        btnThumb.textContent = asset.thumbnail ? "Đổi ảnh đại diện" : "Tải ảnh đại diện";
+        btnThumb.className = "primary";
+        btnThumb.addEventListener("click", function () {
+          openFilePicker({
+            label: vi(asset.description) || asset.id, hint: "vuông 1:1", aspect: [1, 1], targetPx: [1200, 1200],
+            filename: "proof-thumb-" + asset.id + ".jpg",
+            get: function () { return asset.thumbnail || ""; },
+            set: function (v) { asset.thumbnail = v; }
+          }, renderLibrary);
+        });
+        actions.appendChild(btnThumb);
+        if (asset.thumbnail) {
+          var btnThumbRemove = document.createElement("button");
+          btnThumbRemove.textContent = "Xoá ảnh đại diện";
+          btnThumbRemove.className = "danger";
+          btnThumbRemove.addEventListener("click", async function () {
+            delete asset.thumbnail;
+            await persist();
+            renderLibrary();
+          });
+          actions.appendChild(btnThumbRemove);
+        }
       }
 
       var btnEdit = document.createElement("button");

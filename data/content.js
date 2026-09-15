@@ -581,7 +581,7 @@ window.SITE_CONTENT = {
           "vi": "2023 — 2026",
           "en": "2023 — 2026"
         },
-        "cover": "",
+        "cover": "../assets/images/cover-panasonic.jpg",
         "problem": {
           "vi": "Panasonic Service Vietnam cần một chiến dịch kỷ niệm 20 năm (\"20th years of Trusted Service\") vừa thúc đẩy doanh số các gói bảo dưỡng và gia hạn bảo hành, vừa xây dựng thành công cộng đồng khách hàng trung thành dài hạn.",
           "en": "Panasonic Service Vietnam required a 20th-anniversary campaign (\"20 Years of Trusted Service\") that simultaneously drove sales for maintenance and extended-warranty packages while successfully building a long-term loyal customer community."
@@ -604,8 +604,8 @@ window.SITE_CONTENT = {
           }
         ],
         "gallery": [
-          "",
-          ""
+          "../assets/images/gallery-panasonic-0.jpg",
+          "../assets/images/gallery-panasonic-1.jpg"
         ]
       },
       {
@@ -642,8 +642,8 @@ window.SITE_CONTENT = {
           }
         ],
         "gallery": [
-          "",
-          ""
+          "../assets/images/gallery-songhong-bedding-0.jpg",
+          "../assets/images/gallery-songhong-bedding-1.jpg"
         ]
       },
       {
@@ -758,8 +758,8 @@ window.SITE_CONTENT = {
         },
         "metrics": [],
         "gallery": [
-          "",
-          ""
+          "../assets/images/gallery-pvi-am-0.jpg",
+          "../assets/images/gallery-pvi-am-1.jpg"
         ]
       },
       {
@@ -788,8 +788,8 @@ window.SITE_CONTENT = {
         },
         "metrics": [],
         "gallery": [
-          "",
-          ""
+          "../assets/images/gallery-ukg-unie-0.jpg",
+          "../assets/images/gallery-ukg-unie-1.jpg"
         ]
       }
     ],
@@ -929,17 +929,6 @@ window.SITE_CONTENT = {
         "description": {
           "vi": "Kịch bản Brief & Proposal Talkshow ra mắt Tap2Phone, QR Payment",
           "en": "Brief & Proposal for the Tap2Phone / QR Payment launch talkshow"
-        }
-      },
-      {
-        "id": "a9",
-        "type": "video",
-        "category": "livestream",
-        "projectId": "vpbank-sme",
-        "url": "",
-        "description": {
-          "vi": "Hiện trường Talkshow ra mắt giải pháp thanh toán VPBank SME",
-          "en": "On-site: VPBank SME payment solutions launch talkshow"
         }
       },
       {

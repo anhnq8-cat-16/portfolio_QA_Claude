@@ -441,6 +441,13 @@ section { position: relative; padding: clamp(4.5rem, 10vw, 9rem) 0; }
   display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: .6rem; padding: 1.2rem;
 }
 .proof-tile-file .ph-icon { opacity: .85; color: var(--red); width: 26px; height: 26px; transition: transform .35s var(--ease); }
+.proof-tile-play-badge {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 42px; height: 42px; border-radius: 50%; background: rgba(11,11,13,.72); backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center; transition: transform .3s var(--ease);
+}
+.proof-tile-play-badge .ph-icon { width: 20px; height: 20px; color: #fff; opacity: 1; }
+.proof-tile:hover .proof-tile-play-badge { transform: translate(-50%, -50%) scale(1.1); }
 .proof-tile-file .proof-tile-caption { position: static; background: none; color: var(--ink-soft); font-size: .72rem; font-weight: 500; padding: 0; transform: none; opacity: 1; }
 @media (hover: hover) and (pointer: fine) {
   .proof-tile[data-proof-url] { cursor: pointer; transition: transform .3s var(--ease), box-shadow .3s var(--ease); }

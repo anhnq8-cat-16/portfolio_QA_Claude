@@ -433,12 +433,15 @@
   function buildProofTile(asset) {
     var hasFile = !!asset.url;
     var tile = el("div", "proof-tile" + (hasFile ? "" : " ph"));
-    if (hasFile && asset.type === "image") {
+    if (hasFile && (asset.type === "image" || asset.thumbnail)) {
       var img = el("img");
-      img.src = asset.url;
+      img.src = asset.type === "image" ? asset.url : asset.thumbnail;
       img.loading = "lazy";
       img.alt = t(asset.description);
       tile.appendChild(img);
+      if (asset.type !== "image") {
+        tile.appendChild(el("span", "proof-tile-play-badge", proofTypeIcon(asset.type)));
+      }
       tile.appendChild(el("span", "proof-tile-caption", t(asset.description)));
     } else if (hasFile) {
       tile.classList.add("proof-tile-file");
