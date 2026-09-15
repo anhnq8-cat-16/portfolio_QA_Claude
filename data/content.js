@@ -1,4 +1,4 @@
-// AUTO-GENERATED from content.json — do not hand-edit. Run scripts/build_content_js.py after editing content.json.
+// AUTO-GENERATED from content.json — do not hand-edit.
 window.SITE_CONTENT = {
   "meta": {
     "siteTitle": {
@@ -268,15 +268,17 @@ window.SITE_CONTENT = {
               "vi": "B2B2C · Quản lý KOC · Dealer Conference",
               "en": "B2B2C · KOC management · Dealer Conference"
             },
-            "projectId": "songhong-bedding"
+            "projectId": "songhong-bedding",
+            "image": "../assets/images/ownership-case-project-management-1.jpg"
           },
           {
-            "label": "VPBank SME",
+            "label": "PVI AM",
             "detail": {
-              "vi": "Framework nội dung & Talkshow",
-              "en": "Content framework & Talkshow"
+              "vi": "Nội dung đang được bổ sung",
+              "en": "Content coming soon"
             },
-            "projectId": "vpbank-sme"
+            "projectId": "pvi-am",
+            "image": "../assets/images/ownership-case-project-management-2.jpg"
           }
         ],
         "value": {
@@ -305,7 +307,8 @@ window.SITE_CONTENT = {
               "vi": "Chiến dịch kỷ niệm 20 năm — kiểm soát chất lượng từ brief đến nghiệm thu",
               "en": "20th-anniversary campaign — quality control from brief to acceptance"
             },
-            "projectId": "panasonic"
+            "projectId": "panasonic",
+            "image": "../assets/images/ownership-case-operations-0.jpg"
           },
           {
             "label": {
