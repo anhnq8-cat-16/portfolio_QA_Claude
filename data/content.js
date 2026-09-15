@@ -558,6 +558,16 @@ window.SITE_CONTENT = {
         "gallery": [
           "../assets/images/gallery-vietnam-airlines-0.jpg",
           "../assets/images/gallery-vietnam-airlines-1.jpg"
+        ],
+        "highlights": [
+          {
+            "vi": "Quản trị Media Plan toàn cầu",
+            "en": "Global media plan management"
+          },
+          {
+            "vi": "Địa phương hoá thông điệp theo từng quốc gia",
+            "en": "Ad messaging localized per country"
+          }
         ]
       },
       {
