@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quản lý ảnh — Portfolio Mason</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%230B0B0D%22/><text y=%22.9em%22 x=%2222%22 font-size=%2290%22 font-family=%22Georgia,serif%22 font-weight=%22bold%22 fill=%22%23FF3131%22>M</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=23">
+<link rel="stylesheet" href="css/admin.css?v=1">
+</head>
+<body class="admin-body">
+
+<header class="admin-header">
+  <div class="admin-header-inner">
+    <div class="admin-brand">Mason<span class="brand-dot">.</span> <span class="admin-brand-tag">Quản lý ảnh</span></div>
+    <div class="admin-header-actions">
+      <span id="adminStatus" class="admin-status">Chưa kết nối thư mục dự án</span>
+      <button type="button" class="btn btn-line admin-btn-sm" id="btnConnect">Kết nối thư mục dự án</button>
+    </div>
+  </div>
+</header>
+
+<main class="admin-main" id="adminMain" hidden>
+
+  <section class="admin-intro">
+    <p><strong>Cách dùng:</strong> mỗi ô dưới đây tương ứng với 1 vị trí ảnh trên site. Bấm <em>Chọn ảnh mới</em> để tải ảnh từ máy lên, kéo/zoom để crop vừa khung, rồi xác nhận — ảnh được lưu thẳng vào thư mục dự án trên máy bạn, không cần qua Claude. Nhớ bấm <strong>đẩy lên GitHub</strong> (hoặc nhờ Claude) để cập nhật lên link live.</p>
+  </section>
+
+  <section class="admin-section" id="secSingle">
+    <h2 class="admin-section-title">Ảnh cá nhân, Trang chủ &amp; Định vị</h2>
+    <div class="admin-grid" id="gridPersonal"></div>
+  </section>
+
+  <section class="admin-section" id="secProjects">
+    <h2 class="admin-section-title">Ảnh đại diện dự án</h2>
+    <div class="admin-grid" id="gridProjects"></div>
+  </section>
+
+  <section class="admin-section" id="secLibrary">
+    <div class="admin-section-title-row">
+      <h2 class="admin-section-title">Thư viện sản phẩm (Proof of Work)</h2>
+      <button type="button" class="btn btn-solid admin-btn-sm" id="btnAddAsset">+ Thêm mục mới</button>
+    </div>
+    <div class="admin-grid admin-grid-library" id="gridLibrary"></div>
+  </section>
+
+</main>
+
+<div class="admin-empty" id="adminEmpty">
+  <div class="admin-empty-inner">
+    <h1>Quản lý ảnh Portfolio</h1>
+    <p>Công cụ này cho phép bạn thêm / chỉnh sửa kích thước / xoá ảnh trực tiếp trên site, không cần nhờ Claude xử lý từng ảnh.</p>
+    <p class="admin-empty-note">Chỉ hoạt động trên <strong>Chrome hoặc Edge trên máy tính</strong> (cần quyền File System Access). Bấm nút bên dưới và chọn đúng thư mục gốc <code>portfolio-mason</code> trên máy bạn.</p>
+    <button type="button" class="btn btn-solid" id="btnConnectBig">Kết nối thư mục dự án</button>
+    <p class="admin-empty-warning" id="adminUnsupported" hidden>Trình duyệt này chưa hỗ trợ. Vui lòng mở trang bằng Chrome hoặc Edge trên máy tính.</p>
+  </div>
+</div>
+
+<!-- Crop modal -->
+<div class="crop-modal" id="cropModal" aria-hidden="true">
+  <div class="crop-modal-backdrop" id="cropBackdrop"></div>
+  <div class="crop-modal-panel">
+    <h3 class="crop-modal-title" id="cropTitle">Crop ảnh</h3>
+    <p class="crop-modal-hint" id="cropHint"></p>
+    <div class="crop-viewport-wrap">
+      <canvas id="cropCanvas"></canvas>
+    </div>
+    <div class="crop-controls">
+      <label for="cropZoom">Zoom</label>
+      <input type="range" id="cropZoom" min="1" max="4" step="0.01" value="1">
+    </div>
+    <div class="crop-actions">
+      <button type="button" class="btn btn-line" id="cropCancel">Huỷ</button>
+      <button type="button" class="btn btn-solid" id="cropConfirm">Xác nhận &amp; Lưu</button>
+    </div>
+  </div>
+</div>
+
+<!-- Add/edit library asset modal -->
+<div class="crop-modal" id="assetModal" aria-hidden="true">
+  <div class="crop-modal-backdrop" id="assetBackdrop"></div>
+  <div class="crop-modal-panel asset-modal-panel">
+    <h3 class="crop-modal-title" id="assetModalTitle">Thêm mục thư viện</h3>
+    <div class="asset-form">
+      <label>Loại
+        <select id="assetType">
+          <option value="image">Ảnh</option>
+          <option value="video">Video (YouTube/Facebook link)</option>
+          <option value="pdf">PDF (link file)</option>
+        </select>
+      </label>
+      <label>Danh mục
+        <select id="assetCategory"></select>
+      </label>
+      <label>Dự án liên kết (không bắt buộc)
+        <select id="assetProject"></select>
+      </label>
+      <label>Mô tả (Tiếng Việt)
+        <textarea id="assetDescVi" rows="2"></textarea>
+      </label>
+      <label>Description (English)
+        <textarea id="assetDescEn" rows="2"></textarea>
+      </label>
+      <label id="assetUrlRow">Link video/PDF (dán URL)
+        <input type="url" id="assetUrlInput" placeholder="https://youtu.be/... hoặc https://facebook.com/...">
+      </label>
+    </div>
+    <div class="crop-actions">
+      <button type="button" class="btn btn-line" id="assetCancel">Huỷ</button>
+      <button type="button" class="btn btn-solid" id="assetSave">Lưu mục này</button>
+    </div>
+  </div>
+</div>
+
+<input type="file" id="fileInput" accept="image/*" hidden>
+
+<script src="js/admin.js?v=1"></script>
+</body>
+</html>
