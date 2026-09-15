@@ -239,10 +239,21 @@
       article.appendChild(el("p", "ownership-chapter-body", t(chapter.body)));
 
       if (chapter.stat) {
-        // Leadership-style chapter: one placeholder photo next to a big stat callout, instead of the generic case grid.
+        // Leadership-style chapter: one photo (real or placeholder) next to a big stat callout, instead of the generic case grid.
         var statRow = el("div", "ownership-stat-row");
-        var phCard = el("div", "ph");
-        phCard.innerHTML = PH_ICON_TEAM + '<span class="ph-label">' + t(chapter.cases[0].label) + "</span>";
+        var teamCase = chapter.cases[0];
+        var phCard;
+        if (teamCase.image) {
+          phCard = el("div", "ownership-team-photo");
+          var teamImg = el("img", "ownership-team-img");
+          teamImg.src = teamCase.image;
+          teamImg.loading = "lazy";
+          teamImg.alt = t(teamCase.label);
+          phCard.appendChild(teamImg);
+        } else {
+          phCard = el("div", "ph");
+          phCard.innerHTML = PH_ICON_TEAM + '<span class="ph-label">' + t(teamCase.label) + "</span>";
+        }
         var statCard = el("div", "ownership-stat-card");
         statCard.innerHTML = '<span class="ownership-stat-value">' + chapter.stat.value + '</span><span class="ownership-stat-card-label">' + t(chapter.stat.label) + "</span>";
         statRow.appendChild(phCard);
