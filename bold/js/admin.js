@@ -174,8 +174,14 @@
       var currentFile = await currentHandle.getFile();
       var currentText = await currentFile.text();
       if (lastKnownDiskText !== null && currentText !== lastKnownDiskText) {
-        setStatus("Xung đột: nội dung trên máy đã bị phiên khác thay đổi — tải lại trang rồi thử lại.", "error");
-        alert("content.json trên máy vừa bị một phiên khác (một tab admin khác, hoặc Claude) ghi đè kể từ lúc bạn kết nối.\n\nĐể tránh mất dữ liệu, thao tác lưu vừa rồi đã bị huỷ. Hãy tải lại trang (F5) để lấy bản mới nhất rồi thực hiện lại thay đổi của bạn.");
+        // Self-heal instead of dead-ending: adopt the newer disk content (e.g. edits Claude
+        // just pushed) and re-render, rather than silently overwriting it. The change the user
+        // just made is lost (its image file, if any, stays on disk unreferenced — harmless) and
+        // must be redone once — but the session is fresh again for every action after this.
+        DATA = JSON.parse(currentText);
+        lastKnownDiskText = currentText;
+        renderAll();
+        setStatus("Đã có thay đổi mới từ phiên khác — đã tự đồng bộ lại. Vui lòng thực hiện lại thao tác vừa rồi.", "error");
         return false;
       }
       var newJsonText = JSON.stringify(DATA, null, 2);

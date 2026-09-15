@@ -921,17 +921,6 @@ window.SITE_CONTENT = {
         }
       },
       {
-        "id": "a8",
-        "type": "pdf",
-        "category": "proposal",
-        "projectId": "vpbank-sme",
-        "url": "",
-        "description": {
-          "vi": "Kịch bản Brief & Proposal Talkshow ra mắt Tap2Phone, QR Payment",
-          "en": "Brief & Proposal for the Tap2Phone / QR Payment launch talkshow"
-        }
-      },
-      {
         "id": "d-vna-1",
         "type": "image",
         "category": "design",
