@@ -229,7 +229,7 @@
         slots.push({
           id: "ownership-team-" + ch.id, label: "Ảnh: " + vi(c.label) + " (" + vi(ch.title) + ")",
           hint: "ngang ~2.5:1 · ≥1600×640px",
-          aspect: [2.5, 1], targetPx: [1600, 640], filename: "ownership-team.jpg",
+          aspect: [2.5, 1], targetPx: [1000, 400], filename: "ownership-team.jpg",
           get: function () { return c.image || ""; },
           set: function (v) { if (v) c.image = v; else delete c.image; }
         });
@@ -238,7 +238,7 @@
           slots.push({
             id: "ownership-case-" + ch.id + "-" + i, label: "Case: " + vi(c.label) + " (" + vi(ch.title) + ")",
             hint: "ngang 4:3 · ≥1000×750px",
-            aspect: [4, 3], targetPx: [1000, 750], filename: "ownership-case-" + ch.id + "-" + i + ".jpg",
+            aspect: [4, 3], targetPx: [700, 525], filename: "ownership-case-" + ch.id + "-" + i + ".jpg",
             get: function () { return c.image || ""; },
             set: function (v) { if (v) c.image = v; else delete c.image; }
           });
@@ -262,7 +262,7 @@
         slots.push({
           id: "gallery-" + p.id + "-" + gi, label: "Ảnh cụm nhỏ #" + (gi + 1) + ": " + p.client,
           hint: "ngang 4:3 · ≥1000×750px",
-          aspect: [4, 3], targetPx: [1000, 750], filename: "gallery-" + p.id + "-" + gi + ".jpg",
+          aspect: [4, 3], targetPx: [700, 525], filename: "gallery-" + p.id + "-" + gi + ".jpg",
           get: function () { return p.gallery[gi] || ""; },
           set: function (v) { p.gallery[gi] = v; }
         });
@@ -601,7 +601,7 @@
         btnUpload.className = "primary";
         btnUpload.addEventListener("click", function () {
           openFilePicker({
-            label: vi(asset.description) || asset.id, hint: "vuông 1:1", aspect: [1, 1], targetPx: [1200, 1200],
+            label: vi(asset.description) || asset.id, hint: "vuông 1:1", aspect: [1, 1], targetPx: [700, 700],
             filename: "proof-" + asset.id + ".jpg",
             get: function () { return asset.url; },
             set: function (v) { asset.url = v; }
@@ -614,7 +614,7 @@
         btnThumb.className = "primary";
         btnThumb.addEventListener("click", function () {
           openFilePicker({
-            label: vi(asset.description) || asset.id, hint: "vuông 1:1", aspect: [1, 1], targetPx: [1200, 1200],
+            label: vi(asset.description) || asset.id, hint: "vuông 1:1", aspect: [1, 1], targetPx: [700, 700],
             filename: "proof-thumb-" + asset.id + ".jpg",
             get: function () { return asset.thumbnail || ""; },
             set: function (v) { asset.thumbnail = v; }
