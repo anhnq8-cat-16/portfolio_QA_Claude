@@ -256,8 +256,7 @@ window.SITE_CONTENT = {
               "vi": "Google Search Ads · 24 thị trường",
               "en": "Google Search Ads · 24 markets"
             },
-            "projectId": "vietnam-airlines",
-            "image": "../assets/images/ownership-case-vna.jpg"
+            "projectId": "vietnam-airlines"
           },
           {
             "label": {
@@ -268,8 +267,7 @@ window.SITE_CONTENT = {
               "vi": "B2B2C · Quản lý KOC · Dealer Conference",
               "en": "B2B2C · KOC management · Dealer Conference"
             },
-            "projectId": "songhong-bedding",
-            "image": "../assets/images/ownership-case-songhong.jpg"
+            "projectId": "songhong-bedding"
           },
           {
             "label": "VPBank SME",
@@ -306,15 +304,13 @@ window.SITE_CONTENT = {
               "vi": "Chiến dịch kỷ niệm 20 năm — kiểm soát chất lượng từ brief đến nghiệm thu",
               "en": "20th-anniversary campaign — quality control from brief to acceptance"
             },
-            "projectId": "panasonic",
-            "image": "../assets/images/ownership-case-panasonic.jpg"
+            "projectId": "panasonic"
           },
           {
             "label": {
               "vi": "Sơ đồ tự động hoá quy trình",
               "en": "Process automation diagram"
-            },
-            "image": "../assets/images/ownership-process.jpg"
+            }
           }
         ],
         "techTags": [
@@ -351,8 +347,7 @@ window.SITE_CONTENT = {
               "vi": "Ảnh đội nhóm / mentoring",
               "en": "Team / mentoring photo"
             },
-            "placeholder": true,
-            "image": "../assets/images/ownership-team.jpg"
+            "placeholder": true
           }
         ],
         "stat": {

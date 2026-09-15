@@ -348,6 +348,25 @@
     }
     media.appendChild(inner);
 
+    var galleryItems = (proj.gallery && proj.gallery.length) ? proj.gallery : ["", ""];
+    var mediaGallery = el("div", "project-media-gallery");
+    galleryItems.forEach(function (src, gi) {
+      var item = el("div", "project-media-gallery-item");
+      if (src) {
+        var gImg = el("img");
+        gImg.src = src;
+        gImg.loading = "lazy";
+        gImg.alt = t(proj.client) + " — " + (state.lang === "vi" ? "hình ảnh dự án" : "project photo") + " " + (gi + 1);
+        item.appendChild(gImg);
+      } else {
+        var gPh = el("div", "ph project-gallery-ph");
+        gPh.innerHTML = PH_ICON_IMAGE + '<span class="ph-label">' + t(proj.client) + " " + (gi + 1) + "</span>";
+        item.appendChild(gPh);
+      }
+      mediaGallery.appendChild(item);
+    });
+    media.appendChild(mediaGallery);
+
     var body = el("div", "project-body");
     body.appendChild(el("div", "project-index", "0" + (state.activeProjectTab + 1)));
     body.appendChild(el("div", "project-client", t(proj.client)));
@@ -362,27 +381,20 @@
       body.appendChild(block);
     });
 
-    if (proj.metrics && proj.metrics.length) {
+    if ((proj.metrics && proj.metrics.length) || (proj.highlights && proj.highlights.length)) {
       var metrics = el("div", "project-metrics");
-      proj.metrics.forEach(function (m) {
+      (proj.metrics || []).forEach(function (m) {
         var mEl = el("div", "project-metric");
         mEl.appendChild(el("div", "project-metric-value", m.value));
         mEl.appendChild(el("div", "project-metric-label", t(m.label)));
         metrics.appendChild(mEl);
       });
-      body.appendChild(metrics);
-    }
-
-    if (proj.gallery && proj.gallery.length) {
-      var gallery = el("div", "project-gallery");
-      proj.gallery.forEach(function (src) {
-        var gImg = el("img");
-        gImg.src = src;
-        gImg.loading = "lazy";
-        gImg.alt = t(proj.client) + " — " + (state.lang === "vi" ? "hình ảnh dự án" : "project photo");
-        gallery.appendChild(gImg);
+      (proj.highlights || []).forEach(function (h) {
+        var hEl = el("div", "project-metric project-feature");
+        hEl.appendChild(el("div", "project-feature-label", t(h)));
+        metrics.appendChild(hEl);
       });
-      body.appendChild(gallery);
+      body.appendChild(metrics);
     }
 
     if (getAssetsForProject(proj.id).length) {

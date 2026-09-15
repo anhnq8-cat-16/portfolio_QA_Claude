@@ -61,6 +61,17 @@
 .admin-card-actions button.primary { background: var(--red); border-color: var(--red); color: #fff; }
 .admin-card-actions button.primary:hover { opacity: .9; }
 
+.admin-card-text { min-height: 0; }
+.admin-highlight-list { display: flex; flex-direction: column; gap: .4rem; }
+.admin-highlight-row {
+  display: flex; align-items: center; justify-content: space-between; gap: .5rem;
+  background: var(--surface-2); border: 1px solid var(--line); border-radius: 8px; padding: .4rem .6rem;
+  font-size: .78rem;
+}
+.admin-highlight-row span { flex: 1; }
+.admin-highlight-row button { color: var(--ink-faint); font-size: .8rem; }
+.admin-highlight-row button:hover { color: var(--red); }
+
 .admin-card-field { font-size: .7rem; color: var(--ink-faint); }
 .admin-card-field select, .admin-card-field input[type="url"] {
   width: 100%; margin-top: .25rem; background: var(--surface-2); border: 1px solid var(--line); border-radius: 8px;

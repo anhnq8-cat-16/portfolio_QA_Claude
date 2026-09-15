@@ -94,6 +94,7 @@
       var file = await contentFile.getFile();
       var text = await file.text();
       DATA = JSON.parse(text);
+      lastKnownDiskText = text;
 
       await idbSet("rootHandle", handle);
 
@@ -162,20 +163,35 @@
     }
   }
 
-  var saveTimer = null;
-  function persist() {
+  var lastKnownDiskText = null;
+
+  // Optimistic concurrency guard: refuse to overwrite content.json if it changed on disk
+  // since we last read it (e.g. another admin tab, or Claude, edited it in the meantime).
+  async function persist() {
     setStatus("Đang lưu...", null);
-    return Promise.all([
-      writeFile(dataDirHandle, "content.json", JSON.stringify(DATA, null, 2)),
-      writeFile(dataDirHandle, "content.js",
-        "// AUTO-GENERATED from content.json — do not hand-edit.\nwindow.SITE_CONTENT = " + JSON.stringify(DATA, null, 2) + ";\n")
-    ]).then(bumpCacheVersion).then(function () {
+    try {
+      var currentHandle = await dataDirHandle.getFileHandle("content.json");
+      var currentFile = await currentHandle.getFile();
+      var currentText = await currentFile.text();
+      if (lastKnownDiskText !== null && currentText !== lastKnownDiskText) {
+        setStatus("Xung đột: nội dung trên máy đã bị phiên khác thay đổi — tải lại trang rồi thử lại.", "error");
+        alert("content.json trên máy vừa bị một phiên khác (một tab admin khác, hoặc Claude) ghi đè kể từ lúc bạn kết nối.\n\nĐể tránh mất dữ liệu, thao tác lưu vừa rồi đã bị huỷ. Hãy tải lại trang (F5) để lấy bản mới nhất rồi thực hiện lại thay đổi của bạn.");
+        return false;
+      }
+      var newJsonText = JSON.stringify(DATA, null, 2);
+      var newJsText = "// AUTO-GENERATED from content.json — do not hand-edit.\nwindow.SITE_CONTENT = " + newJsonText + ";\n";
+      await writeFile(dataDirHandle, "content.json", newJsonText);
+      await writeFile(dataDirHandle, "content.js", newJsText);
+      lastKnownDiskText = newJsonText;
+      await bumpCacheVersion();
       var t = new Date();
       setStatus("Đã lưu lúc " + t.toLocaleTimeString("vi-VN"), "ok");
-    }).catch(function (e) {
+      return true;
+    } catch (e) {
       console.error(e);
       setStatus("Lỗi khi lưu: " + (e && e.message ? e.message : e), "error");
-    });
+      return false;
+    }
   }
 
   /* ---------------- Slot config (single-image fields) ---------------- */
@@ -227,13 +243,84 @@
   }
 
   function buildProjectSlots() {
-    return DATA.projects.items.map(function (p) {
-      return {
-        id: "cover-" + p.id, label: "Ảnh đại diện: " + p.client, hint: "ngang 4:3 · ≥1600×1200px",
-        aspect: [4, 3], targetPx: [1600, 1200], filename: "cover-" + p.id + ".jpg",
+    var slots = [];
+    DATA.projects.items.forEach(function (p) {
+      slots.push({
+        id: "cover-" + p.id, label: "Ảnh đại diện: " + p.client, hint: "1250×700px",
+        aspect: [1250, 700], targetPx: [1250, 700], filename: "cover-" + p.id + ".jpg",
         get: function () { return p.cover || ""; },
         set: function (v) { p.cover = v; }
-      };
+      });
+      if (!p.gallery || !p.gallery.length) p.gallery = ["", ""];
+      p.gallery.forEach(function (_, gi) {
+        slots.push({
+          id: "gallery-" + p.id + "-" + gi, label: "Ảnh cụm nhỏ #" + (gi + 1) + ": " + p.client,
+          hint: "ngang 4:3 · ≥1000×750px",
+          aspect: [4, 3], targetPx: [1000, 750], filename: "gallery-" + p.id + "-" + gi + ".jpg",
+          get: function () { return p.gallery[gi] || ""; },
+          set: function (v) { p.gallery[gi] = v; }
+        });
+      });
+    });
+    return slots;
+  }
+
+  /* ---------------- Project highlight tiles (short text feature tags) ---------------- */
+  function renderHighlights() {
+    var container = document.getElementById("gridHighlights");
+    if (!container) return;
+    container.innerHTML = "";
+    DATA.projects.items.forEach(function (p) {
+      var card = document.createElement("div");
+      card.className = "admin-card admin-card-text";
+
+      var body = document.createElement("div");
+      body.className = "admin-card-body";
+      var label = document.createElement("div");
+      label.className = "admin-card-label";
+      label.textContent = p.client;
+      body.appendChild(label);
+
+      var list = document.createElement("div");
+      list.className = "admin-highlight-list";
+      (p.highlights || []).forEach(function (h, hi) {
+        var row = document.createElement("div");
+        row.className = "admin-highlight-row";
+        var span = document.createElement("span");
+        span.textContent = vi(h);
+        var btnDel = document.createElement("button");
+        btnDel.textContent = "✕";
+        btnDel.title = "Xoá ô này";
+        btnDel.addEventListener("click", async function () {
+          p.highlights.splice(hi, 1);
+          await persist();
+          renderHighlights();
+        });
+        row.appendChild(span);
+        row.appendChild(btnDel);
+        list.appendChild(row);
+      });
+      body.appendChild(list);
+
+      var actions = document.createElement("div");
+      actions.className = "admin-card-actions";
+      var btnAdd = document.createElement("button");
+      btnAdd.textContent = "+ Thêm ô nổi bật";
+      btnAdd.className = "primary";
+      btnAdd.addEventListener("click", async function () {
+        var textVi = prompt("Nội dung ô nổi bật (Tiếng Việt) — ví dụ: \"B2B2C · Quản lý KOC\"");
+        if (!textVi) return;
+        var textEn = prompt("Nội dung tiếng Anh (để trống nếu muốn giống tiếng Việt)", textVi) || textVi;
+        if (!p.highlights) p.highlights = [];
+        p.highlights.push({ vi: textVi, en: textEn });
+        await persist();
+        renderHighlights();
+      });
+      actions.appendChild(btnAdd);
+      body.appendChild(actions);
+
+      card.appendChild(body);
+      container.appendChild(card);
     });
   }
 
@@ -604,6 +691,7 @@
   function renderAll() {
     renderSlotGrid(document.getElementById("gridPersonal"), buildPersonalSlots());
     renderSlotGrid(document.getElementById("gridProjects"), buildProjectSlots());
+    renderHighlights();
     renderLibrary();
   }
 
