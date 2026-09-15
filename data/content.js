@@ -877,44 +877,11 @@ window.SITE_CONTENT = {
     ],
     "assets": [
       {
-        "id": "a1",
-        "type": "image",
-        "category": "tvc",
-        "projectId": "panasonic",
-        "url": "",
-        "description": {
-          "vi": "Hậu trường quay TVC chiến dịch kỷ niệm 20 năm Panasonic \"Trusted Service\"",
-          "en": "Behind-the-scenes: TVC shooting for Panasonic's 20th-anniversary \"Trusted Service\" campaign"
-        }
-      },
-      {
-        "id": "a2",
-        "type": "image",
-        "category": "csr",
-        "projectId": "panasonic",
-        "url": "",
-        "description": {
-          "vi": "Hoạt động ngoài trời — dự án CSR trồng cây \"Sống khỏe góp xanh\"",
-          "en": "Outdoor activation — the \"Sống khỏe góp xanh\" CSR tree-planting project"
-        }
-      },
-      {
-        "id": "a4",
-        "type": "pdf",
-        "category": "proposal",
-        "projectId": "vietnam-airlines",
-        "url": "",
-        "description": {
-          "vi": "Báo cáo hiệu suất Google Search Ads — 24 thị trường quốc tế",
-          "en": "Google Search Ads performance report — 24 international markets"
-        }
-      },
-      {
         "id": "a6",
         "type": "image",
         "category": "event",
         "projectId": "songhong-bedding",
-        "url": "",
+        "url": "../assets/images/proof-a6.jpg",
         "description": {
           "vi": "Sự kiện Hội nghị khách hàng (Dealer Conference) — 4 bộ sưu tập Sông Hồng",
           "en": "Dealer Conference Event — Song Hong's 4 collections"
@@ -1366,7 +1333,8 @@ window.SITE_CONTENT = {
         "description": {
           "vi": "TVC Thạch rau câu Long Hải",
           "en": "Long Hai jelly TVC"
-        }
+        },
+        "thumbnail": "../assets/images/proof-thumb-t-longhai-1.jpg"
       },
       {
         "id": "t-longhai-2",
@@ -1376,7 +1344,8 @@ window.SITE_CONTENT = {
         "description": {
           "vi": "TVC Thạch Natty Collagen — Long Hải",
           "en": "Long Hai Natty Collagen jelly TVC"
-        }
+        },
+        "thumbnail": "../assets/images/proof-thumb-t-longhai-2.jpg"
       },
       {
         "id": "t-longhai-3",
@@ -1386,17 +1355,8 @@ window.SITE_CONTENT = {
         "description": {
           "vi": "TVC Nước rong biển Long Hải",
           "en": "Long Hai seaweed drink TVC"
-        }
-      },
-      {
-        "id": "t-longhai-4",
-        "type": "video",
-        "category": "tvc",
-        "url": "https://youtu.be/G2InUe-JeoM",
-        "description": {
-          "vi": "TVC Thạch rau câu Long Hải",
-          "en": "Long Hai jelly TVC"
-        }
+        },
+        "thumbnail": "../assets/images/proof-thumb-t-longhai-3.jpg"
       },
       {
         "id": "t-sh-tvc",
@@ -1407,7 +1367,8 @@ window.SITE_CONTENT = {
           "vi": "TVC thương hiệu Sông Hồng",
           "en": "Song Hong brand TVC"
         },
-        "projectId": "songhong-bedding"
+        "projectId": "songhong-bedding",
+        "thumbnail": "../assets/images/proof-thumb-t-sh-tvc.jpg"
       },
       {
         "id": "t-sh-2d",
@@ -1418,7 +1379,8 @@ window.SITE_CONTENT = {
           "vi": "Animation 2D thương hiệu Sông Hồng",
           "en": "Song Hong 2D brand animation"
         },
-        "projectId": "songhong-bedding"
+        "projectId": "songhong-bedding",
+        "thumbnail": "../assets/images/proof-thumb-t-sh-2d.jpg"
       },
       {
         "id": "t-sh-thiennguyen-1",
@@ -1429,7 +1391,8 @@ window.SITE_CONTENT = {
           "vi": "Video CSR Sông Hồng Thiện Nguyện",
           "en": "Song Hong charity CSR video"
         },
-        "projectId": "csr-songhong-garment"
+        "projectId": "csr-songhong-garment",
+        "thumbnail": "../assets/images/proof-thumb-t-sh-thiennguyen-1.jpg"
       },
       {
         "id": "t-sh-thiennguyen-2",
@@ -1440,7 +1403,8 @@ window.SITE_CONTENT = {
           "vi": "Video CSR Sông Hồng Thiện Nguyện",
           "en": "Song Hong charity CSR video"
         },
-        "projectId": "csr-songhong-garment"
+        "projectId": "csr-songhong-garment",
+        "thumbnail": "../assets/images/proof-thumb-t-sh-thiennguyen-2.jpg"
       }
     ]
   },
