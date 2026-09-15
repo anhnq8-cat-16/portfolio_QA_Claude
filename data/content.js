@@ -1,4 +1,4 @@
-// AUTO-GENERATED from content.json — do not hand-edit.
+// AUTO-GENERATED from content.json — do not hand-edit. Run scripts/build_content_js.py after editing content.json.
 window.SITE_CONTENT = {
   "meta": {
     "siteTitle": {
@@ -314,7 +314,8 @@ window.SITE_CONTENT = {
             "label": {
               "vi": "Sơ đồ tự động hoá quy trình",
               "en": "Process automation diagram"
-            }
+            },
+            "image": "../assets/images/ownership-case-operations-1.jpg"
           }
         ],
         "techTags": [
@@ -351,7 +352,8 @@ window.SITE_CONTENT = {
               "vi": "Ảnh đội nhóm / mentoring",
               "en": "Team / mentoring photo"
             },
-            "placeholder": true
+            "placeholder": true,
+            "image": "../assets/images/ownership-team.jpg"
           }
         ],
         "stat": {
@@ -554,8 +556,8 @@ window.SITE_CONTENT = {
           }
         ],
         "gallery": [
-          "",
-          ""
+          "../assets/images/gallery-vietnam-airlines-0.jpg",
+          "../assets/images/gallery-vietnam-airlines-1.jpg"
         ]
       },
       {
@@ -569,7 +571,7 @@ window.SITE_CONTENT = {
           "vi": "2023 — 2026",
           "en": "2023 — 2026"
         },
-        "cover": "../assets/images/cover-panasonic.jpg",
+        "cover": "",
         "problem": {
           "vi": "Panasonic Service Vietnam cần một chiến dịch kỷ niệm 20 năm (\"20th years of Trusted Service\") vừa thúc đẩy doanh số các gói bảo dưỡng và gia hạn bảo hành, vừa xây dựng thành công cộng đồng khách hàng trung thành dài hạn.",
           "en": "Panasonic Service Vietnam required a 20th-anniversary campaign (\"20 Years of Trusted Service\") that simultaneously drove sales for maintenance and extended-warranty packages while successfully building a long-term loyal customer community."
