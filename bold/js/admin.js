@@ -237,11 +237,6 @@
       var s = {
         id: "hero-" + i, label: "Ảnh Hero (trang chủ) #" + (i + 1) + " — slider tự chuyển", hint: "dọc 3:4 · ≥1400×1867px",
         aspect: [3, 4], targetPx: [1400, 1867], filename: "hero-portrait-" + (i + 1) + ".jpg",
-        // The live site zooms hero photos in by 8% (a permanent CSS transform, not a hover
-        // effect) for a subtle cinematic crop. The crop preview here shows the raw framed area,
-        // so we bake in matching extra margin on export — see cropConfirm — otherwise whatever
-        // the user carefully keeps in-frame (e.g. hair) gets clipped by that zoom on the real site.
-        siteZoom: 1.08,
         get: function () { return DATA.personal.heroPhotos[i]; },
         set: function (v) { DATA.personal.heroPhotos[i] = v; }
       };
@@ -519,8 +514,7 @@
     };
     cropZoom.value = "1";
     cropTitle.textContent = slot.label;
-    cropHint.textContent = "Kích thước lưu: " + slot.targetPx[0] + "×" + slot.targetPx[1] + "px — kéo để dịch chuyển, dùng thanh trượt để zoom."
-      + (slot.siteZoom ? " Site sẽ tự zoom thêm " + Math.round((slot.siteZoom - 1) * 100) + "% khi hiển thị — khung xem trước này đã tự bù trừ, cứ canh khung cho đẹp như bình thường." : "");
+    cropHint.textContent = "Kích thước lưu: " + slot.targetPx[0] + "×" + slot.targetPx[1] + "px — kéo để dịch chuyển, dùng thanh trượt để zoom. Khung xem trước khớp 100% với ảnh hiển thị trên site.";
     drawCrop();
     cropModal.classList.add("is-open");
     cropModal.setAttribute("aria-hidden", "false");
@@ -602,23 +596,6 @@
     var sy = (0 - y) / effScale;
     var sw = s.vw / effScale;
     var sh = s.vh / effScale;
-
-    // Compensate for a slot-specific zoom the live site applies after this crop (see hero's
-    // siteZoom above): export a proportionally wider/taller rect so the site's own zoom-in
-    // lands back on exactly what was framed in the preview, instead of cropping past it.
-    var siteZoom = s.slot.siteZoom || 1;
-    if (siteZoom !== 1) {
-      var newSw = sw * siteZoom;
-      var newSh = sh * siteZoom;
-      sx -= (newSw - sw) / 2;
-      sy -= (newSh - sh) / 2;
-      sw = newSw;
-      sh = newSh;
-      sx = Math.max(0, Math.min(sx, s.img.naturalWidth - sw));
-      sy = Math.max(0, Math.min(sy, s.img.naturalHeight - sh));
-      sw = Math.min(sw, s.img.naturalWidth - Math.max(sx, 0));
-      sh = Math.min(sh, s.img.naturalHeight - Math.max(sy, 0));
-    }
 
     var out = document.createElement("canvas");
     out.width = s.slot.targetPx[0];
