@@ -157,7 +157,6 @@
       }
     }
 
-    setText("heroBadge", t(DATA.personal.title));
     setText("scrollHintLabel", t(DATA.ui.scrollHint));
   }
 
