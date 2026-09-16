@@ -9,6 +9,8 @@ from fpdf import FPDF
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FONT_REG = "/Library/Fonts/Tahoma.ttf"
 FONT_BOLD = "/Library/Fonts/Tahoma Bold.ttf"
+QR_PATH = os.path.join(ROOT, "assets", "cv", "qr-portfolio.png")
+QR_LABEL = {"vi": "Xem Portfolio", "en": "View Portfolio"}
 
 RED = (255, 49, 49)
 INK = (23, 23, 23)
@@ -31,6 +33,18 @@ class CV(FPDF):
         pass
 
     def footer(self):
+        lang = getattr(self, "lang", "vi")
+
+        if os.path.exists(QR_PATH):
+            qr_size = 11
+            qr_x = self.w - self.r_margin - qr_size
+            qr_y = self.h - 20
+            self.image(QR_PATH, x=qr_x, y=qr_y, w=qr_size, h=qr_size)
+            self.set_xy(self.l_margin, qr_y)
+            self.set_font("Body", "", 7)
+            self.set_text_color(*GRAY)
+            self.cell(qr_x - self.l_margin - 2, qr_size, QR_LABEL.get(lang, QR_LABEL["vi"]), align="R")
+
         self.set_y(-12)
         self.set_font("Body", "", 8)
         self.set_text_color(*GRAY)
@@ -78,6 +92,7 @@ def bullet(pdf: CV, text: str, size=9.6):
 
 def build(lang: str, out_path: str):
     pdf = CV(format="A4")
+    pdf.lang = lang
     pdf.set_auto_page_break(auto=True, margin=16)
     pdf.set_margins(18, 16, 18)
     pdf.add_font("Body", "", FONT_REG)
