@@ -229,7 +229,7 @@
 
   function renderAbout() {
     setText("aboutEyebrow", t(DATA.about.eyebrow));
-    setText("aboutHeading", t(DATA.about.heading));
+    setAccentedText("aboutHeading", t(DATA.about.heading), DATA.about.headingAccents && DATA.about.headingAccents[state.lang]);
 
     var p = document.getElementById("aboutParagraphs");
     p.innerHTML = "";
@@ -824,7 +824,7 @@
 
   function renderContact() {
     setText("contactEyebrow", t(DATA.contact.eyebrow));
-    setText("contactHeading", t(DATA.contact.heading));
+    setAccentedText("contactHeading", t(DATA.contact.heading), DATA.contact.headingAccents && DATA.contact.headingAccents[state.lang]);
     setText("contactBlurb", t(DATA.contact.blurb));
 
     var links = document.getElementById("contactLinks");

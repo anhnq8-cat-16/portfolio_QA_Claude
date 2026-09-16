@@ -269,7 +269,15 @@ window.SITE_CONTENT = {
           "en": "Average ROAS"
         }
       }
-    ]
+    ],
+    "headingAccents": {
+      "vi": [
+        "bản thân"
+      ],
+      "en": [
+        "me"
+      ]
+    }
   },
   "ownership": {
     "eyebrow": {
@@ -2073,7 +2081,15 @@ window.SITE_CONTENT = {
         "url": "tel:+84983991216",
         "label": "0983 991 216"
       }
-    ]
+    ],
+    "headingAccents": {
+      "vi": [
+        "cơ hội hợp tác"
+      ],
+      "en": [
+        "an opportunity"
+      ]
+    }
   },
   "footer": {
     "note": {
