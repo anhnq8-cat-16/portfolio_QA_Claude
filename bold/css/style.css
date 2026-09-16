@@ -578,7 +578,7 @@ body.modal-open { overflow: hidden; }
 /* ===== Footer ===== */
 .site-footer { border-top: 1px solid var(--line); padding: 2.5rem 0; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
-.signature { font-family: var(--font-script); font-size: 1.9rem; color: var(--red); }
+.signature { height: 2.6rem; width: auto; }
 .footer-note { font-size: .82rem; color: var(--ink-faint); }
 .back-to-top { font-size: .82rem; font-weight: 700; border: 1px solid var(--line); border-radius: 999px; padding: .6rem 1.2rem; color: var(--ink); }
 .back-to-top:hover { border-color: var(--red); }

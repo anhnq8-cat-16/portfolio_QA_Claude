@@ -159,6 +159,22 @@
     try { await imagesDirHandle.removeEntry(filename); } catch (e) { /* already gone */ }
   }
 
+  // When this admin page is opened via the deployed site (not the local dev server), a
+  // just-uploaded image only exists on the user's disk — the page's own origin doesn't have
+  // it yet (not pushed/deployed), so the thumbnail's normal relative-URL fetch 404s. Fall back
+  // to reading the file straight off local disk (via the already-connected directory handle)
+  // and showing that instead, so thumbnails work immediately no matter which URL admin.html
+  // was opened from.
+  function attachLocalThumbFallback(imgEl, relPath) {
+    if (!relPath || relPath.indexOf("http") === 0) return;
+    var filename = relPath.replace(/^\.\.\/assets\/images\//, "");
+    imgEl.addEventListener("error", async function onErr() {
+      imgEl.removeEventListener("error", onErr);
+      var file = await readImageBlob(filename);
+      if (file) imgEl.src = URL.createObjectURL(file);
+    }, { once: true });
+  }
+
   // Swap two slots' displayed photo by swapping the underlying files on disk, so each
   // slot's fixed filename (used on every future upload) always matches what's actually
   // showing there — otherwise a later re-upload to one slot would silently overwrite
@@ -390,6 +406,7 @@
         var img = document.createElement("img");
         img.src = current;
         img.loading = "lazy";
+        attachLocalThumbFallback(img, current);
         thumb.appendChild(img);
       } else {
         var ph = document.createElement("div");
@@ -639,11 +656,13 @@
         var img = document.createElement("img");
         img.src = asset.url;
         img.loading = "lazy";
+        attachLocalThumbFallback(img, asset.url);
         thumb.appendChild(img);
       } else if (asset.type !== "image" && asset.thumbnail) {
         var thumbImg = document.createElement("img");
         thumbImg.src = asset.thumbnail;
         thumbImg.loading = "lazy";
+        attachLocalThumbFallback(thumbImg, asset.thumbnail);
         thumb.appendChild(thumbImg);
       } else {
         var ph = document.createElement("div");

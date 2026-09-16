@@ -1462,6 +1462,106 @@
           "en": ""
         },
         "projectId": "bcc-pv-pharma"
+      },
+      {
+        "id": "custom-3",
+        "type": "image",
+        "category": "design",
+        "url": "../assets/images/proof-custom-3.jpg",
+        "description": {
+          "vi": "",
+          "en": ""
+        }
+      },
+      {
+        "id": "custom-4",
+        "type": "image",
+        "category": "design",
+        "url": "../assets/images/proof-custom-4.jpg",
+        "description": {
+          "vi": "",
+          "en": ""
+        }
+      },
+      {
+        "id": "custom-5",
+        "type": "image",
+        "category": "design",
+        "url": "../assets/images/proof-custom-5.jpg",
+        "description": {
+          "vi": "",
+          "en": ""
+        }
+      },
+      {
+        "id": "custom-6",
+        "type": "image",
+        "category": "design",
+        "url": "../assets/images/proof-custom-6.jpg",
+        "description": {
+          "vi": "",
+          "en": ""
+        }
+      },
+      {
+        "id": "custom-7",
+        "type": "image",
+        "category": "design",
+        "url": "../assets/images/proof-custom-7.jpg",
+        "description": {
+          "vi": "",
+          "en": ""
+        }
+      },
+      {
+        "id": "custom-8",
+        "type": "image",
+        "category": "design",
+        "url": "../assets/images/proof-custom-8.jpg",
+        "description": {
+          "vi": "",
+          "en": ""
+        }
+      },
+      {
+        "id": "custom-9",
+        "type": "image",
+        "category": "design",
+        "url": "../assets/images/proof-custom-9.jpg",
+        "description": {
+          "vi": "",
+          "en": ""
+        }
+      },
+      {
+        "id": "custom-10",
+        "type": "image",
+        "category": "design",
+        "url": "../assets/images/proof-custom-10.jpg",
+        "description": {
+          "vi": "",
+          "en": ""
+        }
+      },
+      {
+        "id": "custom-11",
+        "type": "image",
+        "category": "design",
+        "url": "../assets/images/proof-custom-11.jpg",
+        "description": {
+          "vi": "",
+          "en": ""
+        }
+      },
+      {
+        "id": "custom-12",
+        "type": "image",
+        "category": "design",
+        "url": "../assets/images/proof-custom-12.jpg",
+        "description": {
+          "vi": "",
+          "en": ""
+        }
       }
     ]
   },
