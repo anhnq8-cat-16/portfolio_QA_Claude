@@ -146,6 +146,34 @@
     await w.close();
   }
 
+  async function readImageBlob(filename) {
+    try {
+      var fh = await imagesDirHandle.getFileHandle(filename);
+      return await fh.getFile();
+    } catch (e) {
+      return null;
+    }
+  }
+
+  async function deleteImageFile(filename) {
+    try { await imagesDirHandle.removeEntry(filename); } catch (e) { /* already gone */ }
+  }
+
+  // Swap two slots' displayed photo by swapping the underlying files on disk, so each
+  // slot's fixed filename (used on every future upload) always matches what's actually
+  // showing there — otherwise a later re-upload to one slot would silently overwrite
+  // the file a sibling slot still references.
+  async function swapSlotFiles(slotA, slotB) {
+    var aHad = !!slotA.get();
+    var bHad = !!slotB.get();
+    var aBlob = aHad ? await readImageBlob(slotA.filename) : null;
+    var bBlob = bHad ? await readImageBlob(slotB.filename) : null;
+    if (bBlob) { await writeImageBlob(slotA.filename, bBlob); } else { await deleteImageFile(slotA.filename); }
+    if (aBlob) { await writeImageBlob(slotB.filename, aBlob); } else { await deleteImageFile(slotB.filename); }
+    slotA.set(bHad ? ("../assets/images/" + slotA.filename) : "");
+    slotB.set(aHad ? ("../assets/images/" + slotB.filename) : "");
+  }
+
   async function bumpCacheVersion() {
     try {
       var fh = await boldDirHandle.getFileHandle("index.html");
@@ -204,21 +232,29 @@
   function buildPersonalSlots() {
     var slots = [];
     if (!DATA.personal.heroPhotos || !DATA.personal.heroPhotos.length) DATA.personal.heroPhotos = ["", "", ""];
+    var heroSlots = [];
     DATA.personal.heroPhotos.forEach(function (_, i) {
-      slots.push({
+      var s = {
         id: "hero-" + i, label: "Ảnh Hero (trang chủ) #" + (i + 1) + " — slider tự chuyển", hint: "dọc 3:4 · ≥1400×1867px",
         aspect: [3, 4], targetPx: [1400, 1867], filename: "hero-portrait-" + (i + 1) + ".jpg",
         get: function () { return DATA.personal.heroPhotos[i]; },
         set: function (v) { DATA.personal.heroPhotos[i] = v; }
-      });
+      };
+      s.reorder = { group: heroSlots, index: i };
+      heroSlots.push(s);
+      slots.push(s);
     });
+    var aboutSlots = [];
     DATA.personal.aboutPhotos.forEach(function (_, i) {
-      slots.push({
+      var s = {
         id: "about-" + i, label: "Ảnh Giới thiệu #" + (i + 1), hint: "dọc 3:4 · ≥1200×1600px",
         aspect: [3, 4], targetPx: [1200, 1600], filename: "about-" + (i + 1) + ".jpg",
         get: function () { return DATA.personal.aboutPhotos[i]; },
         set: function (v) { DATA.personal.aboutPhotos[i] = v; }
-      });
+      };
+      s.reorder = { group: aboutSlots, index: i };
+      aboutSlots.push(s);
+      slots.push(s);
     });
     slots.push({
       id: "ownership-rail", label: "Ảnh Rail — Định vị", hint: "dọc 4:5 · ≥960×1200px",
@@ -261,14 +297,18 @@
         set: function (v) { p.cover = v; }
       });
       if (!p.gallery || !p.gallery.length) p.gallery = ["", ""];
+      var gallerySlots = [];
       p.gallery.forEach(function (_, gi) {
-        slots.push({
+        var s = {
           id: "gallery-" + p.id + "-" + gi, label: "Ảnh cụm nhỏ #" + (gi + 1) + ": " + p.client,
           hint: "ngang 4:3 · ≥1000×750px",
           aspect: [4, 3], targetPx: [700, 525], filename: "gallery-" + p.id + "-" + gi + ".jpg",
           get: function () { return p.gallery[gi] || ""; },
           set: function (v) { p.gallery[gi] = v; }
-        });
+        };
+        s.reorder = { group: gallerySlots, index: gi };
+        gallerySlots.push(s);
+        slots.push(s);
       });
     });
     return slots;
@@ -385,6 +425,33 @@
           renderSlotGrid(container, slots);
         });
         actions.appendChild(btnRemove);
+      }
+
+      if (slot.reorder) {
+        var rGroup = slot.reorder.group;
+        var rIdx = slot.reorder.index;
+        if (rIdx > 0) {
+          var btnUp = document.createElement("button");
+          btnUp.textContent = "↑ Lên trước";
+          btnUp.title = "Đổi chỗ với ảnh trước";
+          btnUp.addEventListener("click", async function () {
+            await swapSlotFiles(rGroup[rIdx - 1], rGroup[rIdx]);
+            await persist();
+            renderAll();
+          });
+          actions.appendChild(btnUp);
+        }
+        if (rIdx < rGroup.length - 1) {
+          var btnDown = document.createElement("button");
+          btnDown.textContent = "↓ Xuống sau";
+          btnDown.title = "Đổi chỗ với ảnh sau";
+          btnDown.addEventListener("click", async function () {
+            await swapSlotFiles(rGroup[rIdx], rGroup[rIdx + 1]);
+            await persist();
+            renderAll();
+          });
+          actions.appendChild(btnDown);
+        }
       }
 
       body.appendChild(label);
