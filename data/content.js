@@ -661,7 +661,7 @@ window.SITE_CONTENT = {
           "vi": "2023 — 2024",
           "en": "2023 — 2024"
         },
-        "cover": "",
+        "cover": "../assets/images/cover-bcc-pv-pharma.jpg",
         "problem": {
           "vi": "Ngành dược phẩm và hóa dược chịu sự kiểm duyệt khắt khe cùng nhiều hạn chế quảng cáo trên các nền tảng digital, đòi hỏi phương thức truyền thông khác biệt thay vì phụ thuộc vào các kênh paid ads truyền thống. <br><br>Mỗi thương hiệu lại đối mặt với bài toán riêng: BCC Pharma sở hữu công thức phát minh độc quyền tối ưu cho trẻ nhỏ và bệnh nhân nặng nhưng còn mới mẻ trên môi trường digital; trong khi PV Pharma là thương hiệu uy tín lâu năm nhưng chủ yếu vận hành trên các kênh truyền thống, cần hiện đại hóa hình ảnh để tiếp cận tệp khách hàng mới.",
           "en": "The pharmaceutical sector faces strict regulatory compliance and heavy ad policy restrictions across digital platforms, demanding non-traditional marketing approaches rather than relying strictly on paid media channels. <br><br>Each brand presented unique challenges: BCC Pharma possessed proprietary, high-efficacy formulas for pediatric and critical care but had a minimal digital footprint; whereas PV Pharma was a long-established, reputable brand relying predominantly on traditional channels, needing a modern overhaul to engage digital-native audiences."
@@ -676,8 +676,8 @@ window.SITE_CONTENT = {
         },
         "metrics": [],
         "gallery": [
-          "",
-          ""
+          "../assets/images/gallery-bcc-pv-pharma-0.jpg",
+          "../assets/images/gallery-bcc-pv-pharma-1.jpg"
         ],
         "highlights": []
       },
