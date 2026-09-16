@@ -85,12 +85,20 @@
   function renderHero() {
     setText("heroEyebrow", t(DATA.hero.eyebrow));
     var headlineEl = document.getElementById("heroHeadline");
-    var headlineText = t(DATA.hero.headline);
-    var accentText = DATA.hero.headlineAccent && t(DATA.hero.headlineAccent);
-    if (accentText && headlineText.indexOf(accentText) !== -1) {
-      headlineEl.innerHTML = headlineText.replace(accentText, '<span class="hero-headline-accent">' + accentText + "</span>");
+    var headlineParts = DATA.hero.headlineParts && DATA.hero.headlineParts[state.lang];
+    if (headlineParts && headlineParts.length) {
+      headlineEl.innerHTML = "";
+      headlineParts.forEach(function (part) {
+        headlineEl.appendChild(el("span", "hero-headline-part hero-headline-" + part.style, part.text));
+      });
     } else {
-      headlineEl.textContent = headlineText;
+      var headlineText = t(DATA.hero.headline);
+      var accentText = DATA.hero.headlineAccent && t(DATA.hero.headlineAccent);
+      if (accentText && headlineText.indexOf(accentText) !== -1) {
+        headlineEl.innerHTML = headlineText.replace(accentText, '<span class="hero-headline-accent">' + accentText + "</span>");
+      } else {
+        headlineEl.textContent = headlineText;
+      }
     }
     setText("heroSub", t(DATA.hero.subheadline));
 

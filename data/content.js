@@ -143,16 +143,54 @@ window.SITE_CONTENT = {
       "en": "About Me"
     },
     "headline": {
-      "vi": "Cầu nối chiến lược từ Thực thi Agency đến Quản trị Thương hiệu",
+      "vi": "Cầu nối chiến lược từ Thực thi ở Agency đến Quản trị Thương hiệu",
       "en": "The Strategic Bridge from Agency Execution to Brand Management"
     },
     "headlineAccent": {
-      "vi": "Agency đến Quản trị Thương hiệu",
+      "vi": "Thực thi ở Agency",
       "en": "Agency Execution to Brand Management"
     },
     "subheadline": {
       "vi": "Tôi là Quý Anh (Mason), hơn 5 năm điều phối và tối ưu 40+ chiến dịch IMC cho Vietnam Airlines, Panasonic, VPBank... Tôi tập trung tối ưu vận hành, kiểm soát ngân sách chặt chẽ và thúc đẩy tăng trưởng doanh số thực tế cho phía Nhãn hàng. Kết hợp sự linh hoạt, nhạy bén của Agency cùng tư duy quản trị hệ thống, tôi sẵn sàng đảm nhận vai trò Marketing / Brand Manager.",
       "en": "I am Quy Anh (Mason), with 5+ years driving and optimizing 40+ IMC campaigns for Vietnam Airlines, Panasonic, VPBank... Streamlining operations, managing budgets efficiently, and driving bottom-line growth for client-side brands. Ready to bring agency agility and systematic governance to elevate Marketing / Brand Manager roles."
+    },
+    "headlineParts": {
+      "vi": [
+        {
+          "text": "Cầu nối chiến lược từ",
+          "style": "normal"
+        },
+        {
+          "text": "Thực thi ở Agency",
+          "style": "accent"
+        },
+        {
+          "text": "đến",
+          "style": "connector"
+        },
+        {
+          "text": "Quản trị Thương hiệu",
+          "style": "accent"
+        }
+      ],
+      "en": [
+        {
+          "text": "The Strategic Bridge from",
+          "style": "normal"
+        },
+        {
+          "text": "Agency Execution",
+          "style": "accent"
+        },
+        {
+          "text": "to",
+          "style": "connector"
+        },
+        {
+          "text": "Brand Management",
+          "style": "accent"
+        }
+      ]
     }
   },
   "about": {
@@ -235,7 +273,7 @@ window.SITE_CONTENT = {
       "en": "Field agility from the agency side combined with end-to-end operational ownership of a brand manager. That is the distinct value I bring to the organization."
     },
     "railPlaceholder": {
-      "vi": "Ảnh/đồ họa minh hoạ khái niệm \"Ownership\" — dọc 4:5, ≥960×1200px, JPG <400KB",
+      "vi": "Ảnh/đồ họa minh họa khái niệm \"Ownership\" — dọc 4:5, ≥960×1200px, JPG <400KB",
       "en": "Photo/graphic illustrating the \"Ownership\" concept — vertical 4:5, ≥960×1200px, JPG <400KB"
     },
     "chapters": [
@@ -316,7 +354,7 @@ window.SITE_CONTENT = {
           },
           {
             "label": {
-              "vi": "Sơ đồ tự động hoá quy trình",
+              "vi": "Sơ đồ tự động hóa quy trình",
               "en": "Process automation diagram"
             },
             "image": "../assets/images/ownership-case-operations-1.jpg"
@@ -328,7 +366,7 @@ window.SITE_CONTENT = {
           "Frame.io"
         ],
         "techNote": {
-          "vi": "tự động hoá quy trình quản trị dự án, loại bỏ rủi ro trễ tiến độ",
+          "vi": "tự động hóa quy trình quản trị dự án, loại bỏ rủi ro trễ tiến độ",
           "en": "automating project-management workflows, eliminating the risk of schedule slippage"
         },
         "value": {
@@ -569,7 +607,7 @@ window.SITE_CONTENT = {
             "en": "Global media plan management"
           },
           {
-            "vi": "Địa phương hoá thông điệp theo từng quốc gia",
+            "vi": "Địa phương hóa thông điệp theo từng quốc gia",
             "en": "Ad messaging localized per country"
           }
         ]
