@@ -1441,6 +1441,28 @@ window.SITE_CONTENT = {
         },
         "projectId": "csr-songhong-garment",
         "thumbnail": "../assets/images/proof-thumb-t-sh-thiennguyen-2.jpg"
+      },
+      {
+        "id": "custom-1",
+        "type": "image",
+        "category": "design",
+        "url": "",
+        "description": {
+          "vi": "",
+          "en": ""
+        },
+        "projectId": "bcc-pv-pharma"
+      },
+      {
+        "id": "custom-2",
+        "type": "image",
+        "category": "design",
+        "url": "",
+        "description": {
+          "vi": "",
+          "en": ""
+        },
+        "projectId": "bcc-pv-pharma"
       }
     ]
   },
@@ -1501,6 +1523,11 @@ window.SITE_CONTENT = {
           {
             "name": "BIM Land",
             "logo": "../assets/images/logos/bim-land.png"
+          },
+          {
+            "name": "VPBank SME",
+            "logo": "../assets/images/logos/vpbank-sme.png",
+            "projectId": "vpbank-sme"
           }
         ]
       },
@@ -1529,14 +1556,6 @@ window.SITE_CONTENT = {
             "logo": "../assets/images/logos/the-ascott.png"
           },
           {
-            "name": "Kalite",
-            "logo": "../assets/images/logos/kalite.png"
-          },
-          {
-            "name": "UKG",
-            "logo": "../assets/images/logos/ukg.png"
-          },
-          {
             "name": "Leben Community Vietnam",
             "logo": "../assets/images/logos/leben-community.png"
           },
@@ -1552,11 +1571,6 @@ window.SITE_CONTENT = {
           "en": "SME companies"
         },
         "names": [
-          {
-            "name": "VPBank SME",
-            "logo": "../assets/images/logos/vpbank-sme.png",
-            "projectId": "vpbank-sme"
-          },
           {
             "name": "Trần Phú",
             "logo": "../assets/images/logos/tran-phu.png"
@@ -1592,6 +1606,14 @@ window.SITE_CONTENT = {
           {
             "name": "Volwatt Việt Nam",
             "logo": "../assets/images/logos/volwatt.png"
+          },
+          {
+            "name": "Kalite",
+            "logo": "../assets/images/logos/kalite.png"
+          },
+          {
+            "name": "UKG",
+            "logo": "../assets/images/logos/ukg.png"
           }
         ]
       }

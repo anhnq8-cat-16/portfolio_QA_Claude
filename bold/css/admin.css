@@ -32,6 +32,9 @@
 }
 .admin-section-title-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .8rem; margin-bottom: 1.2rem; }
 .admin-section-title-row .admin-section-title { margin-bottom: 0; }
+.admin-section-title-actions { display: flex; gap: .6rem; flex-wrap: wrap; }
+.admin-bulk-hint { font-size: .78rem; color: var(--ink-faint); margin: -0.6rem 0 1.2rem; line-height: 1.5; }
+.admin-bulk-hint em { color: var(--ink-soft); font-style: normal; font-weight: 600; }
 
 .admin-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
 .admin-grid-library { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }

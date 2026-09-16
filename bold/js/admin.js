@@ -770,6 +770,71 @@
   document.getElementById("assetBackdrop").addEventListener("click", closeAssetModal);
   document.getElementById("btnAddAsset").addEventListener("click", function () { openAssetModal(null); });
 
+  /* ---------------- Bulk upload: many photos at once, fill in info afterward ---------------- */
+  function loadImageFromFile(file) {
+    return new Promise(function (resolve, reject) {
+      var img = new Image();
+      img.onload = function () { resolve(img); };
+      img.onerror = reject;
+      img.src = URL.createObjectURL(file);
+    });
+  }
+
+  function autoCropSquareBlob(img, targetSize) {
+    var scale = Math.max(targetSize / img.naturalWidth, targetSize / img.naturalHeight);
+    var sw = targetSize / scale;
+    var sh = targetSize / scale;
+    var sx = (img.naturalWidth - sw) / 2;
+    var sy = (img.naturalHeight - sh) / 2;
+    var out = document.createElement("canvas");
+    out.width = targetSize;
+    out.height = targetSize;
+    out.getContext("2d").drawImage(img, sx, sy, sw, sh, 0, 0, targetSize, targetSize);
+    return new Promise(function (resolve) { out.toBlob(resolve, "image/jpeg", 0.85); });
+  }
+
+  var bulkFileInput = document.getElementById("bulkFileInput");
+  document.getElementById("btnBulkUpload").addEventListener("click", function () {
+    bulkFileInput.value = "";
+    bulkFileInput.click();
+  });
+
+  bulkFileInput.addEventListener("change", async function () {
+    var files = Array.prototype.slice.call(bulkFileInput.files || []);
+    if (!files.length) return;
+    var btn = document.getElementById("btnBulkUpload");
+    btn.disabled = true;
+    var addedCount = 0;
+    for (var i = 0; i < files.length; i++) {
+      setStatus("Đang tải ảnh " + (i + 1) + "/" + files.length + " ...", null);
+      try {
+        var img = await loadImageFromFile(files[i]);
+        var blob = await autoCropSquareBlob(img, 700);
+        var id = nextAssetId();
+        var filename = "proof-" + id + ".jpg";
+        await writeImageBlob(filename, blob);
+        DATA.proofOfWork.assets.push({
+          id: id, type: "image", category: "design",
+          url: "../assets/images/" + filename,
+          description: { vi: "", en: "" }
+        });
+        addedCount++;
+      } catch (e) {
+        console.error("Bulk upload failed for file", files[i] && files[i].name, e);
+      }
+    }
+    btn.disabled = false;
+    if (addedCount > 0) {
+      var ok = await persist();
+      renderLibrary();
+      setStatus(ok
+        ? "Đã tải lên " + addedCount + " ảnh — bấm \"Sửa thông tin\" trên từng ô để bổ sung mô tả."
+        : "Đã tải " + addedCount + " ảnh lên máy, nhưng lưu thông tin bị xung đột — hãy thử lại thao tác.", ok ? "ok" : "error");
+    } else {
+      setStatus("Không tải được ảnh nào — thử lại.", "error");
+    }
+  });
+
   document.getElementById("assetSave").addEventListener("click", async function () {
     var desc = { vi: assetDescVi.value.trim(), en: assetDescEn.value.trim() };
     var type = assetType.value;

@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=89">
-<link rel="stylesheet" href="css/admin.css?v=17">
+<link rel="stylesheet" href="css/style.css?v=90">
+<link rel="stylesheet" href="css/admin.css?v=18">
 </head>
 <body class="admin-body">
 
@@ -48,8 +48,12 @@
   <section class="admin-section" id="secLibrary">
     <div class="admin-section-title-row">
       <h2 class="admin-section-title">Thư viện sản phẩm (Proof of Work)</h2>
-      <button type="button" class="btn btn-solid admin-btn-sm" id="btnAddAsset">+ Thêm mục mới</button>
+      <div class="admin-section-title-actions">
+        <button type="button" class="btn btn-line admin-btn-sm" id="btnBulkUpload">Tải ảnh hàng loạt</button>
+        <button type="button" class="btn btn-solid admin-btn-sm" id="btnAddAsset">+ Thêm mục mới</button>
+      </div>
     </div>
+    <p class="admin-bulk-hint">Chọn nhiều ảnh cùng lúc — mỗi ảnh tự động tạo 1 mục mới (crop vuông ở giữa, danh mục "Thiết kế"), sau đó bấm <em>Sửa thông tin</em> trên từng ô để bổ sung mô tả/danh mục/dự án.</p>
     <div class="admin-grid admin-grid-library" id="gridLibrary"></div>
   </section>
 
@@ -122,7 +126,8 @@
 </div>
 
 <input type="file" id="fileInput" accept="image/*" hidden>
+<input type="file" id="bulkFileInput" accept="image/*" multiple hidden>
 
-<script src="js/admin.js?v=17"></script>
+<script src="js/admin.js?v=18"></script>
 </body>
 </html>
