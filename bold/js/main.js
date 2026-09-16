@@ -62,6 +62,26 @@
     mobileCvBtn.textContent = t(DATA.ui.downloadCv);
   }
 
+  var heroSliderTimer = null;
+  var heroSliderIndex = 0;
+
+  function goToHeroSlide(index) {
+    heroSliderIndex = index;
+    document.querySelectorAll("#heroPhotoSlider .hero-photo-slide").forEach(function (s, i) {
+      s.classList.toggle("is-active", i === index);
+    });
+    document.querySelectorAll("#heroPhotoDots .hero-photo-dot").forEach(function (d, i) {
+      d.classList.toggle("is-active", i === index);
+    });
+  }
+
+  function restartHeroAutoplay(count) {
+    if (heroSliderTimer) clearInterval(heroSliderTimer);
+    heroSliderTimer = setInterval(function () {
+      goToHeroSlide((heroSliderIndex + 1) % count);
+    }, 4500);
+  }
+
   function renderHero() {
     setText("heroEyebrow", t(DATA.hero.eyebrow));
     var headlineEl = document.getElementById("heroHeadline");
@@ -84,16 +104,57 @@
     var photoInner = document.getElementById("heroPhotoInner");
     var existingHeroPh = photoInner.querySelector(".hero-photo-ph");
     if (existingHeroPh) existingHeroPh.remove();
-    var photo = document.getElementById("heroPhoto");
-    if (DATA.personal.heroPhoto) {
-      photo.style.display = "";
-      photo.src = DATA.personal.heroPhoto;
-      photo.alt = DATA.personal.fullName + " — " + t(DATA.personal.title);
-    } else {
-      photo.style.display = "none";
+
+    if (heroSliderTimer) { clearInterval(heroSliderTimer); heroSliderTimer = null; }
+    var sliderEl = document.getElementById("heroPhotoSlider");
+    var dotsEl = document.getElementById("heroPhotoDots");
+    sliderEl.innerHTML = "";
+    dotsEl.innerHTML = "";
+
+    var heroPhotos = (DATA.personal.heroPhotos || []).filter(function (p) { return !!p; });
+    if (!heroPhotos.length) {
+      sliderEl.style.display = "none";
+      dotsEl.style.display = "none";
       var heroPh = el("div", "ph hero-photo-ph");
       heroPh.innerHTML = PH_ICON_IMAGE + '<span class="ph-label">' + t(DATA.personal.heroPhotoPlaceholder) + "</span>";
-      photoInner.insertBefore(heroPh, photo);
+      photoInner.insertBefore(heroPh, sliderEl);
+    } else {
+      sliderEl.style.display = "";
+      var heroAlt = DATA.personal.fullName + " — " + t(DATA.personal.title);
+      heroSliderIndex = 0;
+      heroPhotos.forEach(function (src, i) {
+        var slideImg = el("img", "hero-photo-slide" + (i === 0 ? " is-active" : ""));
+        slideImg.src = src;
+        slideImg.alt = heroAlt;
+        sliderEl.appendChild(slideImg);
+      });
+      if (heroPhotos.length > 1) {
+        dotsEl.style.display = "";
+        heroPhotos.forEach(function (_, i) {
+          var dot = el("button", "hero-photo-dot" + (i === 0 ? " is-active" : ""));
+          dot.type = "button";
+          dot.setAttribute("aria-label", (state.lang === "vi" ? "Ảnh " : "Photo ") + (i + 1));
+          dot.addEventListener("click", function () {
+            goToHeroSlide(i);
+            if (!reduceMotion) restartHeroAutoplay(heroPhotos.length);
+          });
+          dotsEl.appendChild(dot);
+        });
+        if (!reduceMotion) restartHeroAutoplay(heroPhotos.length);
+
+        if (!photoInner.dataset.hoverBound) {
+          photoInner.dataset.hoverBound = "1";
+          photoInner.addEventListener("mouseenter", function () {
+            if (heroSliderTimer) { clearInterval(heroSliderTimer); heroSliderTimer = null; }
+          });
+          photoInner.addEventListener("mouseleave", function () {
+            var current = (DATA.personal.heroPhotos || []).filter(function (p) { return !!p; });
+            if (!reduceMotion && current.length > 1) restartHeroAutoplay(current.length);
+          });
+        }
+      } else {
+        dotsEl.style.display = "none";
+      }
     }
 
     setText("heroBadge", t(DATA.personal.title));

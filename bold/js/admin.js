@@ -203,11 +203,14 @@
   /* ---------------- Slot config (single-image fields) ---------------- */
   function buildPersonalSlots() {
     var slots = [];
-    slots.push({
-      id: "hero", label: "Ảnh Hero (trang chủ)", hint: "dọc 3:4 · ≥1400×1867px",
-      aspect: [3, 4], targetPx: [1400, 1867], filename: "hero-portrait.jpg",
-      get: function () { return DATA.personal.heroPhoto; },
-      set: function (v) { DATA.personal.heroPhoto = v; }
+    if (!DATA.personal.heroPhotos || !DATA.personal.heroPhotos.length) DATA.personal.heroPhotos = ["", "", ""];
+    DATA.personal.heroPhotos.forEach(function (_, i) {
+      slots.push({
+        id: "hero-" + i, label: "Ảnh Hero (trang chủ) #" + (i + 1) + " — slider tự chuyển", hint: "dọc 3:4 · ≥1400×1867px",
+        aspect: [3, 4], targetPx: [1400, 1867], filename: "hero-portrait-" + (i + 1) + ".jpg",
+        get: function () { return DATA.personal.heroPhotos[i]; },
+        set: function (v) { DATA.personal.heroPhotos[i] = v; }
+      });
     });
     DATA.personal.aboutPhotos.forEach(function (_, i) {
       slots.push({

@@ -138,7 +138,7 @@ section { position: relative; padding: clamp(4.5rem, 10vw, 9rem) 0; }
 .hero-sub { font-size: clamp(1.02rem, 1.35vw, 1.18rem); color: var(--ink-soft); max-width: 48ch; margin-bottom: 2.2rem; line-height: 1.6; text-align: justify; text-justify: inter-word; }
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 .hero-photo-wrap {
-  position: relative; aspect-ratio: 3/4; padding: 5px;
+  position: relative; width: 100%; aspect-ratio: 3/4; padding: 5px;
   border-radius: calc(var(--radius) + 5px);
   background: linear-gradient(155deg, var(--red), var(--red-3) 45%, transparent 75%);
 }
@@ -148,7 +148,24 @@ section { position: relative; padding: clamp(4.5rem, 10vw, 9rem) 0; }
   content: ''; position: absolute; inset: 0;
   background: linear-gradient(200deg, rgba(255,49,49,.25), transparent 55%);
   mix-blend-mode: overlay;
+  z-index: 1;
 }
+.hero-photo-slider { position: relative; width: 100%; height: 100%; }
+.hero-photo-slide {
+  position: absolute; inset: 0; opacity: 0; transition: opacity 1s var(--ease);
+}
+.hero-photo-slide.is-active { opacity: 1; }
+.hero-photo-dots {
+  position: absolute; z-index: 2; left: 50%; bottom: 16px; transform: translateX(-50%);
+  display: flex; gap: .45rem;
+}
+.hero-photo-dot {
+  width: 8px; height: 8px; border-radius: 50%; background: rgba(246,244,239,.4);
+  border: 1px solid rgba(246,244,239,.6); transition: background .3s, transform .3s, width .3s;
+}
+.hero-photo-dot:hover { background: rgba(246,244,239,.7); }
+.hero-photo-dot.is-active { background: var(--red); border-color: var(--red); width: 20px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) { .hero-photo-slide { transition: none; } }
 .hero-badge {
   position: absolute; top: 18px; left: 18px; z-index: 2;
   display: inline-flex; align-items: center; gap: .5rem;
