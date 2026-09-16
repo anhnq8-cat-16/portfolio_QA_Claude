@@ -143,16 +143,16 @@ window.SITE_CONTENT = {
       "en": "About Me"
     },
     "headline": {
-      "vi": "Cầu nối chiến lược giữa Agency & Nhãn hàng",
-      "en": "The Strategic Bridge Between Agency & Brand"
+      "vi": "Cầu nối chiến lược từ Agency đến Quản lý Thương hiệu",
+      "en": "The Strategic Bridge from Agency Execution to Brand Management"
     },
     "headlineAccent": {
       "vi": "Agency & Nhãn hàng",
       "en": "Agency & Brand"
     },
     "subheadline": {
-      "vi": "Tôi là Quý Anh (Mason) — 5 năm quản trị và điều phối hơn 40 chiến dịch IMC cho Vietnam Airlines, Panasonic, Sông Hồng, VPBank... Tôi sẵn sàng mang tư duy làm chủ hệ thống và tốc độ vận hành thực chiến sang vai trò Marketing / Brand Manager phía Client.",
-      "en": "I'm Quy Anh (Mason) — 5 years managing and coordinating 40+ IMC campaigns for Vietnam Airlines, Panasonic, Song Hong, VPBank... Ready to bring an ownership mindset and operational agility to a Client-side Marketing / Brand Manager role."
+      "vi": "Tôi là Quý Anh (Mason), hơn 5 năm trực tiếp điều phối và tối ưu 40+ chiến dịch IMC cho Vietnam Airlines, Panasonic, VPBank... Tối ưu vận hành, làm chủ ngân sách và tăng trưởng doanh số thực chiến cho Brand phía Client. Tôi sẵn sàng mang tốc độ, sự nhạy bén và tư duy làm chủ hệ thống từ Agency sang nâng tầm vai trò Marketing / Brand Manager.",
+      "en": "I'm Quy Anh (Mason), with 5+ years driving and optimizing 40+ IMC campaigns for Vietnam Airlines, Panasonic, VPBank... Streamlining operations, mastering budgets, and driving bottom-line growth for Client-side Brands. I'm ready to bring that speed, agility, and systems-ownership mindset from the Agency to elevate a Marketing / Brand Manager role."
     }
   },
   "about": {
@@ -166,8 +166,8 @@ window.SITE_CONTENT = {
     },
     "paragraphs": [
       {
-        "vi": "Tôi là chuyên gia Quản trị Tài khoản và Dự án (Account & Project Manager) với hơn 5 năm kinh nghiệm tại Novaon Digital — từ Marketing Intern tiến bước lên Senior Account Executive. Tôi đóng vai trò cầu nối chiến lược giữa Agency và Thương hiệu trong các nhóm ngành trọng điểm: Hàng không, Điện máy, Bán lẻ và Ngân hàng.",
-        "en": "I am an Account and Project Management specialist with over 5 years of experience at Novaon Digital. Rising from Marketing Intern to Senior Account Executive, I have served as the strategic bridge between Agency and Brand across the Aviation, Home Appliance, Retail, and Banking sectors."
+        "vi": "Tôi là chuyên gia Quản trị Tài khoản & Dự án (Account & Project Manager) với hơn 5 năm kinh nghiệm thực chiến tại Novaon Digital. Phát triển toàn diện từ Marketing Intern lên Senior Account Executive, tôi đóng vai trò cầu nối chiến lược giữa Agency và Thương hiệu lớn trong các nhóm ngành trọng điểm: Hàng không, Điện máy, Bán lẻ và Ngân hàng. Lợi thế cốt lõi của tôi là sự kết hợp giữa tốc độ thực thi nhạy bén của Agency và tư duy quản trị hệ thống bài bản phía Nhãn hàng.",
+        "en": "I am an Account & Project Management Specialist with 5+ years of hands-on experience at Novaon Digital. Rising from Marketing Intern to Senior Account Executive, I serve as a strategic bridge between Agency execution and Client-side Brand Management across key sectors: Aviation, Home Appliances, Retail, and Banking. My core strength lies in combining Agency agility with Client-side systematic governance."
       }
     ],
     "highlights": [
@@ -227,12 +227,12 @@ window.SITE_CONTENT = {
       "en": "Why Client-side"
     },
     "headline": {
-      "vi": "Agency rèn phản xạ. Giờ tôi muốn làm chủ hệ thống.",
-      "en": "The Agency sharpened my instincts. Now, I want to own the system."
+      "vi": "Tôi đã rèn luyện tốc độ và sự nhạy bén tại Agency. Giờ đây, tôi sẵn sàng làm chủ hệ thống và tạo tăng trưởng đột phá phía Client-side.",
+      "en": "The Agency sharpened my agility and execution speed. Now, I am ready to own the system and drive bottom-line impact Client-side."
     },
     "intro": {
-      "vi": "Sự nhạy bén của một Agency — tốc độ, đa nhiệm, bứt phá dưới áp lực deadline — kết hợp với tư duy làm chủ hệ thống của một người đứng ở phía Client. Đó là vị thế tôi đang hướng tới.",
-      "en": "The agility of an Agency — speed, multitasking, thriving under deadline pressure — combined with the system-ownership mindset of a Client-side leader. That is the role I am pursuing."
+      "vi": "Sự nhạy bén thực chiến của Agency bao gồm tốc độ, khả năng ứng biến đa nhiệm và chịu áp lực cao, kết hợp với tư duy làm chủ hệ thống toàn diện của nhà quản lý thương hiệu. Đó là giá trị khác biệt tôi mang đến cho doanh nghiệp.",
+      "en": "The battlefield agility of an Agency, featuring speed, multitasking adaptability, and high-pressure execution, combined with the end-to-end systematic ownership of a Brand Manager. That is the distinct value I bring to the table."
     },
     "railPlaceholder": {
       "vi": "Ảnh/đồ họa minh hoạ khái niệm \"Ownership\" — dọc 4:5, ≥960×1200px, JPG <400KB",
@@ -246,12 +246,12 @@ window.SITE_CONTENT = {
           "en": "Complex project management"
         },
         "title": {
-          "vi": "Làm chủ mọi quy mô chiến dịch",
-          "en": "Owning campaigns at every scale"
+          "vi": "Làm chủ quy mô & phễu chiến dịch",
+          "en": "Owning Campaign Scale & Full-Funnel Strategy"
         },
         "body": {
-          "vi": "Từ chiến dịch toàn cầu đến hoạt động kích hoạt tại điểm bán địa phương, tôi vận hành xuyên suốt nhiều mô hình (B2C, B2B2C, SME). Tôi không chỉ kiểm soát một mắt xích, mà bao quát toàn bộ phễu khách hàng — từ người tiêu dùng cuối đến đại lý phân phối.",
-          "en": "From global campaigns to local point-of-sale activations, I operate seamlessly across multiple models (B2C, B2B2C, SME). I don't just manage a single link in the chain; I oversee the entire customer funnel, from end-users to distributors."
+          "vi": "Từ các chiến dịch SEM toàn cầu quy mô 24 thị trường đến các hoạt động kích hoạt điểm bán địa phương (B2C, B2B2C, SME), tôi điều phối trơn tru toàn bộ phễu marketing. Không chỉ quản lý một mắt xích đơn lẻ, tôi tối ưu hóa trải nghiệm từ nhận diện thương hiệu đến chuyển đổi doanh số và gắn kết đại lý phân phối.",
+          "en": "From global SEM search campaigns spanning 24 markets to localized trade activations (B2C, B2B2C, SME), I seamlessly operate across the entire marketing funnel. Rather than managing isolated execution touchpoints, I drive end-to-end integration from brand awareness to sales conversion and distributor engagement."
         },
         "cases": [
           {
@@ -286,8 +286,8 @@ window.SITE_CONTENT = {
           }
         ],
         "value": {
-          "vi": "Góc nhìn xuyên ngành hàng — hiểu toàn bộ phễu khách hàng, không chỉ một khâu.",
-          "en": "A cross-industry perspective — understanding the full customer funnel, not just a single stage."
+          "vi": "Góc nhìn chiến lược đa ngành hàng: làm chủ toàn bộ phễu giá trị thay vì các mắt xích rời rạc.",
+          "en": "Cross-industry strategic perspective, mastering the entire value funnel rather than isolated touchpoints."
         }
       },
       {
@@ -297,12 +297,12 @@ window.SITE_CONTENT = {
           "en": "Operation & vendor optimization"
         },
         "title": {
-          "vi": "Tối ưu vận hành, không chỉ cắt giảm ngân sách",
-          "en": "Optimizing operations, not just cutting costs"
+          "vi": "Tối ưu vận hành & ngân sách với tư duy tinh gọn",
+          "en": "Operational & Budget Optimization with a Lean Mindset"
         },
         "body": {
-          "vi": "Từng trực tiếp vận hành tại Agency, tôi nắm rõ cấu trúc báo giá, quy trình nội bộ và các điểm nghẽn về ngân sách outsource. Đây là lợi thế tuyệt đối để tôi tối ưu chi phí In-house mà không phải đánh đổi chất lượng sản phẩm.",
-          "en": "Having operated on the Agency side, I deeply understand quote structures, internal workflows, and outsourced budget bottlenecks. This is a definitive advantage in optimizing In-house costs without compromising quality."
+          "vi": "Thấu hiểu sâu sắc cấu trúc chi phí, quy trình nội bộ và các rủi ro vận hành của Agency giúp tôi tối ưu hóa ngân sách Outsource cho phía Client. Bằng cách ứng dụng tự động hóa công việc, tôi cắt giảm tối đa lãng phí vận hành, đảm bảo tiến độ và nâng cao chất lượng đầu ra mà không làm gia tăng chi phí.",
+          "en": "A deep insider understanding of Agency cost structures, workflows, and operational bottlenecks enables me to ruthlessly optimize Client-side outsourced budgets. By leveraging workflow automation, I eliminate operational friction, guarantee project timelines, and maximize asset quality without inflating expenditure."
         },
         "cases": [
           {
@@ -332,8 +332,8 @@ window.SITE_CONTENT = {
           "en": "automating project-management workflows, eliminating the risk of schedule slippage"
         },
         "value": {
-          "vi": "Hiểu Agency từ bên trong — tối ưu ngân sách mà không cần phỏng đoán.",
-          "en": "Understanding Agencies from the inside out — optimizing budgets without guesswork."
+          "vi": "Thấu hiểu Agency từ bên trong, tối ưu ngân sách và nâng cao chất lượng dựa trên dữ liệu thực tế.",
+          "en": "Understanding Agencies inside out, optimizing budgets and elevating quality through data and operational clarity."
         }
       },
       {
@@ -343,12 +343,12 @@ window.SITE_CONTENT = {
           "en": "Leadership & succession"
         },
         "title": {
-          "vi": "Sẵn sàng làm chủ đội ngũ",
-          "en": "Ready to lead the team"
+          "vi": "Làm chủ con người & xây dựng đội ngũ kế cận",
+          "en": "People Leadership & Building Succession Pipelines"
         },
         "body": {
-          "vi": "Tư duy làm chủ không dừng lại ở dự án, mà mở rộng đến yếu tố con người. Tôi luôn chú trọng xây dựng đội ngũ kế cận và hoàn toàn sẵn sàng cho vai trò Team Lead nội bộ.",
-          "en": "True ownership extends beyond projects to people. I focus on building a strong succession pipeline and am fully prepared to step into an internal Team Lead role."
+          "vi": "Tư duy làm chủ hệ thống gắn liền với năng lực phát triển con người. Tôi tập trung chuẩn hóa quy trình, đào tạo tư duy ra quyết định dựa trên dữ liệu (data-driven) và truyền cảm hứng làm việc cho đội ngũ. Việc hướng dẫn thành công 9 thực tập sinh (với 44% chuyển thành nhân sự chính thức) là minh chứng cho năng lực sẵn sàng đảm nhận vị trí Team Lead / Manager nội bộ.",
+          "en": "True systemic leadership extends to empowering people. I focus on standardizing workflows, instilling a data-driven decision-making mindset, and inspiring team performance. Successfully mentoring 9 interns (achieving a 44% full-time conversion rate) demonstrates my readiness to step into internal Team Lead / Brand Manager roles."
         },
         "cases": [
           {
@@ -368,12 +368,12 @@ window.SITE_CONTENT = {
           }
         },
         "note": {
-          "vi": "Trực tiếp mentor 9 thực tập sinh — 4 người (44%) vượt qua kỳ đánh giá khắt khe, trở thành nhân sự chính thức.",
-          "en": "Directly mentored 9 interns — 4 (44%) passed rigorous evaluations to become full-time staff."
+          "vi": "Trực tiếp mentor 9 thực tập sinh; trong đó 4 người (44%) vượt qua kỳ đánh giá khắt khe để trở thành nhân sự chính thức.",
+          "en": "Directly mentored 9 interns, with 4 (44%) passing rigorous evaluations to become full-time staff."
         },
         "value": {
-          "vi": "Không chỉ đào tạo — mà xây dựng người kế nhiệm.",
-          "en": "Not just training — building successors."
+          "vi": "Lãnh đạo bằng sự trao quyền: không chỉ quản lý công việc mà xây dựng đội ngũ kế cận vững mạnh.",
+          "en": "Leadership through empowerment, going beyond task delegation to build a resilient succession pipeline."
         }
       }
     ],
@@ -530,7 +530,7 @@ window.SITE_CONTENT = {
         "id": "vietnam-airlines",
         "client": "Vietnam Airlines",
         "category": {
-          "vi": "Hàng không · Google Search Ads",
+          "vi": "Hàng không (Aviation) · Quảng cáo Tìm kiếm (Google Search Ads)",
           "en": "Aviation · Google Search Ads"
         },
         "period": {
@@ -539,16 +539,16 @@ window.SITE_CONTENT = {
         },
         "cover": "../assets/images/cover-vietnam-airlines.jpg",
         "problem": {
-          "vi": "Vietnam Airlines cần vận hành hệ thống quảng cáo Google Search nhất quán về thông điệp thương hiệu cốt lõi, nhưng vẫn phải bám sát văn hóa và hành vi tìm kiếm của từng thị trường quốc tế — diễn ra đồng thời mà không bị lệch nhịp.",
-          "en": "Vietnam Airlines needed a Google Search advertising system that maintained core brand consistency while adapting to the culture and search behaviors of individual international markets — running simultaneously without falling out of sync."
+          "vi": "Quản trị hệ thống tiếp thị tìm kiếm (SEM/Search Ads) toàn cầu cho Hãng hàng không Quốc gia trong bối cảnh thị trường hàng không đối mặt với chuỗi thách thức chồng chất hậu COVID-19, biến động địa chính trị, xung đột vũ trang và sự cạnh tranh khốc liệt từ các hãng hàng không giá rẻ mới. Bài toán đòi hỏi sự cân bằng chiến lược khắt khe: vừa phải bảo tồn tính đồng nhất và uy tín của thương hiệu cốt lõi, vừa địa phương hóa thông điệp linh hoạt theo từng văn hóa/hành vi tìm kiếm, đồng thời tối ưu hóa từng đồng ngân sách để thúc đẩy tăng trưởng doanh số thực tế trên 24 thị trường quốc tế.",
+          "en": "Managing a global Search Engine Marketing (SEM) system for the National Carrier amidst a turbulent post-COVID aviation landscape marked by geopolitical instability, armed conflicts, and aggressive competition from new airline entrants. The project demanded a strict strategic balance: preserving core brand integrity and authority while localizing search messaging to diverse cultural behaviors, all while optimizing media spend to drive tangible revenue growth across 24 international markets."
         },
         "action": {
-          "vi": "Trực tiếp quản trị chiến dịch Google Search toàn cầu trải dài trên 24 thị trường quốc tế: thiết lập Media Plan, xây dựng cấu trúc từ khóa chuyên biệt và địa phương hóa thông điệp quảng cáo (localized ad messaging) cho từng quốc gia.",
-          "en": "Directly managed a global Google Search campaign spanning 24 international markets: developing the Media Plan, building market-specific keyword architectures, and localizing ad messaging for each target country."
+          "vi": "• Trực tiếp hoạch định, thiết lập và quản trị mạng lưới chiến dịch Google Search Ads/SEM quy mô lớn trên 24 thị trường quốc tế.<br>• Xây dựng kiến trúc từ khóa địa phương hóa (localized keyword architecture) và tối ưu hóa thông điệp quảng cáo (ad copy) chuẩn xác theo hành vi tìm kiếm của từng vùng lãnh thổ.<br>• Quản trị hiệu suất SEM chuyên sâu: chủ động theo dõi, tinh chỉnh giá thầu và phân bổ ngân sách linh hoạt nhằm tối ưu hóa chỉ số ROAS (Return on Ad Spend) trên từng đường bay/thị trường.<br>• Cân bằng giữa việc khai thác tối đa doanh thu tại các thị trường trọng điểm và duy trì đà tăng trưởng đồng đều, ổn định tại các thị trường tiềm năng.",
+          "en": "• Directly planned, established, and managed large-scale Google Search Ads/SEM campaign networks across 24 international markets.<br>• Architected localized keyword structures and tailored ad copy precisely mapped to regional search behaviors and cultural nuances.<br>• Drove deep SEM performance management: proactively monitored, fine-tuned bidding strategies, and dynamically reallocated budgets to maximize ROAS (Return on Ad Spend) per route and market.<br>• Strategically balanced aggressive revenue exploitation in high-yield markets with steady, sustainable growth across emerging regions."
         },
         "result": {
-          "vi": "Vận hành đồng bộ 24 thị trường quốc tế dưới một khung chiến lược chung, bảo vệ tính nhất quán của thương hiệu toàn cầu trong khi vẫn tối ưu hiệu suất xuất sắc tại từng địa phương.",
-          "en": "Synchronized 24 international markets under a single strategic framework, safeguarding global brand consistency while achieving excellent localized performance."
+          "vi": "• Chuẩn hóa thành công khung vận hành SEM toàn cầu cho 24 thị trường quốc tế, đảm bảo sự cân bằng hoàn hảo giữa nhận diện thương hiệu và hiệu quả kinh doanh.<br>• Đóng góp trực tiếp vào doanh thu ấn tượng suốt 3 năm liên tiếp (2023 - 2026), tạo dòng tiền vững chắc hỗ trợ đà phục hồi và bứt phá mạnh mẽ của Vietnam Airlines trong giai đoạn khủng hoảng toàn ngành.<br>• Khẳng định năng lực quản trị hiệu suất truyền thông quy mô lớn, tối ưu hóa ROAS và bản lãnh ứng biến chiến lược trước những biến động kinh tế - chính trị phức tạp.",
+          "en": "• Successfully standardized a global SEM operating framework across 24 international markets, striking a perfect synergy between brand equity and commercial efficiency.<br>• Directly contributed to substantial revenue streams for 3 consecutive years (2023 - 2026), generating strong cash flows to empower Vietnam Airlines' resilient recovery and growth during industry-wide crises.<br>• Proven capability in large-scale performance management, ROAS optimization, and strategic agility amidst complex geopolitical and economic headwinds."
         },
         "metrics": [
           {
@@ -587,16 +587,16 @@ window.SITE_CONTENT = {
         },
         "cover": "../assets/images/cover-panasonic.jpg",
         "problem": {
-          "vi": "Panasonic Service Vietnam cần một chiến dịch kỷ niệm 20 năm (\"20th years of Trusted Service\") vừa thúc đẩy doanh số các gói bảo dưỡng và gia hạn bảo hành, vừa xây dựng thành công cộng đồng khách hàng trung thành dài hạn.",
-          "en": "Panasonic Service Vietnam required a 20th-anniversary campaign (\"20 Years of Trusted Service\") that simultaneously drove sales for maintenance and extended-warranty packages while successfully building a long-term loyal customer community."
+          "vi": "Đồng thời quản trị và tăng trưởng hiệu suất cho nhiều dòng sản phẩm lẫn mảng kinh doanh chiến lược của Panasonic Vietnam (Panasonic Service, Panasonic Cooking với Bếp từ IH, Panasonic Beauty với thiết bị chăm sóc cá nhân, và Cộng đồng Facebook 'Sống khỏe cùng Panasonic'). Thách thức cốt lõi là duy trì sự tuân thủ tuyệt đối các Tiêu chuẩn Toàn cầu (Global Standards) khắt khe từ tập đoàn và bảo đảm định hướng chiến lược dài hạn qua nhiều năm hợp tác, đồng thời không ngừng đổi mới sáng tạo, vận hành theo tư duy Tinh gọn (Lean Mindset) nhằm tối ưu hóa chi phí và áp lực cải tiến liên tục.",
+          "en": "Simultaneously managing and scaling performance across diverse product lines and key business sectors for Panasonic Vietnam (Panasonic Service, Panasonic Cooking IH Cooktops, Panasonic Beauty personal care devices, and the 'Sống khỏe cùng Panasonic' Facebook Community). The core challenge lay in strictly adhering to rigorous Global Standards and ensuring multi-year strategic continuity, while continuously driving creative innovation and operating with a Lean Mindset under relentless demands for cost efficiency and continuous improvement."
         },
         "action": {
-          "vi": "Xây dựng chiến lược Digital Marketing cho luồng Performance (bảo dưỡng, bảo hành); đồng thời quản trị toàn trình dự án kỷ niệm 20 năm — từ định hướng nội dung, ý tưởng Landing Page, quản trị cộng đồng Facebook, vận hành quảng cáo số, Booking PR, đến tổ chức hoạt động CSR ngoài trời (\"Sống khỏe góp xanh\").",
-          "en": "Formulated the Digital Marketing strategy for the Performance stream (maintenance/warranty) while managing the 20th-anniversary project end-to-end — covering content direction, Landing Page concepts, Facebook community management, digital ads, PR booking, and an outdoor CSR activation (\"Sống khỏe góp xanh\")."
+          "vi": "Chủ trì hoạch định và quản trị toàn trình (end-to-end) các dự án tích hợp đa kênh quy mô lớn: Vận hành thành công chiến dịch kỷ niệm 20 năm Panasonic Service (\"20th Years of Trusted Service\") & chuỗi sự kiện Panasonic CS Caravan; định hình chiến lược nội dung và quản trị cộng đồng \"Sống khỏe cùng Panasonic\"; thúc đẩy đồng thời các luồng chiến dịch Brand Awareness và Performance Marketing cho Bếp từ IH (Panasonic Cooking) cùng mảng Thiết bị chăm sóc cá nhân (Panasonic Beauty). Chuẩn hóa quy trình vận hành tinh gọn, thiết lập cơ chế kiểm soát chất lượng nghiêm ngặt từ khâu tiếp nhận Brief đến nghiệm thu, tạo sự giao thoa hoàn hảo giữa tính nhất quán chiến lược dài hạn và các giải pháp đề xuất sáng tạo, chủ động tối ưu nguồn lực.",
+          "en": "Spearheaded end-to-end planning and management of large-scale multi-channel integrated campaigns: Executed the landmark 20th-anniversary campaign (\"20th Years of Trusted Service\") & the Panasonic CS Caravan series; established content frameworks and community governance for 'Sống khỏe cùng Panasonic'; dynamically drove Brand Awareness and Performance streams for IH Cooktops (Panasonic Cooking) and Personal Care devices (Panasonic Beauty). Standardized lean workflows with rigorous quality control from brief ingestion to sign-off, perfectly bridging long-term strategic continuity with proactive, innovative problem-solving."
         },
         "result": {
-          "vi": "Triển khai thành công chiến dịch tích hợp đa điểm chạm (Omnichannel) — giúp Panasonic vừa gia tăng tỷ lệ giữ chân khách hàng cũ, vừa lan tỏa mạnh mẽ hình ảnh thương hiệu gắn liền với trách nhiệm xã hội.",
-          "en": "Successfully delivered an integrated, multi-touchpoint (Omnichannel) campaign — helping Panasonic boost existing customer retention rates while strongly amplifying its brand image tied to social responsibility."
+          "vi": "Thiết lập mối quan hệ đối tác chiến lược bền vững suốt 4 năm liên tiếp với Panasonic Vietnam. Tối ưu hóa toàn diện hiệu suất vận hành và ngân sách nhờ tư duy tinh gọn, chinh phục thành công những tiêu chuẩn khắt khe nhất của tập đoàn đa quốc gia. Sự kết hợp giữa năng lực thực thi chuẩn mực và tư duy đổi mới liên tục đã củng cố vững chắc vị thế thương hiệu dẫn đầu, nâng cao tỷ lệ giữ chân khách hàng và thắt chặt mối liên kết sâu sắc với cộng đồng người tiêu dùng.",
+          "en": "Established a highly sustainable 4-year strategic partnership with Panasonic Vietnam. Comprehensive optimization of operational workflows and marketing budgets through a lean mindset, successfully satisfying the stringent benchmark standards of a global corporation. The synergy of execution excellence and continuous innovation firmly solidified brand leadership, enhanced customer retention rates, and deepened long-term consumer community engagement."
         },
         "metrics": [
           {
@@ -620,21 +620,21 @@ window.SITE_CONTENT = {
           "en": "Retail · B2B2C Marketing"
         },
         "period": {
-          "vi": "2023",
-          "en": "2023"
+          "vi": "2023 — 2026",
+          "en": "2023 — 2026"
         },
         "cover": "../assets/images/cover-songhong-bedding.jpg",
         "problem": {
-          "vi": "Sông Hồng cần đẩy mạnh truyền thông cho 4 bộ sưu tập (Basic, Urban, Adore, Back Essential) trên cả hai kênh: Đại lý (B2B) và Người tiêu dùng cuối (B2C), đòi hỏi hệ thống thông điệp phải nhất quán nhưng vẫn linh hoạt theo từng tệp đối tượng.",
-          "en": "Song Hong needed to amplify communications for 4 collections (Basic, Urban, Adore, Back Essential) across both Dealer (B2B) and End-Consumer (B2C) channels, requiring a messaging system that was cohesive yet flexible for different audiences."
+          "vi": "Là thương hiệu quốc dân với bề dày lịch sử, Chăn Ga Gối Đệm Sông Hồng đứng trước áp lực chuyển mình mạnh mẽ giữa bối cảnh thị trường cạnh tranh ngày càng khốc liệt. Dự án đòi hỏi giải pháp truyền thông đột phá để giải quyết đồng thời hai bài toán chiến lược: bứt phá doanh số bán hàng trong các giai đoạn cao điểm vụ mùa, đồng thời tái định hình hình ảnh thương hiệu hiện đại, sáng tạo nhưng vẫn bảo tồn trọn vẹn di sản và giá trị cốt lõi lâu đời.",
+          "en": "As a heritage national brand, Song Hong Bedding faced an imperative transformation amidst fierce market competition. The project demanded a breakthrough communication strategy to simultaneously solve two strategic challenges: driving sales performance during peak seasons and revitalizing the brand image with a modern, innovative identity while honoring its long-standing core legacy."
         },
         "action": {
-          "vi": "Thực thi toàn bộ chiến dịch quảng bá kỹ thuật số và chương trình tương tác đại lý B2B2C cho từng bộ sưu tập; thiết kế luồng nội dung quảng cáo, định hướng mạng xã hội, và trực tiếp lên kế hoạch tổ chức Hội nghị khách hàng (Dealer Conference).",
-          "en": "Executed full digital promotion campaigns and B2B2C dealer engagement programs for each collection; designed ad content flows, directed social media strategies, and directly planned the Dealer Conference."
+          "vi": "Trực tiếp đồng hành và phối hợp chặt chẽ cùng đội ngũ Brand Marketing của nhãn hàng để hiện thực hóa chiến lược IMC toàn diện, gắn kết mục tiêu nhận diện thương hiệu dài hạn với chỉ số bán hàng thực tế:<br><br>• Chuẩn hóa tư duy thẩm mỹ thiết kế và định hướng nội dung trên mạng xã hội, nâng tầm visual thương hiệu sắc nét và thời thượng.<br>• Hoạch định và linh hoạt tối ưu hóa kế hoạch truyền thông theo tính vụ mùa, bắt trọn nhịp cầu tiêu dùng cao điểm.<br>• Đồng hành cùng hệ thống phân phối qua các chiến dịch hỗ trợ đại lý, trực tiếp lên kế hoạch và tổ chức Hội nghị khách hàng (Dealer Conference) quy mô lớn.<br>• Điều phối chuỗi hoạt động trách nhiệm xã hội (CSR) lan tỏa giá trị cộng đồng và chỉ đạo sản xuất TVC/hình ảnh đa kênh chuyên nghiệp.",
+          "en": "Worked hand-in-hand with the Client's Brand Marketing team to execute a comprehensive IMC strategy, seamlessly linking long-term brand equity with tangible sales performance:<br><br>• Standardized creative direction and social content frameworks, elevating brand aesthetics into a modern, sophisticated visual style.<br>• Planned and dynamically optimized media campaigns according to seasonality, capitalizing on peak consumer purchasing windows.<br>• Empowered the distribution network through dealer support initiatives and end-to-end planning of a large-scale Dealer Conference.<br>• Coordinated impactful CSR initiatives to strengthen community trust and led multi-channel TVC and creative asset production."
         },
         "result": {
-          "vi": "Vận hành mượt mà 4 dòng sản phẩm song song trên cả hai tuyến B2B và B2C mà không xảy ra xung đột thông điệp; đồng thời thắt chặt mối quan hệ chiến lược với mạng lưới đại lý thông qua Hội nghị khách hàng.",
-          "en": "Smoothly operated 4 product lines in parallel across B2B and B2C channels without message conflict; while also cementing strategic relationships with the dealer network through the customer conference."
+          "vi": "Hơn 3 năm đồng hành liên tục và phát triển bền vững, khẳng định năng lực quản trị dự án toàn diện, tư duy chiến lược sắc bén và tạo dựng niềm tin chiến lược vững chắc từ lãnh đạo thương hiệu Sông Hồng.",
+          "en": "Over 3 years of continuous partnership and sustainable growth, affirming comprehensive project leadership, sharp strategic acumen, and building unwavering trust with Song Hong's brand leadership."
         },
         "metrics": [
           {
@@ -649,6 +649,37 @@ window.SITE_CONTENT = {
           "../assets/images/gallery-songhong-bedding-0.jpg",
           "../assets/images/gallery-songhong-bedding-1.jpg"
         ]
+      },
+      {
+        "id": "bcc-pv-pharma",
+        "client": "BCC Pharma & PV Pharma",
+        "category": {
+          "vi": "Dược phẩm & Chăm sóc sức khỏe · Chiến dịch truyền thông tích hợp & Tái định vị",
+          "en": "Pharmaceuticals & Healthcare · Integrated Campaign & Rebranding"
+        },
+        "period": {
+          "vi": "2023 — 2024",
+          "en": "2023 — 2024"
+        },
+        "cover": "",
+        "problem": {
+          "vi": "Ngành dược phẩm và hóa dược chịu sự kiểm duyệt khắt khe cùng nhiều hạn chế quảng cáo trên các nền tảng digital, đòi hỏi phương thức truyền thông khác biệt thay vì phụ thuộc vào các kênh paid ads truyền thống. Mỗi thương hiệu lại đối mặt với bài toán riêng: BCC Pharma sở hữu công thức phát minh độc quyền tối ưu cho trẻ nhỏ và bệnh nhân nặng nhưng còn mới mẻ trên môi trường digital; trong khi PV Pharma là thương hiệu uy tín lâu năm nhưng chủ yếu vận hành trên các kênh truyền thống, cần hiện đại hóa hình ảnh để tiếp cận tệp khách hàng mới.",
+          "en": "The pharmaceutical sector faces strict regulatory compliance and heavy ad policy restrictions across digital platforms, demanding non-traditional marketing approaches rather than relying strictly on paid media channels. Each brand presented unique challenges: BCC Pharma possessed proprietary, high-efficacy formulas for pediatric and critical care but had a minimal digital footprint; whereas PV Pharma was a long-established, reputable brand relying predominantly on traditional channels, needing a modern overhaul to engage digital-native audiences."
+        },
+        "action": {
+          "vi": "• Tiếp cận truyền thông đa kênh chuyên biệt: Xây dựng hệ thống website chuyên nghiệp, thiết kế luồng trải nghiệm tối ưu chuyển đổi bằng cách rút ngắn quy trình tư vấn và cung cấp thông tin y khoa minh bạch qua content/visual sáng tạo.<br>• Sáng tạo Mascot thương hiệu: Thiết kế và ứng dụng linh hoạt hình tượng Mascot trên bao bì sản phẩm, ấn phẩm truyền thông và điểm chạm digital nhằm tăng tính nhận diện và sự gần gũi.<br>• Triển khai Social Outreach & PR chuyên sâu: Đẩy mạnh truyền thông trên các báo, đài và các kênh tin tức y tế uy tín (như AloBacsi), kết hợp chiến dịch KOLs/Chuyên gia y tế để xây dựng niềm tin thương hiệu.",
+          "en": "• Built specialized digital touchpoints: Developed high-converting, professional websites and streamlined consultation funnels by delivering authoritative, engaging medical content and visual assets.<br>• Brand Mascot Creation & Integration: Designed and deployed brand mascots seamlessly across packaging, promotional materials, and digital touchpoints to enhance brand recall and emotional connection.<br>• Strategic Social Outreach & Influencer PR: Spearheaded PR campaigns across major media outlets, specialized healthcare platforms (e.g., AloBacsi), and strategically partnered with key opinion leaders/medical influencers to cultivate brand credibility."
+        },
+        "result": {
+          "vi": "• Tung thành công các dòng sản phẩm ra thị trường, tiếp cận chuẩn xác và chuyển đổi tệp khách hàng mục tiêu riêng biệt cho từng thương hiệu.<br>• Xây dựng hệ thống tài sản truyền thông có tính kế thừa lâu dài, tiếp tục phát huy hiệu quả và tối ưu chi phí vận hành cho doanh nghiệp.",
+          "en": "• Successfully launched product lines to market, precisely reaching and converting each brand’s distinct target customer segments.<br>• Built a lasting communications-asset system that continues to drive efficiency and optimize operating costs for the business."
+        },
+        "metrics": [],
+        "gallery": [
+          "",
+          ""
+        ],
+        "highlights": []
       },
       {
         "id": "vpbank-sme",
@@ -740,25 +771,25 @@ window.SITE_CONTENT = {
         "id": "pvi-am",
         "client": "PVI AM",
         "category": {
-          "vi": "Đang cập nhật",
-          "en": "To be updated"
+          "vi": "Tài chính, bảo hiểm, đầu tư cao cấp · Trái phiếu",
+          "en": "Finance, Insurance, Premium Investment · Bonds"
         },
         "period": {
-          "vi": "",
-          "en": ""
+          "vi": "2024",
+          "en": "2024"
         },
         "cover": "../assets/images/cover-pvi-am.jpg",
         "problem": {
-          "vi": "Nội dung đang được bổ sung.",
-          "en": "Content coming soon."
+          "vi": "Bước sang năm 2024, thị trường tài chính và trái phiếu Việt Nam vẫn gánh chịu dư chấn trầm trọng từ cuộc khủng hoảng niềm tin 2023. Dòng vốn đầu tư cá nhân lẫn tổ chức co cụm phòng thủ, ưu tiên tuyệt đối các kênh trú ẩn an toàn thuộc hệ sinh thái ngân hàng lâu đời. Trong bối cảnh đó, PVI AM bước vào cuộc đua ở vị thế hoàn toàn bất lợi: xuất phát điểm gần như bằng không về nền tảng truyền thông digital, thiếu vắng các bằng chứng năng lực (proof of capability) công khai, nhưng phải đối mặt với yêu cầu cấp thiết về việc xây dựng uy tín thương hiệu và tạo đà tăng trưởng kinh doanh tức thì.",
+          "en": "Entering 2024, the Vietnamese financial and bond markets were still reeling from the severe 2023 trust crisis. Capital flows remained highly defensive, overwhelmingly favoring safe-haven channels backed by established banking ecosystems. In this climate, PVI AM entered the market at a distinct disadvantage: starting from near-zero digital media presence, lacking public proof of capability, yet facing urgent performance demands to establish brand authority and drive immediate business traction."
         },
         "action": {
-          "vi": "Nội dung đang được bổ sung.",
-          "en": "Content coming soon."
+          "vi": "Trực tiếp chủ trì nghiên cứu thị trường và bóc tách tâm lý nhà đầu tư hậu khủng hoảng. Xây dựng chiến lược tiếp cận đa tầng: định hình kiến trúc nền tảng truyền thông chuyên nghiệp từ con số 0; phác họa chân dung nhà đầu tư sắc nét theo từng phân khúc khẩu vị rủi ro; đồng thời thiết kế hệ thống nội dung chuyên sâu, biến các khái niệm tài chính/trái phiếu phức tạp thành thông điệp minh bạch, thuyết phục và đánh trúng tâm lý tìm kiếm giải pháp tích lũy an toàn.",
+          "en": "Directly led market research and unraveled post-crisis investor psychology. Formulated a multi-layered strategy: architectural setup of professional communication platforms from scratch, precise investor profiling mapped to risk appetites, and high-impact content framework translating complex bond/financial concepts into transparent, highly persuasive messages targeting safe-yield seekers."
         },
         "result": {
-          "vi": "Nội dung đang được bổ sung.",
-          "en": "Content coming soon."
+          "vi": "Nhờ lập luận chiến lược đanh thép và dữ liệu nghiên cứu thị trường thực chiến, bản Proposal đã chinh phục hoàn toàn Ban lãnh đạo và được phê duyệt ngay từ Round 1. Chiến dịch khởi chạy trơn tru, tạo dựng nền tảng truyền thông vững chắc, xác lập niềm tin thương hiệu mạnh mẽ và trực tiếp hỗ trợ thúc đẩy hoạt động kinh doanh trái phiếu/đầu tư của PVI AM trong giai đoạn thị trường đầy biến động.",
+          "en": "Powered by bulletproof strategic reasoning and sharp market insights, the proposal achieved immediate Round 1 approval from executive leadership. The successful rollout established a solid brand communication foundation, restored investor confidence, and directly empowered PVI AM's bond and investment operations amidst challenging market conditions."
         },
         "metrics": [],
         "gallery": [
@@ -770,25 +801,25 @@ window.SITE_CONTENT = {
         "id": "ukg-unie",
         "client": "UKG & Unie Brand",
         "category": {
-          "vi": "Đang cập nhật",
-          "en": "To be updated"
+          "vi": "Điện tử, điện lạnh & Hàng tiêu dùng",
+          "en": "Electronics, Refrigeration & Consumer Goods"
         },
         "period": {
-          "vi": "",
-          "en": ""
+          "vi": "2025 — 2026",
+          "en": "2025 — 2026"
         },
         "cover": "../assets/images/cover-ukg-unie.jpg",
         "problem": {
-          "vi": "Nội dung đang được bổ sung.",
-          "en": "Content coming soon."
+          "vi": "UKG & Unie là thương hiệu điện tử, điện lạnh gia dụng do người Việt phát triển, sở hữu lợi thế lớn về hệ thống phân phối đa kênh và danh mục sản phẩm phong phú. Tuy nhiên, hoạt động truyền thông trước đó còn chồng chéo, chưa tối ưu hiệu suất, thiếu định hướng chiến lược dài hạn, chưa tạo được tính kế thừa và tích lũy tài sản thương hiệu, cũng như thiếu sự bứt phá trong sáng tạo khiến sản phẩm chưa nổi bật được công năng và phân khúc.",
+          "en": "UKG & Unie is a Vietnamese-developed home electronics and appliance brand with a strong omnichannel distribution network and diverse product portfolio. However, previous communication efforts were overlapping, sub-optimally executed, and lacked a long-term strategic direction, failing to accumulate brand equity or deliver creative breakthroughs that highlight product functionality and segment positioning."
         },
         "action": {
-          "vi": "Nội dung đang được bổ sung.",
-          "en": "Content coming soon."
+          "vi": "• Trực tiếp tư vấn, đào sâu bóc tách thực trạng để xây dựng khung chiến lược truyền thông.<br>• Phối hợp chặt chẽ với các phòng ban nội bộ phía Brand nhằm chuẩn hóa quy trình làm việc giữa Agency và Client.<br>• Đồng hành bám sát dữ liệu bán hàng thực tế, linh hoạt tối ưu hóa kế hoạch truyền thông theo nhịp kinh doanh.",
+          "en": "• Directly advised and analyzed current state to build a strategic communication framework.<br>• Collaborated closely with internal brand departments to standardize workflows between Agency and Client.<br>• Closely monitored real-time sales data to dynamically optimize media plans aligned with business rhythms."
         },
         "result": {
-          "vi": "Nội dung đang được bổ sung.",
-          "en": "Content coming soon."
+          "vi": "Định hình chiến lược truyền thông hiệu quả cho các dòng sản phẩm mới, tạo bệ phóng bứt phá trong giai đoạn ra mắt (launching); thiết lập nền tảng nhận diện vững chắc giúp tăng năng lực cạnh tranh; tối ưu hóa hiệu suất ngân sách và đóng góp trực tiếp vào doanh số của thương hiệu.",
+          "en": "Successfully defined an effective communication strategy for new product lines, creating a strong launchpad during product launches; established a solid brand identity foundation to boost competitiveness; optimized budget performance and directly contributed to brand revenue."
         },
         "metrics": [],
         "gallery": [
@@ -801,6 +832,7 @@ window.SITE_CONTENT = {
       "vietnam-airlines",
       "panasonic",
       "songhong-bedding",
+      "bcc-pv-pharma",
       "pvi-am",
       "ukg-unie"
     ]
@@ -1887,8 +1919,8 @@ window.SITE_CONTENT = {
   },
   "footer": {
     "note": {
-      "vi": "Được thiết kế và phát triển thủ công tại Hà Nội.",
-      "en": "Designed and hand-coded in Hanoi."
+      "vi": "Được thiết kế và phát triển bởi Mason.",
+      "en": "Designed and hand-coded by Mason."
     }
   }
 };
