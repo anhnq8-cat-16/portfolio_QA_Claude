@@ -30,6 +30,23 @@
     if (node) node.textContent = value;
   }
 
+  function setAccentedText(id, text, accents) {
+    var node = document.getElementById(id);
+    if (!node) return;
+    if (!accents || !accents.length) {
+      node.textContent = text;
+      return;
+    }
+    var html = text;
+    accents.forEach(function (phrase) {
+      var idx = html.indexOf(phrase);
+      if (idx !== -1) {
+        html = html.slice(0, idx) + '<span class="accent-text">' + phrase + "</span>" + html.slice(idx + phrase.length);
+      }
+    });
+    node.innerHTML = html;
+  }
+
   /* ---------------- Render ---------------- */
 
   function renderMeta() {
@@ -85,11 +102,15 @@
   function renderHero() {
     setText("heroEyebrow", t(DATA.hero.eyebrow));
     var headlineEl = document.getElementById("heroHeadline");
-    var headlineParts = DATA.hero.headlineParts && DATA.hero.headlineParts[state.lang];
-    if (headlineParts && headlineParts.length) {
+    var headlineLines = DATA.hero.headlineLines && DATA.hero.headlineLines[state.lang];
+    if (headlineLines && headlineLines.length) {
       headlineEl.innerHTML = "";
-      headlineParts.forEach(function (part) {
-        headlineEl.appendChild(el("span", "hero-headline-part hero-headline-" + part.style, part.text));
+      headlineLines.forEach(function (line) {
+        var lineEl = el("div", "hero-headline-line");
+        line.forEach(function (part) {
+          lineEl.appendChild(el("span", "hero-headline-" + part.style, part.text));
+        });
+        headlineEl.appendChild(lineEl);
       });
     } else {
       var headlineText = t(DATA.hero.headline);
@@ -268,7 +289,7 @@
   function renderOwnership() {
     var O = DATA.ownership;
     setText("ownershipEyebrow", t(O.eyebrow));
-    setText("ownershipHeadline", t(O.headline));
+    setAccentedText("ownershipHeadline", t(O.headline), O.headlineAccents && O.headlineAccents[state.lang]);
     setText("ownershipIntro", t(O.intro));
 
     var railPh = document.getElementById("ownershipRailPlaceholder");

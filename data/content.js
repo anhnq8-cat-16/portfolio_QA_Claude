@@ -154,42 +154,54 @@ window.SITE_CONTENT = {
       "vi": "Tôi là Quý Anh (Mason), hơn 5 năm điều phối và tối ưu 40+ chiến dịch IMC cho Vietnam Airlines, Panasonic, VPBank... Tôi tập trung tối ưu vận hành, kiểm soát ngân sách chặt chẽ và thúc đẩy tăng trưởng doanh số thực tế cho phía Nhãn hàng. Kết hợp sự linh hoạt, nhạy bén của Agency cùng tư duy quản trị hệ thống, tôi sẵn sàng đảm nhận vai trò Marketing / Brand Manager.",
       "en": "I am Quy Anh (Mason), with 5+ years driving and optimizing 40+ IMC campaigns for Vietnam Airlines, Panasonic, VPBank... Streamlining operations, managing budgets efficiently, and driving bottom-line growth for client-side brands. Ready to bring agency agility and systematic governance to elevate Marketing / Brand Manager roles."
     },
-    "headlineParts": {
+    "headlineLines": {
       "vi": [
-        {
-          "text": "Cầu nối chiến lược từ",
-          "style": "normal"
-        },
-        {
-          "text": "Thực thi ở Agency",
-          "style": "accent"
-        },
-        {
-          "text": "đến",
-          "style": "connector"
-        },
-        {
-          "text": "Quản trị Thương hiệu",
-          "style": "accent"
-        }
+        [
+          {
+            "text": "Cầu nối chiến lược từ",
+            "style": "normal"
+          }
+        ],
+        [
+          {
+            "text": "Thực thi ở Agency",
+            "style": "accent"
+          }
+        ],
+        [
+          {
+            "text": "đến ",
+            "style": "connector"
+          },
+          {
+            "text": "Quản trị Thương hiệu",
+            "style": "accent"
+          }
+        ]
       ],
       "en": [
-        {
-          "text": "The Strategic Bridge from",
-          "style": "normal"
-        },
-        {
-          "text": "Agency Execution",
-          "style": "accent"
-        },
-        {
-          "text": "to",
-          "style": "connector"
-        },
-        {
-          "text": "Brand Management",
-          "style": "accent"
-        }
+        [
+          {
+            "text": "The Strategic Bridge from",
+            "style": "normal"
+          }
+        ],
+        [
+          {
+            "text": "Agency Execution",
+            "style": "accent"
+          }
+        ],
+        [
+          {
+            "text": "to ",
+            "style": "connector"
+          },
+          {
+            "text": "Brand Management",
+            "style": "accent"
+          }
+        ]
       ]
     }
   },
@@ -415,7 +427,17 @@ window.SITE_CONTENT = {
         }
       }
     ],
-    "railImage": "../assets/images/ownership-rail.jpg"
+    "railImage": "../assets/images/ownership-rail.jpg",
+    "headlineAccents": {
+      "vi": [
+        "Agency",
+        "Nhãn hàng"
+      ],
+      "en": [
+        "Agency",
+        "client-side"
+      ]
+    }
   },
   "experience": {
     "eyebrow": {
