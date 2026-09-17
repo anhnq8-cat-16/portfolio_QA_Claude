@@ -417,11 +417,36 @@
     renderProjectPanel();
   }
 
+  // Splits rich project copy (paragraphs joined by "<br><br>", bullets joined
+  // by "<br>• ") into real <p>/<ul><li> elements so it reflows naturally at
+  // whatever width is available — including the narrower width beside a
+  // floated image — instead of breaking at fixed points tuned for a rigid
+  // two-column layout.
+  function renderRichText(container, text) {
+    if (!text) return;
+    text.split("<br><br>").forEach(function (chunk) {
+      chunk = chunk.trim();
+      if (!chunk) return;
+      if (chunk.indexOf("•") !== -1) {
+        var ul = el("ul", "project-list");
+        chunk.replace(/^•\s*/, "").split(/<br>\s*•\s*/).forEach(function (part) {
+          part = part.trim();
+          if (part) ul.appendChild(el("li", null, part));
+        });
+        container.appendChild(ul);
+      } else {
+        container.appendChild(el("p", null, chunk));
+      }
+    });
+  }
+
   function renderProjectPanel() {
     var proj = DATA.projects.items[state.activeProjectTab];
     var panel = document.getElementById("projectPanel");
     panel.innerHTML = "";
 
+    // The cover image is floated so the copy below wraps around it (square
+    // wrap); everything else flows as one column in source order.
     var media = el("div", "project-media");
     var inner = el("div", "project-media-inner");
     if (proj.cover) {
@@ -436,7 +461,38 @@
       inner.appendChild(coverPh);
     }
     media.appendChild(inner);
+    panel.appendChild(media);
 
+    panel.appendChild(el("div", "project-index", "0" + (state.activeProjectTab + 1)));
+    panel.appendChild(el("div", "project-client", t(proj.client)));
+    panel.appendChild(el("div", "project-category", t(proj.category) + " · " + t(proj.period)));
+
+    [["problem", state.lang === "vi" ? "Vấn đề" : "Challenge"],
+     ["action", state.lang === "vi" ? "Cách triển khai" : "What I did"],
+     ["result", state.lang === "vi" ? "Kết quả" : "Result"]].forEach(function (pair) {
+      var block = el("div", "project-block");
+      block.appendChild(el("div", "project-block-label", pair[1]));
+      renderRichText(block, t(proj[pair[0]]));
+      panel.appendChild(block);
+    });
+
+    if ((proj.metrics && proj.metrics.length) || (proj.highlights && proj.highlights.length)) {
+      var metrics = el("div", "project-metrics");
+      (proj.metrics || []).forEach(function (m) {
+        var mEl = el("div", "project-metric");
+        mEl.appendChild(el("div", "project-metric-value", m.value));
+        mEl.appendChild(el("div", "project-metric-label", t(m.label)));
+        metrics.appendChild(mEl);
+      });
+      (proj.highlights || []).forEach(function (h) {
+        var hEl = el("div", "project-metric project-feature");
+        hEl.appendChild(el("div", "project-feature-label", t(h)));
+        metrics.appendChild(hEl);
+      });
+      panel.appendChild(metrics);
+    }
+
+    // Extra gallery shots sit below everything, clear of the float.
     var galleryItems = (proj.gallery && proj.gallery.length) ? proj.gallery : ["", ""];
     var mediaGallery = el("div", "project-media-gallery");
     galleryItems.forEach(function (src, gi) {
@@ -454,47 +510,14 @@
       }
       mediaGallery.appendChild(item);
     });
-    media.appendChild(mediaGallery);
-
-    var body = el("div", "project-body");
-    body.appendChild(el("div", "project-index", "0" + (state.activeProjectTab + 1)));
-    body.appendChild(el("div", "project-client", t(proj.client)));
-    body.appendChild(el("div", "project-category", t(proj.category) + " · " + t(proj.period)));
-
-    [["problem", state.lang === "vi" ? "Vấn đề" : "Challenge"],
-     ["action", state.lang === "vi" ? "Cách triển khai" : "What I did"],
-     ["result", state.lang === "vi" ? "Kết quả" : "Result"]].forEach(function (pair) {
-      var block = el("div", "project-block");
-      block.appendChild(el("div", "project-block-label", pair[1]));
-      block.appendChild(el("p", null, t(proj[pair[0]])));
-      body.appendChild(block);
-    });
-
-    if ((proj.metrics && proj.metrics.length) || (proj.highlights && proj.highlights.length)) {
-      var metrics = el("div", "project-metrics");
-      (proj.metrics || []).forEach(function (m) {
-        var mEl = el("div", "project-metric");
-        mEl.appendChild(el("div", "project-metric-value", m.value));
-        mEl.appendChild(el("div", "project-metric-label", t(m.label)));
-        metrics.appendChild(mEl);
-      });
-      (proj.highlights || []).forEach(function (h) {
-        var hEl = el("div", "project-metric project-feature");
-        hEl.appendChild(el("div", "project-feature-label", t(h)));
-        metrics.appendChild(hEl);
-      });
-      body.appendChild(metrics);
-    }
+    panel.appendChild(mediaGallery);
 
     if (getAssetsForProject(proj.id).length) {
       var proofBtn = el("button", "btn btn-line proof-cta", t(DATA.proofOfWork.viewDetailLabel));
       proofBtn.type = "button";
       proofBtn.setAttribute("data-proof-project", proj.id);
-      body.appendChild(proofBtn);
+      panel.appendChild(proofBtn);
     }
-
-    panel.appendChild(media);
-    panel.appendChild(body);
 
     if (window.gsap && !reduceMotion) {
       window.gsap.fromTo(panel, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" });

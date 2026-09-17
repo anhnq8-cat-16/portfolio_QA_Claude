@@ -52,8 +52,8 @@ window.SITE_CONTENT = {
     },
     "brandLabel": "Mason Nguyễn",
     "heroPhotos": [
-      "../assets/images/hero-portrait-1.jpg",
-      "../assets/images/hero-portrait-2.jpg",
+      "",
+      "",
       "../assets/images/hero-portrait-3.jpg"
     ]
   },
@@ -151,8 +151,8 @@ window.SITE_CONTENT = {
       "en": "Agency Execution to Brand Management"
     },
     "subheadline": {
-      "vi": "Tôi là Quý Anh (Mason), hơn 5 năm điều phối và tối ưu 40+ chiến dịch IMC cho Vietnam Airlines, Panasonic, VPBank... Tôi tập trung tối ưu vận hành, kiểm soát ngân sách chặt chẽ và thúc đẩy tăng trưởng doanh số thực tế cho phía Nhãn hàng. Kết hợp sự linh hoạt, nhạy bén của Agency cùng tư duy quản trị hệ thống, tôi sẵn sàng đảm nhận vai trò Marketing / Brand Manager.",
-      "en": "I am Quy Anh (Mason), with 5+ years driving and optimizing 40+ IMC campaigns for Vietnam Airlines, Panasonic, VPBank... Streamlining operations, managing budgets efficiently, and driving bottom-line growth for client-side brands. Ready to bring agency agility and systematic governance to elevate Marketing / Brand Manager roles."
+      "vi": "5+ năm điều phối và tối ưu 40+ chiến dịch IMC cho Vietnam Airlines, Panasonic, VPBank... sẵn sàng bước sang vai trò Marketing / Brand Manager.",
+      "en": "5+ years driving and optimizing 40+ IMC campaigns for Vietnam Airlines, Panasonic, VPBank... ready to step into a Marketing / Brand Manager role."
     },
     "headlineLines": {
       "vi": [
@@ -216,8 +216,12 @@ window.SITE_CONTENT = {
     },
     "paragraphs": [
       {
-        "vi": "Với hơn 5 năm kinh nghiệm làm việc tại Novaon Digital, phát triển từ Marketing Intern đến Senior Account Executive, tôi đảm nhận vai trò cầu nối chiến lược giữa Agency và các thương hiệu hàng đầu trong lĩnh vực Hàng không, Điện máy, Bán lẻ và Ngân hàng. Thế mạnh cốt lõi của tôi là sự kết hợp giữa tốc độ thực thi linh hoạt của Agency và tư duy quản trị hệ thống tinh gọn phía Nhãn hàng.",
-        "en": "I am an Account & Project Management Specialist with 5+ years of experience at Novaon Digital. Rising from Marketing Intern to Senior Account Executive, I serve as a strategic bridge between agency execution and corporate brands across Aviation, Consumer Electronics, Retail, and Banking. My core strength lies in combining agency agility and quick execution with systematic brand governance."
+        "vi": "Tôi là Quý Anh (Mason) — chuyên gia Quản trị Tài khoản & Dự án với hơn 5 năm kinh nghiệm tại Novaon Digital, phát triển từ Marketing Intern lên Senior Account Executive. Tôi trực tiếp điều phối và tối ưu hơn 40 chiến dịch IMC cho các thương hiệu hàng đầu như Vietnam Airlines, Panasonic, VPBank... trải rộng trên các lĩnh vực Hàng không, Điện máy, Bán lẻ và Ngân hàng, đóng vai trò cầu nối chiến lược giữa Agency và Nhãn hàng.",
+        "en": "I am Quy Anh (Mason) — an Account & Project Management Specialist with 5+ years of experience at Novaon Digital, rising from Marketing Intern to Senior Account Executive. I have directly coordinated and optimized 40+ IMC campaigns for leading brands such as Vietnam Airlines, Panasonic, and VPBank across Aviation, Consumer Electronics, Retail, and Banking, serving as a strategic bridge between Agency and Brand."
+      },
+      {
+        "vi": "Thế mạnh cốt lõi của tôi là sự kết hợp giữa tốc độ thực thi linh hoạt của Agency với tư duy quản trị ngân sách chặt chẽ và kỷ luật tăng trưởng doanh số thực tế của phía Nhãn hàng — tôi sẵn sàng mang năng lực đó bước sang vai trò Marketing / Brand Manager.",
+        "en": "My core strength lies in combining agency agility and execution speed with the disciplined budget governance and real revenue-growth mindset of the client side — I'm ready to bring that combination into a Marketing / Brand Manager role."
       }
     ],
     "highlights": [
