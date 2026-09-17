@@ -1,4 +1,4 @@
-// AUTO-GENERATED from content.json — do not hand-edit. Run scripts/build_content_js.py after editing content.json.
+// AUTO-GENERATED from content.json — do not hand-edit.
 window.SITE_CONTENT = {
   "meta": {
     "siteTitle": {
@@ -633,8 +633,8 @@ window.SITE_CONTENT = {
           {
             "value": "51.88 lần",
             "label": {
-              "vi": "ROAS All Camp",
-              "en": "ROAS All Camp"
+              "vi": "ROAS for Total",
+              "en": "ROAS for Total"
             }
           },
           {
@@ -642,6 +642,20 @@ window.SITE_CONTENT = {
             "label": {
               "vi": "CTR trung bình",
               "en": "Avg CTR"
+            }
+          },
+          {
+            "value": ">2%",
+            "label": {
+              "vi": "CIR for Total",
+              "en": "CIR for Total"
+            }
+          },
+          {
+            "value": ">12%",
+            "label": {
+              "vi": "CVR / US Market",
+              "en": "CVR / US Market"
             }
           }
         ],

@@ -449,11 +449,15 @@ section { position: relative; padding: clamp(4.5rem, 10vw, 9rem) 0; }
 /* Flex (not grid) so a short last row centers instead of leaving empty
    trailing columns — a grid keeps items pinned to the start of the row. */
 .proof-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: .9rem; }
-.proof-grid.proof-grid-marquee { flex-direction: column; justify-content: flex-start; }
+.proof-grid.proof-grid-marquee { flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; }
 .proof-track-row {
   overflow: hidden; margin: 0 calc(clamp(1.25rem, 4vw, 3rem) * -1);
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  /* Without this, a flex item's default min-width:auto lets its max-content
+     .proof-track child force the row (and the whole page) wider than the
+     viewport instead of being clipped by overflow:hidden. */
+  min-width: 0;
 }
 .proof-track { display: flex; gap: .9rem; width: max-content; animation: proof-marquee 42s linear infinite; padding: 0 clamp(1.25rem, 4vw, 3rem); }
 .proof-track-row.is-reverse .proof-track { animation-direction: reverse; }

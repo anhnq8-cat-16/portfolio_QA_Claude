@@ -632,8 +632,8 @@
           {
             "value": "51.88 lần",
             "label": {
-              "vi": "ROAS All Camp",
-              "en": "ROAS All Camp"
+              "vi": "ROAS for Total",
+              "en": "ROAS for Total"
             }
           },
           {
@@ -641,6 +641,20 @@
             "label": {
               "vi": "CTR trung bình",
               "en": "Avg CTR"
+            }
+          },
+          {
+            "value": ">2%",
+            "label": {
+              "vi": "CIR for Total",
+              "en": "CIR for Total"
+            }
+          },
+          {
+            "value": ">12%",
+            "label": {
+              "vi": "CVR / US Market",
+              "en": "CVR / US Market"
             }
           }
         ],
