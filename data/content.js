@@ -633,7 +633,9 @@ window.SITE_CONTENT = {
         ],
         "gallery": [
           "../assets/images/gallery-vietnam-airlines-0.jpg",
-          "../assets/images/gallery-vietnam-airlines-1.jpg"
+          "../assets/images/gallery-vietnam-airlines-1.jpg",
+          "",
+          ""
         ],
         "highlights": [
           {
@@ -681,7 +683,9 @@ window.SITE_CONTENT = {
         ],
         "gallery": [
           "../assets/images/gallery-panasonic-0.jpg",
-          "../assets/images/gallery-panasonic-1.jpg"
+          "../assets/images/gallery-panasonic-1.jpg",
+          "",
+          ""
         ]
       },
       {
@@ -719,7 +723,9 @@ window.SITE_CONTENT = {
         ],
         "gallery": [
           "../assets/images/gallery-songhong-bedding-0.jpg",
-          "../assets/images/gallery-songhong-bedding-1.jpg"
+          "../assets/images/gallery-songhong-bedding-1.jpg",
+          "",
+          ""
         ]
       },
       {
@@ -749,7 +755,9 @@ window.SITE_CONTENT = {
         "metrics": [],
         "gallery": [
           "../assets/images/gallery-bcc-pv-pharma-0.jpg",
-          "../assets/images/gallery-bcc-pv-pharma-1.jpg"
+          "../assets/images/gallery-bcc-pv-pharma-1.jpg",
+          "",
+          ""
         ],
         "highlights": []
       },
@@ -787,6 +795,8 @@ window.SITE_CONTENT = {
           }
         ],
         "gallery": [
+          "",
+          "",
           "",
           ""
         ]
@@ -836,6 +846,8 @@ window.SITE_CONTENT = {
         ],
         "gallery": [
           "",
+          "",
+          "",
           ""
         ]
       },
@@ -866,7 +878,9 @@ window.SITE_CONTENT = {
         "metrics": [],
         "gallery": [
           "../assets/images/gallery-pvi-am-0.jpg",
-          "../assets/images/gallery-pvi-am-1.jpg"
+          "../assets/images/gallery-pvi-am-1.jpg",
+          "",
+          ""
         ]
       },
       {
@@ -896,7 +910,9 @@ window.SITE_CONTENT = {
         "metrics": [],
         "gallery": [
           "../assets/images/gallery-ukg-unie-0.jpg",
-          "../assets/images/gallery-ukg-unie-1.jpg"
+          "../assets/images/gallery-ukg-unie-1.jpg",
+          "",
+          ""
         ]
       }
     ],
@@ -924,8 +940,8 @@ window.SITE_CONTENT = {
     },
     "sheetUrl": "",
     "viewDetailLabel": {
-      "vi": "Xem minh chứng dự án",
-      "en": "View project proof"
+      "vi": "Xem chi tiết dự án",
+      "en": "View project details"
     },
     "modalCloseLabel": {
       "vi": "Đóng",

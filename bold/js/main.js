@@ -445,8 +445,11 @@
     var panel = document.getElementById("projectPanel");
     panel.innerHTML = "";
 
-    // The cover image is floated so the copy below wraps around it (square
-    // wrap); everything else flows as one column in source order.
+    // The cover + its two small thumbnails form one fixed cluster that
+    // floats together, so the copy below wraps around the whole cluster
+    // (square wrap) instead of leaving a gap where a separately-cleared
+    // gallery used to sit. Everything else flows as one column in source
+    // order.
     var media = el("div", "project-media");
     var inner = el("div", "project-media-inner");
     if (proj.cover) {
@@ -461,6 +464,34 @@
       inner.appendChild(coverPh);
     }
     media.appendChild(inner);
+
+    var galleryAll = (proj.gallery && proj.gallery.length) ? proj.gallery : ["", ""];
+    var galleryVisible = galleryAll.slice(0, 2);
+    var hasMorePhotos = getAssetsForProject(proj.id).length > 0;
+    var mediaGallery = el("div", "project-media-gallery");
+    galleryVisible.forEach(function (src, gi) {
+      var item = el("div", "project-media-gallery-item");
+      if (src) {
+        var gImg = el("img");
+        gImg.src = src;
+        gImg.loading = "lazy";
+        gImg.alt = t(proj.client) + " — " + (state.lang === "vi" ? "hình ảnh dự án" : "project photo") + " " + (gi + 1);
+        item.appendChild(gImg);
+      } else {
+        var gPh = el("div", "ph project-gallery-ph");
+        gPh.innerHTML = PH_ICON_IMAGE + '<span class="ph-label">' + t(proj.client) + " " + (gi + 1) + "</span>";
+        item.appendChild(gPh);
+      }
+      if (gi === galleryVisible.length - 1 && hasMorePhotos) {
+        var moreBtn = el("button", "project-media-more", "→");
+        moreBtn.type = "button";
+        moreBtn.setAttribute("data-proof-project", proj.id);
+        moreBtn.setAttribute("aria-label", t(DATA.proofOfWork.viewDetailLabel));
+        item.appendChild(moreBtn);
+      }
+      mediaGallery.appendChild(item);
+    });
+    media.appendChild(mediaGallery);
     panel.appendChild(media);
 
     panel.appendChild(el("div", "project-index", "0" + (state.activeProjectTab + 1)));
@@ -492,27 +523,7 @@
       panel.appendChild(metrics);
     }
 
-    // Extra gallery shots sit below everything, clear of the float.
-    var galleryItems = (proj.gallery && proj.gallery.length) ? proj.gallery : ["", ""];
-    var mediaGallery = el("div", "project-media-gallery");
-    galleryItems.forEach(function (src, gi) {
-      var item = el("div", "project-media-gallery-item");
-      if (src) {
-        var gImg = el("img");
-        gImg.src = src;
-        gImg.loading = "lazy";
-        gImg.alt = t(proj.client) + " — " + (state.lang === "vi" ? "hình ảnh dự án" : "project photo") + " " + (gi + 1);
-        item.appendChild(gImg);
-      } else {
-        var gPh = el("div", "ph project-gallery-ph");
-        gPh.innerHTML = PH_ICON_IMAGE + '<span class="ph-label">' + t(proj.client) + " " + (gi + 1) + "</span>";
-        item.appendChild(gPh);
-      }
-      mediaGallery.appendChild(item);
-    });
-    panel.appendChild(mediaGallery);
-
-    if (getAssetsForProject(proj.id).length) {
+    if (hasMorePhotos) {
       var proofBtn = el("button", "btn btn-line proof-cta", t(DATA.proofOfWork.viewDetailLabel));
       proofBtn.type = "button";
       proofBtn.setAttribute("data-proof-project", proj.id);
