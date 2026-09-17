@@ -1,4 +1,4 @@
-// AUTO-GENERATED from content.json — do not hand-edit.
+// AUTO-GENERATED from content.json — do not hand-edit. Run scripts/build_content_js.py after editing content.json.
 window.SITE_CONTENT = {
   "meta": {
     "siteTitle": {
@@ -216,12 +216,16 @@ window.SITE_CONTENT = {
     },
     "paragraphs": [
       {
-        "vi": "Tôi là Quý Anh (Mason) — chuyên gia Quản trị Tài khoản & Dự án với hơn 5 năm kinh nghiệm tại Novaon Digital, phát triển từ Marketing Intern lên Senior Account Executive. Tôi trực tiếp điều phối và tối ưu hơn 40 chiến dịch IMC cho các thương hiệu hàng đầu như Vietnam Airlines, Panasonic, VPBank... trải rộng trên các lĩnh vực Hàng không, Điện máy, Bán lẻ và Ngân hàng, đóng vai trò cầu nối chiến lược giữa Agency và Nhãn hàng.",
-        "en": "I am Quy Anh (Mason) — an Account & Project Management Specialist with 5+ years of experience at Novaon Digital, rising from Marketing Intern to Senior Account Executive. I have directly coordinated and optimized 40+ IMC campaigns for leading brands such as Vietnam Airlines, Panasonic, and VPBank across Aviation, Consumer Electronics, Retail, and Banking, serving as a strategic bridge between Agency and Brand."
+        "vi": "Tôi là Quý Anh (Mason) — với hơn 5 năm kinh nghiệm Quản lý Dự án & Khách hàng (Account Management) tại Novaon Digital, thăng tiến từ vị trí Intern lên Senior Account Executive.",
+        "en": "I am Quy Anh (Mason) — with 5+ years of experience in Account & Project Management at Novaon Digital, rising from Intern to Senior Account Executive."
       },
       {
-        "vi": "Thế mạnh cốt lõi của tôi là sự kết hợp giữa tốc độ thực thi linh hoạt của Agency với tư duy quản trị ngân sách chặt chẽ và kỷ luật tăng trưởng doanh số thực tế của phía Nhãn hàng — tôi sẵn sàng mang năng lực đó bước sang vai trò Marketing / Brand Manager.",
-        "en": "My core strength lies in combining agency agility and execution speed with the disciplined budget governance and real revenue-growth mindset of the client side — I'm ready to bring that combination into a Marketing / Brand Manager role."
+        "vi": "Đóng vai trò là cầu nối chiến lược giữa Agency và Nhãn hàng, tôi đã trực tiếp điều phối và tối ưu hơn 40 chiến dịch IMC cho các thương hiệu hàng đầu (Vietnam Airlines, Panasonic, VPBank...) trong nhiều lĩnh vực: Hàng không, Điện máy và Ngân hàng.",
+        "en": "Serving as a strategic bridge between Agency and Brand, I have directly coordinated and optimized 40+ IMC campaigns for leading brands (Vietnam Airlines, Panasonic, VPBank...) across multiple sectors: Aviation, Consumer Electronics, and Banking."
+      },
+      {
+        "vi": "Thế mạnh cốt lõi của tôi là sự kết hợp giữa <span class=\"accent-text\">tốc độ thực thi linh hoạt</span> của một Agency, cùng <span class=\"accent-text\">tư duy tối ưu ngân sách và hướng tới mục tiêu doanh số thực tế</span> của một Client. Với nền tảng này, tôi tự tin đảm nhận vai trò Marketing / Brand Manager trong chặng đường tiếp theo.",
+        "en": "My core strength lies in combining the <span class=\"accent-text\">agile execution speed</span> of an Agency with the <span class=\"accent-text\">budget-optimization mindset and real revenue-focused approach</span> of a Client. With this foundation, I am confident stepping into a Marketing / Brand Manager role for the next chapter of my career."
       }
     ],
     "highlights": [
