@@ -330,7 +330,34 @@
     return slots;
   }
 
-  /* ---------------- Project highlight tiles (short text feature tags) ---------------- */
+  /* ---------------- Project metrics (red number tiles) + highlight tiles (text-only feature tags) ---------------- */
+  function makeEditRow(text, onEdit, onDelete) {
+    var row = document.createElement("div");
+    row.className = "admin-highlight-row";
+    var span = document.createElement("span");
+    span.textContent = text;
+    var btnEdit = document.createElement("button");
+    btnEdit.textContent = "✎";
+    btnEdit.title = "Sửa";
+    btnEdit.addEventListener("click", onEdit);
+    var btnDel = document.createElement("button");
+    btnDel.textContent = "✕";
+    btnDel.title = "Xoá";
+    btnDel.addEventListener("click", onDelete);
+    row.appendChild(span);
+    row.appendChild(btnEdit);
+    row.appendChild(btnDel);
+    return row;
+  }
+
+  function promptBilingual(labelVi, labelEn, currentVi, currentEn) {
+    var textVi = prompt(labelVi, currentVi || "");
+    if (textVi == null || !textVi.trim()) return null;
+    var textEn = prompt(labelEn, currentEn != null ? currentEn : textVi);
+    if (textEn == null) textEn = currentEn != null ? currentEn : textVi;
+    return { vi: textVi.trim(), en: (textEn || textVi).trim() };
+  }
+
   function renderHighlights() {
     var container = document.getElementById("gridHighlights");
     if (!container) return;
@@ -346,24 +373,68 @@
       label.textContent = p.client;
       body.appendChild(label);
 
+      // Metrics: a number (highlighted red on the site) + a label.
+      var metricsHead = document.createElement("div");
+      metricsHead.className = "admin-card-field";
+      metricsHead.textContent = "Chỉ số (số đỏ)";
+      body.appendChild(metricsHead);
+
+      var metricsList = document.createElement("div");
+      metricsList.className = "admin-highlight-list";
+      (p.metrics || []).forEach(function (m, mi) {
+        metricsList.appendChild(makeEditRow(m.value + " — " + vi(m.label), async function () {
+          var newValue = prompt("Con số hiển thị (vd: 24, >150, 2.5x)", m.value);
+          if (newValue == null || !newValue.trim()) return;
+          var res = promptBilingual("Nhãn (Tiếng Việt)", "Nhãn (English)", vi(m.label), m.label && m.label.en);
+          if (!res) return;
+          p.metrics[mi] = { value: newValue.trim(), label: res };
+          await persist();
+          renderHighlights();
+        }, async function () {
+          p.metrics.splice(mi, 1);
+          await persist();
+          renderHighlights();
+        }));
+      });
+      body.appendChild(metricsList);
+
+      var metricsActions = document.createElement("div");
+      metricsActions.className = "admin-card-actions";
+      var btnAddMetric = document.createElement("button");
+      btnAddMetric.textContent = "+ Thêm chỉ số";
+      btnAddMetric.addEventListener("click", async function () {
+        var newValue = prompt("Con số hiển thị (vd: 24, >150, 2.5x)");
+        if (newValue == null || !newValue.trim()) return;
+        var res = promptBilingual("Nhãn (Tiếng Việt) — vd: \"thị trường quốc tế\"", "Nhãn (English)");
+        if (!res) return;
+        if (!p.metrics) p.metrics = [];
+        p.metrics.push({ value: newValue.trim(), label: res });
+        await persist();
+        renderHighlights();
+      });
+      metricsActions.appendChild(btnAddMetric);
+      body.appendChild(metricsActions);
+
+      // Highlights: text-only feature tiles, no number.
+      var highlightsHead = document.createElement("div");
+      highlightsHead.className = "admin-card-field";
+      highlightsHead.textContent = "Ô nổi bật (chỉ chữ)";
+      body.appendChild(highlightsHead);
+
       var list = document.createElement("div");
       list.className = "admin-highlight-list";
       (p.highlights || []).forEach(function (h, hi) {
-        var row = document.createElement("div");
-        row.className = "admin-highlight-row";
-        var span = document.createElement("span");
-        span.textContent = vi(h);
-        var btnDel = document.createElement("button");
-        btnDel.textContent = "✕";
-        btnDel.title = "Xoá ô này";
-        btnDel.addEventListener("click", async function () {
+        list.appendChild(makeEditRow(vi(h), async function () {
+          var res = promptBilingual("Nội dung ô nổi bật (Tiếng Việt)", "Nội dung tiếng Anh", vi(h), h && h.en);
+          if (!res) return;
+          p.highlights[hi] = res;
+          await persist();
+          renderHighlights();
+        }, async function () {
           p.highlights.splice(hi, 1);
           await persist();
           renderHighlights();
-        });
-        row.appendChild(span);
-        row.appendChild(btnDel);
-        list.appendChild(row);
+        }));
       });
       body.appendChild(list);
 
@@ -373,11 +444,10 @@
       btnAdd.textContent = "+ Thêm ô nổi bật";
       btnAdd.className = "primary";
       btnAdd.addEventListener("click", async function () {
-        var textVi = prompt("Nội dung ô nổi bật (Tiếng Việt) — ví dụ: \"B2B2C · Quản lý KOC\"");
-        if (!textVi) return;
-        var textEn = prompt("Nội dung tiếng Anh (để trống nếu muốn giống tiếng Việt)", textVi) || textVi;
+        var res = promptBilingual("Nội dung ô nổi bật (Tiếng Việt) — ví dụ: \"B2B2C · Quản lý KOC\"", "Nội dung tiếng Anh (để trống nếu muốn giống tiếng Việt)");
+        if (!res) return;
         if (!p.highlights) p.highlights = [];
-        p.highlights.push({ vi: textVi, en: textEn });
+        p.highlights.push(res);
         await persist();
         renderHighlights();
       });

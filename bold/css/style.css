@@ -491,7 +491,7 @@ section { position: relative; padding: clamp(4.5rem, 10vw, 9rem) 0; }
   .proof-tile-file[data-proof-url]:hover .ph-icon { transform: scale(1.12); }
 }
 .proof-empty { color: var(--ink-faint); font-size: .9rem; padding: 1.5rem 0; grid-column: 1 / -1; }
-.proof-cta { margin-top: 1.8rem; }
+.proof-cta { display: flex; width: fit-content; margin: 1.8rem auto 0; }
 
 @media (max-width: 899px) { .proof-chip { padding: .68rem 1.1rem; } .proof-modal-panel .proof-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); } }
 
