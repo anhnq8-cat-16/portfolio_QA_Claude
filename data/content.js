@@ -626,8 +626,22 @@ window.SITE_CONTENT = {
           {
             "value": "24",
             "label": {
-              "vi": "thị trường quốc tế",
-              "en": "international markets"
+              "vi": "Thị trường Quốc Tế",
+              "en": "International Marketing"
+            }
+          },
+          {
+            "value": "51.88 lần",
+            "label": {
+              "vi": "ROAS All Camp",
+              "en": "ROAS All Camp"
+            }
+          },
+          {
+            "value": "23.5%",
+            "label": {
+              "vi": "CTR trung bình",
+              "en": "Avg CTR"
             }
           }
         ],
@@ -637,16 +651,7 @@ window.SITE_CONTENT = {
           "",
           ""
         ],
-        "highlights": [
-          {
-            "vi": "Quản trị Media Plan toàn cầu",
-            "en": "Global media plan management"
-          },
-          {
-            "vi": "Địa phương hóa thông điệp theo từng quốc gia",
-            "en": "Ad messaging localized per country"
-          }
-        ]
+        "highlights": []
       },
       {
         "id": "panasonic",

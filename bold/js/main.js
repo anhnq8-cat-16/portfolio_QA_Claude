@@ -605,9 +605,15 @@
 
       rows.forEach(function (rowAssets, rowIndex) {
         if (!rowAssets.length) return;
-        var rowEl = el("div", "proof-track-row" + (rowIndex % 2 === 1 ? " is-reverse" : ""));
+        // A row needs enough unique tiles to fill a screen width before it's
+        // duplicated for the loop, otherwise the seam between the two copies
+        // shows up as a visible gap mid-scroll. Too few items to guarantee
+        // that: skip the animation and just center the row instead.
+        var canLoop = rowAssets.length >= 6;
+        var rowClass = "proof-track-row" + (canLoop && rowIndex % 2 === 1 ? " is-reverse" : "") + (canLoop ? "" : " is-static");
+        var rowEl = el("div", rowClass);
         var track = el("div", "proof-track");
-        var loopAssets = rowAssets.length > 2 ? rowAssets.concat(rowAssets) : rowAssets;
+        var loopAssets = canLoop ? rowAssets.concat(rowAssets) : rowAssets;
         loopAssets.forEach(function (asset) { track.appendChild(buildProofTile(asset)); });
         rowEl.appendChild(track);
         container.appendChild(rowEl);

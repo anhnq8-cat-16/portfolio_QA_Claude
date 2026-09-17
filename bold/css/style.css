@@ -446,8 +446,10 @@ section { position: relative; padding: clamp(4.5rem, 10vw, 9rem) 0; }
 .proof-chip:hover { color: var(--ink); border-color: var(--ink-faint); }
 .proof-chip.is-active { background: var(--red); border-color: var(--red); color: #fff; }
 
-.proof-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: .9rem; }
-.proof-grid.proof-grid-marquee { display: flex; flex-direction: column; gap: .9rem; }
+/* Flex (not grid) so a short last row centers instead of leaving empty
+   trailing columns — a grid keeps items pinned to the start of the row. */
+.proof-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: .9rem; }
+.proof-grid.proof-grid-marquee { flex-direction: column; justify-content: flex-start; }
 .proof-track-row {
   overflow: hidden; margin: 0 calc(clamp(1.25rem, 4vw, 3rem) * -1);
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
@@ -455,6 +457,8 @@ section { position: relative; padding: clamp(4.5rem, 10vw, 9rem) 0; }
 }
 .proof-track { display: flex; gap: .9rem; width: max-content; animation: proof-marquee 42s linear infinite; padding: 0 clamp(1.25rem, 4vw, 3rem); }
 .proof-track-row.is-reverse .proof-track { animation-direction: reverse; }
+.proof-track-row.is-static { display: flex; justify-content: center; }
+.proof-track-row.is-static .proof-track { animation: none; }
 .proof-grid-marquee .proof-tile { flex: 0 0 190px; width: 190px; }
 @keyframes proof-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (hover: hover) and (pointer: fine) {
@@ -462,7 +466,7 @@ section { position: relative; padding: clamp(4.5rem, 10vw, 9rem) 0; }
 }
 @media (prefers-reduced-motion: reduce) { .proof-track { animation: none; overflow-x: auto; } }
 @media (max-width: 640px) { .proof-grid-marquee .proof-tile { flex-basis: 130px; width: 130px; } .proof-track { animation-duration: 30s; } }
-.proof-tile { border-radius: 12px; position: relative; overflow: hidden; aspect-ratio: 1/1; background: var(--surface); }
+.proof-tile { flex: 0 1 170px; width: 170px; border-radius: 12px; position: relative; overflow: hidden; aspect-ratio: 1/1; background: var(--surface); }
 .proof-tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s var(--ease); }
 .proof-tile-caption {
   position: absolute; inset: auto 0 0 0; padding: .6rem .7rem .65rem;
@@ -493,7 +497,7 @@ section { position: relative; padding: clamp(4.5rem, 10vw, 9rem) 0; }
 .proof-empty { color: var(--ink-faint); font-size: .9rem; padding: 1.5rem 0; grid-column: 1 / -1; }
 .proof-cta { display: flex; width: fit-content; margin: 1.8rem auto 0; }
 
-@media (max-width: 899px) { .proof-chip { padding: .68rem 1.1rem; } .proof-modal-panel .proof-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); } }
+@media (max-width: 899px) { .proof-chip { padding: .68rem 1.1rem; } .proof-modal-panel .proof-tile { flex-basis: 120px; width: 120px; } }
 
 .proof-modal {
   position: fixed; inset: 0; z-index: 900; display: none;
@@ -515,7 +519,7 @@ section { position: relative; padding: clamp(4.5rem, 10vw, 9rem) 0; }
 .proof-modal-close:hover { border-color: var(--red); background: rgba(255,49,49,.1); }
 .proof-modal-close::before { content: '\2715'; font-size: .85rem; }
 .proof-modal-title { font-family: var(--font-display); font-weight: 900; font-size: clamp(1.4rem, 3vw, 1.9rem); text-transform: uppercase; margin: .2rem 2.8rem 1.6rem 0; line-height: 1.1; }
-.proof-modal-panel .proof-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+.proof-modal-panel .proof-tile { flex-basis: 130px; width: 130px; }
 body.modal-open { overflow: hidden; }
 
 /* ===== Capabilities (bento: Experience accordion + Education + Competencies + Skills) ===== */
