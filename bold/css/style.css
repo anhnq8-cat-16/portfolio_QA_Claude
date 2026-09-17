@@ -408,7 +408,7 @@ section { position: relative; padding: clamp(4.5rem, 10vw, 9rem) 0; }
 .project-index { font-family: var(--font-display); font-weight: 900; font-size: 1rem; color: var(--red); margin-bottom: 1rem; }
 .project-client { font-family: var(--font-display); font-weight: 900; font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: .3rem; text-transform: uppercase; line-height: 1.05; }
 .project-category { font-size: .82rem; color: var(--ink-faint); font-weight: 600; margin-bottom: 1.4rem; text-transform: uppercase; letter-spacing: .03em; }
-.project-block { margin-bottom: 1.3rem; max-width: 68ch; }
+.project-block { margin-bottom: 1.3rem; }
 .project-block-label { font-size: .74rem; text-transform: uppercase; letter-spacing: .1em; color: var(--red); font-weight: 700; margin-bottom: .5rem; }
 .project-block p { color: var(--ink-soft); text-align: left; line-height: 1.65; }
 .project-block p + p { margin-top: .9rem; }
@@ -432,7 +432,6 @@ section { position: relative; padding: clamp(4.5rem, 10vw, 9rem) 0; }
 
 @media (max-width: 899px) {
   .project-media { float: none; width: 100%; margin: 0 0 1.6rem; }
-  .project-block { max-width: none; }
 }
 
 /* ===== Proof of Work (masonry gallery + case-study modal) ===== */
