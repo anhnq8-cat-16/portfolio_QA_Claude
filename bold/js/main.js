@@ -498,10 +498,13 @@
     panel.appendChild(el("div", "project-client", t(proj.client)));
     panel.appendChild(el("div", "project-category", t(proj.category) + " · " + t(proj.period)));
 
-    [["problem", state.lang === "vi" ? "Vấn đề" : "Challenge"],
-     ["action", state.lang === "vi" ? "Cách triển khai" : "What I did"],
-     ["result", state.lang === "vi" ? "Kết quả" : "Result"]].forEach(function (pair) {
-      var block = el("div", "project-block");
+    // Only "Vấn đề" wraps beside the floated image cluster; "Cách triển
+    // khai" always clears below it so a bullet list never gets squeezed
+    // into whatever narrow strip is left beside the tail of the image.
+    [["problem", state.lang === "vi" ? "Vấn đề" : "Challenge", false],
+     ["action", state.lang === "vi" ? "Cách triển khai" : "What I did", true],
+     ["result", state.lang === "vi" ? "Kết quả" : "Result", false]].forEach(function (pair) {
+      var block = el("div", "project-block" + (pair[2] ? " project-block-clear" : ""));
       block.appendChild(el("div", "project-block-label", pair[1]));
       renderRichText(block, t(proj[pair[0]]));
       panel.appendChild(block);

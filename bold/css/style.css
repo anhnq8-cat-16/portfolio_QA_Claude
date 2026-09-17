@@ -409,10 +409,11 @@ section { position: relative; padding: clamp(4.5rem, 10vw, 9rem) 0; }
 .project-client { font-family: var(--font-display); font-weight: 900; font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: .3rem; text-transform: uppercase; line-height: 1.05; }
 .project-category { font-size: .82rem; color: var(--ink-faint); font-weight: 600; margin-bottom: 1.4rem; text-transform: uppercase; letter-spacing: .03em; }
 .project-block { margin-bottom: 1.3rem; }
+.project-block-clear { clear: both; }
 .project-block-label { font-size: .74rem; text-transform: uppercase; letter-spacing: .1em; color: var(--red); font-weight: 700; margin-bottom: .5rem; }
-.project-block p { color: var(--ink-soft); text-align: left; line-height: 1.65; }
+.project-block p { color: var(--ink-soft); text-align: justify; text-justify: inter-word; line-height: 1.65; }
 .project-block p + p { margin-top: .9rem; }
-.project-list { color: var(--ink-soft); line-height: 1.65; padding-left: 1.2rem; display: grid; gap: .5rem; list-style: none; }
+.project-list { color: var(--ink-soft); line-height: 1.65; padding-left: 1.2rem; display: grid; gap: .5rem; list-style: none; text-align: justify; text-justify: inter-word; }
 .project-list li { position: relative; }
 .project-list li::before { content: '—'; position: absolute; left: -1.2rem; color: var(--red); font-weight: 700; }
 .project-metrics { clear: both; display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: 1.8rem; }
